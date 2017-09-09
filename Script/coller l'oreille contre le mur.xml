@@ -1,0 +1,117 @@
+<PNJ>
+    <dialogue1.0 condition="TOCTOC/Jamais-vu:OUI"><!-- Se lance en premier si la condition 1 est "OUI" -->
+		<phrases1 name="inconnu">*Une voix étouffée sort du mur*\n\nY'aurait-il une oreille amicale  prête à m'écouter ?\n\nJ'ai un marché fort intéressant à vous proposer~?</phrases1><!-- La phrase du PNJ -->
+		<reponse1 ><!-- Premier choix du joueur (affiche uniquement si la condition 3 est "OUI")-->
+			<reaction>Répondre positivement</reaction><!--La reponse PJ-->
+			<goto>2</goto><!--Le lien vers la discution suivante-->
+		</reponse1>
+		<reponse2>
+			<reaction>Répondre négativement</reaction><!--La reponse PJ-->
+			<goto>7</goto><!--Le lien vers la discution suivante-->
+		</reponse2>
+		<reponse3>
+			<reaction>Ignorer</reaction><!--La reponse PJ-->
+			<goto action="Avancement/TOCTOC/Jamais-vu:NON">0</goto><!--Le lien vers la discution suivante-->
+		</reponse3>
+	</dialogue1.0>
+	<dialogue1.1 ><!-- Se lance en premier si TOCTOC/Jamais-vus n'est pas "OUI" -->
+		<phrases1 name="inconnu">Je n'ai point envie de perdre mon temps à parler à un mur, j'eus donc apprécié une réponse~!</phrases1><!-- La phrase du PNJ -->
+		<reponse1 >
+			<reaction>Répondre positivement</reaction><!--La reponse PJ-->
+			<goto>2</goto><!--Le lien vers la discution suivante-->
+		</reponse1>
+		<reponse2>
+			<reaction>Répondre négativement</reaction><!--La reponse PJ-->
+			<goto>7</goto><!--Le lien vers la discution suivante-->
+		</reponse2>
+		<reponse3>
+			<reaction>Ignorer</reaction><!--La reponse PJ-->
+			<goto>0</goto><!--Le lien vers la discution suivante-->
+		</reponse3>
+	</dialogue1.1>
+	<dialogue2.0>
+		<phrases1  name="Major">*Parlant au mur*\n\nQui êtes-vous ?</phrases1>
+		<phrases2  name="inconnu">Ah, enfin un être intelligent~!\n\nBonjour braves gens,\nje me prénomme Stale et je suis, tout comme vous, actuellement retenu contre mon gré dans la geôle d'à côté.\nJ'aurais bien besoin d'un petit coup de pouce pour me soustraire à cette situation. \nAuriez-vous l'amabilité de me venir en aide~?</phrases2>
+		<phrases3  name="Leopold">*Rigole doucement puis chuchote :*\nC'est trop marrant la façon dont il parle</phrases3>
+		<reponse1>
+			<reaction>Accepter</reaction>
+			<goto>3</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Refuser</reaction>
+			<goto>5</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Se renseigner sur l'individu</reaction>
+			<goto>8</goto>
+		</reponse3>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Major">Ok, on va vous aider.\nMais je ne suis pas sûr de pouvoir faire grand-chose depuis notre cellule.</phrases1>
+		<phrases2 name="inconnu">Excellent~!\n\n J'ai justement accès au mécanisme de votre geôle. \nJe devrais pouvoir l'ouvrir aisément et une fois dehors vous n'aurez qu'à ouvrir la mienne avec une steamille. </phrases2>
+		<reponse1>
+			<reaction>C'est parti !</reaction>
+			<goto>9</goto><!--=action="Script/102:9" -->
+		</reponse1>
+		<reponse2>
+			<reaction>Changer d'avis</reaction>
+			<goto>5</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Se renseigner sur les steamilles</reaction>
+			<goto>4</goto>
+		</reponse3>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Leopold">C'est quoi une 'sti mille'?</phrases1>
+		<phrases2 name="inconnu">Steamille~: \n Nom féminin, petit objet ressemblant à une pilule.\nRéserve de vapeur miniaturisée.\nProduit fabriquer principalement à FactoryTech.\n\nVous devriez pouvoir en trouver assez facilement, vu que nous sommes dans l'usine en question. </phrases2>
+		<reponse1>
+			<reaction>Accepter de l'aider</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Refuser de l'aider</reaction>
+			<goto>5</goto>
+		</reponse2>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrases1 name="Major">Désolé, je ne marche pas, \nil y a un truc louche là-dessous.</phrases1>
+		<phrases2 name="inconnu">*Stale soupire* \nSachez que si je dois me passer de votre aide, je vais être contraint de risquer la vie de toutes les personnes des environs~!</phrases2>
+		<reponse1>
+			<reaction>Changer d'avis</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto action="Script/-666:0">0</goto>
+		</reponse2>
+	</dialogue5.0>
+	<dialogue6.0>
+		<phrases1 name="inconnu">Bien, le plan est fort simple. \nUne fois l'entrée de votre geôle ouverte, vous scrutez les environs à la recherche d'une steamille. \nUne fois cette tâche accomplie, il ne vous reste plus qu'à vous en servir pour me libérer.\nBonne chance.</phrases1>
+		<reponse1>
+			<reaction>Accepter</reaction>
+			<goto>9</goto><!--=action="Script/102:9" -->
+		</reponse1>
+	</dialogue6.0>
+	<dialogue7.0>
+		<phrases1 name="Leopold">Non, il n'y a personne.</phrases1>
+		<phrases2>.... </phrases2>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>2</goto>
+		</reponse1>
+	</dialogue7.0>
+	<dialogue8.0>
+		<phrases1  name="Major">\nMouais!\n\nQui me dit que vous n'êtes pas enfermé pour une bonne raison~?\n\nVous êtes un peu trop poli pour être honnête~!</phrases1>
+		<phrases2  name="inconnu">\nC'est une excellente remarque~!\nMais elle vaut aussi pour vous. \nVous pourriez être des tueurs sanguinaires sans foi ni loi... \nJe crains donc, mon cher, que nous ne devions nous faire confiance pour sortir de ce mauvais pas.</phrases2>
+		<reponse1>
+			<reaction>Accepter</reaction>
+			<goto>3</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Refuser</reaction>
+			<goto>5</goto>
+		</reponse2>
+		<!--Prévoir un dialogue si les PJs ont vus l'affiche de la roue? SOALT-->
+	</dialogue8.0>
+ </PNJ>

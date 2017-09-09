@@ -1,0 +1,9 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="Porte">*La porte semble avoir été scellée au fer à souder... étrange*</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+ </PNJ>

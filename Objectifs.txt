@@ -1,0 +1,124 @@
+ 
+ * Barre de temps combat (200+20 par 10+20 pixels)
+
+ * Faire une map schématique du canyon
+ * Faire l'itinéraire que l'on veux "forcer" au joueur
+ * Faire les trajets des patrouilles
+ * Prendre les coordonnées précises des keypoints
+Réinit des patrouilles ?
+ * Gestion gravité dans les attaques pokémons pour ceux qui le peuvent
+>Modèles 3D
+>Modèles 2D [pour le 08/03, on est attaqué par des default_guy grisé]
+>Stats
+
+> Faire gagner des objets aléatoirement sur les ennemis ?
+
+==Combat==
+Couleur de log différente en combat
+Augmenter taille face combattants dans le combat
+
+ * "Attaque précise" (nom à rechercher) STRATEGIQUE
+
+Reréfléchir à la transition des débuts de combat
+
+====================================================== Liste officielle pour le 08/03 =========================================================
+
+*) Rajouter des patrouilles dans le canyon
+	* et du coup modifier l'attaque pokémon pour qu'elle prenne en compte le terrain dans le déplacement de l'agresseur.
+
+*) Rajouter ce qu'on peut gagner lors d'un combat ("Vous avez obtenu x Caps et y Junk !") et faire gagner quelques misères avec les rats
+
+*) Continuer l'HUD de combat
+
+*) Une meilleure gestion du son (et modifier certains sons comme l'ouverture des portes) [à compléter au fur et à mesure des remarques]
+
+5) Finaliser mes blocks (parce que je commence à en avoir assez des templates tout moches ^^)
+
+*) Vérifier et débugger la relance de partie [débuggage dans le XML à faire par Loran]
+
+*) Icones et descriptions des haches
+
+*) Menu tuto avec tuto basique.
+
+
+Priorité : 6, 8, 1, 2, 4, 3, 7*, 5 
+
+===============================================================================================================================================
+
+
+
+
+
+ - Passer les pièces d'identités (badges, laissez-passer ...) dans les "spéciaux" ?
+
+08/09
+*Fonction de Save/load/New game pour les XML
+*Graphique plus steampunk (notament les blocks)
+
+09/10
+Viv et Robin
+Débugger le combat !
+
+Long cours:
+Icône d'équipement
+
+Autres :
+-Nerfer les armes à distance (munitions ?)
+-Repenser le combat pour plus de stratégie (objet spé?, évolution [0;3]?, steamball?)
+-Faire des item-quest "Quête" (avec icônes et textes associées)
+-Sélection des persos au début à rendre plus sexy
+-Niveau de difficulté
+-Plusieurs sauvegardes
+-Commencer avec un seul perso puis récupérer des steamilles pour libérer les autres
+-Perso à faire mieux
+-Images de dialogue des gens
+-Ennemis 3D à rajouter (méca, serpent, rat, SS ...)
+
+Faits :
+
+Objo du 08/09 :
+-Cinématique pokémon (fait, à modifier pour afficher l'HUD ?)
+-Relancer Robin et Vivien pour savoir où ils en sont (fait, et c'est mort)
+-Améliorer le stack_butin pour placer les item_quest qui ont shareable=-1 (donc les quêtes) en premier(fait)
+-Block (la progra est là, il faut améliorer les images)
+-Fonction HUD (fait)
+
+
+
+
+
+Objectifs (décidés le 19/02) :
+ - Début et fin
+ - jouable
+ - sans trop de bugs
+-> Début grandes vacances
+
+ - faire un script qui lance le combat de boss final (et que ça)
+ - à la fin d'un combat, donner la possibilité de changer le script_num
+
+CR par mail vendredi 28/02
+
+
+
+CR du 09/04 :
+
+Truc à faire pour finir :
+Anim Eve                                    (30/04)
+Anim Boss de Fin                                   [12/05]
+Debug Combat                                       [30/04 DONE !]
+Script Fin                                  (12/05)
+Dialogue : Interface                               [30/05]
+Combat : aides contextuelles à revoir              [30/04]
+Adapter le niveau 0                         (30/05)
+
+Autres trucs :
+Icones de classe
+Marquer plus le premier tour de combat (?)
+Icones de partout
+Quêtes Annexes
+Boss à "niveau"
+Vrais objectifs
+
+
+
+

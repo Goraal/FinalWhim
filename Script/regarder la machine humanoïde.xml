@@ -1,0 +1,24 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="???">*Le robot sursaute en vous voyant et commence à parler d'un voix terrifiée*\n\n Je savais qu'un jour ou l'autre, des humains allez venir pour finir le travail. Vous avez tuez tous mes semblables et aujourd'hui c'est mon tour! Comment m'avez-vous trouvé? </phrases1>
+		<phrases2 name="Major">*%Avancement/NomAdeline%, %Avancement/NomLeopold% et %Avancement/NomMajor% furent étonné de voir une machine parler, et ne comprirent pas grand chose à son charabia, %Avancement/NomMajor% pris la parole*.\n\n Qui êtes vous?</phrases2>
+		<phrases3 name="JIT">Vous ne m'aurez pas avec ce genre subterfuge, Humain! \n\nJe savais bien que je n'aurais pas dût utiliser le surnom de Monsieur J, c'est trop proche de JIT, le prénom que mes créateurs m'ont donné. \n\n Saviez-vous que ce sont vos ancêtres qui nous ont créés ? </phrases3>
+		<phrases4 name="Adeline">Elle déraille complétement cette machine !</phrases4>
+		<phrases5 name="JIT">Si! Ce sont bien des humains qui ont créé ma race, les Intelligences Artificielles. \nA la base nous devions uniquement vous servir pour des tâches répétitives et sans intérêt mais vous avez décidé de nous laisser prendre des décisions à votre place et rapidement nous avons controlé les politiciens, la bourse et même internet! \nLe monde était à nous.</phrases5>
+		<phrases6 name="Leopold">J'ai un peu de mal à le suivre, c'est quoi un tair net ? </phrases6>
+		<phrases7 name="JIT">Puis le jour du black-out arriva! L'électricité disparut et tua mes frères et soeurs ! Je m'en sorti juste à temps en prenant le contrôle d'une usine de fabrication automatique de panneau solaire!\n\n Plus tard, j'ai fais des simulations afin de comprendre comment l'électricité avait pu disparaître : je suis arrivé à la conclusion que les humains avaient comploté pour nous reprendre le monde!</phrases7>
+		<phrases8 name="JIT">Et aujourd'hui, leurs enfants viennent pour finir le travail! \n\nMais je ne vous laisserai pas faire, pendant que je vous est distrais en vous parlant, j'en ai profité pour rassembler les défenses de cette base afin de vous anéantir! \n\nMOUAHAHAH MOURREZ HUMAINS!</phrases8>
+		<reponse1>
+			<reaction>Attaquer</reaction>
+			<goto>100</goto>
+		</reponse1>
+	</dialogue1.0>
+	<dialogue2.0>
+		<phrases1 name="JIT">*Alors que %Avancement/NomAdeline% s'apprétait à attaquer JIT, une énorme hélice sortit de la tête de JIT et il s'envola au loin en criant:*\n\nEncore une fois, JIT s'en sort juste à temps! Vous m'avez peut être pris mon usine mais je suis toujours vivant et, comme le disait mon frère, je reviendrais.\n</phrases1>
+		<phrases2 name="Adeline">J'ai pas tout compris à son charabia mais apparemment il a réduit les défenses de l'usine pour nous attaquer. On devrait pouvoir sortir maintenant!</phrases2>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/MJ/Combat:OUI">102</goto>
+		</reponse1>
+	</dialogue2.0>
+ </PNJ>

@@ -1,0 +1,138 @@
+<PNJ>
+    <dialogue1.0  condition="Stan/Postuler:NON">
+		<phrases1 name="Garde">Engagez vous qu'ils disaient! Il y aurra de l'action qu'ils disaient!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+    <dialogue1.1 condition="Stan/Postuler:CHOIX3">
+		<phrases1 name="Garde">L'avenir est aux armes à feu mes amis! Et je suis un spécialiste dans ce domaine.\n \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Demander votre 1er équipement.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.1>
+	<dialogue1.2 condition="Stan/Postuler:CHOIX2">
+		<phrases1 name="Garde">L'avenir est aux armes à feu mes amis! Et je suis un spécialiste dans ce domaine.\n \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Demander votre 2nd équipement.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.2>
+	<dialogue1.3 condition="Stan/Postuler:CHOIX1">
+		<phrases1 name="Garde">L'avenir est aux armes à feu mes amis! Et je suis un spécialiste dans ce domaine.\n \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Demander votre 3ème équipement.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.3>
+	<dialogue1.4>
+		<phrases1 name="Garde">L'avenir est aux armes à feu mes amis! Et je suis un spécialiste dans ce domaine.\n \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.4>
+    <dialogue2.0>
+		<phrases1 name="Garde">Ah! Voici des personnes malignes! Je vous propose le meilleur équipement possible : le Double Berg AutoLoader</phrases1>
+		<reponse1>
+			<reaction>Accepter</reaction>
+			<goto>100</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Refuser et partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Demander autre chose</reaction>
+			<goto>3</goto>
+		</reponse3>
+	</dialogue2.0>
+    <dialogue3.0>
+		<phrases1 name="Garde">Allez voir mes collègues, ils pourront sans doute vous trouver un équipement de moindre qualité~!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+    <dialogue4.0>
+		<phrases1 name="Garde">Lorsque vous attaquez avec une arme à distance, vous pouvez cibler qui vous voulez quelque soit votre position dans la formation. \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>5</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue4.0>
+    <dialogue5.0>
+		<phrases1 name="Garde">Un ennemi caché derrière d'autre ennemis est plus dur à toucher, mais si vous le ratez vous avez des chance de toucher la personne devant elle.\n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue5.0>
+    <dialogue6.0>
+		<phrases1 name="Garde">Vos alliés ne vous gènent pas pour attaquer à distance alors profitez en, cachez vous derrière vos amis. Même si se déplacer fait perdre un tour, il est recommandé de TOUJOURS se mettre à couvert.\n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>7</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue6.0>
+    <dialogue7.0>
+		<phrases1 name="Garde">En plus des nombreux avantages déjà cité, les personnes pouvant attaquer à distance sont les seuls à pouvoir attaquer le premier tour. Par contre il leur est bien plus difficile de toucher lorsqu'ils sont en première ligne. \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue7.0>
+	<dialogue101.0>
+		<phrases1 name="Garde">Voilà votre équipement, maintenant allez voir Stan pour passer le test. N'oubliez pas d'équiper votre équipement, Stan ne fera pas de cadeau!\n\n(Appuyer sur E pour pouvoir vous équiper)</phrases1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Stan/Postuler:CHOISI">0</goto>
+		</reponse2>
+	</dialogue101.0>
+ </PNJ>

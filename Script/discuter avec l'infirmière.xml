@@ -1,0 +1,62 @@
+<PNJ>
+    <dialogue1.0 condition="Infirmiere/Jamais-vu:OUI">
+		<phrases1 name="Infirmiere">Bienvenue à l'infirmerie beau gosse. Je peux prendre soin de toi si tu veux.</phrases1>
+		<phrases2 name="Leopold">J'apprétie fortement votre proposition mais je suis déjà prit et la fidélité est pour moi une règle de vie des plus importantes</phrases2>
+		<phrases3 name="Infirmiere">*Clingue plusieurs fois des yeux puis souris.*\n\nSauf que je ne parlais pas à toi le môme. \nDe plus c'est une façon de parler pour attirer des clients. Si vous êtes blesser je peux vous soigner pour 30 caps.</phrases3>
+		<phrases4 name="Adeline">Vous n'avez pas prété serment de soigner les pauvres gratuitement?</phrases4>
+		<phrases5 name="Infirmiere">Pfff, je devais avoir bue quand j'ai prétée Serment d'Hypocras! \n\nBon, je peux vous réanimer gratuitement mais les autres soins restent payant. Si je veux gagner ma vie il faut bien que je vous fasse payer pour la votre.</phrases5>
+		<phrases10 name="Infirmiere">NOTA pour le correcteur : merci de laisser le jeu de mot "Serment d'Hypocras" à la place de "Serment d'Hippocrate" </phrases10>
+		<reponse1>
+			<reaction>Soin : 30 caps</reaction>
+			<goto action="Avancement/Infirmiere/Jamais-vu:NON">100</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Réanimation</reaction>
+			<goto action="Avancement/Infirmiere/Jamais-vu:NON">101</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Infirmiere/Jamais-vu:NON">0</goto>
+		</reponse3>
+	</dialogue1.0>
+	<dialogue1.1>
+		<phrases1 name="Infirmiere">En quoi je peux aider mes clients... euh patients préférés</phrases1>
+		<reponse1>
+			<reaction>Soin : 30 caps</reaction>
+			<goto>100</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Réanimation</reaction>
+			<goto>101</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse3>
+	</dialogue1.1>
+	<dialogue2.0>
+		<phrases1 name="Infirmiere">Comme on dit chez moi, l'argent c'est la santé. \n\nRevenez quand vous voulez!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Infirmiere">Vous semblez vraiment mal en point. Malheureusement mon portefeuille aussi. \n\nRevenez quand l'on pourra s'aider mutuellement.</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Infirmiere">Et voilà, vous êtes tous debout.\n\nPar contre, je vous déconseille toute activité physique dans votre état ... à moins que vous n'acceptiez un soin à des tarifs très abordable.\n\nNoubliez pas que la vie n'a pas de prix et que votre argent ne vous servira à rien si vous mourrez.</phrases1>
+		<reponse1>
+			<reaction>Soin : 30 caps</reaction>
+			<goto>100</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue4.0>
+ </PNJ>

@@ -1,0 +1,170 @@
+<PNJ>
+    <dialogue1.0 condition="Arsène/Jamais-vu:OUI">
+		<phrases1 name="Arsène">Hey, des petits nouveaux... \n\n*Il crache par terre puis observe rapidement les trois étrangers.*\nUn ancêtre, une pisseuse et ... tiens y en a un qui pourrait servir à quelque chose. \n\nTu t'appelles comment petit~?</phrases1>
+		<phrases2 name="Leopold">Je vous interdis de parler ainsi de mon ange adoré et futur beau papa~!\n\n*%Avancement/NomLeopold% pointe ensuite Arsène du doigt*\n\n Encore un mot de votre part et vous le regretterez amèrement~!</phrases2>
+		<phrases3 name="Major">*Met un taquet à %Avancement/NomLeopold% *\n\nEt tu vas faire quoi s'il répond~! Tu vas l'attaquer~! Ici~! Avec tous ses amis autour pour nous casser la figure~?! Ne fais jamais de menace que tu n'es pas prêt à tenir.\n...\nEt, la prochaine fois que tu m'appelles 'beau papa', je te brise les deux jambes. Compris~?</phrases3>
+		<phrases4 name="Leopold">Ou ..oui, Monsieur.\n\n</phrases4>
+		<phrases5 name="Arsène">*Met les pieds sur la table et sourit* \n\nJe t'aime bien l'ancêtre~! \nJe vais te donner un bon conseil~: ne fais pas confiance à la maire~!</phrases5>
+		<reponse1>
+			<reaction>Se renseigner sur la maire</reaction>
+			<goto action="Avancement/Arsène/Jamais-vu:NON">2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Parler de plan d'évasion</reaction>
+			<goto action="Avancement/Arsène/Jamais-vu:NON">3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Pourquoi vouloir partir~?</reaction>
+			<goto action="Avancement/Arsène/Jamais-vu:NON">4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Arsène/Jamais-vu:NON">0</goto>
+		</reponse4>
+	</dialogue1.0>
+	<dialogue1.1 condition="Manny/Recherche:OUI">
+		<phrases1 name="Arsène">Alors les bleus, vous n'avez toujours pas trouvé Manny~?</phrases1>
+		<reponse1>
+			<reaction>Mentir</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Continuer de rechercher</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Redemander de le décrire</reaction>
+			<goto>5</goto>
+		</reponse3>
+	</dialogue1.1>
+	<dialogue1.2 condition="Manny/Recherche:TROUVE">
+		<phrases1 name="Arsène">Alors les bleus, vous n'avez toujours pas trouvé Manny~?</phrases1>
+		<reponse1>
+			<reaction>Mentir</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Parler du cadavre</reaction>
+			<goto>7</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse3>
+	</dialogue1.2>
+	<dialogue1.3 condition="Manny/Recherche:NON">
+		<phrases1 name="Arsène">Revenez me voir quand vous aurez plus d'info sur le maître des lieux. Il se fait appeler maître J.</phrases1>
+		<reponse1>
+			<reaction>Se renseigner sur la maire</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Parler de plan d'évasion</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Pourquoi vouloir partir~?</reaction>
+			<goto>4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse4>
+	</dialogue1.3>
+	<dialogue1.4>
+		<phrases1 name="Arsène">Revenez me voir quand vous aurez plus d'info sur le maître des lieux. \nIl se fait appeler maître J.</phrases1>
+		<reponse1>
+			<reaction>Se renseigner sur la maire</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Pourquoi vouloir partir~?</reaction>
+			<goto>4</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse3>
+	</dialogue1.4>
+	<dialogue2.0>
+		<phrases1 name="Major">C'est quoi le problème avec la maire~?</phrases1>
+		<phrases2 name="Arsène">Selon elle, tant que nous nous arrangeons pour faire tourner les roues, les gardes ne se rendront compte de rien. \nNous nous répartissons la corvée à tour de rôle. Ceux qui ne sont pas de corvée, peuvent continuer à aménager les zones communes comme ce bar, se détendre, discuter...\nMais, on tourne vite en rond ... même quand on n'est pas dans les roues.</phrases2>
+		<phrases3 name="Arsène">Je lui ai pourtant parlé de mes plans d'évasion, mais elle les enterre toujours sous un prétexte ou un autre. Je crois qu'elle aime être maire ici et qu'elle ne trouve plus aucun intérêt à partir d'ici. C'est pour ça que moi et mon groupe, on a décidé de se lancer seuls.</phrases3>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Pourquoi vouloir partir~?</reaction>
+			<goto>4</goto>
+		</reponse2>
+		<reponse3 condition="Manny/Recherche:NON">
+			<reaction>Parler de plan d'évasion</reaction>
+			<goto>3</goto>
+		</reponse3>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Major">On veux partir d'ici. Tu peux nous aider~?</phrases1>
+		<phrases2 name="Arsène">En ce moment on est en phase d'infiltration. En plus des gardes mécaniques, il y a des nobles dans l'usine. J'ai envoyé mon meilleur homme Manny en infiltration. Il ne devrait plus tarder à revenir.</phrases2>
+		<phrases3 name="Major">On peut aider~?</phrases3>
+		<phrases4 name="Arsène">Je sais pas si je peux vous faire confiance...\n\nSi vous êtes courageux, vous pouvez toujours aller chercher Manny et revenir me porter les informations de l'infiltration.</phrases4>
+		<reponse1>
+			<reaction>Accepter</reaction>
+			<goto>5</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Pourquoi vouloir partir~?</reaction>
+			<goto>4</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Se renseigner sur la maire</reaction>
+			<goto>2</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse4>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Major">Pourquoi vouloir partir~?</phrases1>
+		<phrases2 name="Arsène">Quand vous aurez passé quelques mois ici, vous comprendrez que c'est pas une vie. Essayez donc de voir toujours les mêmes têtes et de n'avoir comme seul objectif que de faire tourner ces saloperies de roues pour que personne ne s'aperçoive de rien, là-haut.</phrases2>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Se renseigner sur la maire</reaction>
+			<goto>2</goto>
+		</reponse2>
+		<reponse3 condition="Manny/Recherche:NON">
+			<reaction>Parler de plan d'évasion</reaction>
+			<goto>3</goto>
+		</reponse3>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrases1 name="Arsène">*Arsène vous décrit précisement Manny*... et il porte toujours un costard bleu foncé, vous pouvez pas le rater. Une fois que vous l'aurez trouvé revenez m'informer de la situation.</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Manny/Recherche:OUI">0</goto>
+		</reponse1>
+	</dialogue5.0>
+	<dialogue6.0>
+		<phrases1 name="Major">On a retrouvé Manny! Il est en pleine infiltration donc il n'a pas eut le temps de nous informer de la situation. \n Nous en revanche on a plein de temps et on est motivé pour prendre part à la grande évasion.</phrases1>
+		<phrases2 name="Arsène">Vous devriez arrêter de mentir, c'est mauvais pour votre réputation. \nRevenez avec de faire info la prochaine fois.</phrases2>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue6.0>
+	<dialogue7.0>
+		<phrases1 name="Major">Arsène... On a retrouvé Manny ...il est mort.</phrases1>
+		<phrases2 name="Arsène">*Toujours d'un air impassible* Mouaip, je m'en doutais~!\n\nTrois mois sans nouvelles de sa part, c'était louche.</phrases2>
+		<phrases3 name="Adeline">Trois mois~! Et tu n'as envoyé personne avant~! T'es resté les bras croisés ici~!</phrases3>
+		<phrases4 name="Arsène">On sort rarement dans "la cour" à cause des gardes mécaniques, ils ont tué pas mal de monde lors de la première tentative d'évasion. On avait le nombre, ils avaient les armes...\nDepuis tout le monde ici a peur d'aller à l'extérieur sauf Manny qui s'était porté volontaire pour entérrer les cadavres. \nDu coup il n'y avait personne ici prêt à sortir pour confirmer la mort de Manny.</phrases4>
+		<phrases5 name="Arsène">Bon, vous avez passé l'épreuve de présélection. Bienvenue chez les rebelles.\n\nJ'aurrais besoin de vous pour remplacer Manny et aller trouver des informations sur le maître des lieux.\nManny nous avait ramené un engrenage d'identification, lors de sa dernière mission. Prenez-le, il vous permettera de rentrer dans l'usine.</phrases5>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>100</goto>
+		</reponse1>
+	</dialogue7.0>
+ </PNJ>

@@ -1,0 +1,87 @@
+<PNJ>
+    <dialogue1.0 condition="SS/desactive:OUI">
+		<phrases1 name="Adeline">On va enfin pouvoir quitter cet endroit et rentrer chez nous!</phrases1>
+		<phrases2 name="Leopold">Je n'sais pas pourquoi, mais j'ai l'impression qu'on a oublié un truc ...</phrases2>
+		<reponse1>
+			<reaction>Rester dans l'usine</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir de l'usine</reaction>
+			<goto>7</goto>
+		</reponse2>
+	</dialogue1.0>
+	<dialogue1.1>
+	<phrases1 name="Adeline">Mhhh! Si je me souviens bien, on nous a dit qu'il y a un truc qui garde la porte. \nIls nous ont aussi dit qu'il est super fort et que nous n'avons aucune chance contre lui!</phrases1>
+	<phrases2 name="Leopold">Pfff! C'est tous des lâches!\nNous on est une équipe, forte, soudée et se battant pour une noble cause : la liberté! On est obligé de gagner. \n\nJe te parie qu'on va dégommer ce qu'il nomme le "SS" en moins de deux!</phrases2>
+		<reponse1 >
+			<reaction>Rester dans l'usine</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir de l'usine</reaction>
+			<goto>3</goto>
+		</reponse2>
+	</dialogue1.1>
+	<dialogue2.0>
+		<phrases1 name="Major">Nous sortirons de cette usine quand nous serons prêts. Ce qui n'est pas le cas pour l'instant. </phrases1>
+		<phrases2 name="Adeline">Mais ...</phrases2>
+		<phrases3 name="Major">*%Avancement/NomMajor% lance à %Avancement/NomAdeline% un regard noir* Pas de mais! \n\nSache qu'il vaut mieux trop de précautions que mourir bêtement. \nOn ne vit qu'une fois!</phrases3>
+		<reponse1>
+			<reaction>*Partir*</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Major">Ok, on entre, mais pas de bruit!</phrases1>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>4</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0 image="sprites\Introduction\boss1.png">
+		<phrases1 name="Major">...</phrases1>
+		<phrases2 name="Adeline">...</phrases2>
+		<phrases3 name="Leopold">*Chuchote* Il fait sombre ici et il y a des obstacles partout. \nFaites attention!\n\n*%Avancement/NomLeopold% tape alors dans un objet et un bruit métallique retentis dans tout le bâtiment*\n...</phrases3>
+		<phrases4 name="Adeline">*Chuchote* Pas de réaction ... peut-être que le SS n'est pas là!\n\nD'ailleurs, le "SS" n'est surement qu'une légende qui a pour but de dissuader les prisonniers de partir.</phrases4>
+		<phrases5 name="Major">...\n\nOk, tu as sans doute raison cette fois ... du coup, plus besoin de chuchoter. \n\nJe suis presque déçu qu'on se soit équipés pour rien!</phrases5>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>5</goto>
+		</reponse1>
+	</dialogue4.0>
+	<dialogue5.0 image="sprites\Introduction\boss2.png">
+		<phrases1 name="SS">DETECTION D'INTRUS. \nPASSAGE EN MODE "TUE, BRULE, MUTILE". </phrases1>
+		<phrases2 name="Major">Et merde ...</phrases2>
+		<phrases3 name="???">...Les programmeurs n'ont pas fini de programmer le combat contre le boss. Du coup, pour gagner le combat il faut ... tricher ^^ \n\n (le mode triche est débloqué automatiquement en terminant l'histoire.\n\nSi vous n'avez pas le mode triche, vous êtes mort dans d'atroces souffrances. Heureusement, les programmeurs vous autorisent à revenir en arrière.)</phrases3>
+		<reponse1>
+			<reaction>Triche : retour en arrière</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2 condition="PJ/Triche:OUI">
+			<reaction>Triche : victoire</reaction>
+			<goto>6</goto>
+		</reponse2>
+	</dialogue5.0>
+	<dialogue6.0 image="sprites\Introduction\boss3.png">
+		<phrases1 name="Adeline">Je crois que cette fois c'est bon, on l'a bien dégommé! Je vais aller vérifier et en profiter pour voir ce qui est récupérable.</phrases1>
+		<phrases2 name="Major">Commence par percer sa chaudière, c'est plus sûr.\n On va enfin pouvoir rentrer chez nous !</phrases2>
+		<phrases3 name="Leopold">Je me sens un peu mal de laisser l'usine sans protection! Elle pourrait se faire attaquer, les steamilles semblent avoir de la valeur...</phrases3>
+		<phrases4 name="Major">Tu te sens mal de laisser sans défense les gars qui nous ont enfermés et réduits en esclavage! T'es vraiment un cas!\n Dis-toi que si quelqu'un d'autre se fait enfermer il aura moins de mal à sortir. \nMais si malgré tout tu te sens mal, tu peux toujours rester pour protéger l'usine. </phrases4>
+		<phrases5 name="Leopold">Non merci, monsieur, je préfère rentrer avec vous. J'ai eu assez d'émotion forte pour un bon bout de temps</phrases5>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>7</goto>
+		</reponse1>
+	</dialogue6.0>
+	<dialogue7.0 image="sprites\Introduction\intro1.png">
+		<phrases1 name="narrateur">C'est sur ces mots pleins de sagesse que nos héros partirent retrouver leurs foyers.\n Peu de temps après leurs départs, l'usine fut attaquée par un groupe de pillard et réduite en cendre. \nLes habitants des mégalopoles, habitués à utiliser les steamilles au quotidien que ce soit pour communiquer, se déplacer et même payer eurent une bien mauvaise surprise.</phrases1>
+		<phrases2 name="narrateur">Si l'histoire se répète sans cesse, ce n'est pas point dû au destin, mais aux humains qui n'apprennent que rarement des erreurs de leurs ancêtres. \n\nMais bon, nous n'allons pas nous plaindre, au moins c'est divertissant.</phrases2>
+		<phrases3 name="narrateur">Quant à nos trois héros, leur petit village fut épargné par cette nouvelle crise. \n%Avancement/NomMajor% retrouva sa femme et son poste de chef de village. \n\nTandis que %Avancement/NomAdeline% et %Avancement/NomLeopold% se séparèrent et furent beaucoup mieux ainsi.</phrases3>
+		<phrases4 name="narrateur">\n\n                                                        FIN </phrases4>
+		<reponse1>
+			<reaction>FIN</reaction>
+			<goto action="Script/-665:0">0</goto>
+		</reponse1>
+	</dialogue7.0>
+ </PNJ>

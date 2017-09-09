@@ -1,0 +1,63 @@
+<PNJ>
+    <dialogue1.0 condition="Manny/Fouillé:NON">
+		<phrases1 name="Adeline">*A la vue du squelette, les yeux de %Avancement/NomAdeline% se mirent à scintiller*\n\nPapounet chéri ?\nJe peux fouiller le cadavre?</phrases1>
+		<reponse1>
+			<reaction>Accepter</reaction>
+			<goto action="Avancement/Manny/Fouillé:OUI">2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Refuser</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3 condition="Manny/Recherche:OUI">
+			<reaction>Regardre attentivement</reaction>
+			<goto action="Avancement/Manny/Recherche:TROUVE">4</goto>
+		</reponse3>
+	</dialogue1.0>
+	<dialogue1.1 condition="Manny/Recherche:NON">
+		<phrases1 name="Leopold">Il n'y a plus rien à récupérer sur ce cadavre...\n Sauf ses vêtements.</phrases1>
+		<phrases2 name="Major">*%Avancement/NomMajor% intervient avant que %Avancement/NomAdeline% puisse dire quoi que se soit*\n\nNon! On ne vas pas piquer les vêtements de ce type!\nFranchement, %Avancement/NomAdeline%, il faut que tu arrêtes de vouloir récupérer le moindre déchêt.</phrases2>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.1>
+	<dialogue1.2>
+		<phrases1 name="Leopold">Tiens c'est marrant! Il ne serait pas mort, il ressemblerait beaucoup au Many que nous à décrit Arsène.</phrases1>
+		<phrases2 name="Major">... C'est vrai, \nje n'avais pas remarqué... \n\nIl lui ressemble d'ailleurs tellement qu'à mon avis c'est lui.</phrases2>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Manny/Recherche:TROUVE">0</goto>
+		</reponse1>
+	</dialogue1.2>
+	<dialogue2.0>
+		<phrases1 name="Leopold">*%Avancement/NomLeopold% détourne les yeux et engage la conversation avec %Avancement/NomMajor%.*\nVotre fille et moi, on est vraiment complémentaire! Moi j'ai du mal à fouiller les cadavres. </phrases1>
+		<phrases2 name="Adeline">Wouhou!\n\nC'est pas un cadavre d'occasion! Je suis la première à le fouiller. \n</phrases2>
+		<phrases3 name="Leopold">C'est minion, on dirait qu'elle ouvre des cadeaux.</phrases3>
+		<phrases4 name="Adeline">Une lance! \n\nEt en bonne état en plus! Trop cool! ...</phrases4>
+		<phrases5 name="Major">...\n \nLa prochaine fois je metterais ses cadeaux de Porcher sous un cadavre à la place d'un sapin.</phrases5>
+		<phrases6 name="Adeline">C'est bon j'ai fini! \n\nEt devinez Quoi! Il avait des tunes sur lui! Bon il n'y a qu'une trentaine de caps mais c'est toujours mieux que rien.</phrases6>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>100</goto>
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Major">On ne sait pas de quoi est mort ce type. Il vaut mieux ne pas y toucher pour l'instant.</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Adeline">*%Avancement/NomAdeline% regarde alors le cadavre en plissant des yeux, puis dit l'air satisfaite.*\n\nEn plus, je fais pas ça pour moi, ce type c'est le Many dont nous a parler Arsène. Du coup on es obligé de le fouiller...\n\n...pour savoir ce qui lui est arrivé...</phrases1>
+		<reponse1>
+			<reaction>Fouiller</reaction>
+			<goto action="Avancement/Manny/Fouillé:OUI">2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Ne pas fouiller</reaction>
+			<goto>3</goto>
+		</reponse2>
+	</dialogue4.0>
+ </PNJ>

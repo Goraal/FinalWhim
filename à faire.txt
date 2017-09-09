@@ -1,0 +1,49 @@
+Combat :
+ [done] Dégâts visibles
+ [done] Vérifier les rafales
+ [done] Dégâts visibles lors des rafales
+ [done] Sprite Fillette (scale et atd)
+ - Hud combat
+ - Nettoyer le log
+
+Sons :
+ [done] Son Tadadadaa
+ - Son Alerte
+
+
+IA :
+ [done] vérifier si l'IA à distance fonctionne correctement
+ - IA Boss
+
+Map :
+ [done] Finir HUD
+ [done] Lit lowpoly
+ - Arbre lowpoly
+
+Menu :
+ [done] Trier les équipements (dans l'ordre croissant)
+ - Icones des équipements
+ [done] Faire afficher la valeur en caps et junk dans F2
+
+Menu_classe :
+ [done] Icones de classe
+
+Menu_Forgeron :
+ [done] à repenser
+ [done] à dessiner
+ [done] à implémenter
+ [done] Améliorer des objets dans l'inventaire
+ [done] Vérification vapeur pour les armes équipées
+ - Faire des voix ?
+
+Menu_discussion :
+ [done] Loran est dessus
+ - faire apparaitre le texte au fur et mesure (comme pour mes affichages classiques)
+
+Misc :
+ - Block à dessiner (la progra est là)
+ [done] Stale doit aller à la vitesse du joueur
+
+
+Gameplay :
+ - Rééquilibrer les PJ

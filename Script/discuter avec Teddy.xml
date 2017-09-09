@@ -1,0 +1,24 @@
+<PNJ>
+    <dialogue1.0 condition="PJ/Embarquement:NON">
+		<phrases1 name="Teddy">...en ajoutant dix milligrammes de silicium à la composition mon titane de carbone, je devrais pouvoir condenser 2.21 GigaWatt de vapeur ... </phrases1>
+		<phrases2 name="Leopold">Stan nous envoie car il y a une urgence dans l'usine. </phrases2>
+		<phrases3 name="Teddy">*Teddy continue a faire ses expérience sans faire attention à son entourage*\n\n...reste à créer les joints adequates pour ne pas tout faire exploser...\n Je pourrais faire un joint ARC avec du paladium mais est-ce suffisant ?!</phrases3>
+		<phrases4 name="Major">**\nET OH! ON A PAS TOUTE LA VIE! STAN NOUS ENVOI POUR UNE URGENCE LA !</phrases4>
+		<phrases5 name="Teddy">*Teddy sursaute puis répond sans quitter des yeux son expérience.*\n\n Oui, oui, pas la peine de crier, je les connais les urgences de Stan mais moi j'ai autre chose à faire que d'aller voir Monsieur J.</phrases5>
+		<phrases6 name="Adeline">*Chuchote à son père* Calme toi, je crois que l'on peut profiter de la situation pour rencontrer Monsieur J.\n*Puis s'addresse à Teddy de vive voix.* Vous semblez en effet fort occupé, peut être pouvons nous vous remplacer.</phrases6>
+		<phrases7 name="Teddy">*Teddy sursaute à nouveau puis se frappe doucement le front*\n\nMais oui, de l'adamtium! Comment j'ai put passer à côté de ça?\n\n*Teddy lève enfin les yeux vers Major.*\nTiens! Vous ne portez pas de masque à gaz!? Vous êtes sucidaire ? </phrases7>
+		<phrases8 name="Major">BON CA COMMENCE A BIEN FAIRE! SOIT VOUS VOUS OCCUPER DE L URGENCE SOIT VOUS NOUS LAISSER FAIRE.</phrases8>
+		<phrases9 name="Teddy">Si ça peut vous amuser! Voici de quoi "monter à bord". Par contre, vous avez intérêt à être bien préparer car Monsieur J est un peu particulier et il n'accepte pas les erreurs.</phrases9>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/PJ/Embarquement:OUI">0</goto>
+		</reponse1>
+	</dialogue1.0>
+	<dialogue1.1 >
+		<phrases1 name="Teddy">*Teddy semble injecter quelques goutte dans un tube qui se met à fondre. Puis il se retourne vers vous d'un air satisfait.*\n\n Y a du progrès, ça n'a pas explosé. Par contre je ne veux personne ici sans masque à gaz!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.1>
+ </PNJ>

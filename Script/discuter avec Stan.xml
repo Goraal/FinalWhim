@@ -1,0 +1,87 @@
+<PNJ>
+    <dialogue1.0 condition="Stan/Postuler:NON">
+		<phrases1 name="Stan">Vous n'avez rien à faire ici. Partez ou je vous botte les fesses~!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+	<dialogue1.1 condition="Stan/Postuler:OUI">
+		<phrases1 name="Stan">Vous n'avez rien à faire ici. Partez ou je vous botte les fesses~!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Parler du poste</reaction>
+			<goto action="Avancement/Stan/Postuler:CHOIX3">2</goto>
+		</reponse2>
+	</dialogue1.1>
+	<dialogue1.2 condition="Stan/Postuler:COMBAT">
+		<phrases1 name="Stan">Alors, vous êtes prêt ?</phrases1>
+		<reponse1>
+			<reaction>Pas encore</reaction>
+			<goto action="Avancement/Stan/Postuler:DONE">3</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>A peu près</reaction>
+			<goto action="Avancement/Stan/Postuler:DONE">3</goto>
+		</reponse2>
+	</dialogue1.2>
+	<dialogue1.3 condition="Stan/Mission1:Done">
+		<phrases1 name="Major">On est aller voir Emanuella et tout vas bien. </phrases1>
+		<phrases2 name="Stan">Ah bon, elle s'appelle Emanuella, comme ma mère! J'ai jammais du lui demander son prénom !\nBon, j'ai une seconde mission pour vous. Contacter notre engrenage en chef, Teddy. Cet intello s'est enfermé dans son bureau et a laisser une "enigme" pour le contacter en cas d'urgence.\n Vraiment pathétique surtout qu'on a une urgence et que personne n'arrive a résoudre l'enigme. </phrases2>
+		<phrases3 name="Stan">Voici une clé qui va vous permettre de rentrer dans la zone de production. Trouvez Teddy et dites lui de s'occuper de l'urgence.</phrases3>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Stan/Mission1:Teddy">110</goto>
+		</reponse1>
+	</dialogue1.3>
+	<dialogue1.4 condition="Stan/Mission1:Teddy">
+		<phrases1 name="Stan">Dépéchez vous d'aller chercher Teddy !</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.4>
+	<dialogue1.5>
+		<phrases1 name="Stan">Je n'ai pas le temps de m'occuper de vous!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.5>
+	<dialogue2.0>
+		<phrases1 name="Stan">Alors comme ça, vous voulez être protecteur! On accepte pas les faiblard ici! \n\nAllez voir les autres Protecteurs, ils vous donnerons de quoi équiper chacun d'entre vous. Choisisez avec soins vos équipements puis reviennez me voir pour que l'on test vos aptitudes de combats en 3 contre 3. \n\nNe me décevez pas!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2  condition="Stan/Postuler:OUI">
+			<reaction>Parler du poste</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Stan">Dommage pour toi, car le combat commence maintenant! Eblouis moi!\n</phrases1>
+		<reponse1>
+			<reaction>Combattre</reaction>
+			<goto>100</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Stan">Bravo les bleus! Vous vous en sortez pas trop mal.\nMaintenant on va voir ce que vous donnez sur le terrain.\n\n Votre première mission est une mission d'infiltration, au moins comme ça vos tenues ne feront pas trop tache...</phrases1>
+		<phrases2 name="Stan">Il existe un camp de réfugiés à l'extérieur, ses lavettes pensent que nous ignorons leurs présences, mais en réalité nous avons un accord avec leur chef, une femelle dont j'ai oublié le nom. \nAllez vérifier que tout se passe bien là bas.\n\n Je vais pas vous mentir, "Manny", le dernier gars que j'ai envoyé là bas n'est jammais revenu alors montrez-moi que vous valez mieux que lui.</phrases2>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Stan/Mission1:ToDo">0</goto>
+		</reponse1>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrases1 name="Stan">On dirait que les combats, c'est pas fait pour vous. Reviennez me voir pour retenter votre chance!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Stan/Postuler:COMBAT">0</goto>
+		</reponse1>
+	</dialogue5.0>
+ </PNJ>

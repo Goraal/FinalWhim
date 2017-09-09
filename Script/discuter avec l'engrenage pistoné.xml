@@ -1,0 +1,9 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="Engrenage">Un jour, mon discourt sera lu par plein de gens!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+ </PNJ>

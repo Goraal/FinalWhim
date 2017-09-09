@@ -1,0 +1,60 @@
+
+material Galleon/Details
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0 0 0 1 100
+
+			texture_unit
+			{
+				texture_alias Map #8
+				texture boatdetl.bmp
+			}
+		}
+
+	}
+
+}
+
+material Galleon/Coque
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0 0 0 1 100
+
+			texture_unit
+			{
+				texture_alias Map #9
+				texture coque.jpg
+			}
+		}
+
+	}
+
+}
+
+material Galleon/Plancher
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			specular 0 0 0 1 100
+
+			texture_unit
+			{
+				texture_alias Map #11
+				texture boatdeck.bmp
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,123 @@
+<PNJ>
+    <dialogue1.0 condition="Fillette/ApresCombat:OUI">
+		<phrases1 name="Fillette">Mouhaha! Tu fais moins le malin maintenant que tu es mort, sale rat!\n\n * donne des coups de couteau dans le cadavre d'un rat *</phrases1>
+		<phrases2 name="Major">Dis-moi petite, j'aurais une petite question ...</phrases2>
+		<phrases3 name="Fillette">Hé! Tu vois bien que je suis occupé!\nVa-t'en!</phrases3>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+	<dialogue1.1 condition="Fillette/Jamais-vu:OUI">
+		<phrases1 name="Fillette">*Une jeune fille semble s'acharner sur le béton avec son couteau sous le regard incrédule de quelques rats. Elle se tourne vers vous avec un sourire...déroutant*\n\nDites, dites dites! \nVous voulez bien m'aider à éradiquer quelques rats?\nJe ne le dirais à personne...</phrases1>
+		<reponse1>
+			<reaction>Accepter</reaction>
+			<goto action="Avancement/Fillette/Jamais-vu:NON">6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Demander une rétribution</reaction>
+			<goto action="Avancement/Fillette/Jamais-vu:NON">3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Faire la morale</reaction>
+			<goto action="Avancement/Fillette/Jamais-vu:NON">2</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Refuser</reaction>
+			<goto action="Avancement/Fillette/Jamais-vu:NON">5</goto>
+		</reponse4>
+		<reponse5>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Fillette/Jamais-vu:NON">0</goto>
+		</reponse5>
+	</dialogue1.1>
+	<dialogue1.2>
+		<phrases1 name="Fillette">*Lorsque vous vous approchez de la jeune fille, sa moue se transforme en sourire*\n\nOuais!\nVous êtes revenus m'aider!</phrases1>
+		<reponse1 >
+			<reaction>Refuser</reaction>
+			<goto>5</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Demander une rétribution</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Accepter</reaction>
+			<goto>6</goto>
+		</reponse3>
+	</dialogue1.2>
+	<dialogue2.0>
+		<phrases1 name="Leopold">Tu ne devrais pas jouer avec la vie d'être vivant.\n\nTuer c'est mal. \nTa maman ne te l'a pas appris? </phrases1>
+		<phrases2 name="Fillette">J'ai le droit, je suis une chasseuse !\nBon, vous m'aidez ou vous êtes juste des gros nuls qui puent?</phrases2>
+		<phrases3 name="Adeline">Oh!\nFait attention à ton langage!\nSinon je vais te faire comprendre l'importance de la vie à l'aide de grand coup \nde pied dans la face.</phrases3>
+		<phrases4 name="Fillette">Je parie que tu es toute rouge et ridée quand tu es en colère.</phrases4>
+		<reponse1>
+			<reaction>Accepter de l'aider</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Demander une rétribution</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Partir indigné</reaction>
+			<goto>0</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Lui faire ravaler ses paroles.</reaction>
+			<goto>165</goto>
+		</reponse4>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Major">On aimerait bien te donner un coup de main petite, mais tu vois, par principe, aucun de nous ne travaille pour rien!</phrases1>
+		<phrases2 name="Leopold">Si, moi je travaille souvent gratuitement. \nJe pense que si tout le monde aidait son prochain, le monde serait meilleur.</phrases2>
+		<phrases3 name="Major">Pfff. \n\nJe ne t'ai pas demandé d'intervenir Bidule.\nQue l'on soit clair tout de suite : c'est moi qui donne les ordres ici! \n\nDes objections?</phrases3>
+		<phrases4 name="Leopold">*Se met au garde à vous*\n\nPas d'objection, Monsieur,\nje faisais juste preuve d'initiative, Monsieur.\nSinon je m'appelle pas Bidule mais %Avancement/NomLeopold%.</phrases4>
+		<phrases5 name="Adeline">*Laissant les hommes dans leurs discutions, %Avancement/NomAdeline% se tourne vers la jeune fille.*\n\nDis moi, tu n'aurrais pas de steamille sur toi?</phrases5>
+		<phrases6 name="Fillette">*La jeune fille fouille dans ses poches*\n\nSi, j'en ai ramassées 2-3 ce matin, \nPourquoi?</phrases6>
+		<reponse1>
+			<reaction>Aider pour avoir des steamilles.</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Menacer</reaction>
+			<goto>4</goto>
+		</reponse3>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Adeline">*%Avancement/NomAdeline% fait un clin d'oeil à %Avancement/NomLeopold% *\n*Elle lance ensuite un regard transperçant à la jeune fille*\n\nTu vas me les donner tes steamilles et sans broncher.</phrases1>
+		<phrases2 name="Fillette">QUOI ! \nMais, non euh. \nC'est à moi.</phrases2>
+		<phrases3 name="Adeline">*%Avancement/NomAdeline% fait craquer ses poing* \n\nDans ce cas, je crois plutôt qu'on vas devoir te tuer et piller ton cadavre.\nRien de personnel, on a juste besoin de tes steamilles.</phrases3>
+		<phrases4 name="Fillette">*La jeune fille sursaute et recule légèrement*\n\nV-v-vous ne trouverez jamais les steamilles!\n Je les ai trop bien cachées!\n*Elle semble regagner doucement confiance en elle*\nSi vous m'aidez, je vous les donne en récompense.</phrases4>
+		<reponse1>
+			<reaction>Attaquer la jeune fille</reaction>
+			<goto>165</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Accepter</reaction>
+			<goto>6</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Refuser</reaction>
+			<goto>5</goto>
+		</reponse3>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrase1 name="Major">Désolé fillette, tu ne vaux pas le coup que je me fatigue pour toi\n</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue5.0>
+	<dialogue6.0>
+		<phrases1 name="Fillette">Cool! On vas en faire de la paté pour chat!</phrases1>
+		<reponse1>
+			<reaction>Combat</reaction>
+			<goto action="Avancement/Fillette/ApresCombat:OUI">115</goto>
+		</reponse1>
+	</dialogue6.0>
+ </PNJ>

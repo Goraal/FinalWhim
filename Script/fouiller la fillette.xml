@@ -1,0 +1,88 @@
+<PNJ>
+    <dialogue1.0 condition="Fillette/Fouillee:OUI">
+		<phrases1 name="Leopold">A chaque fois que je vois le corps, je me sens mal.\n On pourrait au moins l'enterrer.</phrases1>
+		<phrases2 name="Adeline">*%Avancement/NomAdeline% regarde autour d'elle*\nJe ne vois pas vraiment d'endroit où l'enterrer, mais on pourrait la cacher sous les décombres!</phrases2>
+		<reponse1>
+			<reaction>Cacher le corps</reaction>
+			<goto>120</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.0>
+	<dialogue1.1 condition="Fillette/Attaquee:OUI">
+	<phrases1 name="Leopold">Elle est morte! Qu'est qu'on a fait? Je voulais juste lui faire peur moi!</phrases1>
+	<phrases2 name="Adeline">Cette sale peste a eu ce qu'elle mérite.\nC'était une psychopathe, on le voyait</phrases2>
+	<phrases3 name="Leopold">Mais c'était qu'une enfant! \nEt si ses parents nous retrouvent?</phrases3>
+	<phrases4 name="Adeline">On les démontera aussi. On est en territoire ennemi mon chou. \nOn ne peut faire confiance qu'à nous même! Certains enfants dans notre village sont plus dangereux que les adultes.</phrases4>
+	<phrases5 name="Major">Ce qui est fait est fait. \nMaintenant, taisez-vous, pour que je puisse réfléchir à ce qu'on doit faire.</phrases5>
+		<reponse1 >
+			<reaction>Partir discrètement</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Fouiller respectueusement</reaction>
+			<goto action="Avancement/Fillette/Fouillee:OUI">2</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Fouiller méthodiquement</reaction>
+			<goto action="Avancement/Fillette/Fouillee:OUI">3</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Fouiller à fond</reaction>
+			<goto action="Avancement/Fillette/Fouillee:OUI">4</goto>
+		</reponse4>
+	</dialogue1.1>
+	<dialogue1.2>
+	<phrases1 name="Leopold">Pff, j'ai bien cru qu'on allait pas s'en tirer cette fois! </phrases1>
+	<phrases2 name="Adeline">%Avancement/NomAdeline% montre le corps sans vie de la petite fille.*\nIl y en a une qui s'en est pas très bien tiré. \nPas très résistante la gamine! Dommage, elle aurait pu être utile.</phrases2>
+	<phrases3 name="Leopold">C'est triste, elle était si jeune. Je suis sûr que vous auriez fini par devenir de bonnes amies </phrases3>
+	<phrases5 name="Major">Ce qui est fait est fait. \nMaintenant, taisez-vous, pour que je puisse réfléchir à ce qu'on va faire.</phrases5>
+		<reponse1 >
+			<reaction>Partir discrètement</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Fouiller respectueusement</reaction>
+			<goto action="Avancement/Fillette/Fouillee:OUI">2</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Fouiller méthodiquement</reaction>
+			<goto action="Avancement/Fillette/Fouillee:OUI">3</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Fouiller à fond</reaction>
+			<goto action="Avancement/Fillette/Fouillee:OUI">4</goto>
+		</reponse4>
+	</dialogue1.2>
+	<dialogue2.0>
+		<phrases1 name="Major">Bon, %Avancement/NomLeopold% fouille le corps et récupère ce qui est utile pendant ce temps, nous, on monte la garde.</phrases1>
+		<phrases2 name="Leopold">Sans vouloir vous offenser Monsieur pourquoi moi?</phrases2>
+		<phrases3 name="Major">*%Avancement/NomMajor% lance à %Avancement/NomLeopold% un regard noir* \n...</phrases3>
+		<phrases4 name="Leopold">... \nOk, je mis met tout de suite Monsieur.*\n\n%Avancement/NomLeopold% trouve 3 steamilles dans les poches de la jeune fille et récupère son arme.</phrases4>
+		<reponse1>
+			<reaction>*Partir*</reaction>
+			<goto>400</goto>
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Major">Ok, je vais fouiller le corps pendant ce temps, vous deux, vous montez la garde.\n\n*Pour être sûr de ne rien oublier, %Avancement/NomMajor% fouille l'ensemble des vêtements, y compris les bottes. Les vêtements sont trop petits mais il trouve trois steamilles et récupère l'arme de la jeune fille.*\n\n*Ensuite il cache le corps dans un tas de déchets.</phrases1>
+		<reponse1>
+			<reaction>*Partir*</reaction>
+			<goto>401</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Major">Bien, \n%Avancement/NomAdeline% fouille le corps à fond, pendant que moi et 'âme sensible', on monte la garde.</phrases1>
+		<phrases2 name="Adeline">*%Avancement/NomAdeline% sourit*\n\n Avec grand plaisir.\n\n*Récupérant le couteau de la petite fille, %Avancement/NomAdeline% commence à découper le cadavre en morceaux.</phrases2>
+		<phrases3 name="Leopold">Mais qu'est que tu fais!!! Ça va pas bien dans ta tête!!!</phrases3>
+		<phrases4 name="Adeline">A la fin du combat, je l'ai vue avaler un truc.\n Je suis sûr que c'était un truc utile! \n\nEn plus ça permet de faire disparaitre les preuves comme ça plus de soucis avec les parents!</phrases4>
+		<phrases5 name="Major">%Avancement/NomLeopold%! \n\nTu viens et tu montes la garde avec moi. Comme ça tu ne regardera pas.</phrases5>
+		<phrases6 name="Adeline">*On n'y voit plus rien avec tout ce sang!*\n\n*Mais à force d'acharnement, %Avancement/NomAdeline% finit par trouver une steamille qui devait vraiment être bien planquée.*\n\n*Elle se sert alors des vêtements pour nettoyer le sang et cache les morceaux du corps dans un trou de rat*</phrases6>
+		<reponse1>
+			<reaction>*Partir*</reaction>
+			<goto>402</goto>
+		</reponse1>
+	</dialogue4.0>
+ </PNJ>

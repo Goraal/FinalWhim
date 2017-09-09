@@ -1,0 +1,42 @@
+<PNJ name="Serrure">
+    <dialogue1.0 condition="MétaPortePrison/steamille-inséré:OUI">
+		<phrases1 name="Marjor">*On dirait bien que la serrure fonctionne à présent.*</phrases1>
+		<reponse1>
+			<reaction>Ouvrir la porte</reaction>
+			<goto>100</goto><!-- Penser à faire Avancement/Stale/Libre=OUI -->
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.0>
+	<dialogue1.1 condition="Inventaire/Steamille:NON">
+	<phrases1 name="Marjor">*Rien à faire, la porte ne veut pas s'ouvrir. Il faut trouver un moyen pour l'alimenter...*</phrases1>
+		<reponse1>
+			<reaction>Forcer comme un boeuf</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.1>
+	<dialogue1.2>
+	<phrases1 name="Marjor">*Les steamilles semblent pouvoir s'insérer parfaitement. \nOn dirait presque que ça a été conçu dans cette perspective.*</phrases1>
+		<reponse1>
+			<reaction>Insérer une steamille</reaction>
+			<goto action="Avancement/MétaPortePrison/steamille-inséré:OUI">1</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.2>
+	<dialogue2.0>
+		<phrases1 name="Marjor">*La persévérance est une stratégie toujours payante!\nCette fois, c'est vos bras qui ont payé... La porte, elle, est toujours intacte *</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto><!--SOALT : Pvs:-1 (min 0)-->
+		</reponse1>
+	</dialogue2.0>
+ </PNJ>

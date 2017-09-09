@@ -1,0 +1,44 @@
+<PNJ name="Serrure">
+    <dialogue1.0 condition="PNJ1/DejaVu:NON">
+		<phrase image="PNJ1">Salut! Je suis PNJ1. Et toi?</phrase>
+		<reponse1>
+			<phrase>Mentir</phrase>
+			<goto action="PNJ1/DejaVu:OUI">2</goto><!-- Penser à faire Avancement/Stale/Libre=OUI -->
+		</reponse1>
+		<reponse2>
+			<phrase>Dire la vérité</phrase>
+			<goto action="PJ1/DejaVu:OUI">3</goto>
+		</reponse2>
+		<reponse3>
+			<phrase>Partir</phrase>
+			<goto>0</goto>
+		</reponse3>
+	</dialogue1.0>
+	<dialogue1.1>
+	<Image type="Normal">PNJ1</Image>
+	<phrase image="PNJ1"> Désolé $PNJ1/CONNAISSANCENAME, j'ai pas le temps de parler pour le moment</phrase>
+		<reponse1 >
+			<phrase>Partir</phrase>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.1>
+	<dialogue2.0>
+	<phrase1 image="PJ1"> Mon nom est $PJ1/NAME. Je suis le père de $PJ2/NAME.</phrase1>
+	<phrase2 image="PJ2"> Salut.</phrase2>
+	<phrase3 image="PJ1"> Et le type qui nous colle là bas c'est $PJ3/NAME.</phrase3>
+	<phrase4 image="PJ3"> Hey!</phrase4>
+	<phrase5 image="PNJ1"> Tu es franc, je t'aime bien $PJ1/NAME. Mais là je dois y aller</phrase5>
+		<reponse1>
+			<phrase>Partir</phrase>
+			<goto action="PNJ1/CONNAISSANCENAME:$PJ1/NAME">0</goto>
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0>
+	<phrase> Je m'en souviendrais. Par contre j'ai pas beaucoup de temps là donc j'y vais.</phrase>
+		<reponse1 >
+			<phrase>*Suite*</phrase>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+	
+ </PNJ>

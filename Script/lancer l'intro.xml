@@ -1,0 +1,111 @@
+<PNJ>
+    <dialogue1.0 image="sprites\Introduction\intro1.png">
+		<phrases1 name="Narrateur">D'après la légende, nos ancêtres étaient tout puissant et vivaient dans un monde parfait \n\nLeurs puissances résidaient dans une énergie magique, leur permettant de communiquer entre eux, quelle que soit la distance qui les sépare, ou de se déplacer plus rapidement que le son.</phrases1>
+		<phrases2 name="Narrateur">Ils avaient appris à récolter cette énergie à partir de l'eau, du vent et même de la lumière du jour. \n\nIls lui donnèrent aussi un nom:\n\n\n                                                                                             L'électricité.</phrases2>
+		<phrases3 name="Narrateur">Mais un beau jour, l'électricité disparut!\n\nLa raison de cette disparition varie selon les légendes, allant du complot de plusieurs gouvernements jusqu'à la classique punition divine. \nMais, quelle qu'en soit la cause, les légendes s'accordent sur le fait que le chaos tomba sur toute la planète.</phrases3>
+		<phrases4 name="Narrateur">\nNos ancêtres étaient tellement dépendants de cette énergie qu'ils en avaient besoin pour travailler, mais aussi pour payer ou même simplement pour se nourrir! \n\nEn seulement quelques mois, la population de la planète fut divisée par dix.</phrases4>
+		<phrases5 name="Narrateur">Les survivants de ce chaos se regroupèrent en petites communautés pour fonder des villages ou devenir des pillards.\nLa plupart des villages furent détruits et complètement pillés, si bien qu'il ne resta que les deux types de villages que nous connaissons aujourd'hui :\n\nles mégalopoles accueillant en leur sein de nombreux villageois et possédant de redoutables défenses et les villages cachés vivant en autarcie.</phrases5>
+		<phrases6 name="Narrateur">Bien sûr, ce n'est qu'une légende. \nSûrement inventée par une personne voulant savoir pourquoi le monde est monde.\n\nMais, il ne faut jamais oublier que dans toute légende, il y a un fond de vérité.</phrases6>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>801</goto><!-- Penser à faire Choix du Nom de Major puis event action = 2 -->
+		</reponse1>
+	</dialogue1.0>
+	<dialogue2.0 image="sprites\Introduction\intro2.png">
+	<phrases1 name="Major">*Malgré le confort du village, %Avancement/NomMajor% aime aller chasser à l'extérieur des palissades.\nIl faut dire que c'est le seul moment où il est un peu tranquille.\nAujourd'hui c'est sa fille qui lui a pris la tête.\n\nÂgée de 19 ans, elle est égoïste, manipulatrice et passe son temps à s'engueuler avec sa mère.*</phrases1>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>802</goto><!-- Penser à faire Choix du Nom d'Adeline puis event action = 3 -->
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0 image="sprites\Introduction\intro3.png">
+	<phrases1 name="Adeline">Papa! Attends, j'ai un truc genre 'über important' à te dire!</phrases1>
+	<phrases2 name="Major">Pfff. \n\nBon ok, mais tu as cinq minutes.\n\n(Que je puisse aller chasser tranquillement.)</phrases2>
+	<phrases3 name="Adeline">Tu te souviens du gars qui me court après depuis mes 16 ans?</phrases3>
+	<phrases4 name="Major">\nOui, oui, viens-en au fait. \n\n(Ce type est un peu trop gentil, il est capable de demander pardon pour avoir oublié de s'excuser la semaine dernière!\nC'est dommage, il est costaux, on aurait pu en faire quelque chose.\n\n C'est quoi son nom déjà?) </phrases4>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>803</goto><!-- Penser à faire Choix du Nom de Leopold puis event action = 4 -->
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0 image="sprites\Introduction\intro4.png">
+	<phrases1 name="Adeline">J'ai décidé de lui donner sa chance pour le féliciter de sa persévérance. Et j'aimerais bien avoir ton avis sur lui...\n\n On dit qu'on apprend beaucoup d'un homme sur sa façon de chasser, tu penses quoi de sa façon de chasser?</phrases1>
+	<phrases2 name="Major">(Soyons diplomate, qu'on en finisse)\n\nJ'aimerais bien te répondre, mais tu vois, je ne l'ai jamais vu chasser.\nBon, ce n’est pas tout, mais mes gibiers ne vont pas se chasser tout seul ... ...</phrases2>
+	<phrases3 name="Adeline">Parfait! Profitez-en pour faire connaissance.\n*%Avancement/NomAdeline% se tourne et hurle*\n\nC'EST BON IL EST D'ACCORD POUR QUE TU CHASSES AVEC LUI.\n\n*Puis elle se retourne vers son père et lui fait un clin d'oeil*\nJe vous laisse entre hommes.</phrases3>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>5</goto>
+		</reponse1>
+	</dialogue4.0>
+	<dialogue5.0 image="sprites\Introduction\intro5.png">
+	<phrases1 name="Leopold">Trop cool, merci ma puce.\n\nC'est trop dément, monsieur. J'ai jamais osé vous demander de venir chasser avec vous.</phrases1>
+	<phrases2 name="Major">(Je ne me souviens pas avoir été d'accord ....Pffffffff)\n\nOk, tu viens mais tu regardes juste, c'est moi qui chasse.</phrases2>
+	<phrases3 name="Leopold">(Ouf, j'avais un peu la frousse qu'il me voit me battre)\nPas de soucis, monsieur.</phrases3>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>6</goto>
+		</reponse1>
+	</dialogue5.0>
+	<dialogue6.0 image="sprites\Introduction\intro6.png">
+	<phrases1 name="Leopold">\n\n...</phrases1>
+	<phrases2 name="Major">\n\n...</phrases2>
+	<phrases3 name="Leopold">C'est une belle journée pour chasser.</phrases3>
+	<phrases4 name="Major">Je n'arrive vraiment pas à comprendre ce que vous trouvez à ma fille!</phrases4>
+	<phrases5 name="Leopold">L'amour ça s'explique pas, monsieur.\nUn jour PAF ça vous tombe dessus.\n\nMa grand-mère disait toujours ...</phrases5>
+	<phrases6 name="Adeline">*La voix familière de %Avancement/NomAdeline% sort de derrière les buissons*. \n\nNe me touchez pas, sales types, ou je vous fais manger vos testicules.</phrases6>
+	<phrases7 name="Major">Quand on parle du loup... \nBon on ferait mieux d'aller voir avant qu'elle ne se crée plus d'ennuis.</phrases7>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>7</goto>
+		</reponse1>
+	</dialogue6.0>
+	<dialogue7.0 image="sprites\Introduction\intro7.png">
+	<phrases1 name="Pillard">Déposez vos armes et il ne vous sera fait aucun mal!</phrases1>
+	<phrases2 name="Major">Deux contre trois, même si nos chances sont minces je suis prêt à parier dessus.</phrases2>
+	<phrases3 name="Pillard">*Le pillard fit un geste de la main et trois flèches se plantèrent dans les arbres à côté de %Avancement/NomMajor%.*\n \nQui a dit que l'on est que trois?</phrases3>
+		<reponse1>
+			<reaction>Attaquer</reaction>
+			<goto>8</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Se rendre</reaction>
+			<goto>9</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Négocier</reaction>
+			<goto>10</goto>
+		</reponse3>
+	</dialogue7.0>
+	<dialogue8.0 image="sprites\Introduction\intro7.png">
+	<phrases1 name="Leopold">Vous avez osé toucher à %Avancement/NomAdeline%. Mes armes feront justice!</phrases1>
+	<phrases2 name="Narrateur">Furent les dernières paroles prononcées et entendues par nos trois compères.\n\nFIN </phrases2>
+		<reponse1>
+			<reaction>FIN</reaction>
+			<goto action="Script/-669:0">6</goto>
+		</reponse1>
+	</dialogue8.0>
+	<dialogue9.0 image="sprites\Introduction\intro7.png">
+	<phrases1 name="Major">*%Avancement/NomMajor% lâcha ses armes sur le sol*\n\nOk, vous avez gagné, pour cette fois...</phrases1>
+	<phrases2 name="Narrateur">Nos trois compères furent ensuite ligotés et assommés. Ils se réveillèrent alors dans une étrange cellule.</phrases2>
+		<reponse1>
+			<reaction>FIN</reaction>
+			<goto>804</goto><!-- Penser à faire Supprimer le groupe "introduction" -->
+		</reponse1>
+	</dialogue9.0>
+	<dialogue10.0 image="sprites\Introduction\intro7.png">
+	<phrases1 name="Major">Qu'est-ce qui nous prouve que vous n’allez pas nous tuer.</phrases1>
+	<phrases2 name="Pillard">Si mon but avait été de vous tuer, vous seriez déjà mort!</phrases2>
+	<phrases3 name="Major">Laisser partir les deux autres et je me rends sans condition.</phrases3>
+	<phrases4 name="Pillard">On a besoin de trois personnes et on préfère éviter que les deux autres alertent tout le village.</phrases4>
+	<phrases5 name="Major">J'ai de l'argent planqué dans la forêt, vous les libérez et je vous montre la cachette.</phrases5>
+	<phrases6 name="Pillard">Ok, on va faire simple:\nsoit tu te rends tout de suite\n soit on vous tue tous les trois et on cherche d'autres 'volontaires'.</phrases6>
+		<reponse1>
+			<reaction>Attaquer</reaction>
+			<goto>8</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Se rendre</reaction>
+			<goto>9</goto>
+		</reponse2>
+	</dialogue10.0>
+ </PNJ>

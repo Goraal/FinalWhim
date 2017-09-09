@@ -1,0 +1,135 @@
+<PNJ name="Stale">
+    <dialogue1.0 condition="Stale/Jamais-vu:OUI">
+		<phrases1 name="Stale">Je vous remercie de m'avoir libéré. \nJe n'y serais point arrivé sans vous. \nJe suis à votre service, pour répondre à vos questions.</phrases1>
+		<reponse1>
+			<reaction>Se renseigner sur lui</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Se renseigner sur les lieux</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Se renseigner sur la sortie</reaction>
+			<goto>4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Demander d'ouvrir la porte</reaction>
+			<goto action="Avancement/Stale/Jamais-vu:NON">7</goto>
+		</reponse4>
+	</dialogue1.0>
+	<dialogue1.1 condition="Stale/AOuvertascenseur:EnCours">
+		<phrases1 name="Stale">*Stale appuie sur l'énorme bouton au centre de la porte de l'ascenseur *\n...\n Je me permet également de vous donner deux conseils vitaux: \n*En premier lieu, une fois dehors éviter autant que faire ce peut les patrouilleurs méchaniques! Vous ne pourrez point les vaincre sans arme.\n *En second lieux, n'oubliez pas que le SS protége l'unique sortie de l'usine et il est bien plus puissant qu'un patrouilleur mechanique. </phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Stale/AOuvertascenseur:OUI">100</goto>
+		</reponse1>
+	</dialogue1.1>
+	<dialogue1.2>
+		<phrases1 name="Stale">Que me vaut le plaisir de vous revoir?</phrases1>
+		<reponse1>
+			<reaction>Se renseigner sur lui</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Se renseigner sur les lieux</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Se renseigner sur la sortie</reaction>
+			<goto>4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Demander d'ouvrir la porte</reaction>
+			<goto action="Avancement/Stale/Jamais-vu:NON">7</goto>
+		</reponse4>
+	</dialogue1.2>
+	<dialogue2.0>
+		<phrases1 name="Stale">Issu d'une famille noble dans la cité haute de SteamLock, \nd'un père commerçant et d'une mère diplomate, j'aime à penser que je vécus mes premières années heureux et chéri\n ...</phrases1>
+		<phrases2 name="Adeline">On peut avoir la version courte? \nCelle où l'on sait comment vous êtes atterrit ici.</phrases2>
+		<phrases3 name="Stale">Ah, l'impatience de la jeunesse... \nEngagé à FactoryTech un cycle annuel plus tôt, j'avais pour mission d'améliorer et de réparer les machines. \nMais, ne supportant point l'utilisation d'esclave, je me suis révolté en libérant certaines pauvres âmes. \nMon geste me plaça dans une fâcheuse position et l'on m'a enfermé ici dans l'attente de ma démission.</phrases3>
+		<phrases4 name="Major">Pourquoi ne vous ont-ils pas mis dans une cellule classique, avec une roue?</phrases4>
+		<phrases5 name="Stale">Officiellement, pour raison de privilège, \nJe suis de la noblesse avant tout! \n\nOfficieusement, c'est pour m'empêcher de m'évader. \nC'est moi qui ai conçu ce que vous nommez "cellule classique"</phrases5>
+		<reponse1>
+			<reaction>Se renseigner sur les esclaves</reaction>
+			<goto>5</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Se renseigner sur les lieux</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Se renseigner sur la sortie</reaction>
+			<goto>4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Stale/Jamais-vu:NON">0</goto>
+		</reponse4>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Stale">Il me semblait vous en avoir parlé... \nVous êtes à FactoryTech l'usine de fabrication de steamille.\n Vous avez sans doute été acheté comme esclave avant d'être envoyé ici.</phrases1>
+		<reponse1>
+			<reaction>Se renseigner sur lui</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Se renseigner sur la sortie</reaction>
+			<goto>4</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Stale/Jamais-vu:NON">0</goto>
+		</reponse3>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Major">Bon ben, ce fut un plaisir, Stale. \n\nNous avons pas mal de choses à faire du coup si vous pouvez nous indiquer la sortie...</phrases1>
+		<phrases2 name="Stale">Bien entendu. \n\nPour sortir,  il vous suffit d'emprunter l'ascenseur puis, depuis l'extérieur, atteindre le bâtiment au fond. \n\nCela étant dit, je vous le déconseille vivement, sans arme vous ne serez pas en mesure de combattre les gardes et encore moins le SS.</phrase2>
+		<phrases3 name="Major">Ce n'est pas deux trois gardes qui servent les repas et qui amènent des prisonniers inconscients dans leurs cellules qui vont nous faire peur!</phrases3>
+		<phrases4 name="Stale">En plus des gardes, qui sont armés et entrainés, FactoryTech est équipé d'un Système de Sécurité (ou SS) pour éviter que les pillards prennent le contrôle de l'usine.\nJe ne serais trop vous conseiller de vous équiper lourdement avant toute tentative de fuite.</phrase4>
+		<phrases5 name="Major">Oui, mais ce système empêche les gens d'entrée pas de sortir!</phrases5>
+		<phrases6 name="Stale">Le SS protège contre toutes entrées et sorties non autorisées. \nMême les gardes ne peuvent pas sortir sans une autorisation. \nJe crois que c'est au cas où un pillard arrive à s'infiltrer parmi les gardes. \n\nVous devriez aller voir les prisonniers que j'ai libérés, je suis sûr qu'ils seront heureux de vous aider.</phrases6>
+		<reponse1>
+			<reaction>Se renseigner sur lui</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Se renseigner sur les esclaves</reaction>
+			<goto>5</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Se renseigner sur les lieux</reaction>
+			<goto>3</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Demander d'ouvrir la porte</reaction>
+			<goto action="Avancement/Stale/Jamais-vu:NON">7</goto>
+		</reponse4>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrases1 name="Stale">Il y a deux prisons souterraines. Dans l'autre prison, j'ai libéré les prisonniers et je leurs est appris à ouvrir leurs cellules depuis l'intérieur. \n\nTant qu'ils font tourner les roues, les gardes ne viendront pas voir ce qui se passe.</phrases1>
+		<phrases2 name="Major">Vous pensez qu'ils peuvent nous aider à sortir d'ici? </phrases2>
+		<phrases3 name="Stale">Il me semble que certains d'entre eux veulent aussi s'échapper. Peut-être ont-ils un plan?</phrases3>
+		<phrases4 name="Major">Et comment on rejoint l'autre prison?</phrases4>
+		<phrases5 name="Stale">Rien de plus simple. \n\nPour l'autre prison, il vous suffit d'emprunter l'ascenseur puis, depuis l'extérieur, atteindre le second ascenseur et descendre.</phrases5>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Stale/Jamais-vu:NON">0</goto>
+		</reponse1>
+	</dialogue5.0>
+	<dialogue7.0 condition="Stale/AOuvertascenseur:NON">
+		<phrases1 name="Adeline">*%Avancement/NomAdeline% se tourna vers Stale et lui fit son plus beau sourire.* \nMonsieur, pourriez-vous nous aider avec la porte de l'ascenseur, elle refuse de s'ouvrir. </phrases1>
+		<phrases2 name="Stale">Mais avec plaisir, gente dame. \n*Veuillez me suivre*</phrases2>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto action="Avancement/Stale/AOuvertascenseur:EnCours">106</goto>
+		</reponse1>
+	</dialogue7.0>
+	<dialogue7.1>
+		<phrases1 name="Stale">Je suis sûr que vous savez faire maintenant</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue7.1>
+</PNJ>

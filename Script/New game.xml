@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<Avancement>
+	<NomMajor>Major</NomMajor>
+	<NomLeopold>Léopold</NomLeopold>
+	<NomAdeline>Adeline</NomAdeline>
+	<Enigme>   </Enigme>
+	<Inventaire>
+			<Steamille>NON</Steamille>
+	</Inventaire>
+	<PJ>
+		<Triche>NON</Triche>
+		<Embarquement>NON</Embarquement>
+		<EngrenageID>NON</EngrenageID>
+		<condition3>NON</condition3>
+		<est-mutant>NON</est-mutant>
+		<programeur>NON</programeur>
+	</PJ>
+	<Fillette>
+		<Attaquee>NON</Attaquee>	
+		<jamais-vu>OUI</jamais-vu>
+		<ApresCombat>NON</ApresCombat>
+		<Fouillee>NON</Fouillee>
+		<morte>NON</morte>
+	</Fillette>
+	<TOCTOC>
+		<jamais-vu>OUI</jamais-vu>
+		<fin>NON</fin>
+	</TOCTOC>
+	<MétaPortePrison>
+		<steamille-inséré>NON</steamille-inséré>
+		<ouverte>NON</ouverte>
+	</MétaPortePrison>
+	<PorteAssenseur>
+		<ouverte>NON</ouverte>
+	</PorteAssenseur>
+	<Stale>
+		<jamais-vu>OUI</jamais-vu>
+		<Libre>NON</Libre>
+		<AOuvertascenseur>NON</AOuvertascenseur>
+	</Stale>
+	<SS>
+		<desactive> NON</desactive>
+	</SS>
+	<SentinelleCamps>	 		 		 	 	 	
+		<jamais-vu> OUI</jamais-vu>
+		<laisse-passer> NON</laisse-passer>
+	</SentinelleCamps>
+	<Arsène>	 		 		 	 	 	
+		<jamais-vu> OUI</jamais-vu>
+	</Arsène>
+	<Manny>	 		 		 	 	 	
+		<Fouillé>NON</Fouillé>
+		<Recherche>NON</Recherche>
+	</Manny>
+	<Emanuella>	 		 		 	 	 	
+		<jamais-vu> OUI</jamais-vu>
+	</Emanuella>
+	<Boris>	 		 		 	 	 	
+		<jamais-vu> OUI</jamais-vu>
+	</Boris>
+	<chasseur>	 		 		 	 	 	
+		<jamais-vu> OUI</jamais-vu>
+	</chasseur>
+	<Secrétaire>	 		 		 	 	 	
+		<jamais-vu> OUI</jamais-vu>
+		<Passe-portes>NON</Passe-portes>
+		<Postuler>NON</Postuler>
+	</Secrétaire>
+	<Stan>	 		 		 	 	 	
+		<jamais-vu> OUI</jamais-vu>
+		<Postuler>NON</Postuler>
+		<Mission1> NON</Mission1>
+		<Mission2>NON</Mission2>
+	</Stan>
+	<coach>	 		 		 	 	 	
+		<jamais-vu> OUI</jamais-vu>
+	</coach>
+	<Teddy>	 		 		 	 	 	
+		<jamais-vu> OUI</jamais-vu>
+	</Teddy>
+	<Infirmiere>	 		 		 	 	 	
+		<jamais-vu> OUI</jamais-vu>
+	</Infirmiere>
+	<MJ>	 		 		 	 	 	
+		<Combat> NON</Combat>
+	</MJ>
+</Avancement>

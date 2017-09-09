@@ -1,0 +1,138 @@
+<PNJ>
+    <dialogue1.0  condition="Stan/Postuler:NON">
+		<phrases1 name="Garde">Engagez vous qu'ils disaient! Vous pourrez tapper sur des gens qu'ils disaient!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+    <dialogue1.1 condition="Stan/Postuler:CHOIX3">
+		<phrases1 name="Garde">Ma passion à moi ce sont les seules armes vraiment efficace : les armes de corps à corps!\n \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Demander votre 1er équipement.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.1>
+	<dialogue1.2 condition="Stan/Postuler:CHOIX2">
+		<phrases1 name="Garde">Ma passion à moi ce sont les seules armes vraiment efficace : les armes de corps à corps!\n \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Demander votre 2nd équipement.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.2>
+	<dialogue1.3 condition="Stan/Postuler:CHOIX1">
+		<phrases1 name="Garde">Ma passion à moi ce sont les seules armes vraiment efficace : les armes de corps à corps!\n \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Demander votre 3ème équipement.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.3>
+	<dialogue1.4>
+		<phrases1 name="Garde">Ma passion à moi ce sont les seules armes vraiment efficace : les armes de corps à corps!\n \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.4>
+    <dialogue2.0>
+		<phrases1 name="Garde">Ah! Voici des personnes inteligentes! Je vous propose le meilleur équipement possible : une hache et je vous fait cadeau d'une armure de cuir légère!</phrases1>
+		<reponse1>
+			<reaction>Accepter</reaction>
+			<goto>100</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Refuser et partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Demander autre chose</reaction>
+			<goto>3</goto>
+		</reponse3>
+	</dialogue2.0>
+    <dialogue3.0>
+		<phrases1 name="Garde">Allez voir mes collègues, ils pourront sans doute vous trouver un équipement de moindre qualité~!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+    <dialogue4.0>
+		<phrases1 name="Garde">Vous ne pouvez attaquer au corps à corps que si il n'y a personne entre vous et la cible. Les combattants déjà hors combat ne comptent pas. \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>5</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue4.0>
+    <dialogue5.0>
+		<phrases1 name="Garde">Vous ne pouvez pas non plus attaquer au premier tour car l'ennemi n'est pas encore assez près pour se prendre un coup de hache. Profitez donc de ce moment pour vous positionner au bon endroit ou pour vous mettre sur la défensive.\n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue5.0>
+    <dialogue6.0>
+		<phrases1 name="Garde">Vous pouvez aussi faire des attaques visées pour toucher les points faibles et faire des coups critiques voire parfaits mais qui réduisent vos chances de toucher. Cela est très utile contre des ennemis avec une très bonne armure comme les protecteurs avec un bouclier.\n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>7</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue6.0>
+    <dialogue7.0>
+		<phrases1 name="Garde">Une fois vos ennemis à terre, il ne pourront plus vous attaquer donc frapper fort permet aussi de se protéger! Rien que du bonus! \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue7.0>
+	<dialogue101.0>
+		<phrases1 name="Garde">Voilà vous avez votre dernier équipement, maintenant allez voir Stan pour passer le test de selection. \nN'oubliez pas de vous'équiper, Stan ne fera pas de cadeau!\n\n(Appuyer sur E pour pouvoir vous équiper)</phrases1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue101.0>
+ </PNJ>

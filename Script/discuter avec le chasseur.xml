@@ -1,0 +1,9 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="Chasseur">Ce matin, un Wolpertinger a tué un chasseur. C'était un Wolpertinger qui avait un fusil.</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+ </PNJ>

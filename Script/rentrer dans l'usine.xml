@@ -1,0 +1,10 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="Leopold">*%Avancement/NomLeopold% essaye d'ouvrir la porte*.\n...\n*Vu qu'il n'y arrive pas, il essaye plus fort*\n...</phrases1>
+		<phrases2 name="Major">*Au quatrième essai de %Avancement/NomLeopold%, %Avancement/NomMajor% interviens*\nC'est un système sécurisé, nous ne pourrons pas rentrer sans avoir un engrenage d'identification.</phrases2>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+ </PNJ>

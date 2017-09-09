@@ -1,0 +1,9 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="Affiche">*Il est interdit de coller des affiches ici.*\n\n*Sauf, bien entendu, pour les affiches qui disent qu'il est interdit de coller des affiches ici.*</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+ </PNJ>

@@ -1,0 +1,138 @@
+<PNJ>
+    <dialogue1.0  condition="Stan/Postuler:NON">
+		<phrases1 name="Garde">Engagez vous qu'ils disaient! Vous pourrez protéger vos amis qu'ils disaient!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+    <dialogue1.1 condition="Stan/Postuler:CHOIX3">
+		<phrases1 name="Garde">Si vous voulez vous battre, je vous conseille de savoir vous protéger! Croyez moi, je suis la personne la mieux placé pour vous en parler.\n \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Demander votre 1er équipement.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.1>
+	<dialogue1.2 condition="Stan/Postuler:CHOIX2">
+		<phrases1 name="Garde">Si vous voulez vous battre, je vous conseille de savoir vous protéger! Croyez moi, je suis la personne la mieux placé pour vous en parler.\n \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Demander votre 2nd équipement.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.2>
+	<dialogue1.3 condition="Stan/Postuler:CHOIX1">
+		<phrases1 name="Garde">Si vous voulez vous battre, je vous conseille de savoir vous protéger! Croyez moi, je suis la personne la mieux placé pour vous en parler.\n \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Demander votre 3ème équipement.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.3>
+	<dialogue1.4>
+		<phrases1 name="Garde">Si vous voulez vous battre, je vous conseille de savoir vous protéger! Croyez moi, je suis la personne la mieux placé pour vous en parler.\n \n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.4>	
+    <dialogue2.0>
+		<phrases1 name="Garde">Ah! Voici des personnes malignes! Je vous propose le meilleur équipement possible : l'armure de cuir clouté et je vous offre une épée en prime.</phrases1>
+		<reponse1>
+			<reaction>Accepter</reaction>
+			<goto>100</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Refuser et partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Demander autre chose</reaction>
+			<goto>3</goto>
+		</reponse3>
+	</dialogue2.0>
+    <dialogue3.0>
+		<phrases1 name="Garde">Allez voir mes collègues, ils pourront sans doute vous trouver un équipement de moindre qualité~!</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+    <dialogue4.0>
+		<phrases1 name="Garde">Vos points de vie sont précieux si vous n'en avez plus, vous êtes KO. Allez voir l'infirmière si celà vous arrive, elle pourra vous réanimmer gratuitement. Par contre les soins sont payant.\n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>5</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue4.0>
+    <dialogue5.0>
+		<phrases1 name="Garde">Lorsqu'un combattant se défend, il gagne deux marqueurs ''protection'' (symbolisé par un bouclier bleu entier) et devient plus dur à toucher. Les marqueurs ''protection'' et ''acharnement'' s'annulent. En plus, les marqueurs ''protection'' reste d'un tour sur l'autre.\n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue5.0>
+    <dialogue6.0>
+		<phrases1 name="Garde">N'oubliez pas de vous défendre de temps en temps car un personnage avec beaucoup de marqueurs ''acharnement'' (symbolisé par un bouclier brisé rouge) sera une proie facile</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>7</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue6.0>
+    <dialogue7.0>
+		<phrases1 name="Garde">Lorsque vous avez gagné un équipement, il ne faut pas oublier de l'équiper (MENU F1).\n\nVoulez-vous en savoir plus?</phrases1>
+		<reponse1>
+			<reaction>Oui</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue7.0>
+	<dialogue101.0>
+		<phrases1 name="Garde">Voilà votre équipement, maintenant allez voir Stan pour passer le test. N'oubliez pas d'équiper votre équipement, Stan ne fera pas de cadeau!\n\n(Appuyer sur E pour pouvoir vous équiper)</phrases1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue101.0>
+ </PNJ>

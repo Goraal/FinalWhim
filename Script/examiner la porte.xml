@@ -1,0 +1,20 @@
+<PNJ>
+    <dialogue1.0 condition="PJ/Triche:NON">
+		<phrases1 name="Porte">*La porte semble solidement fermée.*</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+	<dialogue1.1>
+		<phrases1 name="Programmer">*Vous devriez avoir honte de tricher !*</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Utiliser le mode triche</reaction>
+			<goto>100</goto>
+		</reponse2>
+	</dialogue1.1>
+ </PNJ>

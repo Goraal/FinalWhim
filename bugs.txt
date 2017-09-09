@@ -1,0 +1,88 @@
+COMBAT :
+ 
+ * Les noms ne s'affichent pas pour les alliés de celui qui agit (est-ce vraiment un souci ?)
+ * Les pvs ne s'affichent pas pour ceux qui agissent (y compris les cibles) (est-ce un mal ? -non mais garder le bug à jour-)
+ * Vérifier que les morts PJ ne soient pas considérés comme "en attente" (apparament résolu ?)
+ * Perso suicidé qui bloque le jeu ?
+
+ * Checker si les icones d'armes (lors des changements d'équipement) ont la même taille que "Mains Nues" et adapter sinon
+
+
+
+MENU :
+
+
+
+
+MAP :
+
+ * Les lumières ne sont pas correctes quand on change de map ?
+
+ * Lancer une nouvelle partie après un retour au menu fait terminer la partie immédiatement (après au moins une frame) et renvoit au menu (date d'avant la fct revenir_au_menu()). Charger une partie et le bac à sable fonctionnent normalement. [Quasi débuggé, reste un souci de XML à faire corriger par Loran]
+
+
+IA :
+
+
+SONS :
+
+ * Les sons ne sont pas à l'échelle de la musique
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+============================================Corrigés===================================
+COMBAT :
+ * Barre de vie mal affichée (peut-être la formule de pv que je n'ai pas corrigé dans fight ?) CORRIGÉ ! 
+(et c'était bien ça)
+ * Changement de map qui ne marche plus
+ * Retester Attendre (fonctionne mais bug aff)
+ * Mettre la limite de temps avec une CONST pour la changer plus facilement (voir en fonction de la difficultée) FAIT (à tester) [l'enlever ? la justification technique ne tient plus]
+ * Quand on change de place avec quelqu'un, la cible n'a plus d'animation
+ * Arme de tir : l'action est effectuée mais l'anim saute, le tour du perso suivant est sauté et "Irène essaie de faire quelque chose mais on ne comprend pas quoi"
+ * Il y a d'autres cas où le tour du perso suivant saute (parfois lors des échanges de place, )
+ * Limite de temps : vérifier que c'est bien remis à zéro après avoir fait sauter le tour de qq1
+ * Changer d'arme : apparamment ne marche plus pour avoir les mains vides ?
+ * Bug d'affichage de l'ordre lors de l'animation d'attendre
+ * Les attaques lors des bangbangbang s'arrêtent dès qu'il y a un mort (plus d'effet). Les munitions sont bien décomptées
+ * Les dégâts ne s'affichent pas tous lors des rafales
+ * Combat contre des groupes vides
+ * Les dégâts encore affichés à la fin d'un combat sont affichés dans le combat suivant
+ * Si c'est une arme à distance, afficher l'icone flingue au lieu de l'épée
+ * Quand on selectionne une autre action qu'attaquer (et défendre) comme tempo et chgt, on peut cliquer sur attaquer même si on ne peut pas attaquer le premier tour (ne provoque pas de glitch, c'est juste que ça pourrait induire en erreur)
+
+IA :
+ * IA a distance : parfois agit correctement, mais pas toujours (on dirait qu'une de ces cibles agit et les munitions sont décomptées)
+Par contre, elle change d'arme correctement et le CC est ok
+(en fait une initialisation de variable qui faussait complètement la selection de cible)
+
+MAP :
+ * Pb du TocToc quand on charge une partie (à approfondir, probablement parce que ce sont des valeurs qui changent d'un chargement à l'autre) -DONE : il est maintenant silencieux si on charge une partie (nuisance extrèmement mineure)
+ * Au démarrage, le PJ n'est pas animé
+ * Les aggresseurs ne sont pas tjs dans le bon sens pour aggresser le grp_J (genre les rats)
+ * Dans les terrains accidentés, le joueur ne controle pas tjs bien le perso. C'est parce qu'il "chute" (sans l'animation). C'est particulièrement vrai quand il y a une chute de framerate.
+ * L'état des portes n'est pas conservé (un new_porte(101) inutile dont la raison vient probablement du système avec serveur d'origine)
+
+MENU Joueur :
+ * Les icones et photos des PJ ne sont pas les bonnes
+
+SONS :
+ * Les musiques ne sont pas mises à jour en volume quand on modifie l'option
+ * Certaines musiques qui ne se lance ou ne s'arrêtent pas au bon moment (probablement parce que j'ai pas fini de tout changer)
+
+MENU :
+ * Ameliorer une arme peut faire passer son besoin de vapeur au dessus de ce que peut produire le perso. L'arme doit être mise dans le butin. Mais que faire si il n'y a pas la place ?? Empêcher l'amélioration (l'empêcher plutôt que vérifier si il y a la place dans l'inventaire)
+ * Le nombre de rafales n'est visiblement pas remis à zéro
+ * Dans les achats, quand le curseur est sur un objet du panier, les infos sont celles du l'objet au même endroit dans la vitrine
+ * La poubelle et le comptoir devraient être reversés dans le butin dès qu'on sort du magasin ou que l'on quitte le menu_poubelle
+ * lors du passage d'un onglet ou d'un menu à l'autre, les menus défilants ne s'affichent pas oujours correctement.

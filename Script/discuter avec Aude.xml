@@ -1,0 +1,9 @@
+<PNJ num=202>
+    <dialogue1.0>
+		<phrases1 name="Garde">En travaux. Les programmeurs sont entrain de refaire nos dialogues... \nPfff, c'est long leurs trucs</phrases1>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+ </PNJ>

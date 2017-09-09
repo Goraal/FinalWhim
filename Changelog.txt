@@ -1,0 +1,313 @@
+2014-01-14 (v0.2505) :
+ - Amélioration de l'HUD et du chat en mode map
+ - Correction de la touche Esc qui faisait quitter le jeu en plusieurs endroits (envoie maintenant correctement sur l'écran de pause)
+
+
+
+2014-01-23 (v0.2512) :
+ - Amélioration de l'HUD (bouton Pause et Menu, mais reste à améliorer encore)
+ - L'HUD est maintenant affiché pendant les cinématiques "pokémon"
+ - Correction de la fonction stack_liste_tempo() (qui ne faisait pas son travail correctement)
+ - On peut changer de Leader avec la souris (reste à finir la déco de cette partie de l'HUD)
+
+
+
+2014-02-15 (V0.2530) :
+ - Amélioration HUD : La boussole a changé de place, les boutons Menu et Pause sont animés
+ - l'HUD est maintenant dans une fonction à part (donc peut être appelé rapidement de n'importe où)
+ - Correction d'un bug : qd on change de leader, le manikin tourne maintenant correctement
+ - Correction de l'animation de l'agresseur dans attaque_pokemon(). L'agresseur ne lance maintenant l'animation "mourir" qu'une fois le combat terminé
+
+
+
+2014-02-23 (v0.2555):
+ - Chute avec animation
+ - Mise en place des scripts par XML
+ - Correction de divers bugs de scripts
+ - Correction de la fonction item_quest() (adaptation au mode solo)
+ - Correction d'un bug sur le menu principal. Appuyer sur Echap lançait le mode pause avant la fenêtre "Quitter:oui/non"
+
+
+
+2014-02-28 (v0.2556):
+ - Correction du script de changement de map
+ - Correction de certains sols qui n'étaient pas bon (type mur et pas type sol)
+
+
+
+2014-03-23 (v0.2630):
+ - Le bouton "défendre" dans le combat met maintenant en position défensive directement. La fuite a été supprimée.
+ - Animation de changement de place corrigée
+ - Début de transformation du choix de perso en choix de classe. L'interface est fonctionnelle mais peu claire (à modifier)
+	
+ - Modification des noms des boutons dans les combats pour être plus cohérent
+ - Modification des règles pour toucher les alliés dans les combats (maintenant toujours possible au corps à corps, sans risque de toucher d'autres cibles à distance)
+ - Modification de l'affichage des astuces afin qu'elles puissent être sur plusieurs lignes
+ 
+ - Modification de la réaction à la corruption du fichier options.dat (supprime et recrée un nouveau ficher option.dat avec les valeurs par défaut)
+ - Déplacement des fonctions spé-map de Loran dans un nouveau .bb
+ - Déplacement du combat dans un nouveau .bb
+ - Divers (vieux) bugs corrigés (dus à des copier-collers mal adaptés)
+
+
+
+2014-04-30 (v0.2750) :
+ - Transformation des chandeliers du premier niveau (bcp moins gourmands maintenant)
+ - Suppression (temporaire) de l'arbre de la prison
+ - Suppression des mises à l'échelle des sprites dans les menus. Le chargement des menus est maintenant beaucoup plus rapide !
+ - Correction de l'interface de selection de classe (en début de partie).
+ - Les PVs négatifs sont affichés à 0 dans le menu du joueur (la valeur est inchangée)
+ - Le déplacement des équipements dans l'inventaire a été amélioré. Le déposer-glisser fonctionne correctement et une icone permet de le visualiser
+
+ - Les attaques à distance ne font plus sauter les tours d'autres personnages (enfin !)
+ - Le bouton d'attaque est grisé le premier tour pour ceux qui ne peuvent pas attaquer (arme de cc et non Swift)
+ - Correction du chgt d'arme en combat (l'opération était faite deux fois donc s'annulait)
+ - Correction des mini-portraits en combat, les PJ ont maintenant chacun le leur
+ - Correction d'un bug qui affichait l'ordre au mauvais endroit lors de l'animation de "attendre" en combat
+ - Les dégats sont maintenant affichés visuellement ! (et c'est la classe !)
+
+
+
+2014-05-30 (v0.2760):
+ - Nouveau sprite pour Adeline
+ - Suppression de mises à l'échelle pour les sprites des combattants ! Ça va encore plus vite maintenant !
+ - Correction de bug : TocToc provoquant des problèmes en chargeant la partie
+
+
+
+2014-06-30 (v0.2780) :
+ - Nouveau Sprite pour le boss
+ - Modification des animations, il y a maintenant une animation pour l'attaque à distance (pour l'instant la même qu'au cc à part le boss, mais c'est codé)
+ - Correction de l'animation "esquive" qui ne s'affichait pas en entier
+ - Changement du visage d'Adeline
+ - Modification de l'animation de changement d'arme : une image s'affiche indiquant quelle arme est équipée
+ - Correction des visages des PJ qui ne s'affichaient pas correctement dans le player_menu (tient aussi compte des éventuels alliés)
+ - Les objets équipables sont maintenant triés dans l'ordre croissant (armes, armures, chaudières, spéciaux) à chaque ouverture du menu (mais pas pendant les manipulations)
+ - Conversion de tous sprites dans combattants de .bmp à .png (passage de 32,2 Mo à 1,64 Mo !)
+
+
+
+2014-07-30 (v0.2821) :
+ - Correction dans combat : "Choisissez votre action" ou "Choisissez votre cible" apparaissaient pendant le tour de PNJ
+ - Correction des rafales : les attaques après la mort d'un personnage n'étaient pas faites
+ - Correction des rafales : l'affichage des dégâts se fait maintenant correctement (avec comme valeur le cumul des attaques si plusieurs attaques touchent une même cible)
+
+
+
+2014-08-30 (v0.2845) :
+ - Correction de l'IA à distance : sélectionne son action et sa cible correctement maintenant
+ - Correction du sprite de la Fillette, maintenant à la bonne échelle et avec une fausse animation de tir
+ - Correction des bonus et malus de défense qui étaient conservés d'un combat à l'autre
+ - Passage à Blitz3D 1.108
+
+
+
+2014-10-30 (v0.2870) :
+ - Correction caméra : les angles "X" sont limités, on ne plus être à l'envers ni regarder sous les jupes :) 
+ - Correction caméra : les personnages ne "glissent" plus lorsqu'on tourne autour d'eux avec la caméra
+ - Correction caméra : la caméra garde sa position d'origine lorsque l'on utilise les menus F1 et Marchand
+
+ - Correction d'un bug dans la fonction Stack_Butin() : Si le butin était plein, enlever un objet dédoublait le 250ème.
+ - Correction d'un bug qui empêchait de prendre l'intégralité d'un butin au sol contentant 250 objets, même lorsque l'inventaire du joueur était vide.
+
+ - Modification de l'affichage des "marque-pages" de perso dans le Menu F1 : ils sont maintenant groupés sur la gauche plutôt qu'éparpillé en fonction de leur formation
+ - Quelques corrections sur la "poubelle"
+ - La cadence des armes pouvant faire des rafales est maintenant indiquée
+
+ - Lourdes modifications du menu Marchand : Nouvelle interface d'Achat et de Vente, nouveaux sprites, débug ...
+   Bugs et Glitchs connus :
+    > Améliorer une arme peut lui faire dépasser la vapeur disponible
+    > On ne peut pas améliorer des objets dans l'inventaires
+    > Le panier, le comptoir et la poubelle ne sont pas vidés dans leurs butins d'origine (respectivement la vitrine, l'inventaire et encore l'inventaire). Avec un peu de malice, on peut donc posseder 500 objets au lieu de 250, et on peut en stocker encore 250 autres sur le comptoir (mais ils ne seront pas disponibles en dehors du Marchand et empêchent de vendre facilement)
+    > Parfois, la vitrine et le panier sont vides lorsque l'on ouvre le menu Marchand. Bouger la souris débloque la situation (va savoir pourquoi...)
+    
+
+
+2014-11-30 (v0.2878) :
+ - Menu Marchand : On peut maintenant améliorer les objets de l'inventaire
+ - Menu Marchand : On ne peut plus améliorer un objet si son amélioration ne peut pas être alimentée en vapeur avec la chaudière équipée
+ - Menu Marchand et "F1" : ajout d'un court message qui explique l'erreur en plus du son ("Pas assez de Caps", "Pas assez de Vapeur", ...)
+
+
+
+2014-12-29 (v0.2912) :
+ - Modification du sprite combattant d'Adeline
+ - Modification des icones de classe lors de la sélection de classe
+ - Modification des icones et descriptions des catégories d'équipement suivants : Armes de Poing, Fusils de Guerre
+ - L'HUD de map est enfin terminé
+
+ - Ajout d'un "raccourci" dans le menu principal : appuyer sur Espace pendant le chargement des images l'interrompt, permettant d'aller au menu plus rapidement
+ - Ajout d'un mode "Bac à sable" à l'intention des développeurs
+ - Correction d'une cascade de bugs lorsque le modèle 3D d'un agresseur n'était pas un .MD2
+
+ - Correction de bugs dans le menu Marchand (dont on se demande comment ils n'ont pas été repérés)
+ - Menu Marchand et "F1" : la poubelle et le comptoir sont vidés dans le butin dès qu'on change d'onglet ou qu'on sort du menu. Le panier est volontairement conservé
+
+ - Intégration de l'interface de dialogue
+ - Intégration de l'introduction
+ - Rectification de plusieurs scripts du niveau 1
+ - Ajout de groupes de rats dans le garage
+
+
+
+2015-01-17 (v0.3014) :
+ - Modification du visage par défaut dans les discussions
+ - Ajout du modèle 3D pour les rats
+ - Ajout d'une limite du nombre de caractères pour les noms des PJ
+
+ - Les combats sans ennemis (groupe invalide ou vide, ennemis déjà morts) sont maintenant gagnés immédiatement au lieu d'être (litt.) interminables.
+ - Certains dégâts affichés à la fin d'un combat étaient affichés au début du combat suivant
+ - Les rats en 3D ont maintenant la bonne orientation quand ils agressent les PJ et ont une "animation" quand ils meurent
+ - Correction d'un bug qui supprimait la vitesse de déplacement dès qu'on ouvrait le chat, y compris pendant un saut
+ - On ne peut plus grimper sur les pentes de plus de 45° (valeur à revoir éventuellement)
+
+
+
+2015-02-01 (v0.3026) :
+ - Ajout d'un bouton dans l'onglet Système du Menu_Joueur pour revenir au menu principal (ne sauve pas)
+ - Débug de certaines portes qui ne restaient pas ouvertes lorsqu'on chargeait une partie
+ - Correction partielle d'un bug qui empechait de relancer une nouvelle partie après un retour au menu principal
+ - Collision entre le joueur et certains groupes (les personnages) réactivées. Le joueur est bloqué par ces personnages mais ils peuvent traverser le joueur sans soucis
+ - Modification des icones et descriptions des catégories d'équipement suivants : Fusil de chasse
+ - Lit low_polygones
+
+ - Ajout des patrouilles [aller vers, attendre, se tourner vers angle, se tourner vers point, modifier le cône d'agression, voler, se téléporter, toggle agressivité, goto, déclencher script]
+ - Ajout de fonctions pour activer et désactiver les agresseurs et patrouilles facilement
+
+ - Ajout divers de scripts et de maps
+
+
+
+2015-02-15 (v0.3030) :
+ - Corrections de typo et légères modifications de texte pour aider à la compréhension
+ - Nettoyage de quelques données développeurs dans les versions testeurs
+
+ - Ajout d'une confirmation et d'un retour en arrière pour les choix de classes
+ - Ajout d'un écran de validation d'équipe (à mettre à la fin de l'intro et à embellir)
+ - Ajout d'un choix de difficulté au démarrage d'une nouvelle partie, ainsi que dans les options
+
+ - Modification de divers portraits 2D
+ - Modification des icones et descriptions des catégories d'équipement suivants : Epées
+ - Modification visuelle de la selection de classe
+ - Modification visuelle des actions de combat
+
+
+
+2015-03-08 (v0.3035) :
+ - Le volume de la musique est maintenant mis à jour dès les changements d'options plutôt qu'au chargement suivant
+ - Débug des menus déroulants qui ne s'affichaient pas toujours correctement avant de passer la souris dessus
+ - Les agresseurs sont maintenant soumis à la gravité
+ - L'interface de combat n'est plus affichée lors de l'écran de victoire (mais l'HUD si)
+
+ - Modification visuelle de l'écran de validation d'équipe
+ - Modification visuelle des boutons d'actions de combat ainsi que des barres de temps et de texte
+
+ - Ajout d'un menu de tutoriel dans le menu principal. Vous pouvez maintenant voir et revoir les tutoriels en dehors d'une partie
+ - Ajout de patrouilles dans le canyon. Pour l'instant ce sont juste des cubes qui contiennent des rats mais ça va changer
+ - Ajout de caps et de junk récupérés sur les ennemis à la fin du combat (non équilibré, c'est pour tester la progra)
+
+
+
+2015-12-31 (v0.3108) :
+ - Correction de l'image de chargement (elle ne se "décale" plus)
+ - Correction des fenêtres qcm dont la question était sur plusieurs lignes
+ - Correction des chemin des patrouilles
+ - Correction du défilement des inventaire, vitrine, panier et comptoir
+ - Correction des messages d'erreurs dans l'inventaire
+
+ - Modification de la vitesse de Stale. Il se déplace maintenant à la même vitesse que le joueur
+ - Modification des icones et descriptions des catégories d'équipement suivants : Haches, Lances, Armures de Cuir, Armures de Métal
+ - Modification de l'arbre des actions en combat, avec de nouvelles icônes (Gearbot)
+ - Modification des bonus/malus de défense (les petits boucliers) : L'action "Se défendre" rapporte +6 en DEF, mais le bonus/malus n'est pas remis à zéro en début de tour. Limité à +4/-6
+
+ - Changer d'arme pour celle déjà équipée renvoie maintenant à la racine du menu d'action de combat sans coûter de tour
+ - Idem pour changer d'arme "Mains nues équipée" vers "Mains nues dans l'inventaire"
+ - Ajout d'une fonction permettant de ressusciter les patrouilleurs et les agresseurs (pour pouvoir farmer)
+ - Implémentation basique des Gearbots (avec un GearBot de test non représentatif)
+
+
+
+2016-08-01 (v0.3125):
+ - Modification du sprite combattant du Major
+ - Modification du sprite des bordures des fenêtres 2D
+ - Modification de la map04 (canyon)
+
+ - Ajout d'un modèle 3d de mongolfière pour des patrouilleurs
+ - Ajout de triche pour sauter les combats
+ - Ajout de l'affichage des gains en fin de combat
+ - Ajout d'une fonction d'alignement de caméra (pour les dialogues)
+ - Ajout d'une option de volume des bruitages
+ - Ajout d'une variable pour ne pas déclencher les combats dans certaines situations (par ex. dialogues)
+
+ - Correction de la gestion des animations lors des attaques "pokémon"
+ - Correction de la gestion de la caméra lors des attaques "pokémon" (n'est plus coincée par les murs et sols)
+ - Correction d'affichage dans l'HUD de combat
+ - Correction des animations "idle" des combattants en 2D
+
+
+
+2016-09-12 (v0.3520):
+ - Ajout de raccourcis supplémentaires pour les menu_player (C,E,F,K,J,M et H)
+ - Ajout d'astuces supplémentaires
+ - Ajout de sons différents en fonction de la cadence de l'arme en rafale
+
+ - Esc pendant le menu_player, le menu_marchand et le menu_options fait maintenant sortir du menu plutôt que de mettre en pause
+ - Implémentation du nouveau système de combat (manque encore l'affichage des nouvelles stats dans les menus)
+ - Affichage des chances de toucher et des dégâts avant de selectionner la cible
+
+ - Correction dans le menu_options (tailles des boites et bugs)
+ - Les boucliers de défense des morts sont maintenant enlevés dès qu'ils sont morts
+
+
+
+2016-11-01 (v0.3700):
+ - Modification des fenêtres de discussion
+ - Modification des fiches de personnage
+ - Modification du menu de selection de classe
+
+ - Les dégâts de l'attaque sournoise ne sont plus multipliés par le critique
+
+ - Correction de bug dans la poubelle
+ - Correction de l'attaque sournoise
+
+
+
+2016-12-17 (v0.3800):
+ - Ajout d'une explication pour se déplacer au tout début d'une partie
+ - Ajout de nouvelles astuces de chargement
+ - Les astuces "utiles" sont maintenant affichées d'abord lors d'une nouvelle partie (la première est "N'hésitez pas à passer la souris sur un terme que vous ne comprenez pas, il y aura sûrement une explication qui s'affichera en bas de l'écran.")
+
+ - "Swift" changé en "Célérité"
+ - "Arme de poing" changé en "Pistolet"
+
+ - Changement dans l'affichage des équipements (Inventaire et Marchand) pour refleter le nouveau système de combat
+ - Dans l'inventaire, on peut maintenant sélectionner des équipements au survol si la souris n'est pas déjà enfoncée
+
+ - Les équipements peuvent maintenant donner des bonus en attaque, défense, dégâts, initiative et PV. Ces bonus sont appliqués partout
+ - Les objets avec "Encombrement [x]" donnent maintenant un malus en attaque et en défense de x, sauf l'arme en main
+ - Les équipements qui donnent des bonus de PV changent les PV actuels du perso, y compris en enlevant l'équipement (sans pouvoir descendre à moins de 1 ni donner des PV à un perso KO). Une armure "PV +3" donnera 3 PV lorsqu'on l'équipe et enlèvera 3 PV quand on l'enlève. Ses PV bonus ne changent pas la limite de blessure (qui reste basée sur les PV max de base)
+
+ - Les coups critiques sont indiqués en plus par un "!" (et "!!" pour les parfaits) dans les dégâts "volants"
+
+ - Correction de bugs dans le calcul des bonus/malus dûs à l'équipement
+ - Correction d'un bug qui permettait de porter l'armure de la fillette (pourtant notée trop petite)
+ - Correction de bug de gravité : la gravité est limité par frame, pour éviter de "tomber sur place" en cas de frame drop
+
+
+
+2017-- (v0.3900):
+ - Ajout d'un bouton pour faire des défaire des paires de pistolets dans l'inventaire (si c'est possible)
+
+ - Modifications mineures de l'interface de choix des classes.
+
+ - L'infirmière redonne maintenant correctement les PVs
+ - Corrections dans l'interface d'équipement (Inventaire et Marchand)
+ - Correction de bugs mineurs
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+<PNJ>
+    <dialogue1.0 condition="PJ/Embarquement:NON">
+		<phrases1 name="Secrétaire">STOP! \nIl est interdit de monter à l'étage supérieur sans autorisation!\n\n*Le ton de la voix de la secretaire imposa le respect à %Avancement/NomLeopold% et %Avancement/NomMajor% qui s'arrêtèrent à mi-chemin.*</phrases1>
+		<phrases2 name="Adeline">*Cependant, %Avancement/NomAdeline% continua de monter les marches d'un air encore plus décidée qu'avant en murmurant à elle-même*\n\nMaman aussi essaye de m'arrêter en me parlant de façon autoritaire ... mais ça n'a jamais marché.\n\n*%Avancement/NomAdeline% atteind la trappe en haut de l'escalier et commenca à l'ouvrir.*</phrases2>
+		<phrases3 name="Secrétaire">*La trappe semble solidement fermée.* \n\nMonsieur J ne souhaite pas être dérangé. Revenez quand vous aurez une carte d'embarquement.</phrases3>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+    <dialogue1.1>
+		<phrases1 name="Secrétaire">STOP! \nIl est interdit de monter à l'étage supérieur sans autorisation!*\n...</phrases1>
+		<phrases2 name="Major">*%Avancement/NomMajor% montre la carte d'embarquement* \n\nOn a l'ordre d'aller voir Monsieur J.</phrases2>
+		<phrases3 name="Secrétaire">*La secrétaire semble à la fois étonnée et inquiète* \n\nOk, allez y mais faite bien attention, Monsieur J est très suspicieux et il n'a pas l'habitude de voir de nouvelles têtes.</phrases3>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>100</goto>
+		</reponse1>
+	</dialogue1.1>
+</PNJ>

@@ -1,0 +1,56 @@
+<PNJ num=202>
+    <dialogue1.0 condition="Inventaire/MembreFactoryTech:NON">
+		<phrases1 name="Garde">VOUS NE PASSEREZ PAS !\n\nSauf si vous avez une autorisation...</phrases1>
+		<reponse1>
+			<reaction>Demander à passer</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.0>
+	<dialogue1.1>
+		<phrases1 name="Garde">Bonjour Messieur Dame, en quoi pouvons-nous vous aider?</phrases1>
+		<reponse1>
+			<reaction>Demander à passer</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.1>
+	<dialogue2.0>
+		<phrases1 name="Major">Vous êtes mon seul obstacle avec la sortie. Alors ouvrez la porte!</phrases1>
+		<phrases2 name="Garde">Si vous avez pas d'autorisation, le SS va vous réduire en poussière. Nous, on est juste là pour éviter des pertes inutiles.</phrases2>
+		<phrases3 name="Adeline">On est assez grand pour prendre soin de nous même. \nVous pouvez bien faire une petite exception?</phrases3>
+		<phrases4 name="Garde">\nNon!\nC'est notre boulot! \nPas d'autorisation, pas de passage.</phrases4>
+		<reponse1>
+			<reaction>Insister lourdement</reaction>
+			<goto>3</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Leopold">Allez, laisser nous passer !</phrases1>
+		<phrases2 name="Garde">Non ! Vous risquez de mourir !</phrases2>
+		<phrases3 name="Adeline">Et si je le dis avec un sourrire</phrases3>
+		<phrases4 name="Garde">Non ! Vous risquez de mourir avec un sourrire!</phrases4>
+		<phrases5 name="Major">Et alors, si on veux mourrir. On fait ce qu'on veut</phrases5>
+		<phrases6 name="Garde">Non ! Allez mourrir ailleurs !</phrases6>
+		<phrases7 name="Leopold">Allez, laisser nous passer !</phrases7>
+		<phrases8 name="Garde">Bon, puisque vous insistez et que les grosses feignasse de programmeur n'ont pas encore prévus d'autre moyen de passer, on va faire une exception.</phrases8>
+		<reponse1>
+			<reaction>Sortir de FactoryTech</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse1>
+			<reaction>Rester à FactoryTech</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+ </PNJ>

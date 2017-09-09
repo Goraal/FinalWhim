@@ -1,0 +1,36 @@
+AT	Teddy discution avant resolution enigme
+?	Monter à l'étage = entity does not exist + crash (pb dist2d)
+DONE	Affichage des dégats D3+FOR (étrange)
+
+(SOALT ?)
+Nb fichier
+OK	Bug : nom PJ qui fini par un é ou un è = pb  sur photo
+OK	Bug : nom PJ qui fini par un é ou un è = pb  dans le script
+OK	Bug : Combat VS Boss (Image de combattant non chargée : num=17)
+OK	Bug : Combat VS Boss : immortel et inactif.
+1AT	Pas de dialogue à la fin du combat VS MJ
+	Enlever mode triche
+1AT	SPRITE du Boss Final : "boss blessé" à améliorer
+1AT	SPRITE Major en défense : il manque 1 image.
+0	Rajout épaisseur de mur dans Rdc
+	Taverne des rebelles
+	Teddy a travers la porte.
+	Combat VS rebelles si on dis que l'on est un garde
+	Agrandir sprite protecteur
+	Vrai Sprite version arme de tir 
+	Rebelle tourne roue
+	Fin aide enigme Stan
+1	Pas de son intro (main.bb)
+3	Background des combats en fonction de la zone + combat.bb
+2	Bug Major V esquive. + 2 image
+	Probleme camera lors combat boss (vision temporaire d'avant boss)
+	(Aide N°2 enigme)
+2	Boss = Beau SS (function.bb + bestiaire.bb) 
+0	FactoryTech VS FactoryTec
+1       BUG dialog STAN .xml
+0	Orthographe Teddy + monter étage + Ema + MJ
+
+
+
+INFO
+1 Maj 2 Leo 3 Ade

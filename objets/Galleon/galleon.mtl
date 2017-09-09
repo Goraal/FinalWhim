@@ -1,0 +1,35 @@
+# Max2Mtl Version 4.0 Mar 10th, 2001
+#
+# Multi/Sub Galleon (3) to come 
+#
+newmtl Details
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd boatdetl.bmp
+#
+newmtl Coque
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd coque.jpg
+bump coque-b.jpg
+#
+newmtl Plancher
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd boatdeck.bmp
+#
+# Multi/Sub Galleon done 
+#
+# EOF
