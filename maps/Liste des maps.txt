@@ -3,3 +3,5 @@ Map02 : Rez-de-chaussée de l'Usine
 Map03 : Ancien premier étage de l'Usine
 Map04 : Canyon
 Map05 : Camps des esclaves
+Map314: A supprimer
+Map315: A supprimer
