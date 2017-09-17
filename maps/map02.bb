@@ -187,9 +187,9 @@ RotateEntity mur_alambic2_uc,0,12,0
 mur_ouest_boite_au_lettre=		CreerMur(0.01,HAUTEUR_PLAFOND#,12,					0,HAUTEUR_PLAFOND#/2,6,								tex_mur_garage$,3)
 mur_est_boite_au_lettre=		CreerMur(0.01,HAUTEUR_PLAFOND#,8,					4,HAUTEUR_PLAFOND#/2,8,								tex_mur_garage$,3)
 mur_sud_boite_au_lettre=		CreerMur(11,HAUTEUR_PLAFOND#,0.01,					5.5,HAUTEUR_PLAFOND#/2,0,							tex_mur_garage$,3)
-porte_nord_boite_au_lettre=		CreerMur(4,HAUTEUR_PLAFOND#,0.01,					2,HAUTEUR_PLAFOND#/2,12,							tex_porte_parking$,1,0,	type_block)
-porte_est1_boite_au_lettre=		CreerMur(0.04,HAUTEUR_PLAFOND#,2,					4,HAUTEUR_PLAFOND#/2,1,								tex_porte_sortie1$,HAUTEUR_PLAFOND#,0,	type_block)
-porte_est2_boite_au_lettre=		CreerMur(0.04,HAUTEUR_PLAFOND#,2,					4,HAUTEUR_PLAFOND#/2,3,								tex_porte_sortie1$,HAUTEUR_PLAFOND#,0,	type_block)
+porte_nord_boite_au_lettre=		CreerMur(4,HAUTEUR_PLAFOND#,0.01,					2,HAUTEUR_PLAFOND#/2,12,							tex_porte_parking$,1,0)
+porte_est1_boite_au_lettre=		CreerMur(0.04,HAUTEUR_PLAFOND#,2,					4,HAUTEUR_PLAFOND#/2,1,								tex_porte_sortie1$,HAUTEUR_PLAFOND#,0)
+porte_est2_boite_au_lettre=		CreerMur(0.04,HAUTEUR_PLAFOND#,2,					4,HAUTEUR_PLAFOND#/2,3,								tex_porte_sortie1$,HAUTEUR_PLAFOND#,0)
 
 RotateEntity porte_est2_boite_au_lettre,0,0,180
 ;porte_distributeur=				CreerMur(3,HAUTEUR_PLAFOND#+2*H_stair#,0.01,		12.5,HAUTEUR_PLAFOND#/2+H_stair#,10,				tex_porte_parking$,1,0,	type_block)
@@ -415,9 +415,15 @@ porte_nord_uc=						CreerMur(1,2,0.2,									21.5,H_step#+1,6,								tex_porte
 
 mur_ouest_sur_porte_uc=				CreerMur(0.01,HAUTEUR_PLAFOND#-2,1,					41.21,HAUTEUR_PLAFOND#/2+2*H_step#+1,16.5,		tex_mur_usine$,3)
 mur_ouest_sous_porte_uc=			CreerMur(0.01,2*H_step#,1,							41.21,H_step#,16.5,								tex_mur_usine$,3)
+
+contour_porte_haut_uc=				CreerMur(0.01,1,0.2,								41.11,2+2*H_step#,16.5,							tex_contour_porte$,2,1)
+contour_porte_gauche_uc=			CreerMur(0.2,2,0.01,								41.11,1+2*H_step#,16.0,							tex_contour_porte$,2,1)
+contour_porte_droite_uc=			CreerMur(0.2,2,0.01,								41.11,1+2*H_step#,17.0,							tex_contour_porte$,2,1)
+
+
 mur_est1_uc=						CreerMur(0.01,HAUTEUR_PLAFOND#+2*H_step#,27,		55,HAUTEUR_PLAFOND#/2+H_step#,13.5,				tex_mur_usine$,3)
-mur_nord_ouest_uc=					CreerMur(7.09,HAUTEUR_PLAFOND#+2*H_step#,0.01,		38.51,HAUTEUR_PLAFOND#/2+H_step#,8.49,		tex_mur_usine$,3)
-mur_sud_ouest_uc=					CreerMur(7.09,HAUTEUR_PLAFOND#+2*H_step#,0.01,		38.51,HAUTEUR_PLAFOND#/2+H_step#,24.51,		tex_mur_usine$,3)
+mur_nord_ouest_uc=					CreerMur(7.28,HAUTEUR_PLAFOND#+2*H_step#,0.01,		38.75,HAUTEUR_PLAFOND#/2+H_step#,8.55,		tex_mur_usine$,3)
+mur_sud_ouest_uc=					CreerMur(7.39,HAUTEUR_PLAFOND#+2*H_step#,0.01,		38.61,HAUTEUR_PLAFOND#/2+H_step#,24.59,		tex_mur_usine$,3)
 
 tapis_roulant_base=					CreerMur(1,3,20,						48,0.5,15,					tex_tapis_roulant$,3,1,				type_sol(1,1))
 tapis_roulant_ext1=					CreerTuyau(0.99,3,						48,0.5,5,					tex_tapis_roulant$,3,0,	 "", 0.98,		type_sol(1,1))
@@ -486,6 +492,9 @@ rebord3_passerelle10_uc=			CreerMur(0.01,H_stair#*2,2,			43,H_stair#*7,25.5,				
 rebord3_passerelle11_uc=			CreerMur(0.01,H_stair#*2,2,			42,H_stair#*5,25.5,					tex_sol_passerelle$,1,4,		type_sol(1,1))
 rebord3_passerelle12_uc=			CreerMur(0.01,H_stair#*2,2,			41,H_stair#*3,25.5,					tex_sol_passerelle$,1,4,		type_sol(1,1))
 rebord3_passerelle13_uc=			CreerMur(0.01,H_stair#*2,2,			40,H_stair#,25.5,					tex_sol_passerelle$,1,4,		type_sol(1,1))
+
+
+RotateEntity contour_porte_haut_uc,0,90,90
 
 ;Partie Bureau Teddy
 sol_petit_escalier_uc=			CreerMur(H_step#,1.5,1,				21.75,H_step#/2-0.01,5.6,			tex_dale_couloir$,1,1,		type_sol(1,1))
