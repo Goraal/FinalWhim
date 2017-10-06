@@ -489,53 +489,72 @@ Function aff_loading(frame=3,msg$="",num_astuce=0)
 		If little_font<>0 Then SetFont little_font
 		Select num_astuce
 			Case 1
-				astuce$="Le saviez vous ? : Guy Williams faisait ses cascades lui-même mais ne savait pas jouer de la guitare !"
+				mult_mess$(1)="N'hésitez pas à passer la souris sur un terme que vous ne comprenez pas,#il y aura sûrement une explication qui s'affichera en bas de l'écran."
+				mult_mess$(2)="If you don't understand a term, try to move the mouse over it.#An explanation will likely appear at the bottom of the screen."
 			Case 2
-				astuce$="Si votre adversaire porte une lourde armure, essayez de viser ses points faibles. Vous ferez peut-être plus de dégâts."
+				;mult_mess$(1)="Méfiez vous des autres joueurs, ils m'ont dit des trucs pas bien sur vous ..."
+				mult_mess$(1)="Appuyez sur 1, 2 ou 3 (du haut) pour changer de personnage principal lorsque vous vous déplacez."
+				mult_mess$(2)="Hit 1, 2 or 3 (upper keyboard) to change your leading character."
 			Case 3
-				astuce$="N'oubliez pas qu'au premier tour, seules les armes à distance peuvent attaquer."
+				;mult_mess$(1)="Lorsque vous finirez le jeu, vous pourrez participer à la fête et il y aura du gâteau."
+				mult_mess$(1)="Appuyez sur F1, F2, F3, F4, F5, F6 ou F7 pour accéder directement au menu souhaité."
+				mult_mess$(2)="Press F1, F2, F3, F4, F5, F6 or F7 to go directly to the desired menu."
 			Case 4
-				astuce$="Donner des cookies au programmeur ne vous fera pas gagner de niveau. Mais j'en veux bien quand même."
+				mult_mess$(1)="Vous pouvez aussi utiliser C, E, F, K, J, M et H pour accéder à ces menus."
+				mult_mess$(2)="You can also use C, I, F, K, L, M and H to access those menus."
 			Case 5
-				astuce$="N'hésitez pas à inviter vos amis en Azeroth. Mais n'oubliez pas de --~ah, on me fait signe en régie que ce n'est pas le bon jeu~--"
+				mult_mess$(1)="Les armes à feu sont puissantes, mais vous ne pouvez les utiliser qu'un certain nombre de fois par combat."
+				mult_mess$(2)="Firearms are powerful, but can only be use a few number of times per battle."
 			Case 6
-				astuce$="Le saviez-vous ? : Quand il est tard (ou tôt, c'est selon), je craque et je programme des astuces pour les chargements~!"
+				mult_mess$(1)="N'hésitez pas à vous cacher derrière vos alliés. Ils méritent les coups qu'ils vont prendre à votre place après tout ce qu'ils m'ont dit sur vous."
+				mult_mess$(2)="Don't hesitate to hide behind your allies. They deserve the blows they're going to take for you after everything they've told me about you."
 			Case 7
-				astuce$="Si jamais vous remontez le temps, faîtes attention à ne pas tuer vos ancêtres. On est pas encore clair sur ce qui se passerait."
+				mult_mess$(1)="KO ? Allez voir l'Infirmière, le serment d'Hippocrates l'oblige à vous sauver gratuitement.#Par contre il faudra payer pour être complètement soigné."
+				mult_mess$(2)="KO? Go to the Nurse, the Hippocratic oath obliges her to save you for free. #On the other hand, you will have to pay to be completely healed."
 			Case 8
-				astuce$="Si un ordinateur ne connait pas les Lois Robotiques, ignorez toute promesse de gâteau."
+				mult_mess$(1)="Un grand merci à nos alpha et beta-testeurs~! Que la bave du dieu limace-ours vous bénisse sur 2,64 générations"
+				mult_mess$(2)="Many thanks to our alpha and beta-testers! May the drool of the Slug-Bear God bless you on 2,64 generations"
 			Case 9
-				astuce$="Proverbe : « Si il fait noir, c'est taquets fois deux »"
+				mult_mess$(1)="Le saviez vous ? : Guy Williams faisait ses cascades lui-même mais ne savait pas jouer de la guitare !"
+				mult_mess$(2)="Did you know? Guy Williams did his stunts himself, but didn't know how to play the guitar!"
 			Case 10
-				astuce$="« Je ne sais pas avec quelle armes sera faîte la Troisième Guerre Mondiale, mais elles vont déchirer grâve ! »#Albert Einstein quand il a bu."
+				mult_mess$(1)="Si votre adversaire porte une lourde armure, essayez de viser ses points faibles. Vous ferez peut-être plus de dégâts."
+				mult_mess$(2)="If your opponent is wearing a heavy armour, try to aim for its weak points. You may do more damages."
 			Case 11
-				astuce$="N'hésitez pas à passer la souris sur un terme que vous ne comprenez pas,#il y aura sûrement une explication qui s'affichera en bas de l'écran."
+				mult_mess$(1)="N'oubliez pas qu'au premier tour d'un combat, seules les armes à distance peuvent attaquer."
+				mult_mess$(2)="Don't forget that only ranged weapons can attack on the first round of a battle."
 			Case 12
-				;astuce$="Méfiez vous des autres joueurs, ils m'ont dit des trucs pas bien sur vous ..."
-				astuce$="Appuyez sur 1, 2 ou 3 (du haut) pour changer de personnage principal lorsque vous vous déplacez."
+				mult_mess$(1)="Donner des cookies au programmeur ne vous fera pas gagner de niveau. Mais j'en veux bien quand même."
+				mult_mess$(2)="Giving crips to the programmer will not get you a free level up. But I would still like some."
 			Case 13
-				;astuce$="Lorsque vous finirez le jeu, vous pourrez participer à la fête et il y aura du gâteau."
-				astuce$="Appuyez sur F1, F2, F3, F4, F5, F6 ou F7 pour accéder directement au menu souhaité."
+				mult_mess$(1)="Amenez vos amis en Azeroth, mais n’oubliez pas pour autant de --~ah, on me fait signe en régie que ce n'est pas le bon jeu~--"
+				mult_mess$(2)="Bring your friends to Azeroth, but don't forget to ---~wait, I'm being told it is not the right game~---"
 			Case 14
-				astuce$="Vous pouvez aussi utiliser C, E, F, K, J, M et H pour accéder à ces menus."
+				mult_mess$(1)="Le saviez-vous ? : Quand il est tard (ou tôt, c'est selon), je craque et j'écris des astuces pour les temps de chargements~!"
+				mult_mess$(2)="Did you know? When it's late (or so late it's early), I snap and write loading screen's tips!"
 			Case 15
-				astuce$="Les armes à feu sont puissantes, mais vous ne pouvez les utiliser qu'un certain nombre de fois par combat."
+				mult_mess$(1)="Si jamais vous remontez le temps, faites attention à ne pas tuer vos ancêtres. On est pas encore clair sur ce qui se passerait."
+				mult_mess$(2)="If you happen to go back in time, be careful not to kill your ancestors. We're not clear yet on the consequences."
 			Case 16
-				astuce$="N'hésitez pas à vous cacher derrière vos alliés. Ils méritent les coups qu'ils vont prendre à votre place après tout ce qu'ils m'ont dit sur vous."
+				mult_mess$(1)="Si un ordinateur ne connait pas les Lois Robotiques, ignorez toute promesse de gâteau."
+				mult_mess$(2)="If an IA doesn't know about Robotic Laws, ignore any promise of a cake."
 			Case 17
-				astuce$="KO ? Allez voir l'Infirmière, le serment d'Hippocrates l'oblige à vous sauver gratuitement.#Par contre il faudra payer pour être complètement soigné."
+				mult_mess$(1)="Proverbe : « Si il fait noir, c'est taquets fois deux »"
+				mult_mess$(2)="Tip of the day: Don't use a (french) private joke as a loading tip. It may prove to be way too hard to translate..."
 			Case 18
-				astuce$="Un grand merci à nos alpha et beta-testeurs~! Que la bave du dieu limace-ours vous bénisse sur 2,64 générations"
+				mult_mess$(1)="« Je ne sais pas avec quelles armes sera faite la Troisième Guerre Mondiale, mais elles vont déchirer grave ! »#Albert Einstein quand il a bu."
+				mult_mess$(2)="'' I don't know what weapons WW3 will be fought with, but they gonna rock hard! ''#Albert Einstein, when drunk."
 			Default
-				astuce$="Vous pouvez vous aussi nous proposer des astuces ou autres à mettre sur les écrans de chargement !"
+				mult_mess$(1)="Vous pouvez vous aussi nous proposer des astuces ou autres à mettre sur les écrans de chargement~!"
+				mult_mess$(2)="You can also offer us tips and tricks to put on the loading screens!"
 		End Select
 		
-		;Text screenwidth*0.5,screenheight*0.5+266,astuce$,1,1
+		;Text screenwidth*0.5,screenheight*0.5+266,mult_mess$(1),1,1
 		
 		For t=1 To 7
 			disc_ligne(t)=""
 		Next
-			mess$=astuce$
+		mess$=mult_mess$(Int(options#(7)))
 		t=0
 		k=0
 		amax=Len(mess$)	
@@ -874,8 +893,8 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 		
 		For av.avatar=Each avatar
 			If av\num=perso
-				perso_name$=av\name$
-				perso_description$=av\description$
+				perso_name$=av\name$[Int(options#(7))]
+				perso_description$=av\description$[Int(options#(7))]
 			EndIf
 		Next
 
@@ -886,7 +905,7 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 		Else
 			cible=1
 			For av.avatar=Each avatar
-				If av\classe$=classe_depart$
+				If av\classe$[Int(options#(7))]=classe_depart$
 					cible=-av\num-10
 				EndIf
 			Next
@@ -903,7 +922,8 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 				start_loop()
 				lire_clavier()
 				
-				aide_contextuelle$=""
+				aide_contextuelle$(1)=""
+				aide_contextuelle$(2)=""
 				
 				DrawImageRect gfx_cuir,0,0,0,0,800,600
 				DrawImageRect fond_book,25,220,0,0,750,355
@@ -920,7 +940,7 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						If MouseX()>a_pos*(t)-30 And MouseX()<a_pos*(t)+30
 							For av.avatar=Each avatar
 								If av\num=-10-t
-									aide_contextuelle$=av\classe$
+									aide_contextuelle$(Int(options#(7)))=av\classe$[Int(options#(7))]
 								EndIf
 							Next
 							If keys(1,2)=50
@@ -952,8 +972,12 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						Next
 						;drawcadre(37,7,726,136,1)
 						drawcadre(37,7,136,136,1)
-												
-						MiseEnFormeMessageDialogue(" Classe : "+av\classe$+"  —  "+av\description$,0,700)
+						Select Int(options#(7))
+							Case 1
+								MiseEnFormeMessageDialogue(" Classe : "+av\classe$[1]+"  -  "+av\description$[1],0,700)
+							Case 2
+								MiseEnFormeMessageDialogue(" Class: "+av\classe$[2]+"  -  "+av\description$[2],0,700)
+						End Select
 						For t=1 To 4
 							disc_ligne$(t)=Replace(disc_ligne$(t),"~"," ")
 							Text 50,(224+20*t),disc_ligne$(t)
@@ -963,12 +987,14 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						Text ai,354,"PV",0,1
 						rText(ai+80,354,av\pv[2],1)
 						If MouseX()>50 And MouseX()<150 And MouseY()>(345) And MouseY()<(367)
-							aide_contextuelle$="Points de Vie : Lorsque les points de vie arrivent à 0, le personnage est inconscient."
+							aide_contextuelle$(1)="Points de Vie : Lorsque les points de vie arrivent à 0, le personnage est inconscient."
+							aide_contextuelle$(2)=""
 						EndIf
 						Text ai,378,"Init",0,1
 						rText(ai+80,378,av\init,1)
 						If MouseX()>ai And MouseX()<ai+100 And MouseY()>(369) And MouseY()<(387)
-							aide_contextuelle$="Initiative : La vitesse de réaction et de reflexion du personnage."
+							aide_contextuelle$(1)="Initiative : La vitesse de réaction et de reflexion du personnage."
+							aide_contextuelle$(2)=""
 						EndIf
 						;carac (Att, Def, Dgts)
 						ai=250
@@ -978,13 +1004,17 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						Text ai,384,"Dgts"
 						If MouseX() > ai and MouseX() < ai+150
 							If MouseY() > 330 and MouseY() < 348
-								aide_contextuelle$="Les armes de corps à corps légères (couteau, épée, lance, ...)"
+								aide_contextuelle$(1)="Les armes de corps à corps légères (couteau, épée, lance, ...)"
+								aide_contextuelle$(2)=""
 							ElseIf MouseY() > 348 and MouseY() < 366
-								aide_contextuelle$="L'aptitude du personnage à attaquer avec les armes légères"
+								aide_contextuelle$(1)="L'aptitude du personnage à attaquer avec les armes légères"
+								aide_contextuelle$(2)=""
 							ElseIf MouseY() > 366 and MouseY() < 384
-								aide_contextuelle$="La défense du personnage contre les armes légères"
+								aide_contextuelle$(1)="La défense du personnage contre les armes légères"
+								aide_contextuelle$(2)=""
 							ElseIf MouseY() > 384 and MouseY() < 402
-								aide_contextuelle$="Le bonus aux dégâts du personnage avec les armes légères"
+								aide_contextuelle$(1)="Le bonus aux dégâts du personnage avec les armes légères"
+								aide_contextuelle$(2)=""
 							EndIf									
 						EndIf
 						rText(ai+StringWidth("Armes légères"),348,Str(av\att[1]))
@@ -998,13 +1028,17 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						Text ai,384,"Dgts"
 						If MouseX() > ai and MouseX() < ai+150
 							If MouseY() > 270 and MouseY() < 348
-								aide_contextuelle$="Les armes de corps à corps lourdes (hache, marteau, tronçonneuse, ...)"
+								aide_contextuelle$(1)="Les armes de corps à corps lourdes (hache, marteau, tronçonneuse, ...)"
+								aide_contextuelle$(2)=""
 							ElseIf MouseY() > 348 and MouseY() < 366
-								aide_contextuelle$="L'aptitude du personnage à attaquer avec les armes lourdes"
+								aide_contextuelle$(1)="L'aptitude du personnage à attaquer avec les armes lourdes"
+								aide_contextuelle$(2)=""
 							ElseIf MouseY() > 366 and MouseY() < 384
-								aide_contextuelle$="La défense du personnage contre les armes lourdes"
+								aide_contextuelle$(1)="La défense du personnage contre les armes lourdes"
+								aide_contextuelle$(2)=""
 							ElseIf MouseY() > 384 and MouseY() < 402
-								aide_contextuelle$="Le bonus aux dégâts du personnage avec les armes lourdes"
+								aide_contextuelle$(1)="Le bonus aux dégâts du personnage avec les armes lourdes"
+								aide_contextuelle$(2)=""
 							EndIf									
 						EndIf
 						rText(ai+StringWidth("Armes lourdes"),348,Str(av\att[2]))
@@ -1018,13 +1052,17 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						Text ai,384,"Dgts"
 						If MouseX() > ai and MouseX() < ai+150
 							If MouseY() > 330 and MouseY() < 348
-								aide_contextuelle$="Les armes à distance (pistolet, fusil, lance-piere, ...)"
+								aide_contextuelle$(1)="Les armes à distance (pistolet, fusil, lance-piere, ...)"
+								aide_contextuelle$(2)=""
 							ElseIf MouseY() > 348 and MouseY() < 366
-								aide_contextuelle$="L'aptitude du personnage à attaquer avec les armes à distance"
+								aide_contextuelle$(1)="L'aptitude du personnage à attaquer avec les armes à distance"
+								aide_contextuelle$(2)=""
 							ElseIf MouseY() > 366 and MouseY() < 384
-								aide_contextuelle$="La défense du personnage contre les armes à distance"
+								aide_contextuelle$(1)="La défense du personnage contre les armes à distance"
+								aide_contextuelle$(2)=""
 							ElseIf MouseY() > 384 and MouseY() < 402
-								aide_contextuelle$="Le bonus aux dégâts du personnage avec les armes à distance"
+								aide_contextuelle$(1)="Le bonus aux dégâts du personnage avec les armes à distance"
+								aide_contextuelle$(2)=""
 							EndIf									
 						EndIf
 						rText(ai+StringWidth("Armes à distance"),348,Str(av\att[3]))
@@ -1041,8 +1079,8 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 							If av\cmpt[t]<>0
 								For r.rules=Each rules
 									If r\num=av\cmpt[t]
-										Text ai,bi+20*t,r\name$
-										If MouseX()>ai And MouseX()<ci And MouseY()>bi+20*t And MouseY()<bi+20*(t+1) Then aide_contextuelle$=r\description$
+										Text ai,bi+20*t,r\name$[Int(options#(7))]
+										If MouseX()>ai And MouseX()<ci And MouseY()>bi+20*t And MouseY()<bi+20*(t+1) Then aide_contextuelle$(Int(options#(7)))=r\description$[Int(options#(7))]
 									EndIf
 								Next
 							EndIf
@@ -1054,9 +1092,10 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						;tactiques
 						ai=230
 						If MouseX()>ai And MouseX()<750 And MouseY()>410 And MouseY()<510
-							aide_contextuelle$="Conseils pour utiliser ce personnage. Il s'agit bien entendu uniquement de conseils et ne sauraient engager la responsabilité des créateurs."
+							aide_contextuelle$(1)="Conseils pour utiliser ce personnage. Il s'agit bien entendu uniquement de conseils et ne sauraient engager la responsabilité des créateurs."
+							aide_contextuelle$(2)=""
 						EndIf
-						MiseEnFormeMessageDialogue(" "+av\tactique$,0,750-ai)
+						MiseEnFormeMessageDialogue(" "+av\tactique$[Int(options#(7))],0,750-ai)
 						
 						For t=1 To 5
 							disc_ligne$(t)=Replace(disc_ligne$(t),"~"," ")
@@ -1066,7 +1105,8 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						;bouton de selection
 						Color 0,0,0
 						If MouseX()>250 And MouseX()<550 And MouseY()>520 And MouseY()<545
-							aide_contextuelle$="Hmmm... Non, je n'aurais pas pris celle là. Mais bon, tout le monde ne peut pas être un génie."
+							aide_contextuelle$(1)="Hmmm... Non, je n'aurais pas pris celle là. Mais bon, tout le monde ne peut pas être un génie."
+							aide_contextuelle$(2)=""
 							Color 180,0,0
 							If keys(1,2)=50
 								keys(1,2)=49
@@ -1074,9 +1114,11 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 									If av2\num=perso
 										av2\prop=1
 										av2\groupe=-1
-										name$=av2\name$
-										av2\classe$=av\classe$
-										av2\tactique$=av\tactique$
+										name$=av2\name$[Int(options#(7))]
+										For t=1 To NB_LANGUES
+											av2\classe$[t]=av\classe$[t]
+											av2\tactique$[t]=av\tactique$[t]
+										Next
 										For t=1 to 3
 											av2\att[t]=av\att[t]
 											av2\def[t]=av\def[t]
@@ -1097,7 +1139,9 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 							EndIf
 						EndIf
 						Rect 250,520,300,25,0
-						Text 400,532,"Choisir cette classe",1,1
+						mult_mess$(1)="Choisir cette classe"
+						mult_mess$(2)="Choose this class"
+						Text 400,532,mult_mess$(int(options#(7))),1,1
 						
 					EndIf
 				Next
@@ -1110,7 +1154,7 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 				
 				Color 255,255,255
 				SetFont little_font
-				Text 20,587,aide_contextuelle$,0,1
+				Text 20,587,aide_contextuelle$(Int(options#(7))),0,1
 				DrawImage curseur,MouseX(),MouseY()
 				
 				Flip
@@ -1131,7 +1175,9 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 				
 				drawgrey2(400-(110+5),150-30,2*(110+5),30+70)
 				
-				Text screenwidth*0.5,screenheight*0.25,"Nom du personnage : ",1,1
+				mult_mess$(1)="Nom du personnage : "
+				mult_mess$(2)="Character's name: "
+				Text screenwidth*0.5,screenheight*0.25,mult_mess$(Int(options#(7))),1,1
 				name$=input_text(name$)
 				If Len(name$)>limite_caractere
 					name$=Left(name$,limite_caractere)
@@ -1150,7 +1196,9 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 
 				;rect retour
 				drawgrey2(285,250,100,50)
-				Text 335,275,"Retour",1,1
+				mult_mess$(1)="Retour"
+				mult_mess$(2)="Cancel"
+				Text 335,275,mult_mess$(Int(options#(7))),1,1
 				If MouseX()>285 And MouseX()<385 And MouseY()>250 And MouseY()<300 And keys(1,2)=50 And name$<>""
 					action=1
 					tetra=0
@@ -1158,7 +1206,9 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 				
 				;rect confirmer
 				drawgrey2(415,250,100,50)
-				Text 465,275,"Confirmer",1,1
+				mult_mess$(1)="Confirmer"
+				mult_mess$(2)="Confirm"
+				Text 465,275,mult_mess$(Int(options#(7))),1,1
 				If MouseX()>415 And MouseX()<515 And MouseY()>250 And MouseY()<300 And keys(1,2)=50 And name$<>""
 					action=1
 					tetra=1
@@ -1179,9 +1229,11 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 					If av2\num=perso
 						av2\prop=1
 						av2\groupe=-1
-						name$=av2\name$
-						av2\classe$=av\classe$
-						av2\tactique$=av\tactique$
+						name$=av2\name$[Int(options#(7))]
+						For t=1 To NB_LANGUES
+							av2\classe$[1]=av\classe$[1]
+							av2\tactique$[1]=av\tactique$[1]
+						Next
 						For t=1 to 3
 							av2\att[t]=av\att[t]
 							av2\def[t]=av\def[t]
@@ -1205,14 +1257,15 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 	;affection le renommage et placement dans le groupe
 	For av.avatar=Each avatar
 		If av\num=perso
-			av\name$=name$
-			;DebugLog "N:"+name$+"//"+perso
+			av\name$[1]=name$
+			av\name$[2]=name$
+			DebugLog "N:"+name$+"//"+perso
 			Select perso
 				Case 1
 					ChangeAvancement("Avancement/NomMajor:"+name$)
-				Case 3
-					ChangeAvancement("Avancement/NomLeopold:"+name$)
 				Case 2
+					ChangeAvancement("Avancement/NomLeopold:"+name$)
+				Case 3
 					ChangeAvancement("Avancement/NomAdeline:"+name$)
 			End Select
 		EndIf
@@ -1249,8 +1302,11 @@ Function rechoisir_avatar()
 	While action=0
 		Cls
 		start_loop()
-		lire_clavier()	
-		aide_contextuelle$=""
+		lire_clavier()
+		for t=1 to NB_LANGUES
+			aide_contextuelle$(t)=""
+		next
+		
 		DrawImageRect gfx_cuir,0,0,0,0,800,600
 		
 		SetFont middle_font
@@ -1259,14 +1315,15 @@ Function rechoisir_avatar()
 		drawcadre(102,212,136,136,1)
 		For av.avatar=Each avatar
 			If av\num=1
-				nom$=av\name$
-				classe$=av\classe$
+				nom$=av\name$[Int(options#(7))]
+				classe$=av\classe$[Int(options#(7))]
 			EndIf
 		Next
 		Text 170,360,nom$,1,1
 		Text 170,380,classe$,1,1
-		If MouseX()>110 And MouseX()<230 And MouseY()>220 And MouseY()<340 
-			aide_contextuelle$="Modifier le nom et/ou la classe de "+nom$
+		If MouseX()>110 And MouseX()<230 And MouseY()>220 And MouseY()<340
+			aide_contextuelle$(1)="Modifier le nom et/ou la classe de "+nom$+"."
+			aide_contextuelle$(2)="Change "+nom$+"'s name of class."
 			If keys(1,2)=50
 				keys(1,2)=49
 				selection_avatar(1,4,0,classe$)
@@ -1278,14 +1335,15 @@ Function rechoisir_avatar()
 		drawcadre(332,212,136,136,1)
 		For av.avatar=Each avatar
 			If av\num=3
-				nom$=av\name$
-				classe$=av\classe$
+				nom$=av\name$[Int(options#(7))]
+				classe$=av\classe$[Int(options#(7))]
 			EndIf
 		Next
 		Text 400,360,nom$,1,1
 		Text 400,380,classe$,1,1
 		If MouseX()>340 And MouseX()<460 And MouseY()>220 And MouseY()<340
-			aide_contextuelle$="Modifier le nom et/ou la classe de "+nom$
+			aide_contextuelle$(1)="Modifier le nom et/ou la classe de "+nom$+"."
+			aide_contextuelle$(2)="Change "+nom$+"'s name of class."
 			If keys(1,2)=50
 				keys(1,2)=49
 				selection_avatar(3,7,0,classe$)
@@ -1297,14 +1355,15 @@ Function rechoisir_avatar()
 		drawcadre(562,212,136,136,1)
 		For av.avatar=Each avatar
 			If av\num=2
-				nom$=av\name$
-				classe$=av\classe$
+				nom$=av\name$[Int(options#(7))]
+				classe$=av\classe$[Int(options#(7))]
 			EndIf
 		Next
 		Text 630,360,nom$,1,1
 		Text 630,380,classe$,1,1
 		If MouseX()>570 And MouseX()<690 And MouseY()>220 And MouseY()<340
-			aide_contextuelle$="Modifier le nom et/ou la classe de "+nom$
+			aide_contextuelle$(1)="Modifier le nom et/ou la classe de "+nom$+"."
+			aide_contextuelle$(2)="Change "+nom$+"'s name of class."
 			If keys(1,2)=50
 				keys(1,2)=49
 				selection_avatar(2,1,0,classe$)
@@ -1317,21 +1376,26 @@ Function rechoisir_avatar()
 		SetFont big_font
 		Text 400,70,"Voici votre équipe !",1,1
 		SetFont middle_font
-		Text 400,120,"Cliquer sur le portrait d'un personnage pour changer sa classe",1,1
-		Text 400,140,"puis sur ''Confirmer'' pour valider votre choix et commencer l'aventure.",1,1
+		mult_mess$(1)="Cliquer sur le portrait d'un personnage pour changer sa classe"
+		mult_mess$(1)="Click on a character's portrait to change their class"
+		Text 400,120,mult_mess$(Int(options#(7))),1,1
+		mult_mess$(1)="ou sur ''Confirmer'' pour valider votre choix et commencer l'aventure."
+		mult_mess$(1)="or ''Confirm'' your choices and start your adventure"
+		Text 400,140,mult_mess$(Int(options#(7))),1,1
 		
 		;afficher confirmer
 		drawgrey2(300,465,200,50)
 		SetFont big_font
 		Text 400,490,"Confirmer",1,1
 		If MouseX()>300 And MouseX()<500 And MouseY()>465 And MouseY()<515
-			aide_contextuelle$="Confirmer la composition de votre équipe et partir à l'aventure !"
+			aide_contextuelle$(1)="Confirmer la composition de votre équipe et partir à l'aventure !"
+			aide_contextuelle$(2)="Confirm the composition of your team and start your adventure!"
 			If keys(1,2)=50 Then action=1
 		EndIf
 		
 		Color 255,255,255
 		SetFont little_font
-		Text 400,587,aide_contextuelle$,1,1
+		Text 400,587,aide_contextuelle$(Int(options#(7))),1,1
 		DrawImage curseur,MouseX(),MouseY()		
 		Flip
 	Wend
@@ -1802,7 +1866,7 @@ Function changer_leader(num_leader)
 		player_leader=num_leader
 		For av.avatar=Each avatar
 			If av\num=player_avatar(player_leader)
-				name$=av\name$
+				name$=av\name$[Int(options#(7))]
 			EndIf
 		Next	
 		new_log(name$+" est maintenant le leader du groupe.")
@@ -2501,14 +2565,24 @@ End Function
 ;affiche une fenetre de dialogue avec choix
 ;les variables utilisées sont dans les var_scripts
 
-Function fenetreyn(mess$="Tu m'aimes ?",yes$="Oui",no$="Non",af=400,bf=300,font=1)
+Function fenetreyn(mess$="Tu m'aimes ?",yes$="",no$="",af=400,bf=300,font=1)
 	retour=0
+	If yes$="" And no$=""
+		Select Int(options#(7))
+			Case 1
+				yes$="Oui"
+				no$="Non"
+			Case 2
+				yes$="Yes"
+				no$="No"
+		End Select
+	EndIf
 	cas_cam=-Abs(cas_cam)
 	If font=1 Then SetFont middle_font
 	lenght=max(Int(Len(mess$)*9+20),300)
 	drawgrey2(af-lenght*0.5-2,bf,lenght+3,103)
 	Color 200,200,200
-	Rect af-lenght*0.5,bf+2,lenght,100,0
+	;Rect af-lenght*0.5,bf+2,lenght,100,0
 	Text af,bf+15,mess$,1,1
 	a=af-lenght*0.25-Int(Len(yes$)*5.5+3)
 	b=Int(Len(yes$)*11)+6
@@ -3135,11 +3209,11 @@ Function AfficherPortrait(sNomPortrait$,nX,nY,hors_jeu=0)
 		For av.avatar=Each avatar
 			Select av\num
 				Case 1
-					sNomMajor$ =av\name$
+					sNomMajor$ =av\name$[Int(options#(7))]
 				Case 2
-					sNomLeopold$ =av\name$
+					sNomLeopold$ =av\name$[Int(options#(7))]
 				Case 3
-					sNomAdeline$ =av\name$
+					sNomAdeline$ =av\name$[Int(options#(7))]
 			End Select
 		Next
 	
@@ -3828,499 +3902,995 @@ Function aff_info_equipement(num_equi,endroit$="")
 	For t=1 To 8
 		rules_description$(t)=""
 	Next
-												
-	If num_equi>0
-		If num_equi<100
-			For arme.arme=Each arme
-				If arme\num=num_equi
-					name$=arme\name$
-					Select arme\cat
-						Case 1
-							cat$="Mains nues"
-						Case 2
-							cat$="Epée légère"
-						Case 3
-							cat$="Epée lourde"
-						Case 4
-							cat$="Lance légère"
-						Case 5
-							cat$="Lance lourde"
-						Case 6
-							cat$="Hache/Masse légère"
-						Case 7
-							cat$="Hache/Masse lourde"
-						Case 8
-							cat$="Pistolet"
-							cadence=arme\cadence
-						Case 9
-							cat$="Fusil/PM"
-							cadence=arme\cadence
-						Case 10
-							cat$="Shotgun (fusil âme lisse)"
-							cadence=arme\cadence
-						Default
-							cat$="Inconnue"
-					End Select
-					description$=arme\description$
-					effet$="Dégats ("+arme\degats$+")"
-					rules_description$(1)="Aide à faire des dégâts pendant les combats."
-					nb_rules=1
-					If cadence>1
-						effet$=effet$+",#Rafale ("+cadence+" tirs)"
-						rules_description$(2)="L'arme est assez rapide pour tirer plusieurs fois par tour."
-						nb_rules=2
-					EndIf
-					For k=1 To 6
-						If arme\rules[k]<>0
-							For rules.rules=Each rules
-								If rules\num=arme\rules[k]
-									effet$=effet$+",#"+rules\name$
-									If rules\num=101 Then effet$=effet$+" ("+arme\charge+")"
-									nb_rules=nb_rules+1
-									rules_description$(nb_rules)=rules\description$
-								EndIf
-							Next
-						EndIf
-					Next
-					;bonus/malus attaque
-					For t=1 To 3
-						If arme\att[t]<>0
-							Select t
-								Case 1
-									a_str$="légère":c_str$="légères"
-								Case 2
-									a_str$="lourde":c_str$="lourdes"
-								Case 3
-									a_str$="à distance"::c_str$="à distance"
-							End Select
-							effet$=effet$+",#Attaque "+a_str$+" "+signed_str$(arme\att[t])
-							nb_rules=nb_rules+1
-							If arme\att[t]>0
-								b_str$="Bonus"
-							Else
-								b_str$="Malus"
-							EndIf
-							rules_description$(nb_rules)=b_str$+" de "+signed_str$(arme\att[t])+" attaque "+a_str$+" avec cette arme."
-						EndIf
-					Next
-					;bonus/malus défense
-					For t=1 To 3
-						If arme\def[t]<>0
-							Select t
-								Case 1
-									a_str$="légère":c_str$="légères"
-								Case 2
-									a_str$="lourde":c_str$="lourdes"
-								Case 3
-									a_str$="à distance"::c_str$="à distance"
-							End Select
-							effet$=effet$+",#Défense "+a_str$+" "+signed_str$(arme\def[t])
-							nb_rules=nb_rules+1
-							If arme\def[t]>0
-								b_str$="Bonus"
-							Else
-								b_str$="Malus"
-							EndIf
-							rules_description$(nb_rules)=b_str$+" de "+signed_str$(arme\def[t])+" en défense contre les armes "+c_Str$+"."
-						EndIf
-					Next
-					;bonus/malus dégâts
-					For t=1 To 3
-						If arme\deg[t]<>0
-							Select t
-								Case 1
-									a_str$="légers":c_str$="légère"
-								Case 2
-									a_str$="lourds":c_str$="lourde"
-								Case 3
-									a_str$="à distance"::c_str$="à distance"
-							End Select
-							effet$=effet$+",#Dégâts "+a_str$+" "+signed_str$(arme\deg[t])
-							nb_rules=nb_rules+1
-							If arme\deg[t]>0
-								b_str$="Bonus"
-							Else
-								b_str$="Malus"
-							EndIf
-							rules_description$(nb_rules)=b_str$+" de "+signed_str$(arme\deg[t])+" aux dégâts "+a_str$+" avec cette arme."
-						EndIf
-					Next
-					If arme\pv<>0
-						If arme\pv>0
-							b_str$="Bonus"
-						Else
-							b_str$="Malus"
-						EndIf
-						effet$=effet$+",#PV "+signed_str$(arme\pv)
-						nb_rules=nb_rules+1
-						rules_description$(nb_rules)=b_str$+" de "+signed_str$(arme\pv)+" aux Points de Vie du porteur."
-					EndIf
-					If arme\init<>0
-						If arme\init>0
-							b_str$="Bonus"
-						Else
-							b_str$="Malus"
-						EndIf
-						effet$=effet$+",#Initiative "+signed_str$(arme\init)
-						nb_rules=nb_rules+1
-						rules_description$(nb_rules)=b_str$+" de "+signed_str$(arme\init)+" en Initiative."
-					EndIf
-					icone=arme\icone[2]
-					stat_caps=arme\caps
-					stat_junk=arme\junk
-				EndIf
-			Next
-		ElseIf num_equi<150
-			For armure.armure=Each armure
-				If armure\num=num_equi
-					name$=armure\name$
-					cat$="Armure"
-					description$=armure\description$
-					effet$="Protection ("+Int(armure\val#[1])+" / "+Int(armure\val#[2])+" / "+Int(armure\val#[3])+")"
-					rules_description$(1)="Réduit les dégâts pendant les combats."
-					nb_rules=1
-					For k=1 To 3
-						If armure\rules[k]<>0
-							For rules.rules=Each rules
-								If rules\num=armure\rules[k]
-									effet$=effet$+",#"+rules\name$
-									nb_rules=nb_rules+1
-									rules_description$(nb_rules)=rules\description$
-								EndIf
-							Next
-						EndIf
-					Next
-					;bonus/malus attaque
-					For t=1 To 3
-						If armure\att[t]<>0
-							Select t
-								Case 1
-									a_str$="légère":c_str$="légères"
-								Case 2
-									a_str$="lourde":c_str$="lourdes"
-								Case 3
-									a_str$="à distance"::c_str$="à distance"
-							End Select
-							effet$=effet$+",#Attaque "+a_str$+" "+signed_str$(armure\att[t])
-							nb_rules=nb_rules+1
-							If armure\att[t]>0
-								b_str$="Bonus"
-							Else
-								b_str$="Malus"
-							EndIf
-							rules_description$(nb_rules)=b_str$+" de "+signed_str$(armure\att[t])+" attaque pour toutes les armes "+c_str$+"."
-						EndIf
-					Next
-					;bonus/malus défense
-					For t=1 To 3
-						If armure\def[t]<>0
-							Select t
-								Case 1
-									a_str$="légère":c_str$="légères"
-								Case 2
-									a_str$="lourde":c_str$="lourdes"
-								Case 3
-									a_str$="à distance"::c_str$="à distance"
-							End Select
-							effet$=effet$+",#Défense "+a_str$+" "+signed_str$(armure\def[t])
-							nb_rules=nb_rules+1
-							If armure\def[t]>0
-								b_str$="Bonus"
-							Else
-								b_str$="Malus"
-							EndIf
-							rules_description$(nb_rules)=b_str$+" de "+signed_str$(armure\def[t])+" en défense contre les armes "+c_Str$+"."
-						EndIf
-					Next
-					;bonus/malus dégâts
-					For t=1 To 3
-						If armure\deg[t]<>0
-							Select t
-								Case 1
-									a_str$="légers":c_str$="légère"
-								Case 2
-									a_str$="lourds":c_str$="lourde"
-								Case 3
-									a_str$="à distance"::c_str$="à distance"
-							End Select
-							effet$=effet$+",#Dégâts "+a_str$+" "+signed_str$(armure\deg[t])
-							nb_rules=nb_rules+1
-							If armure\deg[t]>0
-								b_str$="Bonus"
-							Else
-								b_str$="Malus"
-							EndIf
-							rules_description$(nb_rules)=b_str$+" de "+signed_str$(armure\deg[t])+" aux dégâts pour toutes les armes "+c_str$+"."
-						EndIf
-					Next
-					icone=armure\icone[2]
-					If armure\pv<>0
-						If armure\pv>0
-							b_str$="Bonus"
-						Else
-							b_str$="Malus"
-						EndIf
-						effet$=effet$+",#PV "+signed_str$(armure\pv)
-						nb_rules=nb_rules+1
-						rules_description$(nb_rules)=b_str$+" de "+signed_str$(armure\pv)+" aux Points de Vie du porteur."
-					EndIf
-					If armure\init<>0
-						If armure\init>0
-							b_str$="Bonus"
-						Else
-							b_str$="Malus"
-						EndIf
-						effet$=effet$+",#Initiative "+signed_str$(armure\init)
-						nb_rules=nb_rules+1
-						rules_description$(nb_rules)=b_str$+" de "+signed_str$(armure\init)+" en Initiative."
-					EndIf
-					stat_caps=armure\caps
-					stat_junk=armure\junk
-				EndIf
-			Next
-		ElseIf num_equi<200
-			For boiler.boiler=Each boiler
-				If boiler\num=num_equi
-					name$=boiler\name$
-					cat$="Chaudière"
-					description$=boiler\description$
-					effet$="Stockage de Vapeur ("+boiler\capacite+")"
-					rules_description$(1)="Permet d'avoir de la vapeur à disposition en combat."
-					nb_rules=1
-					For k=1 To 3
-						If boiler\rules[k]<>0
-							For rules.rules=Each rules
-								If rules\num=boiler\rules[k]
-									effet$=effet$+",#"+rules\name$
-									nb_rules=nb_rules+1
-									rules_description$(nb_rules)=rules\description$									
-								EndIf
-							Next
-						EndIf
-					Next
-					;bonus/malus attaque
-					For t=1 To 3
-						If boiler\att[t]<>0
-							Select t
-								Case 1
-									a_str$="légère":c_str$="légères"
-								Case 2
-									a_str$="lourde":c_str$="lourdes"
-								Case 3
-									a_str$="à distance"::c_str$="à distance"
-							End Select
-							effet$=effet$+",#Attaque "+a_str$+" "+signed_str$(boiler\att[t])
-							nb_rules=nb_rules+1
-							If boiler\att[t]>0
-								b_str$="Bonus"
-							Else
-								b_str$="Malus"
-							EndIf
-							rules_description$(nb_rules)=b_str$+" de "+signed_str$(boiler\att[t])+" attaque pour toutes les armes "+c_str$+"."
-						EndIf
-					Next
-					;bonus/malus défense
-					For t=1 To 3
-						If boiler\def[t]<>0
-							Select t
-								Case 1
-									a_str$="légère":c_str$="légères"
-								Case 2
-									a_str$="lourde":c_str$="lourdes"
-								Case 3
-									a_str$="à distance"::c_str$="à distance"
-							End Select
-							effet$=effet$+",#Défense "+a_str$+" "+signed_str$(boiler\def[t])
-							nb_rules=nb_rules+1
-							If boiler\def[t]>0
-								b_str$="Bonus"
-							Else
-								b_str$="Malus"
-							EndIf
-							rules_description$(nb_rules)=b_str$+" de "+signed_str$(boiler\def[t])+" en défense contre les armes "+c_Str$+"."
-						EndIf
-					Next
-					;bonus/malus dégâts
-					For t=1 To 3
-						If boiler\deg[t]<>0
-							Select t
-								Case 1
-									a_str$="légers":c_str$="légère"
-								Case 2
-									a_str$="lourds":c_str$="lourde"
-								Case 3
-									a_str$="à distance"::c_str$="à distance"
-							End Select
-							effet$=effet$+",#Dégâts "+a_str$+" "+signed_str$(boiler\deg[t])
-							nb_rules=nb_rules+1
-							If boiler\deg[t]>0
-								b_str$="Bonus"
-							Else
-								b_str$="Malus"
-							EndIf
-							rules_description$(nb_rules)=b_str$+" de "+signed_str$(boiler\deg[t])+" aux dégâts pour toutes les armes "+c_str$+"."
-						EndIf
-					Next
-					If boiler\pv<>0
-						If boiler\pv>0
-							b_str$="Bonus"
-						Else
-							b_str$="Malus"
-						EndIf
-						effet$=effet$+",#PV "+signed_str$(boiler\pv)
-						nb_rules=nb_rules+1
-						rules_description$(nb_rules)=b_str$+" de "+signed_str$(boiler\pv)+" aux Points de Vie du porteur."
-					EndIf
-					If boiler\init<>0
-						If boiler\init>0
-							b_str$="Bonus"
-						Else
-							b_str$="Malus"
-						EndIf
-						effet$=effet$+",#Initiative "+signed_str$(boiler\init)
-						nb_rules=nb_rules+1
-						rules_description$(nb_rules)=b_str$+" de "+signed_str$(boiler\init)+" en Initiative."
-					EndIf
-					icone=boiler\icone[2]
-					stat_caps=boiler\caps
-					stat_junk=boiler\junk
-				EndIf
-			Next
-		Else
-			For special.special=Each special
-				If special\num=num_equi
-					name$=special\name$
-					cat$="GearBot"
-					description$=special\description$
-					If num=201 Or num=202
-						modele$="Aegis"
-					EndIf
-					effet$="Robot allié autonome (modèle "+modele$+")"
-					rules_description$(1)="Permet d'appeler un robot allié sur le champ de bataille."
-					nb_rules=1
-					For k=1 To 3
-						If special\rules[k]<>0
-							For rules.rules=Each rules
-								If rules\num=special\rules[k]
-									effet$=effet$+",#"+rules\name$
-									nb_rules=nb_rules+1
-									rules_description$(nb_rules)=rules\description$
-								EndIf
-							Next
-						EndIf
-					Next
-					icone=special\icone[2]
-					stat_caps=special\caps
-					stat_junk=special\junk
-				EndIf
-			Next
-		EndIf
-	EndIf
 	
-	;afficher les infos collectées
-	Color 5,5,5
-	Rect 490,115,300,440,0
-	
-	If name$<>""
-		Rect 575-2,130-2,130+4,75+4,0
-		If icone<>0
-			DrawBlock icone,575,130
-		Else
-			DrawBlock non_icone2,575,130
-		EndIf
-		SetFont little_font
-		Text 500,225,"Nom : "+name$
-		Text 500,242,"Catégorie : "+cat$
-		If endroit$="Poubelle"
-			Text 500,259,"Valeur à la revente : "+Str(Int(Ceil(stat_caps/Float(COEFF_MARCHAND))))+" caps"
-			Text 500,276,"Recyclage : "+stat_junk+" junks"
-			decal=34
-		ElseIf endroit$="Acheter"
-			Text 500,259,"Prix : "+Str(stat_caps*COEFF_MARCHAND)+" caps"
-			decal=17
-		ElseIf endroit$="Vendre"
-			Text 500,259,"Valeur à la revente : "+Str(Int(Ceil(stat_caps/Float(COEFF_MARCHAND))))+" caps"
-			decal=17
-		Else
-			decal=0
-		EndIf
-		
-		For t=1 To 7
-			disc_ligne(t)=""
-		Next
-		mess$="Description : "+description$
-		t=0
-		k=0
-		amax=Len(mess$)	
-		max_ligne=Int(50)
-		For a_int=1 To amax
-			t=t+1
-			If Mid$(mess$,t,1)="#"
-				k=k+1
-				disc_ligne$(k)=Left$(mess$,t-1)
-				mess$=Right$(mess$,Len(mess$)-t)
-				t=0
-			EndIf
-			If t=max_ligne
-				t=lastspace(Left$(mess$,max_ligne),max_ligne)
-				k=k+1
-				If k>7
-					mess$=""
+	Select Int(options#(7))
+		Case 1										
+			If num_equi>0
+				If num_equi<100
+					For arme.arme=Each arme
+						If arme\num=num_equi
+							name$=arme\name$[Int(options#(7))]
+							Select arme\cat
+								Case 1
+									cat$="Mains nues"
+								Case 2
+									cat$="Epée légère"
+								Case 3
+									cat$="Epée lourde"
+								Case 4
+									cat$="Lance légère"
+								Case 5
+									cat$="Lance lourde"
+								Case 6
+									cat$="Hache/Masse légère"
+								Case 7
+									cat$="Hache/Masse lourde"
+								Case 8
+									cat$="Pistolet"
+									cadence=arme\cadence
+								Case 9
+									cat$="Fusil/PM"
+									cadence=arme\cadence
+								Case 10
+									cat$="Shotgun (fusil âme lisse)"
+									cadence=arme\cadence
+								Default
+									cat$="Inconnue"
+							End Select
+							description$=arme\description$[Int(options#(7))]
+							effet$="Dégats ("+arme\degats$+")"
+							rules_description$(1)="Aide à faire des dégâts pendant les combats."
+							nb_rules=1
+							If cadence>1
+								effet$=effet$+",#Rafale ("+cadence+" tirs)"
+								rules_description$(2)="L'arme est assez rapide pour tirer plusieurs fois par tour."
+								nb_rules=2
+							EndIf
+							For k=1 To 6
+								If arme\rules[k]<>0
+									For rules.rules=Each rules
+										If rules\num=arme\rules[k]
+											effet$=effet$+",#"+rules\name$[Int(options#(7))]
+											If rules\num=101 Then effet$=effet$+" ("+arme\charge+")"
+											nb_rules=nb_rules+1
+											rules_description$(nb_rules)=rules\description$[Int(options#(7))]
+										EndIf
+									Next
+								EndIf
+							Next
+							;bonus/malus attaque
+							For t=1 To 3
+								If arme\att[t]<>0
+									Select t
+										Case 1
+											a_str$="légère":c_str$="légères"
+										Case 2
+											a_str$="lourde":c_str$="lourdes"
+										Case 3
+											a_str$="à distance"::c_str$="à distance"
+									End Select
+									effet$=effet$+",#Attaque "+a_str$+" "+signed_str$(arme\att[t])
+									nb_rules=nb_rules+1
+									If arme\att[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Malus"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" de "+signed_str$(arme\att[t])+" attaque "+a_str$+" avec cette arme."
+								EndIf
+							Next
+							;bonus/malus défense
+							For t=1 To 3
+								If arme\def[t]<>0
+									Select t
+										Case 1
+											a_str$="légère":c_str$="légères"
+										Case 2
+											a_str$="lourde":c_str$="lourdes"
+										Case 3
+											a_str$="à distance"::c_str$="à distance"
+									End Select
+									effet$=effet$+",#Défense "+a_str$+" "+signed_str$(arme\def[t])
+									nb_rules=nb_rules+1
+									If arme\def[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Malus"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" de "+signed_str$(arme\def[t])+" en défense contre les armes "+c_Str$+"."
+								EndIf
+							Next
+							;bonus/malus dégâts
+							For t=1 To 3
+								If arme\deg[t]<>0
+									Select t
+										Case 1
+											a_str$="légers":c_str$="légère"
+										Case 2
+											a_str$="lourds":c_str$="lourde"
+										Case 3
+											a_str$="à distance"::c_str$="à distance"
+									End Select
+									effet$=effet$+",#Dégâts "+a_str$+" "+signed_str$(arme\deg[t])
+									nb_rules=nb_rules+1
+									If arme\deg[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Malus"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" de "+signed_str$(arme\deg[t])+" aux dégâts "+a_str$+" avec cette arme."
+								EndIf
+							Next
+							If arme\pv<>0
+								If arme\pv>0
+									b_str$="Bonus"
+								Else
+									b_str$="Malus"
+								EndIf
+								effet$=effet$+",#PV "+signed_str$(arme\pv)
+								nb_rules=nb_rules+1
+								rules_description$(nb_rules)=b_str$+" de "+signed_str$(arme\pv)+" aux Points de Vie du porteur."
+							EndIf
+							If arme\init<>0
+								If arme\init>0
+									b_str$="Bonus"
+								Else
+									b_str$="Malus"
+								EndIf
+								effet$=effet$+",#Initiative "+signed_str$(arme\init)
+								nb_rules=nb_rules+1
+								rules_description$(nb_rules)=b_str$+" de "+signed_str$(arme\init)+" en Initiative."
+							EndIf
+							icone=arme\icone[2]
+							stat_caps=arme\caps
+							stat_junk=arme\junk
+						EndIf
+					Next
+				ElseIf num_equi<150
+					For armure.armure=Each armure
+						If armure\num=num_equi
+							name$=armure\name$[Int(options#(7))]
+							cat$="Armure"
+							description$=armure\description$[Int(options#(7))]
+							effet$="Protection ("+Int(armure\val#[1])+" / "+Int(armure\val#[2])+" / "+Int(armure\val#[3])+")"
+							rules_description$(1)="Réduit les dégâts pendant les combats."
+							nb_rules=1
+							For k=1 To 3
+								If armure\rules[k]<>0
+									For rules.rules=Each rules
+										If rules\num=armure\rules[k]
+											effet$=effet$+",#"+rules\name$[Int(options#(7))]
+											nb_rules=nb_rules+1
+											rules_description$(nb_rules)=rules\description$[Int(options#(7))]
+										EndIf
+									Next
+								EndIf
+							Next
+							;bonus/malus attaque
+							For t=1 To 3
+								If armure\att[t]<>0
+									Select t
+										Case 1
+											a_str$="légère":c_str$="légères"
+										Case 2
+											a_str$="lourde":c_str$="lourdes"
+										Case 3
+											a_str$="à distance"::c_str$="à distance"
+									End Select
+									effet$=effet$+",#Attaque "+a_str$+" "+signed_str$(armure\att[t])
+									nb_rules=nb_rules+1
+									If armure\att[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Malus"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" de "+signed_str$(armure\att[t])+" attaque pour toutes les armes "+c_str$+"."
+								EndIf
+							Next
+							;bonus/malus défense
+							For t=1 To 3
+								If armure\def[t]<>0
+									Select t
+										Case 1
+											a_str$="légère":c_str$="légères"
+										Case 2
+											a_str$="lourde":c_str$="lourdes"
+										Case 3
+											a_str$="à distance"::c_str$="à distance"
+									End Select
+									effet$=effet$+",#Défense "+a_str$+" "+signed_str$(armure\def[t])
+									nb_rules=nb_rules+1
+									If armure\def[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Malus"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" de "+signed_str$(armure\def[t])+" en défense contre les armes "+c_Str$+"."
+								EndIf
+							Next
+							;bonus/malus dégâts
+							For t=1 To 3
+								If armure\deg[t]<>0
+									Select t
+										Case 1
+											a_str$="légers":c_str$="légère"
+										Case 2
+											a_str$="lourds":c_str$="lourde"
+										Case 3
+											a_str$="à distance"::c_str$="à distance"
+									End Select
+									effet$=effet$+",#Dégâts "+a_str$+" "+signed_str$(armure\deg[t])
+									nb_rules=nb_rules+1
+									If armure\deg[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Malus"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" de "+signed_str$(armure\deg[t])+" aux dégâts pour toutes les armes "+c_str$+"."
+								EndIf
+							Next
+							icone=armure\icone[2]
+							If armure\pv<>0
+								If armure\pv>0
+									b_str$="Bonus"
+								Else
+									b_str$="Malus"
+								EndIf
+								effet$=effet$+",#PV "+signed_str$(armure\pv)
+								nb_rules=nb_rules+1
+								rules_description$(nb_rules)=b_str$+" de "+signed_str$(armure\pv)+" aux Points de Vie du porteur."
+							EndIf
+							If armure\init<>0
+								If armure\init>0
+									b_str$="Bonus"
+								Else
+									b_str$="Malus"
+								EndIf
+								effet$=effet$+",#Initiative "+signed_str$(armure\init)
+								nb_rules=nb_rules+1
+								rules_description$(nb_rules)=b_str$+" de "+signed_str$(armure\init)+" en Initiative."
+							EndIf
+							stat_caps=armure\caps
+							stat_junk=armure\junk
+						EndIf
+					Next
+				ElseIf num_equi<200
+					For boiler.boiler=Each boiler
+						If boiler\num=num_equi
+							name$=boiler\name$[Int(options#(7))]
+							cat$="Chaudière"
+							description$=boiler\description$[Int(options#(7))]
+							effet$="Stockage de Vapeur ("+boiler\capacite+")"
+							rules_description$(1)="Permet d'avoir de la vapeur à disposition en combat."
+							nb_rules=1
+							For k=1 To 3
+								If boiler\rules[k]<>0
+									For rules.rules=Each rules
+										If rules\num=boiler\rules[k]
+											effet$=effet$+",#"+rules\name$[Int(options#(7))]
+											nb_rules=nb_rules+1
+											rules_description$(nb_rules)=rules\description$[Int(options#(7))]						
+										EndIf
+									Next
+								EndIf
+							Next
+							;bonus/malus attaque
+							For t=1 To 3
+								If boiler\att[t]<>0
+									Select t
+										Case 1
+											a_str$="légère":c_str$="légères"
+										Case 2
+											a_str$="lourde":c_str$="lourdes"
+										Case 3
+											a_str$="à distance"::c_str$="à distance"
+									End Select
+									effet$=effet$+",#Attaque "+a_str$+" "+signed_str$(boiler\att[t])
+									nb_rules=nb_rules+1
+									If boiler\att[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Malus"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" de "+signed_str$(boiler\att[t])+" attaque pour toutes les armes "+c_str$+"."
+								EndIf
+							Next
+							;bonus/malus défense
+							For t=1 To 3
+								If boiler\def[t]<>0
+									Select t
+										Case 1
+											a_str$="légère":c_str$="légères"
+										Case 2
+											a_str$="lourde":c_str$="lourdes"
+										Case 3
+											a_str$="à distance"::c_str$="à distance"
+									End Select
+									effet$=effet$+",#Défense "+a_str$+" "+signed_str$(boiler\def[t])
+									nb_rules=nb_rules+1
+									If boiler\def[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Malus"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" de "+signed_str$(boiler\def[t])+" en défense contre les armes "+c_Str$+"."
+								EndIf
+							Next
+							;bonus/malus dégâts
+							For t=1 To 3
+								If boiler\deg[t]<>0
+									Select t
+										Case 1
+											a_str$="légers":c_str$="légère"
+										Case 2
+											a_str$="lourds":c_str$="lourde"
+										Case 3
+											a_str$="à distance"::c_str$="à distance"
+									End Select
+									effet$=effet$+",#Dégâts "+a_str$+" "+signed_str$(boiler\deg[t])
+									nb_rules=nb_rules+1
+									If boiler\deg[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Malus"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" de "+signed_str$(boiler\deg[t])+" aux dégâts pour toutes les armes "+c_str$+"."
+								EndIf
+							Next
+							If boiler\pv<>0
+								If boiler\pv>0
+									b_str$="Bonus"
+								Else
+									b_str$="Malus"
+								EndIf
+								effet$=effet$+",#PV "+signed_str$(boiler\pv)
+								nb_rules=nb_rules+1
+								rules_description$(nb_rules)=b_str$+" de "+signed_str$(boiler\pv)+" aux Points de Vie du porteur."
+							EndIf
+							If boiler\init<>0
+								If boiler\init>0
+									b_str$="Bonus"
+								Else
+									b_str$="Malus"
+								EndIf
+								effet$=effet$+",#Initiative "+signed_str$(boiler\init)
+								nb_rules=nb_rules+1
+								rules_description$(nb_rules)=b_str$+" de "+signed_str$(boiler\init)+" en Initiative."
+							EndIf
+							icone=boiler\icone[2]
+							stat_caps=boiler\caps
+							stat_junk=boiler\junk
+						EndIf
+					Next
 				Else
-					disc_ligne$(k)=Left$(mess$,t-1)
-					mess$=Right$(mess$,Len(mess$)-t)
-					t=0
+					For special.special=Each special
+						If special\num=num_equi
+							name$=special\name$[Int(options#(7))]
+							cat$="GearBot"
+							description$=special\description$[Int(options#(7))]
+							If num=201 Or num=202
+								modele$="Aegis"
+							EndIf
+							effet$="Robot allié autonome (modèle "+modele$+")"
+							rules_description$(1)="Permet d'appeler un robot allié sur le champ de bataille."
+							nb_rules=1
+							For k=1 To 3
+								If special\rules[k]<>0
+									For rules.rules=Each rules
+										If rules\num=special\rules[k]
+											effet$=effet$+",#"+rules\name$[Int(options#(7))]
+											nb_rules=nb_rules+1
+											rules_description$(nb_rules)=rules\description$[Int(options#(7))]
+										EndIf
+									Next
+								EndIf
+							Next
+							icone=special\icone[2]
+							stat_caps=special\caps
+							stat_junk=special\junk
+						EndIf
+					Next
 				EndIf
 			EndIf
-		Next
-		If mess$<>""
-			k=k+1
-			disc_ligne$(k)=mess$
-		EndIf
-		For t=1 To 7
-			disc_ligne$(t)=Replace(disc_ligne$(t),"~"," ")
-			Text 500,(250+15*t+decal),disc_ligne$(t)
-		Next
-		
-		For t=1 To nb_rules
-			disc_ligne(t)=""
-		Next
-		mess$="Effets : "+effet$
-		t=0
-		k=0
-		amax=Len(mess$)	
-		max_ligne=Int(50)
-		For a_int=1 To amax
-			t=t+1
-			If Mid$(mess$,t,1)="#"
-				k=k+1
-				disc_ligne$(k)=Left$(mess$,t-1)
-				mess$=Right$(mess$,Len(mess$)-t)
-				t=0
-			EndIf
-			If t=max_ligne
-				t=lastspace(Left$(mess$,max_ligne),max_ligne)
-				k=k+1
-				If k>7
-					mess$=""
+			
+			;afficher les infos collectées
+			Color 5,5,5
+			Rect 490,115,300,440,0
+			
+			If name$<>""
+				Rect 575-2,130-2,130+4,75+4,0
+				If icone<>0
+					DrawBlock icone,575,130
 				Else
-					disc_ligne$(k)=Left$(mess$,t-1)
-					mess$=Right$(mess$,Len(mess$)-t)
-					t=0
+					DrawBlock non_icone2,575,130
+				EndIf
+				SetFont little_font
+				Text 500,225,"Nom : "+name$
+				Text 500,242,"Catégorie : "+cat$
+				If endroit$="Poubelle"
+					Text 500,259,"Valeur à la revente : "+Str(Int(Ceil(stat_caps/Float(COEFF_MARCHAND))))+" caps"
+					Text 500,276,"Recyclage : "+stat_junk+" junks"
+					decal=34
+				ElseIf endroit$="Acheter"
+					Text 500,259,"Prix : "+Str(stat_caps*COEFF_MARCHAND)+" caps"
+					decal=17
+				ElseIf endroit$="Vendre"
+					Text 500,259,"Valeur à la revente : "+Str(Int(Ceil(stat_caps/Float(COEFF_MARCHAND))))+" caps"
+					decal=17
+				Else
+					decal=0
+				EndIf
+				
+				For t=1 To 7
+					disc_ligne(t)=""
+				Next
+				mess$="Description : "+description$
+				t=0
+				k=0
+				amax=Len(mess$)	
+				max_ligne=Int(50)
+				For a_int=1 To amax
+					t=t+1
+					If Mid$(mess$,t,1)="#"
+						k=k+1
+						disc_ligne$(k)=Left$(mess$,t-1)
+						mess$=Right$(mess$,Len(mess$)-t)
+						t=0
+					EndIf
+					If t=max_ligne
+						t=lastspace(Left$(mess$,max_ligne),max_ligne)
+						k=k+1
+						If k>7
+							mess$=""
+						Else
+							disc_ligne$(k)=Left$(mess$,t-1)
+							mess$=Right$(mess$,Len(mess$)-t)
+							t=0
+						EndIf
+					EndIf
+				Next
+				If mess$<>""
+					k=k+1
+					disc_ligne$(k)=mess$
+				EndIf
+				For t=1 To 7
+					disc_ligne$(t)=Replace(disc_ligne$(t),"~"," ")
+					Text 500,(250+15*t+decal),disc_ligne$(t)
+				Next
+				
+				For t=1 To nb_rules
+					disc_ligne(t)=""
+				Next
+				mess$="Effets : "+effet$
+				t=0
+				k=0
+				amax=Len(mess$)	
+				max_ligne=Int(50)
+				For a_int=1 To amax
+					t=t+1
+					If Mid$(mess$,t,1)="#"
+						k=k+1
+						disc_ligne$(k)=Left$(mess$,t-1)
+						mess$=Right$(mess$,Len(mess$)-t)
+						t=0
+					EndIf
+					If t=max_ligne
+						t=lastspace(Left$(mess$,max_ligne),max_ligne)
+						k=k+1
+						If k>7
+							mess$=""
+						Else
+							disc_ligne$(k)=Left$(mess$,t-1)
+							mess$=Right$(mess$,Len(mess$)-t)
+							t=0
+						EndIf
+					EndIf
+				Next
+				If mess$<>""
+					k=k+1
+					disc_ligne$(k)=mess$
+				EndIf
+				pos_effets=351+decal
+				For t=1 To nb_rules
+					disc_ligne$(t)=Replace(disc_ligne$(t),"~"," ")
+					Text 500,(pos_effets+17*t),disc_ligne$(t)
+					If MouseX()>500 And MouseY()>pos_effets+17*t And MouseY()<pos_effets+17*(t+1) Then aide_contextuelle$(Int(options#(7)))=rules_description$(t)
+				Next
+			EndIf
+		Case 2
+			If num_equi>0
+				If num_equi<100
+					For arme.arme=Each arme
+						If arme\num=num_equi
+							name$=arme\name$[Int(options#(7))]
+							Select arme\cat
+								Case 1
+									cat$="Unarmed Strike"
+								Case 2
+									cat$="Light Sword"
+								Case 3
+									cat$="Heavy Sword"
+								Case 4
+									cat$="Light Spear"
+								Case 5
+									cat$="Heavy Spear"
+								Case 6
+									cat$="Light Axe"
+								Case 7
+									cat$="Heavy Axe"
+								Case 8
+									cat$="Handgun"
+									cadence=arme\cadence
+								Case 9
+									cat$="Battle rifle"
+									cadence=arme\cadence
+								Case 10
+									cat$="Shotgun"
+									cadence=arme\cadence
+								Default
+									cat$="Unknown"
+							End Select
+							description$=arme\description$[Int(options#(7))]
+							effet$="Damages ("+arme\degats$+")"
+							rules_description$(1)="Deals damages"
+							nb_rules=1
+							If cadence>1
+								effet$=effet$+",#Burst first ("+cadence+" tirs)"
+								rules_description$(2)="The weapon is fast enough to fire multiple times per turns."
+								nb_rules=2
+							EndIf
+							For k=1 To 6
+								If arme\rules[k]<>0
+									For rules.rules=Each rules
+										If rules\num=arme\rules[k]
+											effet$=effet$+",#"+rules\name$[Int(options#(7))]
+											If rules\num=101 Then effet$=effet$+" ("+arme\charge+")"
+											nb_rules=nb_rules+1
+											rules_description$(nb_rules)=rules\description$[Int(options#(7))]
+										EndIf
+									Next
+								EndIf
+							Next
+							;bonus/malus attaque
+							For t=1 To 3
+								If arme\att[t]<>0
+									Select t
+										Case 1
+											a_str$="light":c_str$="light"
+										Case 2
+											a_str$="heavy":c_str$="heavy"
+										Case 3
+											a_str$="ranged"::c_str$="ranged"
+									End Select
+									effet$=effet$+",#Attack "+a_str$+" "+signed_str$(arme\att[t])
+									nb_rules=nb_rules+1
+									If arme\att[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Penalty"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" of "+signed_str$(arme\att[t])+" in "+a_str$+" Attack Rating with this weapon."
+								EndIf
+							Next
+							;bonus/malus défense
+							For t=1 To 3
+								If arme\def[t]<>0
+									Select t
+										Case 1
+											a_str$="light":c_str$="light"
+										Case 2
+											a_str$="heavy":c_str$="heavy"
+										Case 3
+											a_str$="ranged"::c_str$="ranged"
+									End Select
+									effet$=effet$+",#Defense "+a_str$+" "+signed_str$(arme\def[t])
+									nb_rules=nb_rules+1
+									If arme\def[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Penalty"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" of "+signed_str$(arme\def[t])+" in Defense Rating against "+c_Str$+" weapons."
+								EndIf
+							Next
+							;bonus/malus dégâts
+							For t=1 To 3
+								If arme\deg[t]<>0
+									Select t
+										Case 1
+											a_str$="light":c_str$="light"
+										Case 2
+											a_str$="heavy":c_str$="heavy"
+										Case 3
+											a_str$="ranged"::c_str$="ranged"
+									End Select
+									effet$=effet$+",#Damages "+a_str$+" "+signed_str$(arme\deg[t])
+									nb_rules=nb_rules+1
+									If arme\deg[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Penalty"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" of "+signed_str$(arme\deg[t])+" to "+a_str$+" damages with this weapon."
+								EndIf
+							Next
+							If arme\pv<>0
+								If arme\pv>0
+									b_str$="Bonus"
+								Else
+									b_str$="Penalty"
+								EndIf
+								effet$=effet$+",#HP "+signed_str$(arme\pv)
+								nb_rules=nb_rules+1
+								rules_description$(nb_rules)=b_str$+" of "+signed_str$(arme\pv)+" to the maximum Hit Points of the user."
+							EndIf
+							If arme\init<>0
+								If arme\init>0
+									b_str$="Bonus"
+								Else
+									b_str$="Penalty"
+								EndIf
+								effet$=effet$+",#Initiative "+signed_str$(arme\init)
+								nb_rules=nb_rules+1
+								rules_description$(nb_rules)=b_str$+" of "+signed_str$(arme\init)+" to Initiative."
+							EndIf
+							icone=arme\icone[2]
+							stat_caps=arme\caps
+							stat_junk=arme\junk
+						EndIf
+					Next
+				ElseIf num_equi<150
+					For armure.armure=Each armure
+						If armure\num=num_equi
+							name$=armure\name$[Int(options#(7))]
+							cat$="Armour"
+							description$=armure\description$[Int(options#(7))]
+							effet$="Protection ("+Int(armure\val#[1])+" / "+Int(armure\val#[2])+" / "+Int(armure\val#[3])+")"
+							rules_description$(1)="Reduces damage during combat."
+							nb_rules=1
+							For k=1 To 3
+								If armure\rules[k]<>0
+									For rules.rules=Each rules
+										If rules\num=armure\rules[k]
+											effet$=effet$+",#"+rules\name$[Int(options#(7))]
+											nb_rules=nb_rules+1
+											rules_description$(nb_rules)=rules\description$[Int(options#(7))]
+										EndIf
+									Next
+								EndIf
+							Next
+							;bonus/malus attaque
+							For t=1 To 3
+								If armure\att[t]<>0
+									Select t
+										Case 1
+											a_str$="light":c_str$="light"
+										Case 2
+											a_str$="heavy":c_str$="heavy"
+										Case 3
+											a_str$="ranged"::c_str$="ranged"
+									End Select
+									effet$=effet$+",#Attaque "+a_str$+" "+signed_str$(armure\att[t])
+									nb_rules=nb_rules+1
+									If armure\att[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Penalty"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" of "+signed_str$(armure\att[t])+" to Attack Rating for all "+c_str$+" weapons."
+								EndIf
+							Next
+							;bonus/malus défense
+							For t=1 To 3
+								If armure\def[t]<>0
+									Select t
+										Case 1
+											a_str$="light":c_str$="light"
+										Case 2
+											a_str$="heavy":c_str$="heavy"
+										Case 3
+											a_str$="ranged"::c_str$="ranged"
+									End Select
+									effet$=effet$+",#Défense "+a_str$+" "+signed_str$(armure\def[t])
+									nb_rules=nb_rules+1
+									If armure\def[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Penalty"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" of "+signed_str$(armure\def[t])+" to Defense Rating against all "+c_Str$+" weapons."
+								EndIf
+							Next
+							;bonus/malus dégâts
+							For t=1 To 3
+								If armure\deg[t]<>0
+									Select t
+										Case 1
+											a_str$="light":c_str$="light"
+										Case 2
+											a_str$="heavy":c_str$="heavy"
+										Case 3
+											a_str$="ranged"::c_str$="ranged"
+									End Select
+									effet$=effet$+",#Dégâts "+a_str$+" "+signed_str$(armure\deg[t])
+									nb_rules=nb_rules+1
+									If armure\deg[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Penalty"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" of "+signed_str$(armure\deg[t])+" to damages dealt by the user with all "+c_str$+" weapons."
+								EndIf
+							Next
+							icone=armure\icone[2]
+							If armure\pv<>0
+								If armure\pv>0
+									b_str$="Bonus"
+								Else
+									b_str$="Penalty"
+								EndIf
+								effet$=effet$+",#HP "+signed_str$(armure\pv)
+								nb_rules=nb_rules+1
+								rules_description$(nb_rules)=b_str$+" of "+signed_str$(armure\pv)+" to the maximum Hit Points of the user."
+							EndIf
+							If armure\init<>0
+								If armure\init>0
+									b_str$="Bonus"
+								Else
+									b_str$="Penalty"
+								EndIf
+								effet$=effet$+",#Initiative "+signed_str$(armure\init)
+								nb_rules=nb_rules+1
+								rules_description$(nb_rules)=b_str$+" of "+signed_str$(armure\init)+" to Initiative."
+							EndIf
+							stat_caps=armure\caps
+							stat_junk=armure\junk
+						EndIf
+					Next
+				ElseIf num_equi<200
+					For boiler.boiler=Each boiler
+						If boiler\num=num_equi
+							name$=boiler\name$[Int(options#(7))]
+							cat$="Boiler"
+							description$=boiler\description$[Int(options#(7))]
+							effet$="Steam pressure ("+boiler\capacite+")"
+							rules_description$(2)="Produce steam, to use steam-powered equipment in battle."
+							nb_rules=1
+							For k=1 To 3
+								If boiler\rules[k]<>0
+									For rules.rules=Each rules
+										If rules\num=boiler\rules[k]
+											effet$=effet$+",#"+rules\name$[Int(options#(7))]
+											nb_rules=nb_rules+1
+											rules_description$(nb_rules)=rules\description$[Int(options#(7))]						
+										EndIf
+									Next
+								EndIf
+							Next
+							;bonus/malus attaque
+							For t=1 To 3
+								If boiler\att[t]<>0
+									Select t
+										Case 1
+											a_str$="light":c_str$="light"
+										Case 2
+											a_str$="heavy":c_str$="heavy"
+										Case 3
+											a_str$="ranged"::c_str$="ranged"
+									End Select
+									effet$=effet$+",#Attaque "+a_str$+" "+signed_str$(boiler\att[t])
+									nb_rules=nb_rules+1
+									If boiler\att[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Penalty"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" of "+signed_str$(boiler\att[t])+" to Attack Rating for all "+c_str$+" weapons."
+								EndIf
+							Next
+							;bonus/malus défense
+							For t=1 To 3
+								If boiler\def[t]<>0
+									Select t
+										Case 1
+											a_str$="light":c_str$="light"
+										Case 2
+											a_str$="heavy":c_str$="heavy"
+										Case 3
+											a_str$="ranged"::c_str$="ranged"
+									End Select
+									effet$=effet$+",#Défense "+a_str$+" "+signed_str$(boiler\def[t])
+									nb_rules=nb_rules+1
+									If boiler\def[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Penalty"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" of "+signed_str$(boiler\def[t])+" to Defense Rating against all "+c_Str$+" weapons."
+								EndIf
+							Next
+							;bonus/malus dégâts
+							For t=1 To 3
+								If boiler\deg[t]<>0
+									Select t
+										Case 1
+											a_str$="light":c_str$="light"
+										Case 2
+											a_str$="heavy":c_str$="heavy"
+										Case 3
+											a_str$="ranged"::c_str$="ranged"
+									End Select
+									effet$=effet$+",#Dégâts "+a_str$+" "+signed_str$(boiler\deg[t])
+									nb_rules=nb_rules+1
+									If boiler\deg[t]>0
+										b_str$="Bonus"
+									Else
+										b_str$="Penalty"
+									EndIf
+									rules_description$(nb_rules)=b_str$+" of "+signed_str$(boiler\deg[t])+" to damages dealt by the user with all "+c_str$+" weapons."
+								EndIf
+							Next
+							If boiler\pv<>0
+								If boiler\pv>0
+									b_str$="Bonus"
+								Else
+									b_str$="Penalty"
+								EndIf
+								effet$=effet$+",#HP "+signed_str$(boiler\pv)
+								nb_rules=nb_rules+1
+								rules_description$(nb_rules)=b_str$+" of "+signed_str$(boiler\pv)+" to the maximum Hit Points of the user."
+							EndIf
+							If boiler\init<>0
+								If boiler\init>0
+									b_str$="Bonus"
+								Else
+									b_str$="Penalty"
+								EndIf
+								effet$=effet$+",#Initiative "+signed_str$(boiler\init)
+								nb_rules=nb_rules+1
+								rules_description$(nb_rules)=b_str$+" of "+signed_str$(boiler\init)+" to Initiative."
+							EndIf
+							icone=boiler\icone[2]
+							stat_caps=boiler\caps
+							stat_junk=boiler\junk
+						EndIf
+					Next
+				Else
+					For special.special=Each special
+						If special\num=num_equi
+							name$=special\name$[Int(options#(7))]
+							cat$="GearBot"
+							description$=special\description$[Int(options#(7))]
+							If num=201 Or num=202
+								modele$="Aegis"
+							EndIf
+							effet$="Allied Autonomous Robot (model "+modele$+")"
+							rules_description$(2)="The user can call a friendly robot to the battlefield."
+							nb_rules=1
+							For k=1 To 3
+								If special\rules[k]<>0
+									For rules.rules=Each rules
+										If rules\num=special\rules[k]
+											effet$=effet$+",#"+rules\name$[Int(options#(7))]
+											nb_rules=nb_rules+1
+											rules_description$(nb_rules)=rules\description$[Int(options#(7))]
+										EndIf
+									Next
+								EndIf
+							Next
+							icone=special\icone[2]
+							stat_caps=special\caps
+							stat_junk=special\junk
+						EndIf
+					Next
 				EndIf
 			EndIf
-		Next
-		If mess$<>""
-			k=k+1
-			disc_ligne$(k)=mess$
-		EndIf
-		pos_effets=351+decal
-		For t=1 To nb_rules
-			disc_ligne$(t)=Replace(disc_ligne$(t),"~"," ")
-			Text 500,(pos_effets+17*t),disc_ligne$(t)
-			If MouseX()>500 And MouseY()>pos_effets+17*t And MouseY()<pos_effets+17*(t+1) Then aide_contextuelle$=rules_description$(t)
-		Next
-	EndIf
+			
+			;afficher les infos collectées
+			Color 5,5,5
+			Rect 490,115,300,440,0
+			
+			If name$<>""
+				Rect 575-2,130-2,130+4,75+4,0
+				If icone<>0
+					DrawBlock icone,575,130
+				Else
+					DrawBlock non_icone2,575,130
+				EndIf
+				SetFont little_font
+				Text 500,225,"Name: "+name$
+				Text 500,242,"Class: "+cat$
+				If endroit$="Poubelle"
+					Text 500,259,"Resell value: "+Str(Int(Ceil(stat_caps/Float(COEFF_MARCHAND))))+" caps"
+					Text 500,276,"Recycling value: "+stat_junk+" junks"
+					decal=34
+				ElseIf endroit$="Acheter"
+					Text 500,259,"Price: "+Str(stat_caps*COEFF_MARCHAND)+" caps"
+					decal=17
+				ElseIf endroit$="Vendre"
+					Text 500,259,"Resell value: "+Str(Int(Ceil(stat_caps/Float(COEFF_MARCHAND))))+" caps"
+					decal=17
+				Else
+					decal=0
+				EndIf
+				
+				For t=1 To 7
+					disc_ligne(t)=""
+				Next
+				mess$="Description: "+description$
+				t=0
+				k=0
+				amax=Len(mess$)	
+				max_ligne=Int(50)
+				For a_int=1 To amax
+					t=t+1
+					If Mid$(mess$,t,1)="#"
+						k=k+1
+						disc_ligne$(k)=Left$(mess$,t-1)
+						mess$=Right$(mess$,Len(mess$)-t)
+						t=0
+					EndIf
+					If t=max_ligne
+						t=lastspace(Left$(mess$,max_ligne),max_ligne)
+						k=k+1
+						If k>7
+							mess$=""
+						Else
+							disc_ligne$(k)=Left$(mess$,t-1)
+							mess$=Right$(mess$,Len(mess$)-t)
+							t=0
+						EndIf
+					EndIf
+				Next
+				If mess$<>""
+					k=k+1
+					disc_ligne$(k)=mess$
+				EndIf
+				For t=1 To 7
+					disc_ligne$(t)=Replace(disc_ligne$(t),"~"," ")
+					Text 500,(250+15*t+decal),disc_ligne$(t)
+				Next
+				
+				For t=1 To nb_rules
+					disc_ligne(t)=""
+				Next
+				mess$="Effects: "+effet$
+				t=0
+				k=0
+				amax=Len(mess$)	
+				max_ligne=Int(50)
+				For a_int=1 To amax
+					t=t+1
+					If Mid$(mess$,t,1)="#"
+						k=k+1
+						disc_ligne$(k)=Left$(mess$,t-1)
+						mess$=Right$(mess$,Len(mess$)-t)
+						t=0
+					EndIf
+					If t=max_ligne
+						t=lastspace(Left$(mess$,max_ligne),max_ligne)
+						k=k+1
+						If k>7
+							mess$=""
+						Else
+							disc_ligne$(k)=Left$(mess$,t-1)
+							mess$=Right$(mess$,Len(mess$)-t)
+							t=0
+						EndIf
+					EndIf
+				Next
+				If mess$<>""
+					k=k+1
+					disc_ligne$(k)=mess$
+				EndIf
+				pos_effets=351+decal
+				For t=1 To nb_rules
+					disc_ligne$(t)=Replace(disc_ligne$(t),"~"," ")
+					Text 500,(pos_effets+17*t),disc_ligne$(t)
+					If MouseX()>500 And MouseY()>pos_effets+17*t And MouseY()<pos_effets+17*(t+1) Then aide_contextuelle$(2)=rules_description$(t)
+				Next
+			EndIf
+	End Select
 End Function
 
 ; Ecrit le texte tapé à la suite de du string mess$.
@@ -4965,12 +5535,15 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 				RuntimeError "Case 17 ! Ne devrait pas arriver"
 
 			Case 18 ; chgt de titre
-				If traduction("isss",msg_data$,msg_type)=1
+				If traduction("issssss",msg_data$,msg_type)=1
 					For av.avatar=Each avatar
 						If av\num=var_analyse_int(1)
-							av\name$=var_analyse_str$(1)
-							av\classe$=var_analyse_str$(2)
-							av\description$=Replace(var_analyse_str$(3),"$$","#")
+							av\name$[1]=var_analyse_str$(1)
+							av\classe$[1]=var_analyse_str$(2)
+							av\description$[1]=var_analyse_str$(3)
+							av\name$[2]=var_analyse_str$(4)
+							av\classe$[2]=var_analyse_str$(5)
+							av\description$[2]=Replace(var_analyse_str$(6),"$$","#")
 						EndIf
 					Next			
 				EndIf
@@ -5228,7 +5801,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 										
 										Case 0 ; rien
 											av\animation=1
-											mess$=av\name$+" est complètement perdu et passe son tour."
+											mess$=av\name$[1]+" est complètement perdu et passe son tour."
 											;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 											mess$="180#180#0#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -5348,7 +5921,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 														nb_attaque=1
 														dgts#=0
 														animation=0
-														mess$=av\name$+" attaque "+av_t\name$
+														mess$=av\name$[1]+" attaque "+av_t\name$[1]
 														If capac_att=1 Then nb_attaque=2
 														crit_happened=0
 														While nb_attaque>0
@@ -5413,7 +5986,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 														;maj_avatar(av\num,3)
 														;maj_avatar(av_t\num,3)
 														If Not(av_t\pv[1]>0)
-															mess$=av_t\name$+" ("+av_t\num+") est battu."
+															mess$=av_t\name$[1]+" ("+av_t\num+") est battu."
 															;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 															mess$="255#255#255#"+combat\num+"#"+mess$
 															analyse(96,mess$,master_id)
@@ -5526,7 +6099,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 														nb_attaque=1
 														dgts#=0
 														animation=0
-														mess$=av\name$+" attaque "+av_t\name$
+														mess$=av\name$[1]+" attaque "+av_t\name$[1]
 														If capac_att=1 Then nb_attaque=2
 														crit_happened=0
 														While nb_attaque>0
@@ -5591,7 +6164,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 														;maj_avatar(av\num,3)
 														;maj_avatar(av_t\num,3)
 														If Not(av_t\pv[1]>0)
-															mess$=av_t\name$+" ("+av_t\num+") est battu."
+															mess$=av_t\name$[1]+" ("+av_t\num+") est battu."
 															;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 															mess$="255#255#255#"+combat\num+"#"+mess$
 															analyse(96,mess$,master_id)
@@ -5715,7 +6288,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 										Case 21 ; défensive
 											av\defense=max(MIN_BONUS_DEFENSE,min(MAX_BONUS_DEF,av\defense+BONUS_DEFENDRE))
 											av\animation=3										
-											mess$=av\name$+" se met sur la défensive."
+											mess$=av\name$[1]+" se met sur la défensive."
 											;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -5726,7 +6299,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 
 										Case 31 ; attendre
 											av\animation=1
-											mess$=av\name$+" décide d'attendre le bon moment pour agir."
+											mess$=av\name$[1]+" décide d'attendre le bon moment pour agir."
 											;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -5745,7 +6318,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 										
 										Case 311 ; revenir
 											av\animation=1
-											mess$=av\name$+" se prépare à agir !"
+											mess$=av\name$[1]+" se prépare à agir !"
 											;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -5775,7 +6348,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 
 										Case 32 ; passer son tour
 											av\animation=1
-											mess$=av\name$+" décide de passer son tour."
+											mess$=av\name$[1]+" décide de passer son tour."
 											;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -5795,7 +6368,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 													action_target(1)=gr\formation[new_place] ; gars sur la nouvelle place
 													gr\formation[old_place]=gr\formation[new_place]
 													gr\formation[new_place]=av\num
-													mess$=av\name$+" change de place !"
+													mess$=av\name$[1]+" change de place !"
 													;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 													mess$="255#255#255#"+combat\num+"#"+mess$
 													analyse(96,mess$,master_id)
@@ -5858,7 +6431,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 											
 											new_chgt_equi(img_chgt,ai,bi,dir)
 											
-											mess$=av\name$+" change d'arme !"
+											mess$=av\name$[1]+" change d'arme !"
 											;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -5868,7 +6441,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 											;charger l'image du combattant
 											For av_bot.avatar = Each avatar ;récupérer la catégorie d'image du gearbot (et en profiter pour récupérer son nom, changer l'animation et le groupe)
 												If av_bot\num=num_bot
-													name_bot$=av_bot\name$
+													name_bot$=av_bot\name$[Int(options#(7))]
 													cat_bot=av_bot\cat
 													av_bot\groupe=av\groupe
 													av_bot\animation=0
@@ -5905,7 +6478,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 												EndIf
 											Next
 											;retour
-											mess$=av\name$+" déploie son gearbot "+name_bot$+" !"
+											mess$=av\name$[1]+" déploie son gearbot "+name_bot$+" !"
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
 											combat\anim_time=2000
@@ -5915,7 +6488,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 													
 										Case 52 ; ranger le GearBot
 											num_bot=(av\equi[6]-180)*-1
-											mess$=av\name$+" range son gearbot "+name_bot$+" !"
+											mess$=av\name$[1]+" range son gearbot "+name_bot$+" !"
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
 											combat\anim_time=2000
@@ -5928,7 +6501,7 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 											
 										Default
 											av\animation=1
-											mess$=av\name$+" tente de faire quelque chose mais on ne comprend pas quoi. ("+current_action+")" 
+											mess$=av\name$[1]+" tente de faire quelque chose mais on ne comprend pas quoi. ("+current_action+")" 
 											;new_log("(cmb "+combat_num+")"+mess$,180,0,0)
 											mess$="180#0#0#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -6421,8 +6994,8 @@ Function var_pl_av_str$(num,var$,new_var=False,value$="none")
 				If av\num=player\avatar
 					Select var$
 						Case "name"
-							If new_var=True Then av\name$=value$
-							Return av\name$						
+							If new_var=True Then av\name$[Int(options#(7))]=value$
+							Return av\name$[Int(options#(7))]				
 						Default
 							RuntimeError "'"+var$+"' n'est une valeur définie pour var_pl_av_str$"
 					End Select
@@ -6452,11 +7025,18 @@ Function start_loop(endroit$="")
 		Case "Head_Menu"
 			If KeyHit(01)
 				reponse=0
+				;If mode_debug=1 Then reponse=1
 				While reponse=0
 					start_loop("sans pause")
 					lire_clavier()
 					disc_len#=10000
-					reponse=fenetreyn("Quitter ?")
+					Select Int(options#(7))
+						Case 1
+							quitter$="Quitter le jeu ?"
+						Case 2
+							quitter$="Quit the game and return to Windows?"
+					End Select
+					reponse=fenetreyn(quitter$)
 					DrawImage curseur,MouseX(),MouseY()
 					Flip
 					compensation_lag()
@@ -6628,44 +7208,68 @@ Function update_boutons_menu()
 			Case 2
 				Select options_buffer#(1)
 					Case 1
-						bo\nom$ = " Difficulté : Facile "
-						bo\desc$="Can I play, Daddy?"
+						bo\nom$[1] = " Difficulté : Facile "
+						bo\desc$[1]="Can I play, Daddy?"
+						bo\nom$[2] = " Easy Mode "
+						bo\desc$[2]="For those who want the story first."
 					Case 2
-						bo\nom$ = " Difficulté : Normale "
-						bo\desc$="Bring'em on!"
+						bo\nom$[1] = " Difficulté : Normale "
+						bo\desc$[1]="Bring'em on!"
+						bo\nom$[2] = " Normal Mode "
+						bo\desc$[2]="For those who want a reasonnable challenge."
 					Case 3
-						bo\nom$ = " Difficulté : Difficile "
-						bo\desc$="I am Death incarnate!"
+						bo\nom$[1] = " Difficulté : Difficile "
+						bo\desc$[1]="I am Death incarnate!"
+						bo\nom$[2] = " Hard Mode "
+						bo\desc$[2]="For those who want the opportunity to rage quit due to RNG shenanigans."
 				End Select
 			Case 3
 				If options_buffer#(2)=1
-					bo\nom$ = " Fréquence : 30 fps "
+					bo\nom$[1] = " Fréquence : 30 ips "
+					bo\nom$[2] = " Framerate : 30 fps "
 				Else
-					bo\nom$ = " Fréquence : 50 fps "
+					bo\nom$[1] = " Fréquence : 50 ips "
+					bo\nom$[2] = " Framerate : 30 fps "
 				EndIf
-				bo\desc$= "Le nombre d'images par seconde. Le jeu compense le lag donc l'influence n'est qu'esthétique."
+				bo\desc$[1]= "Le nombre d'images par seconde. Le jeu compense le lag donc l'influence n'est qu'esthétique."
+				bo\desc$[2]= "The number of frames per seconds. No 120fps/1080p because the game engine is mostly from 1997."
 			Case 4
 				Select options_buffer#(4)
 					Case 1
-						bo\nom$= " Mode caméra A : Liée par défaut (alt pour Fixe) "
+						bo\nom$[1]= " Mode caméra A : Liée par défaut (alt pour Fixe) "
+						bo\nom$[2]= " Camera Mode A: Linked by default (Alt to Set) "
 					Case 2
-						bo\nom$= " Mode caméra B : Alt pour alterner en Fixe et Liée "
+						bo\nom$[1]= " Mode caméra B : Alt pour alterner en Fixe et Liée "
+						bo\nom$[2]= " Camera Mode B: Alt to toggle between Linked and Set "
 					Case 3
-						bo\nom$= " Mode caméra C : Fixe par défaut (alt pour Liée) "
+						bo\nom$[1]= " Mode caméra C : Fixe par défaut (alt pour Liée) "
+						bo\nom$[2]= " Camera Mode C: Set by default (Alt to Linked) "
 				End Select
-				bo\desc$="Liée : la caméra bouge avec la souris. Fixe : la caméra est fixe et on peut utiliser la souris."
+				bo\desc$[1]="Liée : la caméra bouge avec la souris. Fixe : la caméra est fixe et on peut utiliser la souris."
+				bo\desc$[2]="Linked: the camera is directly controled by the mouse. Set: the camera doesn't move and you can use the mouse cursor."
 			
 			Case 5
-				bo\nom$ = "  Volume musique : "+Str(Int(options_buffer#(5)*100))+"%  "
-				bo\desc$= "Le volume de la musique de fond. Clic gauche pour augmenter, clic droit pour dimnuer."
+				bo\nom$[1] = "  Volume musique : "+Str(Int(options_buffer#(5)*100))+"%  "
+				bo\desc$[1]= "Le volume de la musique de fond. Clic gauche pour augmenter, clic droit pour diminuer."
+				bo\nom$[2] = "  Music Volume : "+Str(Int(options_buffer#(5)*100))+"%  "
+				bo\desc$[2]= "Music Volume. Left mouse to increase, right mouse to decrease."
 			
 			Case 6
-				bo\nom$ = "  Volume bruitage : "+Str(Int(options_buffer#(6)*100))+"%  "
-				bo\desc$= "Le volume des bruitages. Clic gauche pour augmenter, clic droit pour dimnuer."
+				bo\nom$[1] = "  Volume bruitage : "+Str(Int(options_buffer#(6)*100))+"%  "
+				bo\desc$[1]= "Le volume des bruitages. Clic gauche pour augmenter, clic droit pour diminuer."
+				bo\nom$[2] = "  SFX Volume : "+Str(Int(options_buffer#(6)*100))+"%  "
+				bo\desc$[2]= "SFX Volume. Left mouse to increase, right mouse to decrease."
 				
 			Case 7
-				bo\nom$ = "Défilement du texte : "+options_buffer#(3)
-				bo\desc$= "La vitesse de défilement des textes. 2,5 est une bonne valeur."				
+				bo\nom$[1] = "Défilement du texte : "+options_buffer#(3)
+				bo\desc$[1]= "La vitesse de défilement des textes. 2,5 est une bonne valeur."
+				bo\nom$[2] = "Text scrolling speed: "+options_buffer#(3)
+				bo\desc$[2]= "Speed of the scrolling in dialogues. 2,5 is a good value."
+			Case 8
+				bo\nom$[1]="Français"
+				bo\nom$[2]="English"
+				bo\desc$[1]="Langue actuellement utilisée."
+				bo\desc$[2]="Language currently used."			
 		End Select
 	Next
 End Function
@@ -6706,13 +7310,13 @@ Function menu_option()
 				Color b\act_couleur[1],b\act_couleur[2],b\act_couleur[3]
 				If mouseclic1 Then action=b\effet:mouseclic1=0
 				If mouseclic2 And b\clic2 Then action=-b\effet:mouseclic2=0
-				description$=b\desc$
+				description$=b\desc$[Int(options_buffer#(7))]
 			Else
 				Color b\ina_couleur[1],b\ina_couleur[2],b\ina_couleur[3]
 			EndIf
 			Rect 400-temp,(b\y-15)*screeny#,temp*2,30*screeny#,0
 			SetFont big_font
-			Text 400,b\y*screeny#,b\nom$,1,1
+			Text 400,b\y*screeny#,b\nom$[Int(options_buffer#(7))],1,1
 		Next
 		
 		If KeyHit(01) Then action=0
@@ -6727,14 +7331,10 @@ Function menu_option()
 				For t=1 To 10
 					options#(t)=options_buffer#(t)
 				Next
-				If FileType("options.dat")=1 Then DeleteFile "options.dat"
-				file_option=WriteFile("options.dat")
-				For t=1 To 10
-					WriteFloat file_option,options#(t)
-				Next
-				CloseFile file_option
+				export_options()
+				
 				DIFFICULTY=options_buffer#(1)
-				Playsound2(sons_menu(01))
+				Playsound2(sons_menu(1))
 				new_log("Options modifiées")
 				action=0
 			Case 2 ; Fond (+)
@@ -6806,6 +7406,12 @@ Function menu_option()
 				update_boutons_menu()
 				Playsound2(sons_menu(12))
 				action=1
+			Case 8 ; toogle Langue (FR, EN)
+				options_buffer#(7)=3-options_buffer#(7)
+				update_boutons_menu()
+				Playsound2(sons_menu(12))
+				action=1
+
 		End Select
 		
 		Color 200,200,200
@@ -6819,7 +7425,33 @@ Function menu_option()
 	FlushKeys
 	FlushMouse
 	lire_clavier()
-	
+End Function
+
+Function first_language_choice()
+	If middle_font=0
+		middle_font=LoadFont("Constantia",25*screeny#)
+	EndIf
+	options#(7)=0
+	While options#(7)=0
+		;start_loop("sans pause")
+		Cls
+		lire_clavier()
+		disc_len#=10000
+		options#(7)=fenetreyn("Choose your language / Choississez votre langue","English","Français")
+		DrawImage curseur,MouseX(),MouseY()
+		Flip
+		;compensation_lag()
+	Wend
+	options#(7)=3-options#(7)
+End Function
+
+Function export_options()
+	If FileType("options.dat")=1 Then DeleteFile "options.dat"
+	file_option=WriteFile("options.dat")
+	For t=1 To 10
+		WriteFloat file_option,options#(t)
+	Next
+	CloseFile file_option
 End Function
 
 Function cinematique_de_fin()
@@ -7689,7 +8321,9 @@ Function revenir_au_menu()
 		start_loop()
 		lire_clavier()
 		disc_len#=10000
-		reponse=fenetreqcm(2,"Quitter la partie en cours ?#Les progrès depuis la dernière sauvegarde ne seront pas conservés.","Oui","Non")
+		mult_mess$(1)="Quitter la partie en cours ?#Les progrès depuis la dernière sauvegarde ne seront pas conservés."
+		mult_mess$(2)="Quit the game?# All unsaved progress will be lost"
+		reponse=fenetreqcm(2,mult_mess$(Int(options#(7))),oui$(Int(options#(7))),non$(Int(options#(7))))
 		DrawImage curseur,MouseX(),MouseY()
 		Flip
 		compensation_lag()
@@ -7709,8 +8343,12 @@ Function save()
 		start_loop()
 		lire_clavier()
 		disc_len#=10000
-		fenetre_info("Attention : Il n'y a pour l'instant qu'un seul fichier de sauvegarde. Si vous sauvez, vous supprimez la sauvegarde précédente.",0,100,0)
-		reponse=fenetreqcm(2,"Sauvegarder ?","Oui","Non")
+		mult_mess$(1)="Attention : Il n'y a pour l'instant qu'un seul fichier de sauvegarde. Si vous sauvez, vous supprimez la sauvegarde précédente."
+		mult_mess$(2)="Warning: There is currently only one savefile. If you save now, you will erase the previous saved game."
+		fenetre_info(mult_mess$(Int(options#(7))),0,100,0)
+		mult_mess$(1)="Sauvegarder ?"
+		mult_mess$(2)="Save?"
+		reponse=fenetreqcm(2,mult_mess$(Int(options#(7))),oui$(Int(options#(7))),non$(Int(options#(7))))
 		DrawImage curseur,MouseX(),MouseY()
 		Flip
 		compensation_lag()
@@ -7755,23 +8393,15 @@ Function save_server()
 		WriteInt file,av\num
 		WriteInt file,av\prop
 		WriteInt file,av\groupe
-		WriteString file,av\name$
-		WriteString file,av\classe$
-		WriteString file,av\description$
+		For t=1 To NB_LANGUES
+			WriteString file,av\name$[t]
+			WriteString file,av\classe$[t]
+			WriteString file,av\description$[t]
+		Next
 		WriteInt file,av\cat
-		;====================================(
-	;	For t=1 To 5
-	;		WriteInt file,av\carac[t]
-	;	Next
-		;====================================)
 		For t=1 To 3
 			WriteFloat file,av\faiblesse#[t]
 		Next
-		;====================================(
-	;	For t=1 To 10
-	;		WriteInt file,av\capac[t]
-	;	Next
-		;====================================)
 		For t=1 To 15
 			WriteInt file,av\cmpt[t]
 		Next
@@ -7819,6 +8449,8 @@ Function save_server()
 				WriteInt file,gr\trigger[t]
 			EndIf
 			WriteInt file,gr\range_trigger[t]
+		Next
+		For t=1 To 4*NB_LANGUES
 			WriteString file,gr\nom_action$[t]
 		Next
 		For t=1 To 9
@@ -7973,23 +8605,15 @@ Function load_server()
 				good=1
 				av\prop=ReadInt(file)
 				av\groupe=ReadInt(file)
-				av\name$=ReadString(file)
-				av\classe$=ReadString(file)
-				av\description$=ReadString(file)
+				For i=1 To NB_LANGUES
+					av\name$[i]=ReadString(file)
+					av\classe$[i]=ReadString(file)
+					av\description$[i]=ReadString(file)
+				Next
 				av\cat=ReadInt(file)
-				;====================================(
-			;	For i=1 To 5
-			;		av\carac[i]=ReadInt(file)
-			;	Next
-				;====================================)
 				For i=1 To 3
 					av\faiblesse#[i]=ReadFloat(file)
 				Next
-				;====================================(
-			;	For i=1 To 10
-			;		av\capac[i]=ReadInt(file)
-			;	Next
-				;====================================)
 				For i=1 To 15
 					av\cmpt[i]=ReadInt(file)
 				Next
@@ -8023,9 +8647,11 @@ Function load_server()
 			av\num=num
 			av\prop=ReadInt(file)
 			av\groupe=ReadInt(file)
-			av\name$=ReadString(file)
-			av\classe$=ReadString(file)
-			av\description$=ReadString(file)
+			For i=1 To NB_LANGUES
+				av\name$[i]=ReadString(file)
+				av\classe$[i]=ReadString(file)
+				av\description$[i]=ReadString(file)
+			Next
 			av\cat=ReadInt(file)
 			;====================================(
 		;	For i=1 To 5
@@ -8091,6 +8717,8 @@ Function load_server()
 					gr\script[i]=ReadInt(file)
 					gr\trigger[i]=ReadInt(file)
 					gr\range_trigger[i]=ReadInt(file)
+				Next
+				For i=1 To 4*NB_LANGUES
 					gr\nom_action$[i]=ReadString(file)		
 				Next
 				For i=1 To 9

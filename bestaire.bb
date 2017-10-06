@@ -47,7 +47,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 		
 		Select cat
 			Case 11 ; rat
-				a\name$="Rat"
+				a\name$[1]="Rat"
 				a\cat=11 ; rat
 				a\att[1]=-1
 				a\att[2]=-2
@@ -77,7 +77,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 			Case 12 ; fillette
 
 			Case 13 ; Protecteur avec une grosse hache
-				a\name$="Prtkt Hache"
+				a\name$[1]="Prtkt Hache"
 				a\cat=13 ; Protecteur
 				a\att[1]=0
 				a\att[2]=0
@@ -105,7 +105,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 				a\junk=Rand(20,25)
 
 			Case 14 ; Protecteur avec une bonne armure
-				a\name$="Prtkt Mur"
+				a\name$[1]="Prtkt Mur"
 				a\cat=14 ; Protecteur
 				a\att[1]=0
 				a\att[2]=0
@@ -134,7 +134,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 				a\junk=Rand(20,25)
 
 			Case 15 ; Protecteur avec épée
-				a\name$="Protecteur"
+				a\name$[1]="Protecteur"
 				a\cat=15 ; Protecteur
 				a\att[1]=0
 				a\att[2]=0
@@ -163,7 +163,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 				a\junk=Rand(20,25)
 			
 			Case 16 ; Stan
-				a\name$="Stan"
+				a\name$[1]="Stan"
 				a\cat=16 ; Louis
 				a\att[1]=0
 				a\att[2]=0
@@ -192,7 +192,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 				a\junk=Rand(20,25)
 			
 			Case 17 ; Systeme de Sécurité
-				a\name$="Boss"
+				a\name$[1]="Boss"
 				a\cat=17 ; SS
 				a\att[1]=0
 				a\att[2]=0
@@ -223,7 +223,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 				a\junk=Rand(0,2)
 			
 			Case 18
-				a\name$="Chasseur A"
+				a\name$[1]="Chasseur A"
 				a\cat=18 ; Protecteur
 				a\att[1]=0
 				a\att[2]=0
@@ -250,7 +250,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 				a\junk=Rand(20,25)
 				
 			Case 19
-				a\name$="Chasseur B"
+				a\name$[1]="Chasseur B"
 				a\cat=19 ; Protecteur
 				a\att[1]=0
 				a\att[2]=0
@@ -277,7 +277,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 				a\junk=Rand(20,25)
 			
 			Case 20
-				a\name$="Aude"
+				a\name$[1]="Aude"
 				a\cat=20 ; Protecteur
 				a\att[1]=0
 				a\att[2]=0
@@ -304,7 +304,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 				a\junk=Rand(20,25)
 				
 			Case 21
-				a\name$="Arsène"
+				a\name$[1]="Arsène"
 				a\cat=21 ; Protecteur
 				a\att[1]=0
 				a\att[2]=0
@@ -330,7 +330,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 				a\junk=Rand(20,25)
 			
 			Case 22
-				a\name$="Larbin"
+				a\name$[1]="Larbin"
 				a\cat=22 ; Protecteur
 				a\att[1]=0
 				a\att[2]=0
@@ -356,7 +356,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 				a\junk=Rand(20,25)
 			
 			Case 30 ; mongolfière
-				a\name$="Patrouilleur"
+				a\name$[1]="Patrouilleur"
 				a\cat=30 ; patrouilleur
 				a\att[1]=0
 				a\att[2]=0
@@ -373,7 +373,8 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 				a\faiblesse#[1]=1 ; normal
 				a\faiblesse#[2]=2 ; critique
 				a\faiblesse#[3]=5 ; parfait
-				For t=1 To 15
+				a\cmpt[1]=1
+				For t=2 To 15
 					a\cmpt[t]=0
 				Next
 				a\equi[1]=24 ; Fusil à clou ^^ => arme à distance
@@ -385,7 +386,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 				a\junk=Rand(0,2)
 
 			Default ; rat
-				a\name$="Rat"
+				a\name$[1]="Rat"
 				a\cat=11 ; rat
 				a\att[1]=-1
 				a\att[2]=-2

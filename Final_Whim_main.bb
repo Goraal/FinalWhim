@@ -1,7 +1,5 @@
-
 Global num_version$="0.43"
-
-date_version$="17 Mars 2017" 
+date_version$="2017-10-06" 
 
 AppTitle Str("Final Whim "+num_version$)
 
@@ -25,7 +23,6 @@ Graphics3D 800,600,32,2
 SetBuffer BackBuffer()
 SeedRnd (MilliSecs())
 HidePointer
-
 
 .var_global
 
@@ -62,6 +59,8 @@ Const LIMITE_BLESSURE#=0.3 ; à partir de combien on est considéré comme blessé (
 Const ATT_SOURNOISE=4 ; le bonus de dégâts de l'attaque sournoise par bouclier
 Const BONUS_MEDIC#=0.25 ; le ratio de pv rendus par le médecin à la fin d'un combat
 
+Const NB_LANGUES=2 ; le nombre de langues supportées par Final Whim
+
 Global time_fps
 Global old_time_fps ; nécessaire pour le calcul des fps
 Global frame_fps
@@ -70,7 +69,7 @@ Const frame_lim_fps=25
 Global nb_frame ; nombre de frame max par seconde
 Global coeff_frame# ; nb de frame qu'il y aurait dû y avoir depuis la dernière
 Global delta_frame ; la différence en millisecs entre les deux frames
-Global tour_frame ; nb frame visuelle qu'il va y avoir ce tour ci pour compenser
+Global tour_frame ; nb frames visuelles qu'il va y avoir ce tour ci pour compenser
 Global reste_frame# ; le reste de frame qu'il faudra faire la prochaine fois.
 Global frame_a
 Global frame_b
@@ -178,7 +177,7 @@ Global old_message_curseur$=""
 Global message_action$=""
 Global ch_clic
 Global msg_radio$=""
-Global mode_debug=0
+Global mode_debug=1
 Global nb_tour
 Global nb_partie=1
 
@@ -189,7 +188,6 @@ Global middle_font
 
 Global disc_len#
 Global onglet ;  quel onglet du menu
-Global aide_contextuelle$
 
 Global bouton_combat
 Global bouton_combat_sombre
@@ -244,6 +242,9 @@ Global bordure_right=LoadImage("sprites\menu\bordure_right.png")
 Global bordure_left=LoadImage("sprites\menu\bordure_left.png")
 
 Global fond_hud=LoadImage("sprites\menu\HUD.bmp")
+Global non_icone=LoadImage("sprites\objets\non_icone_1.jpg")
+Global non_icone2=LoadImage("sprites\objets\non_icone_2.jpg")
+
 
 ;global Loran
 Global centre_porteAscenceur
@@ -310,7 +311,7 @@ Global fond_BoutonQCM=LoadImage("sprites\menu\HUD_dialogue_bouton.png")
 Global fond_animation
 Global xml_ScriptPartiel=""
 Global phrasesIndex=0
-Dim variableTemporaire(16) ; Permet d'utiliser un tableau pour des variables locals ATTENTION a bien les réinitialiser.
+Dim variableTemporaire(16) ; Permet d'utiliser un tableau pour des variables locales ATTENTION a bien les réinitialiser.
 Global entiteTest
 Global pas#=1
 
@@ -431,6 +432,16 @@ Dim sons_battle(50)
 Dim nom_musique_de_fond$(20) ; nom_fichier$
 Dim musique_de_fond(20,2) ; 1 musique chargée 2 volume_de_base (en %)
 
+Dim gfx_onglets(2,NB_LANGUES) ; onglets dans le menu en jeu et dans l'interface de marchand.
+Dim aide_contextuelle$(NB_LANGUES) ; aides contextuelles multilingues
+Dim mult_mess$(NB_LANGUES) ; messages en multilangues (pour éviter les "Select Int(options#(7))" de partout
+Dim oui$(NB_LANGUES) ; oui dans les différentes langues supportées
+oui$(1)="Oui"
+oui$(2)="Yes"
+Dim non$(NB_LANGUES)
+non$(1)="Non"
+non$(2)="No"
+
 Dim pos_entrance#(3)
 Dim var_script_int(20)
 Dim var_script_float#(20)
@@ -488,8 +499,8 @@ Type bouton_du_menu
 	Field num ; par habitude aussi
 	Field action ; à quel niveau il apparait
 	Field effet ; à quel niveau il envoit
-	Field nom$ ; le truc affiché
-	Field desc$ ; description en bas de l'écran
+	Field nom$[NB_LANGUES] ; le truc affiché
+	Field desc$[NB_LANGUES] ; description en bas de l'écran
 	Field x ; 
 	Field y ; position du centre du bouton
 	Field ina_couleur[3] ; rgb inactif
@@ -501,9 +512,9 @@ Type bouton_option
 	Field action ; à quel niveau il apparait
 	Field effet ; à quel niveau il envoit
 	Field clic2 ; si le bouton a un effet au clic droit
-	Field nom$ ; le truc affiché
+	Field nom$[NB_LANGUES] ; le truc affiché
 	Field len_max ; la longueur du plus grand nom possible
-	Field desc$ ; description en bas de l'écran
+	Field desc$[NB_LANGUES] ; description en bas de l'écran
 	Field x ; 
 	Field y ; position du centre du bouton
 	Field ina_couleur[3] ; rgb inactif
@@ -529,7 +540,7 @@ Type groupe
 	
 	Field script[4] ; num script lancé en cas d'interaction
 	Field trigger[4] ; type de déclenchement d'interaction (0 impossible : 1 perpétuel : 2 souris : 3 clic : 4 distance : 5 distance+A : 6 serveur)
-	Field nom_action$[4]
+	Field nom_action$[4*NB_LANGUES] ; Int(id_script+4*(options#(7)-1))
 	Field range_trigger[4]; la portée du déclencheur
 	Field detector ; le pivot pour tester les lignes de vue
 	
@@ -540,10 +551,10 @@ Type avatar
 	Field num ; négatif si jouable
 	Field prop ; num du player qui le joue (1 pour solo, 0 si IA)
 	Field groupe ; num du groupe dont il fait parti
-	Field name$
-	Field classe$
-	Field description$
-	Field tactique$
+	Field name$[NB_LANGUES]
+	Field classe$[NB_LANGUES]
+	Field description$[NB_LANGUES]
+	Field tactique$[NB_LANGUES]
 	Field cat ; catégorie (sert pour savoir quel sprite on utilise pdt les combats)
 	
 	Field faiblesse#[3]
@@ -623,7 +634,7 @@ End Type
 
 Type arme ; c_arme de DMa (mais comme les armes ne sont pas séparées comme pour DMa, pas de pb)
 	Field num
-	Field name$
+	Field name$[NB_LANGUES]
 	Field cat ; (épée, pistolet, ...)
 	Field classe ; en cc/en tir pour les armes de tir (mains nues, légère, lourde, dist, dist inesquivable)
 	Field charge ; Le nombre de fois qu'elle peut être utilisée (-1=infini)
@@ -633,7 +644,7 @@ Type arme ; c_arme de DMa (mais comme les armes ne sont pas séparées comme pour 
 	Field degat_min ; pour rendre inutile la variable scr_degats (scr_degats=num)
 	Field degat_max ;
 	Field rules[8] ; règles spéciales à l'arme (contient aussi les bonus de catégories)
-	Field description$
+	Field description$[NB_LANGUES]
 	Field icone[2] ; en un la petite, en deux la grande
 	Field junk ; en combien de junk elle se transforme
 	Field caps ; sa valeur monétaire
@@ -649,8 +660,8 @@ End Type
 
 Type armure
 	Field num
-	Field name$
-	Field description$
+	Field name$[NB_LANGUES]
+	Field description$[NB_LANGUES]
 	Field val#[3]
 	Field rules[3]
 	Field icone[2] ; en un la petite, en deux la grande
@@ -668,8 +679,8 @@ End Type
 
 Type boiler ; chaudière
 	Field num
-	Field name$
-	Field description$
+	Field name$[NB_LANGUES]
+	Field description$[NB_LANGUES]
 	Field capacite
 	Field rules[3]
 	Field icone[2] ; en un la petite, en deux la grande
@@ -687,8 +698,8 @@ End Type
 
 Type special
 	Field num
-	Field name$
-	Field description$
+	Field name$[NB_LANGUES]
+	Field description$[NB_LANGUES]
 	Field rules[5]
 	Field icone[2] ; en un la petite, en deux la grande
 	Field junk
@@ -705,8 +716,8 @@ End Type
 
 Type quest_item
 	Field num
-	Field name$
-	Field description$
+	Field name$[NB_LANGUES]
+	Field description$[NB_LANGUES]
 	Field shareable ; 0 si non (comme un objet), 1 si oui (comme une information), -1 Quête
 	Field icone[2]
 End Type
@@ -729,8 +740,8 @@ End Type
 
 Type rules ; description des règles spéciales
 	Field num
-	Field name$
-	Field description$
+	Field name$[NB_LANGUES]
+	Field description$[NB_LANGUES]
 End Type
 
 Type smoke_source
@@ -812,47 +823,37 @@ If FileType("options.dat")=1
 		options#(t)=ReadFloat#(file_option)
 	Next 
 	CloseFile file_option
-Else
-	action=0
-	options#(1)=1
-	options#(2)=1
-	options#(4)=1	
-	options#(3)=2.5 ; vitesse de défilement de texte (faire une barre pour la selectionner)
-	options#(5)=01 ; volume musique
-	options#(6)=1 ; volume sfx
 	
-	file_option=WriteFile("options.dat")
-	For t=1 To 10
-		WriteFloat file_option,options#(t)
-	Next
-	CloseFile file_option
-
-EndIf
-
-Select options#(2)
-	Case 1
-		nb_frame=30
+	Select options#(2) ; vérifier que les valeurs de framerate sont acceptées
 	Case 2
 		nb_frame=50
 	Default
-		If FileType("options.dat")=1 Then DeleteFile "options.dat"
-		action=0
 		nb_frame=30
-		options#(1)=1
 		options#(2)=1
-		options#(4)=1	
-		options#(3)=2.5 ; vitesse de défilement de texte (faire une barre pour la selectionner)
-		options#(5)=01 ; volume musique
-		options#(6)=1 ; volume sfx
-		
-		file_option=WriteFile("options.dat")
-		For t=1 To 10
-			WriteFloat file_option,options#(t)
-		Next
-		CloseFile file_option
-	
-		
 	End Select
+	
+	options#(1)=min(1,max(3,options#(1))) ; type de fond
+	options#(4)=min(1,max(3,options#(4))) ; caméra
+	
+	options#(5)=minf#(1,maxf#(0,options#(5))) ; normaliser les volumes
+	options#(6)=minf#(1,maxf#(0,options#(6)))
+	
+	options#(7)=Int(options#(7)) ; vérifier que la langue est gérée
+	If Int(options#(7))<1 Or Int(options#(7))>NB_LANGUES
+		first_language_choice()
+	EndIf
+Else
+	action=0
+	options#(1)=1 ; type de fond (noir ?)
+	options#(2)=1 ; framerate (30 fps)
+	options#(3)=2.5 ; vitesse de défilement de texte
+	options#(4)=1 ; caméra (mode liée par défaut)
+	options#(5)=1 ; volume musique (100%)
+	options#(6)=1 ; volume sfx (100%)
+	first_language_choice()
+	export_options()
+EndIf
+
 Global frame_timer=CreateTimer(nb_frame)
 
 .menu_principal
@@ -863,27 +864,32 @@ reinit_keyboard()
 
 ;A enlever
 If mode_debug<>0
-	action=11
+	action=12
 	sortie=1
 EndIf
 
-aff_loading(0,"Chargement du menu")
+mult_mess$(1)="Chargement du menu"
+mult_mess$(2)="Loading"
+mess$=mult_mess$(Int(options#(7)))
+aff_loading(0,mess$)
 
 If sortie=0
-	For i=0 To 89
-		If engrenage_deco(i)=0 Then engrenage_deco(i)=LoadImage("textures\loran\menu\Animation_rouage"+i+".jpg")
-		MidHandle engrenage_deco(i)
-		If KeyDown(keys(12,1))
-			i=89
-		Endif
-		If i=25
-			aff_loading(1,"Chargement du menu")
-		ElseIf i=50
-			aff_loading(2,"Chargement du menu")
-		ElseIf i=75
-			aff_loading(3,"Chargement du menu")
-		EndIf
-	Next
+	If mode_debug=0
+		For i=0 To 89
+			If engrenage_deco(i)=0 Then engrenage_deco(i)=LoadImage("textures\loran\menu\Animation_rouage"+i+".jpg")
+			MidHandle engrenage_deco(i)
+			If KeyDown(keys(12,1))
+				i=89
+			EndIf
+			If i=25
+				aff_loading(1,mess$)
+			ElseIf i=50
+				aff_loading(2,mess$)
+			ElseIf i=75
+				aff_loading(3,mess$)
+			EndIf
+		Next
+	EndIf
 	cuir1=LoadImage("textures\loran\fond-cuir-noir.jpg")
 	gfxTitle=LoadImage("sprites\menu\gfx_title.bmp")
 	MidHandle gfxTitle
@@ -929,18 +935,18 @@ While sortie=0
 	For b.bouton_du_menu = Each bouton_du_menu
 		If b\action=action
 			;calcul du rectangle
-			temp=Int(Len(b\nom$)*6*screeny#)
+			temp=Int(Len(b\nom$[Int(options#(7))])*6*screeny#)
 			drawgrey(b\x*screenx#-temp-1,(b\y-15)*screeny#-1,temp*2+1,30*screeny#+1,0.66,2)
 			If MouseX()>b\x*screenx#-temp And MouseX()<b\x*screenx#+temp And MouseY()>(b\y-13)*screeny# And MouseY()<(b\y+13)*screeny#
 				Color b\act_couleur[1],b\act_couleur[2],b\act_couleur[3]
 				If mouseclic1 Then action=b\effet:mouseclic1=0
-				description$=b\desc$
+				description$=b\desc$[Int(options#(7))]
 			Else
 				Color b\ina_couleur[1],b\ina_couleur[2],b\ina_couleur[3]
 			EndIf
 			Rect b\x*screenx#-temp,(b\y-15)*screeny#,temp*2,30*screeny#,0
 			SetFont big_font
-			Text b\x*screenx#,b\y*screeny#,b\nom$,1,1
+			Text b\x*screenx#,b\y*screeny#,b\nom$[Int(options#(7))],1,1
 		EndIf
 	Next
 	
