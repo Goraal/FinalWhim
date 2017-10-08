@@ -238,7 +238,7 @@ Function ChargerVariablesDialogues()
 	If str_PJ$(0)="Major" ; remplace le nom des PJs	
 		For av.avatar=Each avatar
 			If av\num = 1
-				str_PJ$(0) =av\name$
+				str_PJ$(0) =av\name$[Int(options#(7))]
 			Endif
 		Next
 	EndIf
@@ -246,7 +246,7 @@ Function ChargerVariablesDialogues()
 	If str_PJ$(0)="Leopold" ; remplace le nom des PJs	
 		For av.avatar=Each avatar
 			If av\num = 2
-				str_PJ$(0) =av\name$
+				str_PJ$(0) =av\name$[Int(options#(7))]
 			Endif
 		Next
 	EndIf
@@ -254,7 +254,7 @@ Function ChargerVariablesDialogues()
 	If str_PJ$(0)="Adeline" ; remplace le nom des PJs	
 		For av.avatar=Each avatar
 			If av\num = 3
-				str_PJ$(0) =av\name$
+				str_PJ$(0) =av\name$[Int(options#(7))]
 			Endif
 		Next
 	EndIf

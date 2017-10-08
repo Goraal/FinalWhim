@@ -295,7 +295,7 @@
 
 
 
-2017-- (v0.3900):
+2017-01-12 (v0.3900):
  - Ajout d'un bouton pour faire des défaire des paires de pistolets dans l'inventaire (si c'est possible)
 
  - Modifications mineures de l'interface de choix des classes.
@@ -305,7 +305,10 @@
  - Correction de bugs mineurs
 
 
-
+2017-09- (v0.4100):
+ - Ajout d'un système multlingue (Français/English), modifiable via le menu options.
+ - Traductions des divers menus et interfaces.
+ - Traduction (+ modifications en VF) des astuces de chargements
 
 
 

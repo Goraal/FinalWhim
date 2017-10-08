@@ -13,7 +13,8 @@
 
 ca.arme=New arme
 ca\num=1
-ca\name$="Glaive de Chasseur"
+ca\name$[1]="Glaive de Chasseur"
+ca\name$[2]=""
 ca\cat=2 ; épée légère
 ca\classe=2 ; légère
 ca\scr_degats=ca\num
@@ -24,7 +25,8 @@ ca\charge=-1
 For t=1 To 8
 	ca\rules[t]=0
 Next
-ca\description$="Un glaive de chasseur, juste assez long pour ne pas être utilisé comme un couteau et cependant trop court pour faire une épée raisonnable. Ceci dit, c'est mieux que rien."
+ca\description$[1]="Un glaive de chasseur, juste assez long pour ne pas être utilisé comme un couteau et cependant trop court pour faire une épée raisonnable. Ceci dit, c'est mieux que rien."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\knife_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\knife_2.jpg")
 ca\junk=10
@@ -44,7 +46,8 @@ ca\init=-1
 
 ca.arme=New arme
 ca\num=2
-ca\name$="Epée médiocre"
+ca\name$[1]="Epée médiocre"
+ca\name$[2]=""
 ca\cat=2 ; épée légère
 ca\classe=2 ; légère
 ca\degat_min=5
@@ -55,7 +58,8 @@ ca\charge=-1
 For t=1 To 8
 	ca\rules[t]=0
 Next
-ca\description$="Une épée à une main, pas très aiguisée mais bien résistance. Utilisée comme arme secondaire par les Protecteurs à Bouclier."
+ca\description$[1]="Une épée à une main, pas très aiguisée mais bien résistance. Utilisée comme arme secondaire par les Protecteurs à Bouclier."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\epee_old_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\epee_old_2.jpg")
 ca\junk=15
@@ -76,18 +80,20 @@ ca\init=0
 
 ca.arme=New arme
 ca\num=3
-ca\name$="Epée longue"
+ca\name$[1]="Epée longue"
+ca\name$[2]=""
 ca\cat=2 ; épée légère
 ca\classe=2 ; légère
 ca\degat_min=9
 ca\degat_max=12
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=-1
 For t=1 To 8
 	ca\rules[t]=0
 Next
-ca\description$="Une épée d'acier à une main, d'assez bonne qualitée"
+ca\description$[1]="Une épée d'acier à une main, d'assez bonne qualitée"
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\epee_neuve_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\epee_neuve_2.jpg")
 ca\junk=50
@@ -110,16 +116,18 @@ ca\init=0
 
 ca.arme=New arme
 ca\num=4
-ca\name$="Epée tronçonneuse"
+ca\name$[1]="Epée tronçonneuse"
+ca\name$[2]=""
 ca\cat=3 ; épée lourde
 ca\classe=3 ; lourde
 ca\degat_min=20
 ca\degat_max=25
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=-1
 ca\rules[1]=103
-ca\description$="Pour les épéistes jaloux des porteurs de hache."
+ca\description$[1]="Pour les épéistes jaloux des porteurs de hache."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\epee_tron_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\epee_tron_2.jpg")
 ca\junk=200
@@ -138,16 +146,18 @@ ca\init=-1
 
 ca.arme=New arme
 ca\num=5
-ca\name$="Epée de phase"
+ca\name$[1]="Epée de phase"
+ca\name$[2]=""
 ca\cat=2 ; épée légère
 ca\classe=2 ; légère
 ca\degat_min=27
 ca\degat_max=31
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=-1
 ca\rules[1]=104
-ca\description$="Prototype d'épée vraiment bizarre, limite hérétique. De longs éclairs parcourent sa lame tandis que vous doutez de la légitimité de sa place dans ce jeu."
+ca\description$[1]="Prototype d'épée vraiment bizarre, limite hérétique. De longs éclairs parcourent sa lame tandis que vous doutez de la légitimité de sa place dans ce jeu."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\epee_phase_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\epee_phase_2.jpg")
 ca\junk=200
@@ -166,18 +176,20 @@ ca\init=2
 
 ca.arme=New arme
 ca\num=6
-ca\name$="Hache de bucheron"
+ca\name$[1]="Hache de bucheron"
+ca\name$[2]=""
 ca\cat=6 ; hache légère
 ca\classe=2 ; légère
 ca\degat_min=4
 ca\degat_max=7
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=-1
 For t=1 To 8
 	ca\rules[t]=0
 Next
-ca\description$="Une grande hache de bucheron, faite à l'origine pour couper des arbres. Mais c'est tout aussi efficace pour fracasser des crânes."
+ca\description$[1]="Une grande hache de bucheron, faite à l'origine pour couper des arbres. Mais c'est tout aussi efficace pour fracasser des crânes."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\Hache01_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\Hache01_2.jpg")
 ca\junk=15
@@ -198,18 +210,20 @@ ca\init=-1
 
 ca.arme=New arme
 ca\num=7
-ca\name$="Grande Hache"
+ca\name$[1]="Grande Hache"
+ca\name$[2]=""
 ca\cat=7 ; hache lourde
 ca\classe=3 ; lourde
 ca\degat_min=9
 ca\degat_max=17
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=-1
 For t=1 To 8
 	ca\rules[t]=0
 Next
-ca\description$="Version alourdie d'une hache de bucheron. Plus aiguisée et utilisant un acier de meilleure qualité, il serait presque dommage de l'utiliser sur un arbre."
+ca\description$[1]="Version alourdie d'une hache de bucheron. Plus aiguisée et utilisant un acier de meilleure qualité, il serait presque dommage de l'utiliser sur un arbre."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\Hache02_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\Hache02_2.jpg")
 ca\junk=50
@@ -230,16 +244,18 @@ ca\init=-2
 
 ca.arme=New arme
 ca\num=8
-ca\name$="Ironwood-Cutter"
+ca\name$[1]="Ironwood-Cutter"
+ca\name$[2]=""
 ca\cat=7 ; hache lourde
 ca\classe=3 ; lourde
 ca\degat_min=35
 ca\degat_max=55
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=-1
 ca\rules[1]=103
-ca\description$="Parfois, un supplément de puissance sous la forme d'une scie circulaire à vapeur est nécessaire face à un arbre particulièrement dur. Ou n'importe quoi d'autre qui a le malheur de croiser votre chemin."
+ca\description$[1]="Parfois, un supplément de puissance sous la forme d'une scie circulaire à vapeur est nécessaire face à un arbre particulièrement dur. Ou n'importe quoi d'autre qui a le malheur de croiser votre chemin."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\Hache03_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\Hache03_2.jpg")
 ca\junk=150
@@ -258,18 +274,20 @@ ca\init=-3
 
 ca.arme=New arme
 ca\num=9
-ca\name$="Lance classique"
+ca\name$[1]="Lance classique"
+ca\name$[2]=""
 ca\cat=4 ; Lance légère
 ca\classe=2 ; légère
 ca\degat_min=2
 ca\degat_max=5
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=-1
 For t=1 To 8
 	ca\rules[t]=0
 Next
-ca\description$="Une simple lance à tête d'acier. Simple, mais efficace."
+ca\description$[1]="Une simple lance à tête d'acier. Simple, mais efficace."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\lanceI_1.png")
 ca\icone[2]=LoadImage("sprites\objets\lanceI_2.png")
 ca\junk=2
@@ -290,16 +308,18 @@ ca\init=2
 
 ca.arme=New arme
 ca\num=10
-ca\name$="Lance à impact"
+ca\name$[1]="Lance à impact"
+ca\name$[2]=""
 ca\cat=4 ; Lance légère
 ca\classe=2 ; légère
 ca\degat_min=12
 ca\degat_max=12
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=-1
 ca\rules[1]=102
-ca\description$="La tête de cette lance est fixée sur un vérin qui se déclenche à l'impact, provoquant des dégâts supplémentaires. L'ensemble reste remarquablement léger."
+ca\description$[1]="La tête de cette lance est fixée sur un vérin qui se déclenche à l'impact, provoquant des dégâts supplémentaires. L'ensemble reste remarquablement léger."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\lanceII_1.png")
 ca\icone[2]=LoadImage("sprites\objets\lanceII_2.png")
 ca\junk=100
@@ -320,16 +340,18 @@ ca\init=4
 
 ca.arme=New arme
 ca\num=11
-ca\name$="Déchiqueteuse"
+ca\name$[1]="Déchiqueteuse"
+ca\name$[2]=""
 ca\cat=4 ; Lance légère
 ca\classe=2 ; légère
 ca\degat_min=19
 ca\degat_max=24
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=-1
 ca\rules[1]=103
-ca\description$="En plus de la tête à impact, des lames ont été rajoutées à côté de la tête et cisaillent les chairs de l'ennemi."
+ca\description$[1]="En plus de la tête à impact, des lames ont été rajoutées à côté de la tête et cisaillent les chairs de l'ennemi."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\lanceIII_1.png")
 ca\icone[2]=LoadImage("sprites\objets\lanceIII_2.png")
 ca\junk=150
@@ -348,12 +370,13 @@ ca\init=4
 
 ca.arme=New arme
 ca\num=12
-ca\name$="Berg AutoLoader"
+ca\name$[1]="Berg AutoLoader"
+ca\name$[2]=""
 ca\cat=8 ; pistolet
 ca\classe=5 ; à feu
 ca\degat_min=7
 ca\degat_max=9
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=3
 ca\cadence=2
@@ -362,7 +385,8 @@ ca\rules[2]=101
 For t=3 To 8
 	ca\rules[t]=0
 Next
-ca\description$="Pistolet automatique chambré en 6.5mm. Le calibre est un peu faible mais il reste supérieur à tous les revolvers du marché en terme d'ergonomie et de cadence."
+ca\description$[1]="Pistolet automatique chambré en 6.5mm. Le calibre est un peu faible mais il reste supérieur à tous les revolvers du marché en terme d'ergonomie et de cadence."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\BergAuto_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\BergAuto_2.jpg")
 ca\junk=25
@@ -385,18 +409,20 @@ ca\init=0
 
 ca.arme=New arme
 ca\num=13
-ca\name$="Double Berg AutoLoader"
+ca\name$[1]="Double Berg AutoLoader"
+ca\name$[2]=""
 ca\cat=8 ; pistolet
 ca\classe=5 ; à feu
 ca\degat_min=18
 ca\degat_max=22
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=3
 ca\cadence=2
 ca\rules[1]=100
 ca\rules[2]=101
-ca\description$="Ce pistolet est suffisamment léger pour en prendre un dans chaque main. Pourquoi s'en priver ?"
+ca\description$[1]="Ce pistolet est suffisamment léger pour en prendre un dans chaque main. Pourquoi s'en priver ?"
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\BergAutodb_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\BergAutodb_2.jpg")
 ca\junk=50
@@ -417,12 +443,13 @@ ca\init=0
 
 ca.arme=New arme
 ca\num=14
-ca\name$="Berg AutoLoader Mark II"
+ca\name$[1]="Berg AutoLoader Mark II"
+ca\name$[2]=""
 ca\cat=8 ; pistolet
 ca\classe=5 ; à feu
 ca\degat_min=9
 ca\degat_max=11
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=6
 ca\cadence=2
@@ -431,7 +458,8 @@ ca\rules[2]=101
 For t=3 To 8
 	ca\rules[t]=0
 Next
-ca\description$="Version améliorée du Berg AutoLoader, avec un chargeur plus grand et un mécanisme plus efficace rendant l'arme légèrement plus rapide et plus puissante."
+ca\description$[1]="Version améliorée du Berg AutoLoader, avec un chargeur plus grand et un mécanisme plus efficace rendant l'arme légèrement plus rapide et plus puissante."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\BergII_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\BergII_2.jpg")
 ca\junk=50
@@ -452,18 +480,20 @@ ca\init=0
 
 ca.arme=New arme
 ca\num=15
-ca\name$="Double Berg AutoLoader Mark II"
+ca\name$[1]="Double Berg AutoLoader Mark II"
+ca\name$[2]=""
 ca\cat=8 ; pistolet
 ca\classe=5 ; à feu
 ca\degat_min=18
 ca\degat_max=22
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=6
 ca\cadence=2
 ca\rules[1]=100
 ca\rules[2]=101
-ca\description$="Une cadence de tir deux fois plus grande pour deux fois plus de plaisir !"
+ca\description$[1]="Une cadence de tir deux fois plus grande pour deux fois plus de plaisir !"
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\BergIIdb_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\BergIIdb_2.jpg")
 ca\junk=100
@@ -482,18 +512,20 @@ ca\init=0
 
 ca.arme=New arme
 ca\num=16
-ca\name$="Lebaut"
+ca\name$[1]="Lebaut"
+ca\name$[2]=""
 ca\cat=9 ;fusil
 ca\classe=5 ; à feu
 ca\degat_min=4
 ca\degat_max=7
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=8
 ca\cadence=1
 ca\rules[1]=100
 ca\rules[2]=101
-ca\description$="Un fusil à verrou de bonne qualité. Son magasin tubulaire permet de stocker un bon nombre de cartouche mais la longueur le rend peu maniable en combat rapproché."
+ca\description$[1]="Un fusil à verrou de bonne qualité. Son magasin tubulaire permet de stocker un bon nombre de cartouche mais la longueur le rend peu maniable en combat rapproché."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\Lebaut_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\Lebaut_2.jpg")
 ca\junk=25
@@ -514,18 +546,20 @@ ca\init=-4
 
 ca.arme=New arme
 ca\num=17
-ca\name$="Lebaut M25"
+ca\name$[1]="Lebaut M25"
+ca\name$[2]=""
 ca\cat=9 ;fusil
 ca\classe=5 ; à feu
 ca\degat_min=7
 ca\degat_max=13
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=5
 ca\cadence=1
 ca\rules[1]=100
 ca\rules[2]=101
-ca\description$="Le magasin tubulaire a été remplacé par un chargeur vertical intégré, ce qui diminue sa capacité mais aussi la taille du fusil, le rendant plus maniable. Les nouvelles cartouches sont aussi plus puissantes."
+ca\description$[1]="Le magasin tubulaire a été remplacé par un chargeur vertical intégré, ce qui diminue sa capacité mais aussi la taille du fusil, le rendant plus maniable. Les nouvelles cartouches sont aussi plus puissantes."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\Lebaut2_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\Lebaut2_2.jpg")
 ca\junk=40
@@ -548,18 +582,20 @@ ca\init=-2
 
 ca.arme=New arme
 ca\num=18
-ca\name$="Lebaut M25+"
+ca\name$[1]="Lebaut M25+"
+ca\name$[2]=""
 ca\cat=9 ;fusil
 ca\classe=5 ; à feu
 ca\degat_min=13
 ca\degat_max=25
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=10
 ca\cadence=1
 ca\rules[1]=100
 ca\rules[2]=101
-ca\description$="Quasiment identique à la version M25, le M25+ utilise un nouveau type de chargeur contenant 10 cartouches."
+ca\description$[1]="Quasiment identique à la version M25, le M25+ utilise un nouveau type de chargeur contenant 10 cartouches."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\Lebaut2M_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\Lebaut2M_2.jpg")
 ca\junk=200
@@ -580,18 +616,20 @@ ca\init=-2
 
 ca.arme=New arme
 ca\num=19
-ca\name$="Lebaut M37"
+ca\name$[1]="Lebaut M37"
+ca\name$[2]=""
 ca\cat=9 ;fusil
 ca\classe=5 ; à feu
 ca\degat_min=7
 ca\degat_max=13
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=6
 ca\cadence=2
 ca\rules[1]=100
 ca\rules[2]=101
-ca\description$="Le Lebaut M37 possède un ingénieux système de réarmement par récupération de gaz permet un tir semi-automatique tout en ne perdant qu'une quantité infime de puissance."
+ca\description$[1]="Le Lebaut M37 possède un ingénieux système de réarmement par récupération de gaz permet un tir semi-automatique tout en ne perdant qu'une quantité infime de puissance."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\Lebaut2A_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\Lebaut2A_2.jpg")
 ca\junk=90
@@ -612,18 +650,20 @@ ca\init=-2
 
 ca.arme=New arme
 ca\num=20
-ca\name$="Lebaut M37+"
+ca\name$[1]="Lebaut M37+"
+ca\name$[2]=""
 ca\cat=9 ;fusil
 ca\classe=5 ; à feu
 ca\degat_min=13
 ca\degat_max=25
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=10
 ca\cadence=2
 ca\rules[1]=100
 ca\rules[2]=101
-ca\description$="Avec son tir semi-automatique et son chargeur à grande capacité, le M37+ est l'avenir du fusil de guerre.##Du moins jusqu'à la sortie du M37+S..."
+ca\description$[1]="Avec son tir semi-automatique et son chargeur à grande capacité, le M37+ est l'avenir du fusil de guerre.##Du moins jusqu'à la sortie du M37+S..."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\Lebaut2AM_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\Lebaut2AM_2.jpg")
 ca\junk=125
@@ -642,18 +682,20 @@ ca\init=-2
 
 ca.arme=New arme
 ca\num=21
-ca\name$="Sven"
+ca\name$[1]="Sven"
+ca\name$[2]=""
 ca\cat=10 ; shot
 ca\classe=5 ; à feu
 ca\degat_min=15
 ca\degat_max=30
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=8
 ca\cadence=1
 ca\rules[1]=100
 ca\rules[2]=101
-ca\description$="Fusil de chasse à rechargement à pompe. Il utilise des cartouches à plomb de chasse, ce qui le rend relativement peu puissant (le mot clé étant ''relativement'')."
+ca\description$[1]="Fusil de chasse à rechargement à pompe. Il utilise des cartouches à plomb de chasse, ce qui le rend relativement peu puissant (le mot clé étant ''relativement'')."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\sjogren_1.png")
 ca\icone[2]=LoadImage("sprites\objets\sjogren_2.png")
 ca\junk=50
@@ -674,18 +716,20 @@ ca\init=-3
 
 ca.arme=New arme
 ca\num=22
-ca\name$="Sven-Sjogren"
+ca\name$[1]="Sven-Sjogren"
+ca\name$[2]=""
 ca\cat=10 ; shot
 ca\classe=5 ; à feu
 ca\degat_min=15
 ca\degat_max=30
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=9
 ca\cadence=3
 ca\rules[1]=100
 ca\rules[2]=101
-ca\description$="Par le ''simple'' ajout d'un module contenant plus de 18 pièces mobiles, le Dr.Sjogren a rendu le Sven semi-automatique. Il reste moins puissant qu'un Lebaut mais le recul moindre permet une plus grande cadence de tir."
+ca\description$[1]="Par le ''simple'' ajout d'un module contenant plus de 18 pièces mobiles, le Dr.Sjogren a rendu le Sven semi-automatique. Il reste moins puissant qu'un Lebaut mais le recul moindre permet une plus grande cadence de tir."
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\sjogrenA_1.png")
 ca\icone[2]=LoadImage("sprites\objets\sjogrenA_2.png")
 ca\junk=120
@@ -704,18 +748,20 @@ ca\init=-2
 
 ca.arme=New arme
 ca\num=23
-ca\name$="Piston de combat -Stan only-"
+ca\name$[1]="Piston de combat -Stan only-"
+ca\name$[2]=""
 ca\cat=6 ; hache légère
 ca\classe=3 ; lourde
 ca\degat_min=17
 ca\degat_max=27
-ca\degats$=str$(ca\degat_min)+"-"+str$(ca\degat_max)
+ca\degats$=Str$(ca\degat_min)+"-"+Str$(ca\degat_max)
 ca\scr_degats=ca\num
 ca\charge=-1
 For t=1 To 8
 	ca\rules[t]=0
 Next
-ca\description$="Piston de combat"
+ca\description$[1]="Piston de combat"
+ca\description$[2]=""
 ca\junk=15
 ca\caps=15/2 ;bug qui fait prix *2 dans armurie
 ca\att[1]=0
@@ -732,7 +778,8 @@ ca\init=0
 
 ca.arme=New arme
 ca\num=24
-ca\name$="Fusil à clou"
+ca\name$[1]="Fusil à clou"
+ca\name$[2]=""
 ca\cat=9 ;fusil
 ca\classe=5 ; dist inesquivable
 ca\degat_min=4
@@ -743,7 +790,8 @@ ca\charge=100
 ca\cadence=1
 ca\rules[1]=100
 ca\rules[2]=101
-ca\description$="Version grand format du pistolet à clou"
+ca\description$[1]="Version grand format du pistolet à clou"
+ca\description$[2]=""
 ca\icone[1]=LoadImage("sprites\objets\Lebaut2M_1.jpg")
 ca\icone[2]=LoadImage("sprites\objets\Lebaut2M_2.jpg")
 ca\junk=550
@@ -761,6 +809,14 @@ ca\deg[2]=0
 ca\deg[3]=0
 ca\pv=0
 ca\init=0
+
+For ca.arme = Each arme
+	For i=2 To NB_LANGUES
+		If ca\description$[i]="" Then ca\description$[i]="NTY: "+ca\description$[1]
+		If ca\name$[i]="" Then ca\name$[i]="NTY: "+ca\name$[1]
+	Next
+Next
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;DEGATS des ARMES;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;minmax : 0 lance les dégâts normalement, 1 renvoit les dégâts minimaux, 2 renvoit les dégâts max
@@ -801,11 +857,13 @@ End Function
 ;	Field icone[2]
 ar.armure=New armure
 ar\num=100
-ar\name$="Armure de fillette"
-ar\description$="Une armure basique en cuir rose et de petite taille, avec des licornes peintes dessus. Impossible de la porter, à moins d'être une fillette."
-ar\val#[1]=1
-ar\val#[2]=1
-ar\val#[3]=1
+ar\name$[1]="Armure de fillette"
+ar\description$[1]="Une armure basique en cuir rose et de petite taille, avec des licornes peintes dessus. Impossible de la porter, à moins d'être une fillette."
+ar\name$[2]=""
+ar\description$[2]=""
+ar\val#[1]=3
+ar\val#[2]=2
+ar\val#[3]=2
 ar\icone[1]=LoadImage("sprites\objets\armure_fillette_1.jpg")
 ar\icone[2]=LoadImage("sprites\objets\armure_fillette_2.jpg")
 ar\rules[1]=314
@@ -826,11 +884,13 @@ ar\init=0
 
 ar.armure=New armure
 ar\num=101
-ar\name$="Cuirasse de cuir"
-ar\description$="Une simple cuirasse en cuir noir. Légère et peu chère."
-ar\val#[1]=1
-ar\val#[2]=1
-ar\val#[3]=1
+ar\name$[1]="Cuirasse de cuir"
+ar\description$[1]="Une simple cuirasse en cuir noir. Légère et peu chère."
+ar\name$[2]=""
+ar\description$[2]=""
+ar\val#[1]=3
+ar\val#[2]=2
+ar\val#[3]=2
 ar\icone[1]=LoadImage("sprites\objets\cuir01_1.jpg")
 ar\icone[2]=LoadImage("sprites\objets\cuir01_2.jpg")
 ar\junk=20
@@ -851,8 +911,10 @@ ar\init=1
 
 ar.armure=New armure
 ar\num=102
-ar\name$="Cuirasse de cuir renforcée"
-ar\description$="Une cuirasse en cuir protégeant aussi les épaules et le bras dominant. Assez efficace vu son poids."
+ar\name$[1]="Cuirasse de cuir renforcée"
+ar\description$[1]="Une cuirasse en cuir protégeant aussi les épaules et le bras dominant. Assez efficace vu son poids."
+ar\name$[2]=""
+ar\description$[2]=""
 ar\val#[1]=1
 ar\val#[2]=2
 ar\val#[3]=3
@@ -876,8 +938,10 @@ ar\init=1
 
 ar.armure=New armure
 ar\num=103
-ar\name$="Armure de cuir complète"
-ar\description$="Une combinaison de cuir épaisse complète une cuirasse renforcée, protégeant ainsi tout le corps contre les lames, les intempéries et le manque de classe."
+ar\name$[1]="Armure de cuir complète"
+ar\description$[1]="Une combinaison de cuir épaisse complète une cuirasse renforcée, protégeant ainsi tout le corps contre les lames, les intempéries et le manque de classe."
+ar\name$[2]=""
+ar\description$[2]=""
 ar\val#[1]=2
 ar\val#[2]=4
 ar\val#[3]=6
@@ -899,8 +963,10 @@ ar\init=0
 
 ar.armure=New armure
 ar\num=104
-ar\name$="Cotte de maille"
-ar\description$="Une simple cotte de maille."
+ar\name$[1]="Cotte de maille"
+ar\description$[1]="Une simple cotte de maille."
+ar\name$[2]=""
+ar\description$[2]=""
 ar\val#[1]=3
 ar\val#[2]=5
 ar\val#[3]=7
@@ -924,8 +990,10 @@ ar\init=-1
 
 ar.armure=New armure
 ar\num=105
-ar\name$="Armure cuirassée"
-ar\description$="Une cotte de maille complétée par une cuirasse en acier traité pour mieux protéger contre les armes à feu."
+ar\name$[1]="Armure cuirassée"
+ar\description$[1]="Une cotte de maille complétée par une cuirasse en acier traité pour mieux protéger contre les armes à feu."
+ar\name$[2]=""
+ar\description$[2]=""
 ar\val#[1]=4
 ar\val#[2]=6
 ar\val#[3]=7
@@ -950,8 +1018,10 @@ ar\init=-2
 
 ar.armure=New armure
 ar\num=106
-ar\name$="Armure de plates"
-ar\description$="Une armure en acier couvrant tout le corps pour une protection optimale. Un peu lourde cependant."
+ar\name$[1]="Armure de plates"
+ar\description$[1]="Une armure en acier couvrant tout le corps pour une protection optimale. Un peu lourde cependant."
+ar\name$[2]=""
+ar\description$[2]=""
 ar\val#[1]=6
 ar\val#[2]=11
 ar\val#[3]=16
@@ -1016,6 +1086,14 @@ ar\deg[3]=0
 ar\pv=0
 ar\init=0
 
+
+For ar.armure = Each armure
+	For i=2 To NB_LANGUES
+		If ar\description$[i]="" Then ar\description$[i]="NTY: "+ar\description$[1]
+		If ar\name$[i]="" Then ar\name$[i]="NTY: "+ar\name$[1]
+	Next
+Next
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;STATS des Chaudières;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;	Field num
 ;	Field name$
@@ -1025,8 +1103,10 @@ ar\init=0
 ;	Field icone[2] ; en un la petite, en deux la grande
 boi.boiler=New boiler
 boi\num=150
-boi\name$="Kid-Boiler (tm)"
-boi\description$="''Une chaudière parfaitement sécurisée et idéale pour les enfants. Attention, contient des petits éléments qui peuvent être avalés.''#Etrangement, pas d'avertissement sur le fait que ce type de chaudière peut monter jusqu'à 120°C en température externe..."
+boi\name$[1]="Kid-Boiler (tm)"
+boi\description$[1]="''Une chaudière parfaitement sécurisée et idéale pour les enfants. Attention, contient des petits éléments qui peuvent être avalés.''#Étrangement, pas d'avertissement sur le fait que ce type de chaudière peut monter jusqu'à 120°C en température externe..."
+boi\name$[2]=""
+boi\description$[2]=""
 boi\icone[1]=LoadImage("sprites\objets\chaudiere1_1.jpg")
 boi\icone[2]=LoadImage("sprites\objets\chaudiere1_2.jpg")
 boi\capacite=1
@@ -1046,8 +1126,10 @@ boi\init=0
 
 boi.boiler=New boiler
 boi\num=151
-boi\name$="Petit chauffe-eau"
-boi\description$="Un petit chauffe-eau, alimenté par une steamille. Bas de gamme"
+boi\name$[1]="Petit chauffe-eau"
+boi\description$[1]="Un petit chauffe-eau, alimenté par une steamille. Bas de gamme"
+boi\name$[2]=""
+boi\description$[2]=""
 boi\icone[1]=LoadImage("sprites\objets\chaudiere1_1.jpg")
 boi\icone[2]=LoadImage("sprites\objets\chaudiere1_2.jpg")
 boi\capacite=1
@@ -1071,8 +1153,10 @@ boi\init=1
 
 boi.boiler=New boiler
 boi\num=152
-boi\name$="Chauffe-eau Renforcé"
-boi\description$="Un petit chauffe-eau amélioré dont la structure a été renforcée. Plus lourd mais capable de plus grande pression."
+boi\name$[1]="Chauffe-eau Renforcé"
+boi\description$[1]="Un petit chauffe-eau amélioré dont la structure a été renforcée. Plus lourd mais capable de plus grande pression."
+boi\name$[2]=""
+boi\description$[2]=""
 boi\icone[1]=LoadImage("sprites\objets\chaudiere1_1.jpg")
 boi\icone[2]=LoadImage("sprites\objets\chaudiere1_2.jpg")
 boi\capacite=3
@@ -1097,8 +1181,10 @@ boi\init=0
 
 boi.boiler=New boiler
 boi\num=153
-boi\name$="Chauffe-eau Amélioré"
-boi\description$="Un petit chauffe-eau amélioré. Légèrement plus puissant qu'à l'origine."
+boi\name$[1]="Chauffe-eau Amélioré"
+boi\description$[1]="Un petit chauffe-eau amélioré. Légèrement plus puissant qu'à l'origine."
+boi\name$[2]=""
+boi\description$[2]=""
 boi\capacite=2
 boi\junk=70
 boi\caps=50
@@ -1120,8 +1206,10 @@ boi\init=0
 
 boi.boiler=New boiler
 boi\num=154
-boi\name$="Heavy Duty"
-boi\description$="Cette lourde chaudière peut produire de grande pression et est très fiable. Cependant son poids est un gros problème."
+boi\name$[1]="Heavy Duty"
+boi\description$[1]="Cette lourde chaudière peut produire de grande pression et est très fiable. Cependant son poids est un gros problème."
+boi\name$[2]=""
+boi\description$[2]=""
 boi\icone[1]=LoadImage("sprites\objets\chaudiere1_1.jpg")
 boi\icone[2]=LoadImage("sprites\objets\chaudiere1_2.jpg")
 boi\capacite=4
@@ -1146,8 +1234,10 @@ boi\init=0
 
 boi.boiler=New boiler
 boi\num=155
-boi\name$="Chauffe-eau Ingénieux"
-boi\description$="Une chaudière avec une bonne pression, tout en restant légère. On entre dans le haut de gamme."
+boi\name$[1]="Chauffe-eau Ingénieux"
+boi\description$[1]="Une chaudière avec une bonne pression, tout en restant légère. On entre dans le haut de gamme."
+boi\name$[2]=""
+boi\description$[2]=""
 boi\icone[1]=LoadImage("sprites\objets\chaudiere1_1.jpg")
 boi\icone[2]=LoadImage("sprites\objets\chaudiere1_2.jpg")
 boi\capacite=3
@@ -1171,8 +1261,10 @@ boi\init=0
 
 boi.boiler=New boiler
 boi\num=156
-boi\name$="M.Zoulou"
-boi\description$="''Pleine puissance, Monsieur Zoulou !!''#Elu meilleur slogan de l'année."
+boi\name$[1]="M.Zoulou"
+boi\description$[1]="''Pleine puissance, Monsieur Zoulou !!''#Élu meilleur slogan de l'année."
+boi\name$[2]="Mr.Zoulou"
+boi\description$[2]="''Full Power, Mr.Zoulou!''#Voted 'Best Slogan of the Year'"
 boi\icone[1]=LoadImage("sprites\objets\chaudiere1_1.jpg")
 boi\icone[2]=LoadImage("sprites\objets\chaudiere1_2.jpg")
 boi\capacite=6
@@ -1193,8 +1285,10 @@ boi\init=0
 
 boi.boiler=New boiler
 boi\num=157
-boi\name$="Lightning"
-boi\description$="Une incroyable chaudière, légère mais puissante"
+boi\name$[1]="Lightning"
+boi\description$[1]="Une incroyable chaudière, légère mais puissante"
+boi\name$[2]=""
+boi\description$[2]=""
 boi\icone[1]=LoadImage("sprites\objets\chaudiere1_1.jpg")
 boi\icone[2]=LoadImage("sprites\objets\chaudiere1_2.jpg")
 boi\capacite=4
@@ -1212,6 +1306,13 @@ boi\deg[3]=0
 boi\pv=0
 boi\init=0
 
+For boi.boiler = Each boiler
+	For i=2 To NB_LANGUES
+		If boi\description$[i]="" Then boi\description$[i]="NTY: "+boi\description$[1]
+		If boi\name$[i]="" Then boi\name$[i]="NTY: "+boi\name$[1]
+	Next
+Next
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Objets Spéciaux;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;	Field num
 ;	Field name$
@@ -1220,200 +1321,269 @@ boi\init=0
 ;	Field icone[2] ; en un la petite, en deux la grande
 spe.special=New special
 spe\num=200
-spe\name$="Lunettes de protection"
-spe\description$="Un must pour qui travaille avec de la vapeur et du métal."
+spe\name$[1]="Lunettes de protection"
+spe\description$[1]="Un must pour qui travaille avec de la vapeur et du métal."
+spe\name$[2]=""
+spe\description$[2]=""
 spe\junk=10
 spe\caps=25
 
 spe.special=New special
 spe\num=201
-spe\name$="Aegis-1"
-spe\description$="Télécommande pour démarrer le Gearbot Aegis-1"
+spe\name$[1]="Aegis-1"
+spe\description$[1]="Télécommande pour démarrer le Gearbot Aegis-1"
+spe\name$[2]=""
+spe\description$[2]=""
 spe\icone[1]=LoadImage("sprites\objets\gearbot01_1.jpg")
 spe\icone[2]=LoadImage("sprites\objets\gearbot01_2.jpg")
 spe\junk=0
 spe\caps=0
 spe\rules[1]=201
 
+For spe.special = Each special
+	For i=2 To NB_LANGUES
+		If spe\description$[i]="" Then spe\description$[i]="NTY: "+spe\description$[1]
+		If spe\name$[i]="" Then spe\name$[i]="NTY: "+spe\name$[1]
+	Next
+Next
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Objets de quêtes;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 q.quest_item=New quest_item
 q\num=1
-q\name$="Poignée de Steamille"
-q\description$="Quelques steamilles. Avec un peu de chance, cela suffira à alimenter la porte de la cellule de Stale."
+q\name$[1]="Poignée de Steamille"
+q\description$[1]="Quelques steamilles. Avec un peu de chance, cela suffira à alimenter la porte de la cellule de Stale."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\poi_steamille_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\poi_steamille_2.jpg")
 
 q.quest_item=New quest_item
 q\num=2
-q\name$="Arsène et la Voteuse"
-q\description$="Arsène veut faire réparer la Voteuse. Un membre de la Caste des Engrenages pourrait bien être utile pour cela."
+q\name$[1]="Arsène et la Voteuse"
+q\name$[2]=""
+q\description$[1]="Arsène veut faire réparer la Voteuse. Un membre de la Caste des Engrenages pourrait bien être utile pour cela."
+q\description$[2]=""
 q\shareable=1
 
 q.quest_item=New quest_item
 q\num=3
-q\name$="Badge de Protecteur"
-q\description$="Une plaque métallique, qui prouve que vous faites partie de la très respectée Caste des Protecteurs. Étrangement, il n'y a ni nom ni photo, mais il semble usé et il y a même quelques traces de sang."
+q\name$[1]="Badge de Protecteur"
+q\description$[1]="Une plaque métallique, qui prouve que vous faites partie de la très respectée Caste des Protecteurs. Étrangement, il n'y a ni nom ni photo, mais il semble usé et il y a même quelques traces de sang."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\Badge_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\Badge_2.jpg")
 
 q.quest_item=New quest_item
 q\num=4
-q\name$="Visa Temporaire"
-q\description$="Un visa donné par une des secrétaires. Il permet de circuler dans quelques zones, le temps de passer l'épreuve des Protecteurs."
+q\name$[1]="Visa Temporaire"
+q\description$[1]="Un visa donné par une des secrétaires. Il permet de circuler dans quelques zones, le temps de passer l'épreuve des Protecteurs."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\Visa_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\Visa_2.jpg")
 
 q.quest_item=New quest_item
 q\num=5
-q\name$="Engrenage d'identification"
-q\description$="Test--Cette engrenage d'identification n'est adapté qu'à une seule porte et nécessite une rotation manuelle. Attention à tourner dans le bon sens !"
+q\name$[1]="Engrenage d'identification"
+q\description$[1]="Test--Cette engrenage d'identification n'est adapté qu'à une seule porte et nécessite une rotation manuelle. Attention à tourner dans le bon sens !"
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\keygun_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\keygun_2.jpg")
 
 q.quest_item=New quest_item
 q\num=6
-q\name$="Piston de Combat"
-q\description$="Le fameux Piston de Combat de Stan. C'est une arme très puissante mais qui nécessite un compresseur hydraulique pour fonctionner."
+q\name$[1]="Piston de Combat"
+q\description$[1]="Le fameux Piston de Combat de Stan. C'est une arme très puissante mais qui nécessite un compresseur hydraulique pour fonctionner."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\piston_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\piston_2.jpg")
 
 q.quest_item=New quest_item
 q\num=7
-q\name$="Dessin d'un Piston de Combat"
-q\description$="Un dessin très ressemblant du fameux Piston de Combat de Stan."
+q\name$[1]="Dessin d'un Piston de Combat"
+q\description$[1]="Un dessin très ressemblant du fameux Piston de Combat de Stan."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\dessin_piston_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\dessin_piston_2.jpg")
 
 q.quest_item=New quest_item
 q\num=8
-q\name$="Visa Temporaire"
-q\description$="Un visa donné par une des secrétaires. Il a été tamponné par un garde pour indiquer qu'il vous a donné de l'équipement."
+q\name$[1]="Visa Temporaire"
+q\description$[1]="Un visa donné par une des secrétaires. Il a été tamponné par un garde pour indiquer qu'il vous a donné de l'équipement."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\Visa_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\Visa_2.jpg")
 
 q.quest_item=New quest_item
 q\num=9
-q\name$="Pass Formation Engrenage"
-q\description$="Donné par une des secrétaires. Vous permet de passer l'épreuve pour devenir un Engrenage."
+q\name$[1]="Pass Formation Engrenage"
+q\description$[1]="Donné par une des secrétaires. Vous permet de passer l'épreuve pour devenir un Engrenage."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\Visa_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\Visa_2.jpg")
 
 q.quest_item=New quest_item
 q\num=10
-q\name$="Clé Engrenage"
-q\description$="Clé permettant d'avoir accès au laboratoire de Teddy"
+q\name$[1]="Clé Engrenage"
+q\description$[1]="Clé permettant d'avoir accès au laboratoire de Teddy"
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\Visa_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\Visa_2.jpg")
 
 q.quest_item=New quest_item
 q\num=11
-q\name$="Clé Poste"
-q\description$="Clé permettant d'avoir accès à la Poste"
+q\name$[1]="Clé Poste"
+q\description$[1]="Clé permettant d'avoir accès à la Poste"
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\Visa_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\Visa_2.jpg")
 
 q.quest_item=New quest_item
 q\num=12
-q\name$="Lettre pour Emmanuella"
-q\description$="Une lettre qui prouve que Emmanuella a essayé d'engager des assassins pour se débarrasser de M.Arsène."
+q\name$[1]="Lettre pour Emmanuella"
+q\description$[1]="Une lettre qui prouve que Emmanuella a essayé d'engager des assassins pour se débarrasser de M.Arsène."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\Visa_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\Visa_2.jpg")
 
 q.quest_item=New quest_item
 q\num=13
-q\name$="Pièces de rechange pour la Voteuse"
-q\description$="Des pièces diverses, à priori destinées à remplacer les pièces défaillantes dans la Voteuse."
+q\name$[1]="Pièces de rechange pour la Voteuse"
+q\description$[1]="Des pièces diverses, à priori destinées à remplacer les pièces défaillantes dans la Voteuse."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\poi_steamille_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\poi_steamille_2.jpg")
 
 q.quest_item=New quest_item
 q\num=14
-q\name$="Insigne de l'Engrenage"
-q\description$="Une plaque métallique, qui prouve que vous faites partie de la très respectée Caste des Engrenages. Son cliquetis incessant est hypnotique."
+q\name$[1]="Insigne de l'Engrenage"
+q\description$[1]="Une plaque métallique, qui prouve que vous faites partie de la très respectée Caste des Engrenages. Son cliquetis incessant est hypnotique."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\Badge_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\Badge_2.jpg")
 
 q.quest_item=New quest_item
 q\num=15
-q\name$="Carte de Teddy Bière"
-q\description$="Une carte perforée métallique. Contrairement aux autres objets des chefs de castes, elle n'est pas unique et Teddy semblait en avoir un paquet sur lui."
+q\name$[1]="Carte de Teddy Bière"
+q\description$[1]="Une carte perforée métallique. Contrairement aux autres objets des chefs de castes, elle n'est pas unique et Teddy semblait en avoir un paquet sur lui."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\Visa_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\Visa_2.jpg")
 
 q.quest_item=New quest_item
 q\num=16
-q\name$="Complot contre Arsène"
-q\description$="Emmanuella veut tuer Arsène car il s'oppose à sa domination."
+q\name$[1]="Complot contre Arsène"
+q\description$[1]="Emmanuella veut tuer Arsène car il s'oppose à sa domination."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=1
 
 q.quest_item=New quest_item
 q\num=17
-q\name$="Jet Pack"
-q\description$="Le fameux Jet-Pack d'Aude, leader de la Caste respectée des Chasseurs."
+q\name$[1]="Jet Pack"
+q\description$[1]="Le fameux Jet-Pack d'Aude, leader de la Caste respectée des Chasseurs."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 
 q.quest_item=New quest_item
 q\num=18
-q\name$="Insigne des Chasseurs"
-q\description$="Une médaille arc un arc et un arbre en argent. Elle prouve que vous êtes un chasseur."
+q\name$[1]="Insigne des Chasseurs"
+q\description$[1]="Une médaille arc un arc et un arbre en argent. Elle prouve que vous êtes un chasseur."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\Badge_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\Badge_2.jpg")
 
 q.quest_item=New quest_item
 q\num=19
-q\name$="Dessin du Meurtre d'Arsène"
-q\description$="Un dessin fait par Emmanuella où elle explique qu'il faut tuer Arsène. Franchement vous n'avez pas honte ?"
+q\name$[1]="Dessin du Meurtre d'Arsène"
+q\description$[1]="Un dessin fait par Emmanuella où elle explique qu'il faut tuer Arsène. Franchement vous n'avez pas honte ?"
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 
 q.quest_item=New quest_item
 q\num=20
-q\name$="Key-Gun"
-q\description$="Une magnifique clé qui semble faire aussi fusil. Malheureusement, vous ne possédez pas les munitions correspondantes."
+q\name$[1]="Key-Gun"
+q\description$[1]="Une magnifique clé qui semble faire aussi fusil. Malheureusement, vous ne possédez pas les munitions correspondantes."
+q\name$[2]=""
+q\description$[2]=""
 q\icone[1]=LoadImage("sprites\objets\keygun_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\keygun_2.jpg")
 q\shareable=0
 
 q.quest_item=New quest_item
 q\num=21
-q\name$="Pass Chasseur"
-q\description$="Un pass donné par la secrétaire. Il vous permet de passer l'épreuve des Chasseurs au premier étage."
+q\name$[1]="Pass Chasseur"
+q\description$[1]="Un pass donné par la secrétaire. Il vous permet de passer l'épreuve des Chasseurs au premier étage."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 q\icone[1]=LoadImage("sprites\objets\Visa_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\Visa_2.jpg")
 
 q.quest_item=New quest_item
 q\num=22
-q\name$="Clé de l'épreuve"
-q\description$="Une bête clé utilisée pour l'épreuve des Chasseurs."
+q\name$[1]="Clé de l'épreuve"
+q\description$[1]="Une bête clé utilisée pour l'épreuve des Chasseurs."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=0
 
 q.quest_item=New quest_item
 q\num=23
-q\name$="Evasion"
-q\description$="Que votre village vous manque ! Evadez vous et regagnez votre petit chez vous."
+q\name$[1]="Evasion"
+q\description$[1]="Que votre village vous manque ! Evadez vous et regagnez votre petit chez vous."
+q\name$[2]=""
+q\description$[2]=""
 q\shareable=-1
 q\icone[1]=LoadImage("sprites\objets\Quest_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\Quest_2.jpg")
 
 q.quest_item=New quest_item
 q\num=24
-q\name$="Engrenage d'identification"
-q\description$="Ce petit engrenage permet d'ouvrir les batiments de l'usine. C'est bien utile."
+q\name$[1]="Engrenage d'identification"
+q\description$[1]="Ce petit engrenage permet d'ouvrir les batiments de l'usine. C'est bien utile."
+q\name$[2]=""
+q\description$[2]=""
 q\icone[1]=LoadImage("sprites\objets\keygun_1.jpg")
 q\icone[2]=LoadImage("sprites\objets\keygun_2.jpg")
 q\shareable=0
+
+For q.quest_item = Each quest_item
+	For i=2 To NB_LANGUES
+		If q\description$[i]="" Then q\description$[i]="NTY: "+q\description$[1]
+		If q\name$[i]="" Then q\name$[i]="NTY: "+q\name$[1]
+	Next
+Next
+
+
+

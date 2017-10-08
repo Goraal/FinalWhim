@@ -739,7 +739,7 @@ Function reinit_groupe()
 	g\script[1]=219
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
-	g\nom_action$[1]="monter à l'étage Supérieur"
+	g\nom_action$[1]="monter à l'étage supérieur"
 	g\range_trigger[2]=2
 	g\range_trigger[3]=4
 	g\position#[1]=14
@@ -869,46 +869,56 @@ Function reinit_groupe()
 	;équipe du joueur
 	a.avatar=New avatar
 	a\num=-1
-	a\name$="Inventaire quest du joueur"
-	a\classe$="Programmation"
+	a\name$[1]="Inventaire quest du joueur"
+	a\classe$[1]="Programmation"
 
 	a.avatar=New avatar
 	a\num=1
 	a\prop=0
 	a\set=1
 	a\cat=1
-	a\name$="Major"
+	a\name$[1]="Major"
+	a\name$[2]="Major"
 	a\groupe=-1
-	a\description$="Chef par droit de sang d'un petit village caché. Il aime la chasse, prendre des décisions et l'odeur du café au petit matin. Il n'aime pas les protecteurs des animaux, les gens qui n'obéissent pas et les matins sans café."
+	a\description$[1]="Chef par droit de sang d'un petit village caché. Il aime la chasse, prendre des décisions et l'odeur du café au petit matin. Il n'aime pas les protecteurs des animaux, les gens qui n'obéissent pas et les matins sans café."
+	a\description$[2]=""
 	
 	a.avatar=New avatar
 	a\num=2
 	a\prop=0
 	a\set=1
 	a\cat=2
-	a\name$="Léopold"
+	a\name$[1]="Léopold"
+	a\name$[2]="Léopold"
 	a\groupe=-1
-	a\description$="Fils d'un marchand itinérant, il s'est installé dans ce village après avoir eu un coup de foudre pour la fille du Chef. Sa bonne volonté est appréciée des villageois mais sa trop grande gentillesse en fait la cible rêvée de tous les profiteurs."
+	a\description$[1]="Fils d'un marchand itinérant, il s'est installé dans ce village après avoir eu un coup de foudre pour la fille du Chef. Sa bonne volonté est appréciée des villageois mais sa trop grande gentillesse en fait la cible rêvée de tous les profiteurs."
+	a\description$[2]=""
 
 	a.avatar=New avatar
 	a\num=3
 	a\prop=0
 	a\set=1
 	a\cat=3
-	a\name$="Adeline"
+	a\name$[1]="Adeline"
+	a\name$[2]="Adeline"
 	a\groupe=-1
-	a\description$="Fille du Chef du village. Son égoïsme et sa passion pour la manipulation énervent au plus haut point ses parents qui désespèrent de la voir mûrir un peu."
-
+	a\description$[1]="Fille du Chef du village. Son égoïsme et sa passion pour la manipulation énervent au plus haut point ses parents qui désespèrent de la voir mûrir un peu."
+	a\description$[2]=""
+	
 	;classes possibles pour les PJ
 	a.avatar=New avatar
 	a\num=-11
 	a\prop=0
 	a\set=1
 	a\cat=1
-	a\name$="Classe 1"
-	a\classe$="Aspirant"
-	a\description$="L'aspirant est un apprenti-garde. Il s'est durement entrainé au combat et a juré de protéger les habitants de son village."
-	a\tactique$="Conseils : L'Aspirant est équilibré et s'en sort plutôt bien au corps à corps. Il devrait donc convenir dans la plupart des situations mais son absence de spécialisation peut rendre un peu dure la fin du jeu."
+	a\name$[1]="Classe 1"
+	a\classe$[1]="Aspirant"
+	a\description$[1]="L'aspirant est un apprenti-garde. Il s'est durement entrainé au combat et a juré de protéger les habitants de son village."
+	a\tactique$[1]="Conseils : L'Aspirant est équilibré et s'en sort plutôt bien au corps à corps. Il devrait donc convenir dans la plupart des situations mais son absence de spécialisation peut rendre un peu dure la fin du jeu."
+	a\name$[2]="Class 1"
+	a\classe$[2]=""
+	a\description$[2]=""
+	a\tactique$[2]=""
 	a\att[1]=4
 	a\att[2]=4
 	a\att[3]=4
@@ -935,10 +945,14 @@ Function reinit_groupe()
 	a\prop=0
 	a\set=1
 	a\cat=3
-	a\name$="Classe 2"
-	a\classe$="Acrobate"
-	a\description$="Après de nombreuses années dans un cirque, l'Acrobate peut enchaîner des roulades et des sauts capables aussi bien de captiver un auditoire que de sauver sa vie sur un champ de bataille."
-	a\tactique$="Conseils : L'Acrobate est difficile à toucher grâce à sa haute dextérité mais elle reste très fragile. Profitez de sa rapidité pour frapper dès le premier tour même avec des armes de corps à corps."
+	a\name$[1]="Classe 2"
+	a\classe$[1]="Acrobate"
+	a\description$[1]="Après de nombreuses années dans un cirque, l'Acrobate peut enchaîner des roulades et des sauts capables aussi bien de captiver un auditoire que de sauver sa vie sur un champ de bataille."
+	a\tactique$[1]="Conseils : L'Acrobate est difficile à toucher grâce à sa haute dextérité mais reste très fragile. Profitez de sa rapidité pour frapper dès le premier tour même avec des armes de corps à corps."
+	a\name$[2]="Class 2"
+	a\classe$[2]="Acrobat"
+	a\description$[2]=""
+	a\tactique$[2]=""
 	a\att[1]=6
 	a\att[2]=3
 	a\att[3]=4
@@ -966,10 +980,14 @@ Function reinit_groupe()
 	a\prop=0
 	a\set=1
 	a\cat=1
-	a\name$="Classe 3"
-	a\classe$="Médecin"
-	a\description$="Ancien médecin militaire, c'est un spécialiste de la suture et rebouture avec trois bouts de ficelle. Certes il ne peut pas rivaliser avec un hôpital bien équipé mais bien des gens doivent la vie à ses mains habiles et son professionnalisme."
-	a\tactique$="Conseils : Le Médecin est fragile et n'est pas très bon au combat, que ce soit au contact ou à distance. Il faudra donc le protéger et cela vous empêchera aussi de prendre un autre combattant mais sa compétence [Médecin] (qui ne fonctionne que s'il n'est pas inconscient) peut valoir le coup."
+	a\name$[1]="Classe 3"
+	a\classe$[1]="Médecin"
+	a\description$[1]="Ancien médecin militaire, c'est un spécialiste de la suture et rebouture avec trois bouts de ficelle. Certes il ne peut pas rivaliser avec un hôpital bien équipé mais bien des gens doivent la vie à ses mains habiles et son professionnalisme."
+	a\tactique$[1]="Conseils : Le Médecin est fragile et n'est pas très bon au combat, que ce soit au contact ou à distance. Il faudra donc le protéger et cela vous empêchera aussi de prendre un autre combattant mais sa compétence [Médecin] (qui ne fonctionne que s'il n'est pas inconscient) peut valoir le coup."
+	a\name$[2]="Class 3"
+	a\classe$[2]=""
+	a\description$[2]=""
+	a\tactique$[2]=""
 	a\att[1]=3
 	a\att[2]=1
 	a\att[3]=3
@@ -997,10 +1015,14 @@ Function reinit_groupe()
 	a\prop=0
 	a\set=1
 	a\cat=3
-	a\name$="Classe 4"
-	a\classe$="Infirmier"
-	a\description$="Encore jeune et plein de bonne volonté, l'Infirmier accompagne souvent un Médecin afin d'apprendre son art (même si il sert le plus souvent de garde du corps et d'aide de camp)."
-	a\tactique$="Conseils : L'infirmier est plus utile en combat que le Médecin mais son bonus de soin est moins élevé et il n'a pas d'arme de prédilection."
+	a\name$[1]="Classe 4"
+	a\classe$[1]="Infirmier"
+	a\description$[1]="Encore jeune et plein de bonne volonté, l'Infirmier accompagne souvent un Médecin afin d'apprendre son art (même si il sert le plus souvent de garde du corps et d'aide de camp)."
+	a\tactique$[1]="Conseils : L'infirmier est plus utile en combat que le Médecin mais son bonus de soin est moins élevé et il n'a pas d'arme de prédilection."
+	a\name$[2]="Class 4"
+	a\classe$[2]=""
+	a\description$[2]=""
+	a\tactique$[2]=""
 	a\att[1]=4
 	a\att[2]=3
 	a\att[3]=5
@@ -1027,10 +1049,14 @@ Function reinit_groupe()
 	a\prop=0
 	a\set=1
 	a\cat=5
-	a\name$="Classe 5"
-	a\classe$="Brute"
-	a\description$="Contrairement à ce que pourrait faire penser son physique impressionnant, la Brute n'est pas idiote et profite même souvent de ce stéréotype pour bluffer les ennemis qui la sous-estiment."
-	a\tactique$="Conseils : Pas besoin de beaucoup réfléchir avec la Brute. Profitez de sa grande force et de sa résistance pour l'envoyer en première ligne."
+	a\name$[1]="Classe 5"
+	a\classe$[1]="Brute"
+	a\description$[1]="Contrairement à ce que pourrait faire penser son physique impressionnant, la Brute n'est pas idiote et profite même souvent de ce stéréotype pour bluffer les ennemis qui la sous-estiment."
+	a\tactique$[1]="Conseils : Pas besoin de beaucoup réfléchir avec la Brute. Profitez de sa grande force et de sa résistance pour l'envoyer en première ligne."
+	a\name$[2]="Class 5"
+	a\classe$[2]=""
+	a\description$[2]=""
+	a\tactique$[2]=""
 	a\att[1]=1
 	a\att[2]=5
 	a\att[3]=0
@@ -1059,10 +1085,14 @@ Function reinit_groupe()
 	a\prop=0
 	a\set=1
 	a\cat=1
-	a\name$="Classe 6"
-	a\classe$="Assassin"
-	a\description$="Pour ce spécialiste des coups bas, tout est une question de timing. Une petite estocade peut faire autant de dégâts qu'un grand coup de hache si la victime ne peut pas se défendre. Et imaginez ce que pourrait faire un grand coup de hache bien placé !"
-	a\tactique$="Conseils : Essayez de frapper les cible ayant le moins de défense. Plus la cible a de malus de defense (bouclier rouge), plus vous ferez de dégâts. Attention cependant à ne pas mourir avant de pouvoir frapper."
+	a\name$[1]="Classe 6"
+	a\classe$[1]="Assassin"
+	a\description$[1]="Pour ce spécialiste des coups bas, tout est une question de timing. Une petite estocade peut faire autant de dégâts qu'un grand coup de hache si la victime ne peut pas se défendre. Et imaginez ce que pourrait faire un grand coup de hache bien placé !"
+	a\tactique$[1]="Conseils : Essayez de frapper les cible ayant le moins de défense. Plus la cible a de malus de defense (bouclier rouge), plus vous ferez de dégâts. Attention cependant à ne pas mourir avant de pouvoir frapper."
+	a\name$[2]="Class 6"
+	a\classe$[2]="Assassin"
+	a\description$[2]=""
+	a\tactique$[2]=""
 	a\att[1]=7
 	a\att[2]=2
 	a\att[3]=5
@@ -1089,10 +1119,14 @@ Function reinit_groupe()
 	a\prop=0
 	a\set=1
 	a\cat=3
-	a\name$="Classe 7"
-	a\classe$="Flingeur"
-	a\description$="Les flingues, c'est sa passion depuis son enfance. Pourquoi jouer dehors quand on peut démonter un pistolet~? Pourquoi avoir des amis quand on peut écouter le doux murmure de la mécanique, suivi du rugissement de la poudre~? Pourquoi rester enfermé alors qu'on pourrait flinguer tout le monde~?"
-	a\tactique$="Conseils : Faites irradier la passion du Flingeur sur vos ennemis et n'hésitez pas à tirer en rafale. Cependant n'oubliez pas que son bonus d'attaque avec les armes de poings n'est pas appliqué sur les autres armes."
+	a\name$[1]="Classe 7"
+	a\classe$[1]="Flingeur"
+	a\description$[1]="Les flingues, c'est sa passion depuis son enfance. Pourquoi jouer dehors quand on peut démonter un pistolet~? Pourquoi avoir des amis quand on peut écouter le doux murmure de la mécanique, suivi du rugissement de la poudre~? Pourquoi rester enfermé alors qu'on pourrait flinguer tout le monde~?"
+	a\tactique$[1]="Conseils : Faites irradier la passion du Flingeur sur vos ennemis et n'hésitez pas à tirer en rafale. Cependant n'oubliez pas que son bonus d'attaque avec les armes de poings n'est pas appliqué sur les autres armes."
+	a\name$[2]="Class 7"
+	a\classe$[2]=""
+	a\description$[2]=""
+	a\tactique$[2]=""
 	a\att[1]=3
 	a\att[2]=2
 	a\att[3]=6
@@ -1122,10 +1156,14 @@ Function reinit_groupe()
 	a\prop=0
 	a\set=1
 	a\cat=1
-	a\name$="Classe 8"
-	a\classe$="Franc-Tireur"
-	a\description$="Le Franc-Tireur fait généralement parti d'un petit groupe de mercenaire, engagé pour protéger un village. Il est spécialement entrainé aux armes à feu, en particulier les fusils semi-automatiques, ce qui en fait un allié précieux mais couteux."
-	a\tactique$="Conseils : Le Franc-Tireur fera des ravages avec une arme pouvant tirer plusieurs fois par tour, comme un fusil semi-automatique ou un pistolet mitrailleur. Mais n'oubliez pas qu'il s'agit d'armes de haut niveau, chères et rares."
+	a\name$[1]="Classe 8"
+	a\classe$[1]="Franc-Tireur"
+	a\description$[1]="Le Franc-Tireur fait généralement parti d'un petit groupe de mercenaire, engagé pour protéger un village. Il est spécialement entrainé aux armes à feu, en particulier les fusils semi-automatiques, ce qui en fait un allié précieux mais couteux."
+	a\tactique$[1]="Conseils : Le Franc-Tireur fera des ravages avec une arme pouvant tirer plusieurs fois par tour, comme un fusil semi-automatique ou un pistolet mitrailleur. Mais n'oubliez pas qu'il s'agit d'armes de haut niveau, chères et rares."
+	a\name$[2]="Class 8"
+	a\classe$[2]=""
+	a\description$[2]=""
+	a\tactique$[2]=""
 	a\att[1]=2
 	a\att[2]=4
 	a\att[3]=7
@@ -1153,10 +1191,10 @@ Function reinit_groupe()
 	a\prop=0
 	a\set=1
 	a\cat=-21
-	a\name$="Aegis-1"
-	a\classe$="Gearbot Aegis"
-	a\description$="Un GearBot modèle Aegis, immatriculé 1."
-	a\tactique$="Blabla, tu vois pas ça !"
+	a\name$[1]="Aegis-1"
+	a\classe$[1]="Gearbot Aegis"
+	a\description$[1]="Un GearBot modèle Aegis, immatriculé 1."
+	a\tactique$[1]="Blabla, tu vois pas ça !"
 	a\att[1]=0
 	a\att[2]=0
 	a\att[3]=0
@@ -1184,9 +1222,9 @@ Function reinit_groupe()
 	a\prop=0
 	a\set=1
 	a\cat=12
-	a\name$="Fillette"
-	a\classe$="Apprentie Chasseuse"
-	a\description$="La fillette est née à FactoryTec et travaille dur pour réaliser son rêve, devenir un membre de la caste très respectée des Chasseurs (ça et manger des chamallows grillés)."
+	a\name$[1]="Fillette"
+	a\classe$[1]="Apprentie Chasseuse"
+	a\description$[1]="La fillette est née à FactoryTec et travaille dur pour réaliser son rêve, devenir un membre de la caste très respectée des Chasseurs (ça et manger des chamallows grillés)."
 	a\att[1]=0
 	a\att[2]=0
 	a\att[3]=0
@@ -1211,6 +1249,15 @@ Function reinit_groupe()
 	a\faiblesse#[2]=2
 	a\faiblesse#[3]=3
 	a\cmpt[1]=2 ; interne en médecine
+	
+	For a.avatar = Each avatar
+		For i=2 To NB_LANGUES
+			If a\name$[i]="" Then a\name$[i] = "NTY: "+a\name$[1]
+			If a\classe$[i]="" Then a\classe$[i] = "NTY: "+a\classe$[1]
+			If a\description$[i]="" Then a\description$[i] = "NTY: "+a\description$[1]
+			If a\tactique$[i]="" Then a\tactique$[i] = "NTY: "+a\tactique$[1]
+		Next
+	Next 
 
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Agresseurs;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	agr.agresseur=New agresseur

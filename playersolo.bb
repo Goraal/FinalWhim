@@ -27,7 +27,7 @@ numero_astuce=Rand(1,NB_ASTUCES)
 		xml_Avancement=xmlLoad("Script/New game.xml")
 		event_action=0
 		quitter_jeu=0
-		numero_astuce=10 ; mettre les astuces "utiles" en premier lors d'une nouvelle partie
+		numero_astuce=1 ; mettre les astuces "utiles" en premier lors d'une nouvelle partie
 		
 .selection_avatar ; + cinématique à intégrer
 
@@ -126,7 +126,9 @@ sortie=0
 level=player_map
 numero_astuce=numero_astuce+1
 If numero_astuce>NB_ASTUCES Then numero_astuce=1
-aff_loading(1,"Création du niveau",numero_astuce)
+mult_mess$(1)="Création du niveau"
+mult_mess$(2)="Building level"
+aff_loading(1,mult_mess$(Int(options#(7))),numero_astuce)
 load_map(level,map_entrance)
 loaded_map=level
 current_map=loaded_map
@@ -142,7 +144,9 @@ current_map=loaded_map
 ;EndIf
 
 
-aff_loading(2,"Création du joueur",numero_astuce)
+mult_mess$(1)="Création du joueur"
+mult_mess$(2)="Building player"
+aff_loading(2,mult_mess$(Int(options#(7))),numero_astuce)
 ;create groupe\model et les autres groupes à côtés
 For pl_grp.groupe=Each groupe
 	If pl_grp\num=-1
@@ -187,7 +191,10 @@ CreateListener(cam,0.3)
 ;activator
 activator=LoadSprite("sprites\gfx\activator_01.bmp")
 
-aff_loading(3,"Chargement sons",numero_astuce)
+mult_mess$(1)="Chargement sons"
+mult_mess$(2)="Loading sounds"
+aff_loading(3,mult_mess$(Int(options#(7))),numero_astuce)
+
 ;load sound
 
 
@@ -225,9 +232,6 @@ If mode_de_jeu=5 Then mode_de_jeu=1
 While quitter_jeu=0
 	start_loop()
 	
-	;a enlever
-	;If KeyDown(82) Then quitter_jeu=1 ; Num0
-
 	Gosub entree
 			
 	Select mode_de_jeu
@@ -245,16 +249,15 @@ While quitter_jeu=0
 			RuntimeError "Mode_de_jeu incorrect"
 	End Select
 
-	;If nb_tour>0 Then RuntimeError "Blim"
-	
 	call_serveur()
 	animation()
 	If loaded_map<>current_map Then Goto load_map
 
-	;;a enlever	
+	If mode_debug=1
 		Color 250,250,250
 		SetFont little_font
 		Text 5,screenheight-30*screeny#,Left(fps#(),5)
+	EndIf
 	
 	Flip
 	compensation_lag()	
@@ -576,7 +579,9 @@ Return
 				If dist2d(pl_grp_pivot,butin\pivot)<1.5 And lock_action=0
 					lock_action=1
 					If butin\hidden=0
-						message_action$="prendre ce butin"
+						mult_mess$(1)="prendre ce butin"
+						mult_mess$(2)="loot"
+						message_action$=mult_mess$(Int(options#(7)))
 						aff_activator(butin\position#[1],butin\position#[2]+0.1,butin\position#[3],1,2)
 					EndIf
 					If keys(12,2)=50
@@ -648,9 +653,15 @@ Return
 											EndIf
 										EndIf
 									Next
-									If good2=0 Then new_log("Attention : votre inventaire est plein.",250,0,0)
+									If good2=0
+										mult_mess$(1)="Attention : votre inventaire est plein."
+										mult_mess$(2)="Warning: Your inventory is full."
+										new_log(mult_mess$(Int(options#(7))),250,0,0)
+									EndIf
 								Else
-									new_log("Attention : votre inventaire est plein.",250,0,0)
+									mult_mess$(1)="Attention : votre inventaire est plein."
+									mult_mess$(2)="Warning: Your inventory is full."
+									new_log(mult_mess$(Int(options#(7))),250,0,0)
 								EndIf
 							EndIf
 						Next
@@ -737,31 +748,31 @@ Return
 	
 	;;load les items du menu
 		; les onglets et le curseur
-	If gfx_onglets=0
-		gfx_onglets=LoadImage("sprites\menu\onglets.bmp")
-		;ScaleImage gfx_onglets,screenxf#,screenyf#
+	If gfx_onglets(1,Int(options#(7)))=0
+		Select Int(options#(7))
+			Case 1
+				gfx_onglets(1,Int(options#(7)))=LoadImage("sprites\menu\onglets.bmp")
+			Case 2				
+				gfx_onglets(1,Int(options#(7)))=LoadImage("sprites\menu\onglets_en.png")
+		End Select
 	EndIf
 	If face_poubelle=0
 		face_poubelle=LoadImage("sprites\menu\face_poubelle.bmp")
-		;ScaleImage face_poubelle,screenxf#,screenyf#
 	EndIf
 	If gfx_curseur_onglets=0
 		gfx_curseur_onglets=LoadImage("sprites\menu\curseur_onglets.bmp")
-		;ScaleImage gfx_curseur_onglets,screenxf#,screenyf#
 	EndIf
 	If gfx_cuir=0 Then gfx_cuir=LoadImage("textures\loran\fond-cuir-noir.jpg")
 	If fond_book=0 
 		fond_book=LoadImage("sprites\menu\fond_book.jpg")
-		;ScaleImage fond_book,screenxf#,screenyf#
 	EndIf
 	If gfx_signet=0 Then gfx_signet=LoadImage("sprites\menu\marque-page.bmp")
 	If gfx_signet_sombre=0 Then gfx_signet_sombre=LoadImage("sprites\menu\marque-page_sombre.bmp")
 	If non_icone=0 Then non_icone=LoadImage("sprites\objets\non_icone_1.jpg")
-	If non_icone2=0 Then non_icone2=LoadImage("sprites\objets\non_icone_2.jpg");ScaleImage non_icone2,screenyf#,screenyf#
+	If non_icone2=0 Then non_icone2=LoadImage("sprites\objets\non_icone_2.jpg")
 	aff_load_menu(0.3)
 	If gfx_xiao=0 
 		gfx_xiao=LoadImage("sprites\objets\xiao.bmp")
-		;ScaleImage gfx_xiao,screenyf#,screenyf#
 	EndIf
 ;	If bouton_panel_1=0
 ;		bouton_panel_1=LoadAnimImage("sprites\objets\panel-1.bmp",100,50,0,2)
@@ -835,7 +846,8 @@ Return
 		lire_clavier()
 		If mode_de_jeu=2 Then sortie_menu=1
 		
-		aide_contextuelle$=""
+		aide_contextuelle$(1)=""
+		aide_contextuelle$(2)=""
 
 		If MouseDown(02) or keys(90,2)=50 Then sortie_menu=1:keys(90,2)=min(49,keys(90,2))
 		sourisz#=MouseZSpeed()
@@ -853,7 +865,15 @@ Return
 				pos_curseur=pos_curseur+vitesse			
 			EndIf
 		EndIf
-		DrawImage gfx_onglets,0,0
+		If gfx_onglets(1,Int(options#(7)))=0
+			Select Int(options#(7))
+				Case 1
+					gfx_onglets(1,Int(options#(7)))=LoadImage("sprites\menu\onglets.bmp")
+				Case 2				
+					gfx_onglets(1,Int(options#(7)))=LoadImage("sprites\menu\onglets_en.png")
+			End Select
+		EndIf
+		DrawImage gfx_onglets(1,Int(options#(7))),0,0
 		DrawImage gfx_curseur_onglets,0,pos_curseur
 		
 		;selection des onglets
@@ -862,21 +882,29 @@ Return
 				If MouseY()<t*75 And MouseY()>(t-1)*75
 					Select t
 						Case 1
-							aide_contextuelle$="Voir les caractéristiques des personnages."	
+							aide_contextuelle$(1)="Voir les caractéristiques des personnages."
+							aide_contextuelle$(2)="See the attributes and abilities of your team members."
 						Case 2
-							aide_contextuelle$="Voir l'équipement des personnages."
+							aide_contextuelle$(1)="Voir l'équipement des personnages."
+							aide_contextuelle$(2)="Manage the equipment of your team members, and the inventory."
 						Case 3
-							aide_contextuelle$="Gérer le placement des personnages en combat."
+							aide_contextuelle$(1)="Gérer le placement des personnages en combat."
+							aide_contextuelle$(2)="Manage in-fight positions of the team members."
 						Case 4
-							aide_contextuelle$="Voir les objets de quêtes et les informations glanées au cours de la partie."
+							aide_contextuelle$(1)="Voir les objets de quêtes et les informations glanées au cours de la partie."
+							aide_contextuelle$(2)="See the key items and information gleaned during the game"
 						Case 5
-							aide_contextuelle$="Consulter le chat et les dernières informations."
+							aide_contextuelle$(1)="Consulter le chat et les dernières informations."
+							aide_contextuelle$(2)="Read the log of the last actions and conversations."
 						Case 6
-							aide_contextuelle$="Changer quelques options et sauvegarder votre partie."
+							aide_contextuelle$(1)="Changer les options et sauvegarder votre partie."
+							aide_contextuelle$(2)="Change the settings, save, or quit the game."
 						Case 7
-							aide_contextuelle$="Quelques astuces pour s'en sortir."
+							aide_contextuelle$(1)="Quelques astuces pour s'en sortir."
+							aide_contextuelle$(2)="A few tips on how to get by."
 						Case 8
-							aide_contextuelle$="Quitter le menu et revenir au jeu."
+							aide_contextuelle$(1)="Quitter le menu et revenir au jeu."
+							aide_contextuelle$(2)="Quit the menu and return to the game."
 					End Select
 					If keys(1,2)=50; And t<>4
 						If onglet<>t
@@ -964,12 +992,14 @@ Return
 									DrawBlock PJ_big(av\num),180,120
 								EndIf
 								SetFont middle_font
-								Text 310,120,"Nom : "+av\name$+" ("+av\classe$+")"
+								mult_mess$(1)="Nom : "
+								mult_mess$(2)="Name: "
+								Text 310,120,mult_mess$(Int(options#(7)))+av\name$[Int(options#(7))]+" ("+av\classe$[Int(options#(7))]+")"
 								;description
 								For t=1 To 7
 									disc_ligne(t)=""
 								Next
-								mess$=av\description$
+								mess$=av\description$[Int(options#(7))]
 								t=0
 								k=0
 								amax=Len(mess$)	
@@ -1011,20 +1041,37 @@ Return
 									car$=""
 									Select t
 										Case 1
-											mess$="Points de Vie : Lorsque les points de vie arrivent à 0, le personnage meurt."
-											car$="PV"
+											mult_mess$(1)="Points de Vie : Lorsque les points de vie arrivent à 0, le personnage est vaincu."
+											mult_mess$(2)="Hit Points: If hit points drop to 0, the character is knocked out."
+											mess$=mult_mess$(Int(options#(7)))
+											mult_mess$(1)="PV"
+											mult_mess$(2)="HP"
+											car$=mult_mess$(Int(options#(7)))
 										Case 2
-											mess$="Initiative : Détermine l'ordre d'action des combattants."
-											car$="Init"
+											mult_mess$(1)="Initiative : Détermine l'ordre d'action des combattants."
+											mult_mess$(2)="Initiative: Determine the rank in a battle's turn order."
+											mess$=mult_mess$(Int(options#(7)))
+											mult_mess$(1)="Init"
+											mult_mess$(2)="Init"
+											car$=mult_mess$(Int(options#(7)))
 										Case 3
-											mess$="Armure : Le nombre dégâts absorbés (coup normal / coup crtique / coup parfait)"
-											car$="Armure"
+											mult_mess$(1)="Armure : Le nombre dégâts absorbés (coup normal / coup crtique / coup parfait)."
+											mult_mess$(2)="Armour: The number of damages absorbed (normal hit / critical hit / perfect hit)."
+											mess$=mult_mess$(Int(options#(7)))
+											mult_mess$(1)="Armure"
+											mult_mess$(2)="Armour"
+											car$=mult_mess$(Int(options#(7)))
 										Case 4
-											mess$="Vapeur (Steam) : La pression utilisée pour l'équipement, et celle que produit la chaudière."
-											car$="Stm"
+											mult_mess$(1)="Vapeur (Steam) : La pression utilisée pour l'équipement, et celle que produit la chaudière."
+											mult_mess$(2)="Steam: The amount of pressure available for steam powered equipment (used / total)."
+											mess$=mult_mess$(Int(options#(7)))
+											mult_mess$(1)="Stm"
+											mult_mess$(2)="Stm"
+											car$=mult_mess$(Int(options#(7)))
 									End Select
 									If MouseX()>190 And MouseX()<300 And MouseY()>(t*20+250) And MouseY()<((t+1)*20+275)
-										aide_contextuelle$=mess$
+										aide_contextuelle$(1)=mess$
+										aide_contextuelle$(2)=mess$
 									EndIf
 										
 									Text 190,(t*20+250),car$
@@ -1066,19 +1113,31 @@ Return
 								
 								encombrement=calcul_encombrement(av\num)
 								;carac (Att, Def, Dgts)
-								Text 340,270,"Armes légères"
-								Text 340,290,"Att"
-								Text 340,310,"Def"
-								Text 340,330,"Dgts"
+								Select Int(options#(7))
+									Case 1
+										Text 340,270,"Armes légères"
+										Text 340,290,"Att"
+										Text 340,310,"Def"
+										Text 340,330,"Dgts"
+									Case 2
+										Text 340,270,"Light Weapons"
+										Text 340,290,"Att"
+										Text 340,310,"Def"
+										Text 340,330,"Dmg"
+								End Select
 								If MouseX() > 340 and MouseX() < 470
 									If MouseY() > 270 and MouseY() < 291
-										aide_contextuelle$="Les armes de corps à corps légères (couteau, épée, lance, ...)"
+										aide_contextuelle$(1)="Les armes de corps à corps légères (couteau, épée, lance, ...)."
+										aide_contextuelle$(2)="Light melee weapons (knife, sword, spear, ...)."
 									ElseIf MouseY() > 290 and MouseY() < 311
-										aide_contextuelle$="L'aptitude du personnage à attaquer avec les armes légères (Naturel + Equipement)"
+										aide_contextuelle$(1)="L'aptitude du personnage à attaquer avec les armes légères (Naturel + Equipement)."
+										aide_contextuelle$(2)="Attack rating with light weapons (Base + Equipment)."
 									ElseIf MouseY() > 310 and MouseY() < 331
-										aide_contextuelle$="La défense du personnage contre les armes légères (Naturel + Equipement)"
+										aide_contextuelle$(1)="La défense du personnage contre les armes légères (Naturel + Equipement)."
+										aide_contextuelle$(2)="Defense rating against light weapons (Base + Equipment)."
 									ElseIf MouseY() > 330 and MouseY() < 351
-										aide_contextuelle$="Le bonus aux dégâts du personnage avec les armes légères (Naturel + Equipement)"
+										aide_contextuelle$(1)="Le bonus aux dégâts du personnage avec les armes légères (Naturel + Equipement)."
+										aide_contextuelle$(2)="Bonus to the damages done with light weapons (Base + Equipement)."
 									EndIf									
 								EndIf
 								rText(395,290,Str(av\att[1]))
@@ -1088,19 +1147,32 @@ Return
 								rText(395,330,Str(av\deg[1]))
 								If bonus_equi(3)<>0 Then Text 395,330," "+signed_str$(bonus_equi(3),1)
 								
-								Text 480,270,"Armes lourdes"
-								Text 480,290,"Att"
-								Text 480,310,"Def"
-								Text 480,330,"Dgts"
+								
+								Select Int(options#(7))
+									Case 1
+										Text 480,270,"Armes lourdes"
+										Text 480,290,"Att"
+										Text 480,310,"Def"
+										Text 480,330,"Dgts"								
+									Case 2
+										Text 480,270,"Heavy Weapons"
+										Text 480,290,"Att"
+										Text 480,310,"Def"
+										Text 480,330,"Dmg"								
+								End Select
 								If MouseX() > 480 and MouseX() < 610
 									If MouseY() > 270 and MouseY() < 291
-										aide_contextuelle$="Les armes de corps à corps lourdes (hache, marteau, tronçonneuse, ...)"
+										aide_contextuelle$(1)="Les armes de corps à corps lourdes (hache, marteau, tronçonneuse, ...)."
+										aide_contextuelle$(2)="Heavy melee weapons (axe, warhammer, chainsaw, ...)."
 									ElseIf MouseY() > 290 and MouseY() < 311
-										aide_contextuelle$="L'aptitude du personnage à attaquer avec les armes lourdes (Naturel + Equipement)"
+										aide_contextuelle$(1)="L'aptitude du personnage à attaquer avec les armes lourdes (Naturel + Equipement)."
+										aide_contextuelle$(2)="Attack rating with heavy weapons (Base + Equipment)."
 									ElseIf MouseY() > 310 and MouseY() < 331
-										aide_contextuelle$="La défense du personnage contre les armes lourdes (Naturel + Equipement)"
+										aide_contextuelle$(1)="La défense du personnage contre les armes lourdes (Naturel + Equipement)."
+										aide_contextuelle$(2)="Defense rating against heavy weapons (Base + Equipment)."
 									ElseIf MouseY() > 330 and MouseY() < 351
-										aide_contextuelle$="Le bonus aux dégâts du personnage avec les armes lourdes (Naturel + Equipement)"
+										aide_contextuelle$(1)="Le bonus aux dégâts du personnage avec les armes lourdes (Naturel + Equipement)."
+										aide_contextuelle$(2)="Bonus to the damages done with heavy weapons (Base + Equipement)."
 									EndIf									
 								EndIf
 								rText(535,290,Str(av\att[2]))
@@ -1110,19 +1182,31 @@ Return
 								rText(535,330,Str(av\deg[2]))
 								If bonus_equi(6)<>0 Then Text 535,330," "+signed_str$(bonus_equi(6),1)
 								
-								Text 620,270,"Armes à distance"
-								Text 620,290,"Att"
-								Text 620,310,"Def"
-								Text 620,330,"Dgts"
+								Select Int(options#(7))
+									Case 1
+										Text 620,270,"Armes à distance"
+										Text 620,290,"Att"
+										Text 620,310,"Def"
+										Text 620,330,"Dgts"
+									Case 2
+										Text 620,270,"Ranged Weapons"
+										Text 620,290,"Att"
+										Text 620,310,"Def"
+										Text 620,330,"Dmg"
+								End Select
 								If MouseX() > 620 and MouseX() < 750
 									If MouseY() > 270 and MouseY() < 291
-										aide_contextuelle$="Les armes à distance (pistolet, fusil, lance-piere, ...)"
+										aide_contextuelle$(1)="Les armes à distance (pistolet, fusil, lance-piere, ...)."
+										aide_contextuelle$(2)="Ranged weapons (handgun, rifle, slingshot, ...)."
 									ElseIf MouseY() > 290 and MouseY() < 311
-										aide_contextuelle$="L'aptitude du personnage à attaquer avec les armes à distance (Naturel + Equipement)"
+										aide_contextuelle$(1)="L'aptitude du personnage à attaquer avec les armes à distance (Naturel + Equipement)."
+										aide_contextuelle$(2)="Attack rating with ranged weapons (Base + Equipment)."
 									ElseIf MouseY() > 310 and MouseY() < 331
-										aide_contextuelle$="La défense du personnage contre les armes à distance (Naturel + Equipement)"
+										aide_contextuelle$(1)="La défense du personnage contre les armes à distance (Naturel + Equipement)."
+										aide_contextuelle$(2)="Defense rating against ranged weapons (Base + Equipment)."
 									ElseIf MouseY() > 330 and MouseY() < 351
-										aide_contextuelle$="Le bonus aux dégâts du personnage avec les armes à distance (Naturel + Equipement)"
+										aide_contextuelle$(1)="Le bonus aux dégâts du personnage avec les armes à distance (Naturel + Equipement)."
+										aide_contextuelle$(2)="Bonus to the damages done with ranged weapons (Base + Equipement)."
 									EndIf									
 								EndIf
 								rText(675,290,Str(av\att[3]))
@@ -1145,12 +1229,12 @@ Return
 										For rules.rules=Each rules
 											If rules\num=av\cmpt[k]
 												If nb_rules>1
-													effet$=effet$+",#"+rules\name$
+													effet$=effet$+",#"+rules\name$[Int(options#(7))]
 												Else
-													effet$="#"+rules\name$
+													effet$="#"+rules\name$[Int(options#(7))]
 												EndIf
 												nb_rules=nb_rules+1
-												rules_description$(nb_rules)=rules\description$
+												rules_description$(nb_rules)=rules\description$[Int(options#(7))]
 											EndIf
 										Next
 									EndIf
@@ -1159,7 +1243,9 @@ Return
 								For t=1 To 7
 								disc_ligne(t)=""
 								Next
-								mess$="Talent(s) : "+effet$
+								mult_mess$(1)="Talent(s) : "
+								mult_mess$(2)="Special abilities: "
+								mess$=mult_mess$(Int(options#(7)))+effet$
 								t=0
 								k=0
 								amax=Len(mess$)	
@@ -1191,7 +1277,7 @@ Return
 								For t=1 To 7
 									disc_ligne$(t)=Replace(disc_ligne$(t),"~"," ")
 									Text 200,(368+17*t),disc_ligne$(t)
-									If MouseX()>200 And MouseX()<400 And MouseY()>368+17*t And MouseY()<368+17*(t+1) Then aide_contextuelle$=rules_description$(t)
+									If MouseX()>200 And MouseX()<400 And MouseY()>368+17*t And MouseY()<368+17*(t+1) Then aide_contextuelle$(Int(options#(7)))=rules_description$(t)
 								Next
 							EndIf
 						Next
@@ -1260,7 +1346,7 @@ Return
 										If av\num=gr\formation[cible]
 											SetFont middle_font
 											Color 0,0,0
-											Text 180,110,av\name$
+											Text 180,110,av\name$[Int(options#(7))]
 											
 											Rect 165,195,200,360,0	
 									
@@ -1270,17 +1356,23 @@ Return
 											drift_caps=StringWidth(player_caps)
 											drift_junk=StringWidth(player_junk)
 											drift=max(drift_caps,max(drift_junk,10))
-											Text 180,150,"Caps :"											
+											mult_mess$(1)="Caps :"
+											mult_mess$(2)="Caps:"
+											Text 180,150,mult_mess$(Int(options#(7)))											
 											Text 242+drift-drift_caps,150,player_caps
 											If MouseX()<320 And MouseX()>180 And MouseY()<170 And MouseY()>150
-												aide_contextuelle$="La monnaie utilisée à FactoryTec."
+												aide_contextuelle$(1)="La monnaie utilisée à FactoryTec."
+												aide_contextuelle$(2)="The currency used in FactoryTec."
 										
 											EndIf
-											Text 180,170,"Junk :"
+											mult_mess$(1)="Junk :"
+											mult_mess$(2)="Junk:"
+											Text 180,170,mult_mess$(Int(options#(7)))
 											Text 242+drift-drift_junk,170,player_junk
 										
 											If MouseX()<320 And MouseX()>180 And MouseY()<190 And MouseY()>170
-												aide_contextuelle$="Pièces détachées utilisées pour améliorer les armes et équipements."
+												aide_contextuelle$(1)="Pièces détachées utilisées pour améliorer les armes et équipements."
+												aide_contextuelle$(2)="Spare parts used to improve weapons and equipment."
 											EndIf
 
 											;dessiner le bonhomme
@@ -1302,8 +1394,12 @@ Return
 													Next
 												EndIf
 												If MouseX()<220 And MouseX()>180 And MouseY()>(170+t*65) And MouseY()<(225+t*65)
-													aide_contextuelle$="Arme"
-													If t=1 Then aide_contextuelle$="Arme équipée"
+													aide_contextuelle$(1)="Arme"
+													aide_contextuelle$(2)="Weapon"
+													If t=1
+														aide_contextuelle$(1)="Arme équipée"
+														aide_contextuelle$(2)="Equiped weapon"
+													EndIf
 													Color 180,0,0
 													Rect 180-4,(170+t*65)-4,48,48,0
 													If keys(1,2)=50
@@ -1327,7 +1423,9 @@ Return
 																	inventaire_cible=-t
 																ElseIf inventaire_cible<>0
 																	Playsound2(sons_menu(2))
-																	msg_erreur$="Emplacement réservé aux armes"
+																	mult_mess$(1)="Emplacement réservé aux armes"
+																	mult_mess$(2)="This slot is for weapons only"
+																	msg_erreur$=mult_mess$(Int(options#(7)))
 																	msg_erreur_timing=90
 																EndIf
 															Else
@@ -1352,12 +1450,16 @@ Return
 																			Else
 																				av\equi[t]=ai
 																				Playsound2(sons_menu(2))
-																				msg_erreur$="Pas assez de Vapeur"
+																				mult_mess$(1)="Pas assez de Vapeur"
+																				mult_mess$(2)="Not enough Steam"
+																				msg_erreur$=mult_mess$(Int(options#(7)))
 																				msg_erreur_timing=90
 																			EndIf
 																		ElseIf inventaire_cible<>0
 																			Playsound2(sons_menu(2))
-																			msg_erreur$="Emplacement réservé aux armes"
+																			mult_mess$(1)="Emplacement réservé aux armes"
+																			mult_mess$(2)="This slot is for weapons only"
+																			msg_erreur$=mult_mess$(Int(options#(7)))
 																			msg_erreur_timing=90																	
 																		EndIf
 																	EndIf
@@ -1386,7 +1488,8 @@ Return
 												Next
 											EndIf
 											If MouseX()>255 And MouseX()<295 And MouseY()>295 And MouseY()<335
-												aide_contextuelle$="Armure"
+												aide_contextuelle$(1)="Armure"
+												aide_contextuelle$(2)="Armour"
 												Color 180,0,0
 												Rect 255-4,295-4,48,48,0
 												If keys(1,2)=50
@@ -1398,7 +1501,9 @@ Return
 														; vérifier qu'il s'agit bien d'une armure
 														If inventaire_cible<0
 															Playsound2(sons_menu(2))
-															msg_erreur$="Emplacement réservé aux armures"
+															mult_mess$(1)="Emplacement réservé aux armures"
+															mult_mess$(2)="This slot is for armours only"
+															msg_erreur$=mult_mess$(Int(options#(7)))
 															msg_erreur_timing=90
 														Else
 															; gerer avec le butin
@@ -1431,17 +1536,23 @@ Return
 																			Else
 																				av\equi[4]=ai
 																				Playsound2(sons_menu(2))
-																				msg_erreur$="Pas assez de Vapeur"
+																				mult_mess$(1)="Pas assez de Vapeur"
+																				mult_mess$(2)="Not enough Steam"
+																				msg_erreur$=mult_mess$(Int(options#(7)))
 																				msg_erreur_timing=90
 																			EndIf
 																		Else
 																			Playsound2(sons_menu(2))
-																			msg_erreur$="Equipement trop petit"
+																			mult_mess$(1)="Equipement trop petit"
+																			mult_mess$(2)="Too small"
+																			msg_erreur$=mult_mess$(Int(options#(7)))
 																			msg_erreur_timing=90
 																		EndIf
 																	ElseIf inventaire_cible<>0
 																		Playsound2(sons_menu(2))
-																		msg_erreur$="Emplacement réservé aux armures"
+																		mult_mess$(1)="Emplacement réservé aux armures"
+																		mult_mess$(2)="This slot is for armours only"
+																		msg_erreur$=mult_mess$(Int(options#(7)))
 																		msg_erreur_timing=90
 																	EndIf
 																EndIf
@@ -1469,7 +1580,8 @@ Return
 												Next
 											EndIf
 											If MouseX()>310 And MouseX()<350 And MouseY()>295 And MouseY()<335
-												aide_contextuelle$="Chaudière"
+												aide_contextuelle$(1)="Chaudière"
+												aide_contextuelle$(2)="Boiler"
 												Color 180,0,0
 												Rect 310-4,295-4,48,48,0
 												If keys(1,2)=50
@@ -1481,7 +1593,9 @@ Return
 														; vérifier qu'il s'agit bien d'une chaudière
 														If inventaire_cible<0
 															Playsound2(sons_menu(2))
-															msg_erreur$="Emplacement réservé aux chaudières"
+															mult_mess$(1)="Emplacement réservé aux chaudières"
+															mult_mess$(2)="This slot is for boilers only"
+															msg_erreur$=mult_mess$(Int(options#(7)))
 															msg_erreur_timing=90
 														Else
 															;gerer avec le butin
@@ -1505,12 +1619,16 @@ Return
 																		Else
 																			av\equi[5]=ai
 																			Playsound2(sons_menu(2))
-																			msg_erreur$="Plus assez de Vapeur"
+																			mult_mess$(1)="Plus assez de Vapeur"
+																			mult_mess$(2)="Not enough Steam anymore"
+																			msg_erreur$=mult_mess$(Int(options#(7)))
 																			msg_erreur_timing=90
 																		EndIf
 																	ElseIf inventaire_cible<>0
 																		Playsound2(sons_menu(2))
-																		msg_erreur$="Emplacement réservé aux chaudières"
+																		mult_mess$(1)="Emplacement réservé aux chaudières"
+																		mult_mess$(2)="This slot is for boilers only"
+																		msg_erreur$=mult_mess$(Int(options#(7)))
 																		msg_erreur_timing=90
 																	EndIf
 																EndIf
@@ -1538,7 +1656,8 @@ Return
 												Next
 											EndIf
 											If MouseX()>310 And MouseX()<350 And MouseY()>240 And MouseY()<280
-												aide_contextuelle$="GearBot"
+												aide_contextuelle$(1)="GearBot"
+												aide_contextuelle$(2)="GearBot"
 												Color 180,0,0
 												Rect 310-4,240-4,48,48,0
 												If keys(1,2)=50
@@ -1550,7 +1669,9 @@ Return
 														; vérifier qu'il s'agit bien d'un spécial
 														If inventaire_cible<0
 															Playsound2(sons_menu(2))
-															msg_erreur$="Emplacement réservé aux GearBots"
+															mult_mess$(1)="Emplacement réservé aux GearBots"
+															mult_mess$(2)="This slot is for GearBots only"
+															msg_erreur$=mult_mess$(Int(options#(7)))
 															msg_erreur_timing=90
 														Else
 															; gerer avec le butin
@@ -1574,12 +1695,16 @@ Return
 																		Else
 																			av\equi[6]=ai
 																			Playsound2(sons_menu(2))
-																			msg_erreur$="Pas assez de Vapeur"
+																			mult_mess$(1)="Pas assez de Vapeur"
+																			mult_mess$(2)="Not enough Steam"
+																			msg_erreur$=mult_mess$(Int(options#(7)))
 																			msg_erreur_timing=90
 																		EndIf
 																	ElseIf inventaire_cible<>0
 																		Playsound2(sons_menu(2))
-																		msg_erreur$="Emplacement réservé aux GearBots"
+																		mult_mess$(1)="Emplacement réservé aux GearBots"
+																		mult_mess$(2)="This slot is for GearBots only"
+																		msg_erreur$=mult_mess$(Int(options#(7)))
 																		msg_erreur_timing=90
 																	EndIf
 																EndIf
@@ -1605,11 +1730,12 @@ Return
 													Next
 													If nb_objets=-1 Then nb_objets=250
 													If MouseX()>375 And MouseX()<485 And MouseY()>115
-														aide_contextuelle$="Inventaire : utilisez la roulette pour faire défiler le butin"
+														aide_contextuelle$(1)="Inventaire : utilisez la roulette pour faire défiler le butin."
+														aide_contextuelle$(2)="Inventory: use the mouse wheel to scroll through the loot."
 														If inventaire_cible>0
-															aide_contextuelle$=aide_contextuelle$+" ("+Abs(inventaire_cible)+"/"+nb_objets+")"
+															aide_contextuelle$(Int(options#(7)))=aide_contextuelle$(Int(options#(7)))+" ("+Abs(inventaire_cible)+"/"+nb_objets+")"
 														Else
-															aide_contextuelle$=aide_contextuelle$+" ("+nb_objets+")"
+															aide_contextuelle$(Int(options#(7)))=aide_contextuelle$(Int(options#(7)))+" ("+nb_objets+")"
 														EndIf
 														degre_roulette#=degre_roulette#-sourisz#
 														degre_roulette#=maxf(0,minf(degre_roulette#,Ceil(nb_objets*0.5-9)))
@@ -1627,7 +1753,9 @@ Return
 																Playsound2(sons_menu(6))
 															Else ; inventaire plein
 																Playsound2(sons_menu(2))
-																msg_erreur$="Inventaire plein"
+																mult_mess$(1)="Inventaire plein"
+																mult_mess$(2)="Inventory full"
+																msg_erreur$=mult_mess$(Int(options#(7)))
 																msg_erreur_timing=90
 															EndIf
 														EndIf
@@ -1738,7 +1866,8 @@ Return
 															DrawBlock bouton_paire,785-a,550-a,1
 															If MouseX()<785 And MouseX()>785-a And MouseY()<550 And MouseY()>550-a
 																Color 150,0,0
-																aide_contextuelle$="Séparer la paire de pistolets."
+																aide_contextuelle$(1)="Séparer la paire de pistolets."
+																aide_contextuelle$(2)="Separate the handgun pair."
 																If keys(1,2)=50
 																	keys(1,2)=49
 																	If inventaire_cible<0 ; équipé
@@ -1767,7 +1896,8 @@ Return
 															DrawBlock bouton_paire,785-a,550-a,0
 															If MouseX()<785 And MouseX()>785-a And MouseY()<550 And MouseY()>550-a
 																Color 150,0,0
-																aide_contextuelle$="Créer une paire de pistolets."
+																aide_contextuelle$(1)="Créer une paire de pistolets."
+																aide_contextuelle$(2)="Combine two handuns in a pair"
 																If keys(1,2)=50
 																	keys(1,2)=49
 																	If inventaire_cible<0 ; équipé
@@ -1871,8 +2001,10 @@ Return
 								Color 5,5,5
 								;afficher l'inventaire
 								inventaire_cible=0
-								setfont big_font
-								Text 170,100,"Inventaire",0,1
+								SetFont big_font
+								mult_mess$(1)="Inventaire"
+								mult_mess$(2)="Inventory"
+								Text 170,100,mult_mess$(Int(options#(7))),0,1
 								Rect 170,115,150,440,0 
 								For butin.butin=Each butin
 									If butin\num=1
@@ -1883,11 +2015,12 @@ Return
 										Next
 										If nb_objets=-1 Then nb_objets=250
 										If MouseX()>170 And MouseX()<320 And MouseY()>115 and mouseY()<565
-											aide_contextuelle$="Inventaire : utilisez la roulette pour faire défiler le butin"
+											aide_contextuelle$(1)="Inventaire : utilisez la roulette pour faire défiler le butin"
+											aide_contextuelle$(2)="Inventory: use the mouse wheel to scroll through the loot."
 											If inventaire_cible>0
-												aide_contextuelle$=aide_contextuelle$+" ("+Abs(inventaire_cible)+"/"+nb_objets+")"
+												aide_contextuelle$(Int(options#(7)))=aide_contextuelle$(Int(options#(7)))+" ("+Abs(inventaire_cible)+"/"+nb_objets+")"
 											Else
-												aide_contextuelle$=aide_contextuelle$+" ("+nb_objets+")"
+												aide_contextuelle$(Int(options#(7)))=aide_contextuelle$(Int(options#(7)))+" ("+nb_objets+")"
 											EndIf
 											degre_roulette#=degre_roulette#-sourisz#
 											degre_roulette#=maxf(0,minf(degre_roulette#,Ceil(nb_objets*0.333-9)))
@@ -1965,7 +2098,9 @@ Return
 									EndIf
 								Next
 								;afficher la poubelle
-								Text 330,100,"Poubelle",0,1
+								mult_mess$(1)="Poubelle"
+								mult_mess$(2)="Recycling Bin"
+								Text 330,100,mult_mess$(Int(options#(7))),0,1
 								rect 330,115,150,350,0 
 								For butin.butin=Each butin
 									If butin\num=-1
@@ -1977,7 +2112,8 @@ Return
 										Next
 										If nb_objets=-1 Then nb_objets=250
 										If MouseX()>330 And MouseX()<480 And MouseY()>115 and mouseY()<565
-											aide_contextuelle$="Poubelle : utilisez la roulette pour faire défiler la poubelle"+" "+abs(inventaire_cible)+"/"+nb_objets
+											aide_contextuelle$(1)="Poubelle : utilisez la roulette pour faire défiler la poubelle "+Abs(inventaire_cible)+"/"+nb_objets
+											aide_contextuelle$(2)="Recycling Bin: use the mouse wheel to scroll through the bin "+Abs(inventaire_cible)+"/"+nb_objets
 											degre_roulette2#=degre_roulette2#-sourisz#
 											degre_roulette2#=maxf(0,minf(degre_roulette2#,Ceil(nb_objets*0.3333-7)))
 										EndIf
@@ -2054,7 +2190,6 @@ Return
 									EndIf
 								Next
 								;afficher les stats
-.doko
 								Rect 490,115,300,440,0
 								cadence=0
 								nb_rules=1
@@ -2081,9 +2216,12 @@ Return
 								Rect 330,475,150,80,0
 								setfont big_font
 								junk=prix(-1,2)
-								Text 405,515,"Recycler ("+junk+")",1,1
+								mult_mess$(1)="Recycler"
+								mult_mess$(2)="Recycle"
+								Text 405,515,mult_mess$(Int(options#(7)))+" ("+junk+")",1,1
 								If MouseX()>330 And MouseX()<480 And MouseY()>475 And MouseY()<555
-									aide_contextuelle$="Recycler les objets dans la poubelle."
+									aide_contextuelle$(1)="Recycler les objets dans la poubelle."
+									aide_contextuelle$(2)="Recycle all items in the bin."
 									If keys(1,2)=50
 										keys(1,2)=49
 										reponse=0
@@ -2091,9 +2229,15 @@ Return
 											start_loop()
 											lire_clavier()
 											disc_len#=10000
-											color 255,255,255
-											fenetre_info("Attention : Recycler détruira définitivement tous les objets dans la poubelle pour les transformer en [junk]",0,100,0)
-											reponse=fenetreqcm(2,"Recycler ?","Oui","Non")
+											Color 255,255,255
+											Select Int(options#(7))
+												Case 1
+													fenetre_info("Attention : Recycler détruira définitivement tous les objets dans la poubelle pour les transformer en [junk]",0,100,0)
+													reponse=fenetreqcm(2,"Recycler ?","Oui","Non")
+												Case 2
+													fenetre_info("Warning: Recycling will permanently destroy all the items in the bin to turn them into [junk]",0,100,0)
+													reponse=fenetreqcm(2,"Recycle?","Yes","No")
+											End Select
 											DrawImage curseur,MouseX(),MouseY()
 											Flip
 											compensation_lag()
@@ -2163,7 +2307,7 @@ Return
 											DrawImage fighters_gfx(av\cat,2),ai,bi,frame
 											SetFont middle_font
 											Color 255,255,255
-											Text ai,bi+20,av\name$,1,1
+											Text ai,bi+20,av\name$[Int(options#(7))],1,1
 										EndIf
 									Next
 								Else
@@ -2174,11 +2318,17 @@ Return
 						Next						
 					
 						If combat_from=0
-							mess_action$="Choisissez un personnage"
+							mult_mess$(1)="Choisissez un personnage"
+							mult_mess$(2)="Choose a character"
+							mess_action$=mult_mess$(Int(options#(7)))
 						ElseIf combat_from>0
-							mess_action$="Choisissez sa nouvelle place"
+							mult_mess$(1)="Choisissez sa nouvelle place"
+							mult_mess$(2)="Choose their new place"
+							mess_action$=mult_mess$(Int(options#(7)))
 						Else
-							mess_action$="Vous devez être le leader du groupe pour modifier la formation"
+							mult_mess$(1)="Vous devez être le leader du groupe pour modifier la formation"
+							mult_mess$(2)="Somehow this warning made its way to the final version. Shouldn't have happened."
+							mess_action$=mult_mess$(Int(options#(7)))
 						EndIf
 						
 						ai=max(Len(mess_action$)*8,200)
@@ -2188,7 +2338,7 @@ Return
 						Rect (screenwidth-ai)*0.5-3+75,(500-10)-3,ai+6,20+6,0							
 						SetFont middle_font
 						Text screenwidth*0.5+75,500,mess_action$,1,1
-						
+				
 					Case 4 ; Quête
 						DrawImageRect fond_book,160,80,0,0,screenwidth-165,495
 						Color 0,0,0
@@ -2205,9 +2355,12 @@ Return
 									If butin\quest[t]=0 And nb_objets=-1 Then nb_objets=t-1
 								Next
 								If nb_objets=-1 Then nb_objets=LIMITE_QUEST
-								Text 318,97,"Objets de Quête et Informations ("+nb_objets+")",1,1
+								mult_mess$(1)="Objets de Quête et Informations ("+nb_objets+")"
+								mult_mess$(2)="Key Items and Intel ("+nb_objets+")"
+								Text 318,97,mult_mess$(Int(options#(7))),1,1
 								If MouseX()>165 And MouseX()<470 And MouseY()>115
-									aide_contextuelle$="Cliquer sur un objet pour en savoir plus."
+									aide_contextuelle$(1)="Cliquer sur un objet pour en savoir plus."
+									aide_contextuelle$(2)="Click on an item to display more informations."
 									degre_roulette#=degre_roulette#-sourisz#
 									degre_roulette#=maxf(0,minf(degre_roulette#,maxf(Ceil(nb_objets*0.2-7),0)))
 								EndIf
@@ -2236,16 +2389,24 @@ Return
 													If q_i\num=butin\quest[t]
 														icone=q_i\icone[1]
 														If inventaire_cible=t
-															name$=q_i\name$
-															description$=q_i\description$
+															name$=q_i\name$[Int(options#(7))]
+															description$=q_i\description$[Int(options#(7))]
 															If q_i\shareable=1
-																cat$="Information"
+																mult_mess$(1)="Information"
+																mult_mess$(2)="Intel"
+																cat$=mult_mess$(Int(options#(7)))
 															ElseIf q_i\shareable=0
-																cat$="Objet de Quête"
+																mult_mess$(1)="Objet de Quête"
+																mult_mess$(2)="Key Item"
+																cat$=mult_mess$(Int(options#(7)))
 															ElseIf q_i\shareable=-2
-																cat$="Mission terminée"
+																mult_mess$(1)="Mission terminée"
+																mult_mess$(2)="Completed mission"
+																cat$=mult_mess$(Int(options#(7)))
 															Else
-																cat$="Mission"
+																mult_mess$(1)="Mission"
+																mult_mess$(2)="Mission"
+																cat$=mult_mess$(Int(options#(7)))
 															EndIf
 															icone2=q_i\icone[2]
 															quest_item_num=q_i\num
@@ -2350,66 +2511,76 @@ Return
 						Text 180+80*screeny,screenheight-40,msg_radio$+char$
 						
 						If keys(14,2)=50 Or keys(87,2)=50
-							new_log("Vous : "+msg_radio$,50,50,255)
+							mult_mess$(1)="Vous : "
+							mult_mess$(2)="You: "
+							new_log(mult_mess(Int(options#(7)))+msg_radio$,50,50,255)
 							msg_radio$=""	
 						EndIf
 
 	
-					Case 6 ; Système				
+					Case 6 ; Système
+					
 					;sauvegarde
-					ai=max(Len("Sauvegarder")*8,200)
 					Color 0,0,0
-					;Rect (screenwidth-ai)*0.5-4+75,(450-10)-4,ai+8,20+8,1
+					ai=max(Len("Sauvegarder")*8,200)
+					frame=reste(Int(timer_animation#*0.1),8)
+					
+					mult_mess$(1)="* Sauvegarder *"
+					mult_mess$(2)="* Save *"
 					DrawImageRect fond_book,(screenwidth-ai)*0.5-4+75,(200-20)-4,0,0,ai+8,40+8
 					Rect (screenwidth-ai)*0.5-3+75,(200-20)-3,ai+6,40+6,0							
 					SetFont big_font
-					Text screenwidth*0.5+75,200,"* Sauvegarder *",1,1
+					Text screenwidth*0.5+75,200,mult_mess$(Int(options#(7))),1,1
 					
-					If MouseX()>(screenwidth-ai)*0.5-4+75 And MouseX()<(screenwidth-ai)*0.5+79+ai
-						If MouseY()>176 And MouseY()<224
-							aide_contextuelle$="Cliquer ici pour sauvegarder. Attention : il n'y a qu'un seul fichier de sauvegarde"
-							If keys(1,2)=50
-								save()
-							EndIf
+					If MouseX()>(screenwidth-ai)*0.5-4+75 And MouseX()<(screenwidth-ai)*0.5+79+ai And MouseY()>176 And MouseY()<224
+						aide_contextuelle$(1)="Cliquer ici pour sauvegarder. Attention : il n'y a qu'un seul fichier de sauvegarde"
+						aide_contextuelle$(2)="Save the current game. Warning: there is currently only one savefile."
+						DrawImage little_wheel,(screenwidth-ai)*0.5+75+10,190,frame
+						DrawImage little_wheel,(screenwidth+ai)*0.5+75-30,190,frame
+						If keys(1,2)=50
+							save()
 						EndIf
 					EndIf
+									
 					
-					;Options
-					
-					Color 0,0,0
-					;Rect (screenwidth-ai)*0.5-4+75,(250-10)-4,ai+8,20+8,1
+					;Options					
+					mult_mess$(1)="* Options *"
+					mult_mess$(2)="* Settings *"					
 					DrawImageRect fond_book,(screenwidth-ai)*0.5-4+75,(300-20)-4,0,0,ai+8,40+8
-					;Color 180,180,180
 					Rect (screenwidth-ai)*0.5-3+75,(300-20)-3,ai+6,40+6,0							
 					SetFont big_font
-					Text screenwidth*0.5+75,300,"* Options *",1,1
+					Text screenwidth*0.5+75,300,mult_mess$(Int(options#(7))),1,1
 					
-					If MouseX()>(screenwidth-ai)*0.5-4+75 And MouseX()<(screenwidth-ai)*0.5+79+ai
-						If MouseY()>276 And MouseY()<324
-							aide_contextuelle$="Modifier les options"
-							If keys(1,2)=50
-								menu_option()
-							EndIf
+					If MouseX()>(screenwidth-ai)*0.5-4+75 And MouseX()<(screenwidth-ai)*0.5+79+ai And MouseY()>276 And MouseY()<324
+						aide_contextuelle$(1)="Modifier les options"
+						aide_contextuelle$(2)="Modify settings"
+						DrawImage little_wheel,(screenwidth-ai)*0.5+75+10,290,frame
+						DrawImage little_wheel,(screenwidth+ai)*0.5+75-30,290,frame
+						If keys(1,2)=50
+							menu_option()
 						EndIf
 					EndIf
+					
 					
 					;Quitter et revenir au menu principal
-					Color 0,0,0
+					mult_mess$(1)="* Quitter *"
+					mult_mess$(2)="* Quit *"
 					DrawImageRect fond_book,(screenwidth-ai)*0.5-4+75,(400-20)-4,0,0,ai+8,40+8
-					;Color 180,180,180
 					Rect (screenwidth-ai)*0.5-3+75,(400-20)-3,ai+6,40+6,0							
 					SetFont big_font
-					Text screenwidth*0.5+75,400,"* Quitter *",1,1
+					Text screenwidth*0.5+75,400,mult_mess$(Int(options#(7))),1,1
 					
-					If MouseX()>(screenwidth-ai)*0.5-4+75 And MouseX()<(screenwidth-ai)*0.5+79+ai
-						If MouseY()>376 And MouseY()<424
-							aide_contextuelle$="Quitter cette partie et revenir au menu principal"
-							If keys(1,2)=50
-								sortie_menu=revenir_au_menu()
-								;quitter_jeu=1
-							EndIf
+					If MouseX()>(screenwidth-ai)*0.5-4+75 And MouseX()<(screenwidth-ai)*0.5+79+ai And MouseY()>376 And MouseY()<424
+						aide_contextuelle$(1)="Quitter cette partie et revenir au menu principal"
+						aide_contextuelle$(2)=""
+						DrawImage little_wheel,(screenwidth-ai)*0.5+75+10,390,frame
+						DrawImage little_wheel,(screenwidth+ai)*0.5+75-30,390,frame
+						If keys(1,2)=50
+							sortie_menu=revenir_au_menu()
 						EndIf
 					EndIf
+					
+					
 					
 					Case 7 ; Aide
 					
@@ -2421,8 +2592,8 @@ Return
 		
 		Color 255,255,255
 		SetFont little_font
-		Text 160,587,aide_contextuelle$,0,1
-		
+		Text 160,587,aide_contextuelle$(Int(options#(7))),0,1
+
 		If msg_erreur_timing>0 And msg_erreur$<>""
 			msg_erreur_timing=msg_erreur_timing-1
 			SetFont middle_font
@@ -2508,9 +2679,13 @@ aff_load_menu(0)
 	
 	;;load les items du menu
 		; les onglets et le curseur
-	If gfx_onglets2=0
-		gfx_onglets2=LoadImage("sprites\menu\onglets2.png")
-		;ScaleImage gfx_onglets2,screenxf#,screenyf#
+	If gfx_onglets(2,Int(options#(7)))=0
+		Select Int(options#(7))
+			Case 1
+				gfx_onglets(2,Int(options#(7)))=LoadImage("sprites\menu\onglets2.png")
+			Case 2
+				gfx_onglets(2,Int(options#(7)))=LoadImage("sprites\menu\onglets2_en.png")
+		End Select
 	EndIf
 	If gfx_curseur_onglets=0
 		gfx_curseur_onglets=LoadImage("sprites\menu\curseur_onglets.bmp")
@@ -2590,7 +2765,7 @@ aff_load_menu(0)
 		lire_clavier()
 		If mode_de_jeu=2 Then sortie_menu=1
 		
-		aide_contextuelle$=""
+		aide_contextuelle$(Int(options#(7)))=""
 			
 		If MouseDown(02) or keys(90,2)=50 Then sortie_menu=1:keys(90,2)=min(49,keys(90,2))
 		sourisz#=MouseZSpeed()
@@ -2608,7 +2783,7 @@ aff_load_menu(0)
 				pos_curseur=pos_curseur+vitesse			
 			EndIf
 		EndIf
-		DrawImage gfx_onglets2,0,0
+		DrawImage gfx_onglets(2,Int(options#(7))),0,0
 		DrawImage gfx_curseur_onglets,0,pos_curseur
 		
 		color 0,0,0
@@ -2623,13 +2798,17 @@ aff_load_menu(0)
 					good=0
 					Select t
 						Case 4
-							aide_contextuelle$="Acheter de l'équipement":good=1
+							aide_contextuelle$(1)="Acheter de l'équipement.":good=1
+							aide_contextuelle$(2)="Buy equipment for your team."
 						Case 5
-							aide_contextuelle$="Vendre ce que vous avez dans votre inventaire":good=1
+							aide_contextuelle$(1)="Vendre ce que vous avez dans votre inventaire.":good=1
+							aide_contextuelle$(2)="Sell items in your inventory."
 						Case 6
-							aide_contextuelle$="Améliorer votre équipement (''Plus y'a de boulons, moins t'as l'air con !'')":good=1
+							aide_contextuelle$(1)="Améliorer votre équipement (« Plus y'a de boulons, moins t'as l'air con ! »).":good=1
+							aide_contextuelle$(2)="Upgrade your equipment (''The more bolts, the less dolt you look.'')."
 						Case 8	
-							aide_contextuelle$="Quitter la boutique du Forgeron":good=1
+							aide_contextuelle$(1)="Quitter la boutique du Forgeron.":good=1
+							aide_contextuelle$(2)="Exit the blacksmith's shop."
 					End Select
 					If keys(1,2)=50 And good=1
 						If onglet<>t
@@ -2680,8 +2859,10 @@ aff_load_menu(0)
 						Color 5,5,5
 						;afficher la vitrine
 						inventaire_cible=0
-						setfont big_font
-						Text 170,100,"Vitrine",0,1
+						SetFont big_font
+						mult_mess$(1)="Vitrine"
+						mult_mess$(2)="Shop"
+						Text 170,100,mult_mess$(Int(options#7))),0,1
 						Rect 170,115,150,440,0 
 						For butin.butin=Each butin
 							If butin\num=-12
@@ -2692,7 +2873,9 @@ aff_load_menu(0)
 								Next
 								If nb_objets=-1 Then nb_objets=250
 								If MouseX()>170 And MouseX()<320 And MouseY()>115 and mouseY()<565
-									aide_contextuelle$="Utilisez la roulette pour faire défiler la vitrine"+" "+Abs(inventaire_cible)+"/"+nb_objets
+									aide_contextuelle$(1)="Utilisez la roulette pour faire défiler la vitrine "+Abs(inventaire_cible)+"/"+nb_objets+"."
+									aide_contextuelle$(2)="Use the mouse wheel to scroll through the shop "+Abs(inventaire_cible)+"/"+nb_objets+"."
+
 									degre_roulette#=degre_roulette#-sourisz#
 									degre_roulette#=maxf(0,minf(degre_roulette#,Ceil(nb_objets*0.333-9)))
 								EndIf
@@ -2769,7 +2952,9 @@ aff_load_menu(0)
 							EndIf
 						Next
 						;afficher le panier
-						Text 330,100,"Panier",0,1
+						mult_mess$(1)="Panier"
+						mult_mess$(2)="Shopping cart"
+						Text 330,100,mult_mess$(Int(options#(7))),0,1
 						rect 330,115,150,350,0 
 						For butin.butin=Each butin
 							If butin\num=-14
@@ -2781,7 +2966,8 @@ aff_load_menu(0)
 								Next
 								If nb_objets=-1 Then nb_objets=250
 								If MouseX()>330 And MouseX()<480 And MouseY()>115 and mouseY()<565
-									aide_contextuelle$="Utilisez la roulette pour faire défiler le panier"+" "+abs(inventaire_cible)+"/"+nb_objets
+									aide_contextuelle$(1)="Utilisez la roulette pour faire défiler le panier "+Abs(inventaire_cible)+"/"+nb_objets+"."
+									aide_contextuelle$(2)="Use the mouse wheel to scroll through the shopping cart "+Abs(inventaire_cible)+"/"+nb_objets+"."
 									degre_roulette2#=degre_roulette2#-sourisz#
 									degre_roulette2#=maxf(0,minf(degre_roulette2#,Ceil(nb_objets*0.3333-7)))
 								EndIf
@@ -2870,20 +3056,24 @@ aff_load_menu(0)
 							For butin.butin=Each butin
 								If butin\num=butin_cible And good=0
 									good=1
-									aff_info_equipement(butin\loot[Abs(inventaire_cible)],"Acheter")
+									mult_mess$(1)="Acheter"
+									mult_mess$(2)="Buy"
+									aff_info_equipement(butin\loot[Abs(inventaire_cible)],mult_mess$(Int(options#(7)))
 								EndIf
 							Next
-						EndIf																	
-						
+						EndIf
 						Color 5,5,5
 						;bouton Acheter
 						Rect 330,475,150,80,0
 						setfont big_font
 						caps=prix(-14,1)
 						caps=caps*COEFF_MARCHAND
-						Text 405,515,"Acheter ("+caps+")",1,1
+						mult_mess$(1)="Acheter ("+caps+" caps)"
+						mult_mess$(2)="Buy ("+caps+" caps)"
+						Text 405,515,mult_mess$(Int(options#(7))),1,1
 						If MouseX()>330 And MouseX()<480 And MouseY()>475 And MouseY()<555
-							aide_contextuelle$="Acheter les objets sur le comptoir."
+							aide_contextuelle$(1)="Acheter les objets sur le comptoir."
+							aide_contextuelle$(2)="Buy all the items in the shopping cart"
 							If keys(1,2)=50
 								keys(1,2)=49
 								reponse=0
@@ -2893,16 +3083,22 @@ aff_load_menu(0)
 										lire_clavier()
 										disc_len#=10000
 										color 255,255,255
-										fenetre_info("Voulez vous vraiment acheter ces objets ? Vous pouvez aussi garder vos caps pour vous rouler dedans quand vous aurez plus de temps.",0,100,0)
+										mult_mess$(1)="Voulez vous vraiment acheter ces objets ? Vous pouvez aussi garder vos caps pour vous rouler dedans quand vous aurez plus de temps."
+										mult_mess$(2)="Do you really want to buy these items? You can also keep your caps and roll yourself into it when you'll have more time."
+										fenetre_info(mult_mess$(Int(options#(7))),0,100,0)
 										;reponse=fenetreqcm(2,"Acheter ?","Oui","Non")
-										reponse=fenetreyn("Acheter ?")
+										mult_mess$(1)="Acheter ?"
+										mult_mess$(2)="Buy?"
+										reponse=fenetreyn(mult_mess$(Int(options#(7))))
 										DrawImage curseur,MouseX(),MouseY()
 										Flip
 										compensation_lag()
 									Wend
 								Else
 									Playsound2(sons_menu(2))
-									msg_erreur$="Pas assez de Caps"
+									mult_mess$(1)="Pas assez de Caps"
+									mult_mess$(2)="Not enough caps"
+									msg_erreur$=mult_mess$(Int(options#(7)))
 									msg_erreur_timing=90
 								EndIf
 								If reponse=1
@@ -2931,7 +3127,9 @@ aff_load_menu(0)
 													lire_clavier()
 													disc_len#=10000
 													color 255,255,255
-													reponse2=fenetre_info("Vous n'avez pas assez de place dans votre inventaire pour acheter tous ces objets ("+Str(nb_objets-nb_restant)+" objets en trop).#Vendez ou recyclez d'abord des objets dont vous ne voulez plus, ou achetez moins.",0,100,1)
+													mult_mess$(1)="Vous n'avez pas assez de place dans votre inventaire pour acheter tous ces objets ("+Str(nb_objets-nb_restant)+" objets en trop).#Vendez ou recyclez d'abord des objets dont vous ne voulez plus, ou achetez moins."
+													mult_mess$(2)="You don't have enough room in your inventory for all the items in the shopping cart ("+Str(nb_objets-nb_restant)+" items too many).#Sell or recycle first a few indesired items in your inventory, ou buy less."
+													reponse2=fenetre_info(mult_mess$(Int(options#(7))),0,100,1)
 													DrawImage curseur,MouseX(),MouseY()
 													Flip
 													compensation_lag()
@@ -2960,7 +3158,9 @@ aff_load_menu(0)
 						;afficher la vitrine
 						inventaire_cible=0
 						setfont big_font
-						Text 170,100,"Inventaire",0,1
+						mult_mess$(1)="Inventaire"
+						mult_mess$(2)="Inventory"
+						Text 170,100,mult_mess$(Int(options#(7))),0,1
 						Rect 170,115,150,440,0 
 						For butin.butin=Each butin
 							If butin\num=1
@@ -2971,7 +3171,8 @@ aff_load_menu(0)
 								Next
 								If nb_objets=-1 Then nb_objets=250
 								If MouseX()>170 And MouseX()<320 And MouseY()>115 and mouseY()<565
-									aide_contextuelle$="Utilisez la roulette pour faire défiler l'inventaire"+" "+abs(inventaire_cible)+"/"+nb_objets
+									aide_contextuelle$(1)="Utilisez la roulette pour faire défiler l'inventaire "+Abs(inventaire_cible)+"/"+nb_objets
+									aide_contextuelle$(2)="Use the mouse wheel to scroll through the inventory "+Abs(inventaire_cible)+"/"+nb_objets
 									degre_roulette#=degre_roulette#-sourisz#
 									degre_roulette#=maxf(0,minf(degre_roulette#,Ceil(nb_objets*0.333-9)))
 								EndIf
@@ -3048,7 +3249,9 @@ aff_load_menu(0)
 							EndIf
 						Next
 						;afficher le comptoir
-						Text 330,100,"Comptoir",0,1
+						mult_mess$(1)="Comptoir"
+						mult_mess$(2)="Counter"
+						Text 330,100,mult_mess$(Int(options#(7))),0,1
 						Rect 330,115,150,350,0 
 						For butin.butin=Each butin
 							If butin\num=-13
@@ -3060,7 +3263,8 @@ aff_load_menu(0)
 								Next
 								If nb_objets=-1 Then nb_objets=250
 								If MouseX()>330 And MouseX()<480 And MouseY()>115 and mouseY()<565
-									aide_contextuelle$="Utilisez la roulette pour faire défiler le comptoir"+" "+abs(inventaire_cible)+"/"+nb_objets
+									aide_contextuelle$(1)="Utilisez la roulette pour faire défiler le comptoir "+Abs(inventaire_cible)+"/"+nb_objets
+									aide_contextuelle$(2)="Use the mouse wheel to scroll through the counter "+Abs(inventaire_cible)+"/"+nb_objets
 									degre_roulette2#=degre_roulette2#-sourisz#
 									degre_roulette2#=maxf(0,minf(degre_roulette2#,Ceil(nb_objets*0.3333-7)))
 								EndIf
@@ -3160,9 +3364,12 @@ aff_load_menu(0)
 						setfont big_font
 						caps=prix(-13,1)
 						caps=Ceil(caps/Float(COEFF_MARCHAND))
-						Text 405,515,"Vendre ("+caps+")",1,1
+						mult_mess$(1)="Vendre ("+caps+")"
+						mult_mess$(2)="Sell ("+caps+")"
+						Text 405,515,mult_mess$(Int(options#(7))),1,1
 						If MouseX()>330 And MouseX()<480 And MouseY()>475 And MouseY()<555
-							aide_contextuelle$="Vendre les objets sur le comptoir."
+							aide_contextuelle$(1)="Vendre les objets sur le comptoir."
+							aide_contextuelle$(2)="Sell all items on the counter."
 							If keys(1,2)=50
 								keys(1,2)=49
 								reponse=0
@@ -3171,8 +3378,12 @@ aff_load_menu(0)
 									lire_clavier()
 									disc_len#=10000
 									color 255,255,255
-									fenetre_info("Voulez vous vraiment vendre ces objets ? Vous pouvez aussi les recycler en Junk",0,100,0)
-									reponse=fenetreqcm(2,"Vendre ?","Oui","Non")
+									mult_mess$(1)="Voulez vous vraiment vendre ces objets ? Vous pouvez aussi les recycler en [junk] pour améliorer votre équipement."
+									mult_mess$(2)="Sell all these items? You can also recycle them for [junk] to upgrade your equipment."
+									fenetre_info(mult_mess$(Int(options#(7))),0,100,0)
+									mult_mess$(1)="Vendre ?"
+									mult_mess$(2)="Sell?"
+									reponse=fenetreqcm(2,mult_mess$(Int(options#(7))),oui(Int(options#(7))),non(Int(options#(7))))
 									DrawImage curseur,MouseX(),MouseY()
 									Flip
 									compensation_lag()
@@ -3189,6 +3400,7 @@ aff_load_menu(0)
 														panier\loot[t]=0 ; mis correctement dans la vitrine
 													else
 														panier\loot[t]=0 ; détruit. Faire qqchose avec ?
+														;SOALT : chercher l'objet ayant le moins de valeur dans l'inventaire du marchand, et le remplacer par celui-là (ssi il est plus cher)
 													endif
 												EndIf
 											Next
@@ -3261,8 +3473,10 @@ aff_load_menu(0)
 									
 										SetFont middle_font
 										Color 0,0,0
-										Text 180,110,av\name$
-										Text 180,150,"Junk disponible : "+player_junk
+										Text 180,110,av\name$[Int(options#(7))]
+										mult_mess$(1)="Junk : " ; "Junk disponible : "
+										mult_mess$(2)="Junk: "
+										Text 180,150,mult_mess$(Int(options#(7)))+player_junk
 										
 										;dessiner les boutons des panels
 										Rect 165,195,200,360,0						
@@ -3296,8 +3510,12 @@ aff_load_menu(0)
 												Next
 											EndIf
 											If MouseX()<220 And MouseX()>180 And MouseY()>(170+t*65) And MouseY()<(225+t*65)
-												aide_contextuelle$="Arme"
-												If t=1 Then aide_contextuelle$="Arme équipée"
+												aide_contextuelle$(1)="Arme"
+												aide_contextuelle$(2)="Weapon"
+												If t=1
+													aide_contextuelle$(1)="Arme équipée"
+													aide_contextuelle$(2)="Equiped Weapon"
+												EndIf
 												Color 180,0,0
 												Rect 180-4,(170+t*65)-4,48,48,0
 												If keys(1,2)=50
@@ -3334,7 +3552,8 @@ aff_load_menu(0)
 											Next
 										EndIf
 										If MouseX()>255 And MouseX()<295 And MouseY()>295 And MouseY()<335
-											aide_contextuelle$="Armure"
+											aide_contextuelle$(1)="Armure"
+											aide_contextuelle$(2)="Armour"
 											Color 180,0,0
 											Rect 255-4,295-4,48,48,0
 											If keys(1,2)=50
@@ -3370,7 +3589,8 @@ aff_load_menu(0)
 											Next
 										EndIf
 										If MouseX()>310 And MouseX()<350 And MouseY()>295 And MouseY()<335
-											aide_contextuelle$="Chaudière"
+											aide_contextuelle$(1)="Chaudière"
+											aide_contextuelle$(2)="Boiler"
 											Color 180,0,0
 											Rect 310-4,295-4,48,48,0
 											If keys(1,2)=50
@@ -3473,9 +3693,12 @@ aff_load_menu(0)
 											SetFont big_font
 											Color 0,0,0
 											Rect 495,505,290,45,0
-											Text 636,527,"Améliorer ("+upgrade(cible_up,2)+")",1,1
+											mult_mess$(1)="Améliorer ("+upgrade(cible_up,2)+" junk)"
+											mult_mess$(2)="Upgrade ("+upgrade(cible_up,2)+" junk)"
+											Text 636,527,mult_mess$(Int(options#(7))),1,1
 											If MouseX()>495 And MouseX()<785 And MouseY()>505 And MouseY()<550
-												aide_contextuelle$="Cliquez ici pour améliorer l'équipement sélectionné."
+												aide_contextuelle$(1)="Améliorer l'équipement en l'option sélectionnée."
+												aide_contextuelle$(2)="Upgrade the equipment into the selected option."
 												If keys(1,2)=50
 													keys(1,2)=49
 													If upgrade(cible_up,2)<player_junk+1
@@ -3495,13 +3718,17 @@ aff_load_menu(0)
 															av\equi[cible_equi]=old_equipement
 															Playsound2(sons_menu(2))
 															;pas assez de pression ("Ta chaudière est pas assez costaude pour ça !")
-															msg_erreur$="Pas assez de vapeur. Déséquipez avant d'améliorer ou équipez une chaudière plus puissante"
+															mult_mess$(1)="Pas assez de vapeur. Déséquipez avant d'améliorer ou équipez une chaudière plus puissante"
+															mult_mess$(2)="Not enough steam. Unequipe the item before the upgrade, or use a more powerful boiler."
+															msg_erreur$=mult_mess$(int(options#(7)))
 															msg_erreur_timing=90
 														Endif		
 													Else
 														Playsound2(sons_menu(2))
 														;pas assez de junk ("Il me faut plus de pièces détachées si tu veux que je l'améliore !")
-														msg_erreur$="Pas assez de Junk"
+														mult_mess$(1)="Pas assez de Junk"
+														mult_mess$(2)="Not enough Junk"
+														msg_erreur$=mult_mess$(Int(options#(7)))
 														msg_erreur_timing=90
 													EndIf
 												EndIf
@@ -3523,7 +3750,9 @@ aff_load_menu(0)
 									Rect 170,115,190,440,0
 									
 									;dessiner l'inventaire
-									Text 170,100,"Inventaire",0,1
+									mult_mess$(1)="Inventaire"
+									mult_mess$(2)="Inventory"
+									Text 170,100,mult_mess$(Int(options#(7))),0,1
 									caps=0
 									;comptez le nombre d'objets dans l'inventaire
 									nb_objets=-1
@@ -3532,7 +3761,8 @@ aff_load_menu(0)
 									Next
 									If nb_objets=-1 Then nb_objets=250
 									If MouseX()>170 And MouseX()<360 And MouseY()>115 and MouseY()<565
-										aide_contextuelle$="Utilisez la roulette pour faire défiler l'inventaire"+" "+abs(cible_equi)+"/"+nb_objets
+										aide_contextuelle$(1)="Utilisez la roulette pour faire défiler l'inventaire "+Abs(cible_equi)+"/"+nb_objets+"."
+										aide_contextuelle$(2)="Use the mouse wheel to scroll through the inventory "+Abs(cible_equi)+"/"+nb_objets+"."
 										degre_roulette2#=degre_roulette2#-sourisz#
 										degre_roulette2#=maxf(0,minf(degre_roulette2#,Ceil(nb_objets*0.25-9)))
 									EndIf
@@ -3725,9 +3955,12 @@ aff_load_menu(0)
 										SetFont big_font
 										Color 0,0,0
 										Rect 495,505,290,45,0
-										Text 636,527,"Améliorer ("+upgrade(cible_up,2)+")",1,1
+										mult_mess$(1)="Améliorer ("+upgrade(cible_up,2)+" junk)"
+										mult_mess$(2)="Upgrade ("+upgrade(cible_up,2)+" junk)"
+										Text 636,527,mult_mess$(Int(options#(7))),1,1
 										If MouseX()>495 And MouseX()<785 And MouseY()>505 And MouseY()<550
-											aide_contextuelle$="Cliquez ici pour améliorer l'équipement sélectionné."
+											aide_contextuelle$(1)="Améliorer l'équipement en l'option sélectionnée."
+											aide_contextuelle$(2)="Upgrade the equipment into the selected option."
 											If keys(1,2)=50
 												keys(1,2)=49
 												If upgrade(cible_up,2)<player_junk+1
@@ -3736,7 +3969,9 @@ aff_load_menu(0)
 													Playsound2(sons_menu(9))
 												Else
 													Playsound2(sons_menu(2))
-													msg_erreur$="Pas assez de Junk"
+													mult_mess$(1)="Pas assez de Junk"
+													mult_mess$(2)="Not enough Junk"
+													msg_erreur$=mult_mess$(Int(options#(7)))
 													msg_erreur_timing=90
 												EndIf
 											EndIf
@@ -3753,7 +3988,7 @@ aff_load_menu(0)
 		
 		Color 255,255,255
 		SetFont little_font
-		Text 165,587,aide_contextuelle$,0,1
+		Text 165,587,aide_contextuelle$(Int(options#(7))),0,1
 		
 		If msg_erreur_timing>0 And msg_erreur$<>""
 			msg_erreur_timing=msg_erreur_timing-1

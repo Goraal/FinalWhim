@@ -112,7 +112,7 @@ Function script(script_num)
 				lire_clavier()
 				timer_animation#=timer_animation#+1
 				delta_frame=20
-				sortie=fenetre_info("Votre mort fut rapide et sans surprise! Mais vus qu'on est pas méchant, on vous laisse retentez votre chance. ;)")
+				sortie=fenetre_info("Votre mort fut rapide et sans surprise~! Mais vus qu'on est pas méchant, on vous laisse retentez votre chance. ;)")
 				Flip
 				If KeyHit(01) Then sortie=10
 			Wend
@@ -1264,7 +1264,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="examiner l'enigme"
+				message_action$="examiner l'énigme"
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0

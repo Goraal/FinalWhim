@@ -288,7 +288,7 @@ Function fn_combat()
 												; name
 												SetFont middle_font
 												Color 255,255,255
-												Text ai,bi+20,av\name$,1,1
+												Text ai,bi+20,av\name$[Int(options#(7))],1,1
 
 											EndIf
 										Next
@@ -373,7 +373,7 @@ Function fn_combat()
 												;name
 												SetFont middle_font
 												Color 255,255,255
-												Text ai,bi+20,av\name$,1,1
+												Text ai,bi+20,av\name$[Int(options#(7))],1,1
 											EndIf
 										Next
 									EndIf
@@ -1625,7 +1625,7 @@ Function fn_combat()
 													End Select
 													SetFont middle_font
 													Color 255,255,255
-													Text ai,bi+20,av\name$,1,1
+													Text ai,bi+20,av\name$[Int(options#(7))],1,1
 												EndIf
 											EndIf
 										Next
@@ -2126,7 +2126,7 @@ Function fn_combat()
 												EndIf
 												SetFont middle_font
 												Color 255,255,255
-												Text ai,bi+20,av\name$,1,1
+												Text ai,bi+20,av\name$[Int(options#(7))],1,1
 											EndIf
 										Next
 									EndIf
