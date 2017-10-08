@@ -1541,7 +1541,7 @@ Function script(script_num)
 							event_action = 2
 						Else
 							event_action = 3
-						Endif
+						EndIf
 						
 					Case 101
 						redonner_pv_pj(1,2)
@@ -1960,6 +1960,58 @@ Function script(script_num)
                         EndIf
 						g_bHUDactif=1
 
+                    Default
+                        event_action=Main_ScriptXml(message_action$,event_action)
+					End Select
+				EndIf
+		Case 506 ; Tavernier		
+		If lock_action=0
+				lock_action=1
+				If event_action>0 
+					var_pl_grp(num_player,"animation",True,1):animation()
+					g_bHUDactif=0
+				EndIf
+				message_action$="discuter avec le tavernier"
+                
+				Select event_action
+					Case 0
+						call_activator(script_num)                     
+                        If keys(12,2)=50 And player_in_control And chat_mode=0
+                            keys(12,2)=min(49,keys(12,2))
+                            interaction_avec=var_script_int(1)
+                            interaction_script=var_script_int(2)
+                            event_action=1
+                            disc_len#=0       
+                        EndIf
+						g_bHUDactif=1
+
+					Case 102
+						If player_caps > 3
+							player_caps = player_caps-3
+							redonner_pv_pj(2,3)
+							event_action = 2
+						Else
+							event_action = 5
+						EndIf
+						
+					Case 103
+						If player_caps > 9
+							player_caps = player_caps-9
+							redonner_pv_pj(0.15,1)
+							event_action = 3
+						Else
+							event_action = 5
+						EndIf
+					
+					Case 104
+						If player_caps > 9
+							player_caps = player_caps-9
+							redonner_pv_pj(0.5,1)
+							event_action = 4
+						Else
+							event_action = 5
+						EndIf
+					
                     Default
                         event_action=Main_ScriptXml(message_action$,event_action)
 					End Select

@@ -1,0 +1,53 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="Lou">Qu'est-ce que je vous sert ?</phrases1>
+		<reponse1>
+			<reaction>Boissons fraiches (3 caps)</reaction>
+			<goto>102</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Surprises du chef (9 caps)</reaction>
+			<goto>103</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Gencives de porc (21 caps)</reaction>
+			<goto>104</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse4>
+	</dialogue1.0>
+	<dialogue2.0>
+		<phrases1 name="Lou">Voici les trois rat-fraichissements des messieurs, dames.</phrases1>
+		<phrases2 name="Info">*Vous avez récupéré quelques points de vie.*</phrases2>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Lou">Je vous présente ma spécialité : la rat-touille bio!\n\nViande 100% d'origine animale cuite à la braise par notre artisant forgeron.\n\n\n...Peut contenir des traces de bois et de métaux...</phrases1>
+		<phrases2 name="Info">*Vous avez récupéré des points de vie.*</phrases2>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Lou">Malheureusement nous sommes en pénurie de porc. \n\nMais je vous ait fait un équivalent avec des produits locaux !</phrases1>
+		<phrases2 name="Info">*Vous avez récupéré beaucoup de points de vie.*</phrases2>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrases1 name="Lou">La maison ne fait pas crédit. Lorsque vous ferez officiellement parti de notre groupe, vous pourrez payer en tour de roue mais celà peut prendre plusieurs semaines.</phrases1>
+		<phrases2 name="Leopold">Pfff, refuser de donner à manger à des gens affammé, ce tavernier est vraiment rat-din.</phrases2>
+		<reponse1>
+			<reaction>Partir</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue5.0>
+ </PNJ>

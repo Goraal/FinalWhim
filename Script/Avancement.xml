@@ -1,108 +1,108 @@
 <?xml version="1.0" ?>
 <Avancement>
-	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	
-	<NomMajor>    Major</NomMajor>
-	<NomLeopold>    Adeline</NomLeopold>
-	<NomAdeline>    Léopold</NomAdeline>
-	<Enigme>        </Enigme>
+	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	
+	<NomMajor>       Major</NomMajor>
+	<NomLeopold>       Adeline</NomLeopold>
+	<NomAdeline>       Léopold</NomAdeline>
+	<Enigme>           (|-|4|280|\|</Enigme>
 	<Inventaire>
-		 		 		 		 		 			 	 		 	 		 	 		 	 		 	
-		<Steamille>    1</Steamille>
+		 		 		 		 		 		 		 		 			 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	
+		<Steamille>       1</Steamille>
 	</Inventaire>
 	<PJ>
-		 		 		 		 		 		 		 		 		 		 		 	 		 		 		 		 		 		 	 		 		 		 		 		 		 	 		 		 		 		 		 		 	 		 		 		 		 		 		 	
-		<Triche>     NON</Triche>
-		<Embarquement>     NON</Embarquement>
-		<EngrenageID>    OUI</EngrenageID>
-		<condition3>     NON</condition3>
-		<est-mutant>     NON</est-mutant>
-		<programeur>     NON</programeur>
+		 		 		 		 		 		 		 		 		 		 		 		 		 		 	 		 		 		 		 		 		 	 		 		 		 		 		 		 	 		 		 		 		 		 		 	 		 		 		 		 		 		 	 		 		 		 		 		 		 	 		 		 		 		 		 		 	 		 		 		 		 		 		 	
+		<Triche>        NON</Triche>
+		<Embarquement>        NON</Embarquement>
+		<EngrenageID>       OUI</EngrenageID>
+		<condition3>        NON</condition3>
+		<est-mutant>        NON</est-mutant>
+		<programeur>        NON</programeur>
 	</PJ>
 	<Fillette>
-		 		 		 		 		 		 	 		 		 		 		 	 		 		 		 		 		 	 		 		 		 		 		 	 		 		 		 		 		 	 		 		 		 		 		 	
-		<Attaquee>     NON</Attaquee>
-		<jamais-vu>    NON</jamais-vu>
-		<ApresCombat>    OUI</ApresCombat>
-		<Fouillee>     NON</Fouillee>
-		<morte>     NON</morte>
+		 		 		 		 		 		 		 		 		 	 		 		 		 		 	 		 		 		 		 		 	 		 		 		 		 		 	 		 		 		 		 		 	 		 		 		 		 		 	 		 		 		 		 		 	 		 		 		 		 		 	 		 		 		 		 		 	
+		<Attaquee>        NON</Attaquee>
+		<jamais-vu>       NON</jamais-vu>
+		<ApresCombat>       OUI</ApresCombat>
+		<Fouillee>        NON</Fouillee>
+		<morte>        NON</morte>
 	</Fillette>
 	<TOCTOC>
-		 		 		 		 		 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	
-		<jamais-vu>     OUI</jamais-vu>
-		<fin>     NON</fin>
+		 		 		 		 		 		 		 		 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	
+		<jamais-vu>        OUI</jamais-vu>
+		<fin>        NON</fin>
 	</TOCTOC>
 	<MétaPortePrison>
-		 		 		 		 		 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	
-		<steamille-inséré>    OUI</steamille-inséré>
-		<ouverte>     NON</ouverte>
+		 		 		 		 		 		 		 		 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	
+		<steamille-inséré>       OUI</steamille-inséré>
+		<ouverte>        NON</ouverte>
 	</MétaPortePrison>
 	<PorteAssenseur>
-		 		 		 		 		 		 	 		 	 		 	 		 	 		 	
-		<ouverte>     NON</ouverte>
+		 		 		 		 		 		 		 		 		 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	
+		<ouverte>        NON</ouverte>
 	</PorteAssenseur>
 	<Stale>
-		 		 		 		 		 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	
-		<jamais-vu>    NON</jamais-vu>
-		<Libre>     NON</Libre>
-		<AOuvertascenseur>    OUI</AOuvertascenseur>
+		 		 		 		 		 		 		 		 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	
+		<jamais-vu>       NON</jamais-vu>
+		<Libre>        NON</Libre>
+		<AOuvertascenseur>       OUI</AOuvertascenseur>
 	</Stale>
 	<SS>
-		 		 		 		 		 		 	 		 	 		 	 		 	 		 	
-		<desactive>      NON</desactive>
+		 		 		 		 		 		 		 		 		 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	
+		<desactive>         NON</desactive>
 	</SS>
 	<SentinelleCamps>
-		 		 		 		 		 	 		 		 	 	 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	
-		<jamais-vu>    NON</jamais-vu>
-		<laisse-passer>    OUI</laisse-passer>
+		 		 		 		 		 		 		 		 	 		 		 	 	 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	
+		<jamais-vu>       NON</jamais-vu>
+		<laisse-passer>       OUI</laisse-passer>
 	</SentinelleCamps>
 	<Arsène>
-		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	
-		<jamais-vu>    NON</jamais-vu>
+		 		 		 		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	
+		<jamais-vu>       NON</jamais-vu>
 	</Arsène>
 	<Manny>
-		 		 		 		 		 	 		 		 	 	 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	
-		<Fouillé>    OUI</Fouillé>
-		<Recherche>    DONE</Recherche>
+		 		 		 		 		 		 		 		 	 		 		 	 	 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	 		 		 	
+		<Fouillé>       OUI</Fouillé>
+		<Recherche>       DONE</Recherche>
 	</Manny>
 	<Emanuella>
-		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	
-		<jamais-vu>      OUI</jamais-vu>
+		 		 		 		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	
+		<jamais-vu>         OUI</jamais-vu>
 	</Emanuella>
 	<Boris>
-		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	
-		<jamais-vu>      OUI</jamais-vu>
+		 		 		 		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	
+		<jamais-vu>         OUI</jamais-vu>
 	</Boris>
 	<chasseur>
-		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	
-		<jamais-vu>      OUI</jamais-vu>
+		 		 		 		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	
+		<jamais-vu>         OUI</jamais-vu>
 	</chasseur>
 	<Secrétaire>
-		 		 		 		 		 	 		 		 	 	 	 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	
-		<jamais-vu>      OUI</jamais-vu>
-		<Passe-portes>    EnCours</Passe-portes>
-		<Postuler>    OUI</Postuler>
+		 		 		 		 		 		 		 		 	 		 		 	 	 	 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	 		 		 		 	
+		<jamais-vu>         OUI</jamais-vu>
+		<Passe-portes>       EnCours</Passe-portes>
+		<Postuler>       OUI</Postuler>
 	</Secrétaire>
 	<Stan>
-		 		 		 		 		 	 		 		 	 	 	 		 		 		 		 	 		 		 		 		 	 		 		 		 		 	 		 		 		 		 	 		 		 		 		 	
-		<jamais-vu>      OUI</jamais-vu>
-		<Postuler>DONE</Postuler>
-		<Mission1>Teddy</Mission1>
-		<Mission2>     NON</Mission2>
+		 		 		 		 		 		 		 		 	 		 		 	 	 	 		 		 		 		 	 		 		 		 		 	 		 		 		 		 	 		 		 		 		 	 		 		 		 		 	 		 		 		 		 	 		 		 		 		 	 		 		 		 		 	
+		<jamais-vu>         OUI</jamais-vu>
+		<Postuler>   DONE</Postuler>
+		<Mission1>   Teddy</Mission1>
+		<Mission2>        NON</Mission2>
 	</Stan>
 	<coach>
-		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	
-		<jamais-vu>      OUI</jamais-vu>
+		 		 		 		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	
+		<jamais-vu>         OUI</jamais-vu>
 	</coach>
 	<Teddy>
-		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	
-		<jamais-vu>      OUI</jamais-vu>
+		 		 		 		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	
+		<jamais-vu>         OUI</jamais-vu>
 	</Teddy>
 	<Infirmiere>
-		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	
-		<jamais-vu>    NON</jamais-vu>
+		 		 		 		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	
+		<jamais-vu>       NON</jamais-vu>
 	</Infirmiere>
 	<MJ>
-		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	
-		<Combat>      NON</Combat>
+		 		 		 		 		 		 		 		 	 		 		 	 	 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	 		 	
+		<Combat>         NON</Combat>
 	</MJ>
 </Avancement>

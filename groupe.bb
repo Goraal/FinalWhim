@@ -783,7 +783,7 @@ Function reinit_groupe()
 	g\script[1]=503
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
-	g\nom_action$[1]="discuter avec Arsène"
+	g\nom_action$[1]="discuter avec Arsene";"discuter avec Arsène"
 	g\position#[1]=6.2
 	g\position#[2]=0.48
 	g\position#[3]=39.5
@@ -817,6 +817,21 @@ Function reinit_groupe()
 	g\position#[1]=48
 	g\position#[2]=0.48
 	g\position#[3]=37.5
+	g\position#[4]=-90
+	g\act_scale#=1
+	g\act_type=2
+	
+	g.groupe=New groupe
+	g\num=506
+	g\name$="Tavernier"
+	g\map=5
+	g\script[1]=506
+	g\trigger[1]=4
+	g\range_trigger[1]=3
+	g\nom_action$[1]="discuter avec le tavernier"
+	g\position#[1]=4.5
+	g\position#[2]=0.48
+	g\position#[3]=32.9
 	g\position#[4]=-90
 	g\act_scale#=1
 	g\act_type=2

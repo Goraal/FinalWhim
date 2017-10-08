@@ -20,7 +20,7 @@ tex_debrit$						="textures/loran/debris2.jpg"
 tex_sol_parking$				="textures/loran/gravel.jpg"
 tex_cuir_noir$					="textures/loran/cuir-noir.jpg"
 tex_cuivre1$					="textures/loran/Cuivre_neuf.bmp"
-tex_comptoire_bar$				="textures/loran/MarbleWhite2.jpg";velour_petit.jpg"
+tex_comptoire_bar$				="textures/loran/WoodWall3.jpg";MarbleWhite2.jpg";velour_petit.jpg"
 tex_presentoire_bar$			="textures/loran/parquet.jpg"
 tex_parquet$					="textures/loran/parquet.jpg"
 
@@ -190,7 +190,7 @@ AmbientLight 50,50,50
 ;cellule16
 i=7
 j=1
-mur_ouest_cellule16=		CreerMur(0.1,3,5,		0+6.5*i,1.5,2.5+35*j,	tex_mur_Forge$,3)
+;mur_ouest_cellule16=		CreerMur(0.1,3,5,		0+6.5*i,1.5,2.5+35*j,	tex_mur_Forge$,3)
 mur_est_cellule16=			CreerMur(0.1,3,8,		6+6.5*i,1.5,4+32*j,		tex_mur_Forge$,3)
 
 FAKE_mur_roue1_cellule16=				CreerMur(1,3,0.75,		50.82,1.5,36.9)
@@ -207,8 +207,8 @@ EntityFX roue_cellule16,1
 
 ;specifique forge
 mur_fond_cellule16=				CreerMur(12.5,3,0.1,			45.2,1.5,39.99,				tex_mur_Forge$,3)
-plafond_cellule16=				CreerMur(0.1,6.5,8,				48.2,2.99,36,				tex_plafond_Forge$,3)
-sol_cellule16=					CreerMur(0.1,6.5,8,				48.2,-0.04,36,				tex_sol_Forge$,3,1,		type_sol(1,1))
+plafond_cellule16=				CreerMur(0.1,13,8,				44.95,2.99,36,				tex_plafond_Forge$,3)
+sol_cellule16=					CreerMur(0.1,13,8,				44.95,-0.04,36,				tex_sol_Forge$,3,1,		type_sol(1,1));6.5=>13      48.2=>44.95
 RotateEntity plafond_cellule16,0,0,90
 RotateEntity sol_cellule16,0,0,90
 
@@ -253,8 +253,8 @@ EntityAlpha faux_mur_Forgeron,0
 ;cellule15
 i=6
 j=1
-mur_ouest_cellule15=			CreerMur(0.1,3,5,		0+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
-mur_est_cellule15=			CreerMur(0.1,3,5,		6+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
+mur_ouest_cellule15=			CreerMur(0.1,3,5,		0+6.5*i,1.5,2.5+35*j,		tex_mur_Forge$,3)
+;mur_est_cellule15=			CreerMur(0.1,3,5,		6+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
 
 FAKE_mur_roue1_cellule15=				CreerMur(0.75,3,1,		4.12+6.5*i,1.5,0.8+38.4*j);39.2
 FAKE_mur_roue2_cellule15=				CreerMur(0.75,3,1,		1.87+6.5*i,1.5,0.8+38.4*j)
@@ -275,7 +275,7 @@ EntityFX roue_cellule15,1
 ;cellule14
 i=5
 j=1
-mur_ouest_cellule14=			CreerMur(0.1,3,5,		0+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
+;mur_ouest_cellule14=			CreerMur(0.1,3,5,		0+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
 mur_est_cellule14=			CreerMur(0.1,3,5,		6+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
 
 FAKE_mur_roue1_cellule14=				CreerMur(0.75,3,1,		4.12+6.5*i,1.5,0.8+38.4*j)
@@ -297,8 +297,8 @@ EntityFX roue_cellule14,1
 ;cellule13
 i=4
 j=1
-mur_ouest_cellule13=			CreerMur(0.1,3,5,		0+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
-mur_est_cellule13=			CreerMur(0.1,3,5,		6+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
+;mur_ouest_cellule13=			CreerMur(0.1,3,5,		0+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
+;mur_est_cellule13=			CreerMur(0.1,3,5,		6+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
 
 FAKE_mur_roue1_cellule13=				CreerMur(0.75,3,1,		4.12+6.5*i,1.5,0.8+38.4*j)
 FAKE_mur_roue2_cellule13=				CreerMur(0.75,3,1,		1.87+6.5*i,1.5,0.8+38.4*j)
@@ -319,8 +319,8 @@ EntityFX roue_cellule13,1
 ;cellule12
 i=3
 j=1
-mur_ouest_cellule12=			CreerMur(0.1,3,5,		0+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
-mur_est_cellule12=			CreerMur(0.1,3,5,		6+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
+;mur_ouest_cellule12=			CreerMur(0.1,3,5,		0+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
+;mur_est_cellule12=			CreerMur(0.1,3,5,		6+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
 
 FAKE_mur_roue1_cellule12=				CreerMur(0.75,3,1,		4.12+6.5*i,1.5,0.8+38.4*j)
 FAKE_mur_roue2_cellule12=				CreerMur(0.75,3,1,		1.87+6.5*i,1.5,0.8+38.4*j)
@@ -342,7 +342,7 @@ EntityFX roue_cellule12,1
 i=2
 j=1
 mur_ouest_cellule11=			CreerMur(0.1,3,5,		0+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
-mur_est_cellule11=			CreerMur(0.1,3,5,		6+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
+;mur_est_cellule11=			CreerMur(0.1,3,5,		6+6.5*i,1.5,2.5+35*j,		tex_mur_garage$,3)
 
 FAKE_mur_roue1_cellule11=				CreerMur(0.75,3,1,		4.12+6.5*i,1.5,0.8+38.4*j)
 FAKE_mur_roue2_cellule11=				CreerMur(0.75,3,1,		1.87+6.5*i,1.5,0.8+38.4*j)
@@ -671,11 +671,11 @@ mur_cellule14_cellule15=		CreerMur(0.5,3,0.5,			38.75,1.5,32.2,		tex_mur_parking
 mur_cellule15_cellule16=		CreerMur(0.5,3,0.5,			45.25,1.5,32.2,		tex_mur_parking$,3)
 mur_cellule16_cellule16b=		CreerMur(1,3,0.5,			52.00,1.5,32.2,		tex_mur_parking$,3)
 mur_cache_cellule10_11=			CreerMur(0.6,3,0.01,		12.75,1.5,35.00,	tex_mur_garage$,3)
-mur_cache_cellule11_12=			CreerMur(0.6,3,0.01,		19.25,1.5,35.00,	tex_mur_garage$,3)
-mur_cache_cellule12_13=			CreerMur(0.6,3,0.01,		25.75,1.5,35.00,	tex_mur_garage$,3)
-mur_cache_cellule13_14=			CreerMur(0.6,3,0.01,		32.25,1.5,35.00,	tex_mur_garage$,3)
+;mur_cache_cellule11_12=			CreerMur(0.6,3,0.01,		19.25,1.5,35.00,	tex_mur_garage$,3)
+;mur_cache_cellule12_13=			CreerMur(0.6,3,0.01,		25.75,1.5,35.00,	tex_mur_garage$,3)
+;mur_cache_cellule13_14=			CreerMur(0.6,3,0.01,		32.25,1.5,35.00,	tex_mur_garage$,3)
 mur_cache_cellule14_15=			CreerMur(0.6,3,0.01,		38.75,1.5,35.00,	tex_mur_garage$,3)
-mur_cache_cellule15_16=			CreerMur(0.6,3,0.01,		45.25,1.5,35.00,	tex_mur_Forge$,3)
+;mur_cache_cellule15_16=			CreerMur(0.6,3,0.01,		45.25,1.5,35.00,	tex_mur_Forge$,3)
 
 
 
@@ -1104,6 +1104,7 @@ PositionEntity lumiere_saloon,6.25,2.0,37.5
 LightRange lumiere_saloon,15
 
 entiteTest=Barman
+
 
 
 
