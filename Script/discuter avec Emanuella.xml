@@ -8,7 +8,7 @@
 		<phrases6 name="Adeline">En gros vous avez trahi toutes les personnes de ce camp~? \n\nPas mal~! Je commence à bien vous aimer~!</phrases6>
 		<phrases7 name="Emanuella">Trahi~! \nPas du tout~! \nJe leur ai apporté une vie meilleure. Vous croyez vraiment que notre forgeron a pu fabriquer un piano~! Ce sont mes négociations avec Stan qui nous ont permis le confort que l'on a actuellement. La plupart des personnes ici n'avaient pas le même confort à l'extérieur~!</phrases7>
 		<phrases8 name="Leopold">Le confort c'est bien mais chaque être vivant souhaite avant tout la liberté ! \n\nVous ne pouvez pas les priver de leur envie de s'évader~!</phrases8>
-		<phrases9 name="Emanuella">N'oublions pas que nous parlons des lâches qui ont préféré battre en retraite que d'aider ceux qui se battaient pour les libérés lors de notre tentative d'évasion. \nLeur envie d'évasion est moins grande que leur envie de survivre. Et si vous connaissez un peu l'extérieur vous serez d'accord qu'il est plus facile de survivre ici que dehors. </phrases9>
+		<phrases9 name="Emanuella">N'oublions pas que nous parlons des lâches qui ont préféré battre en retraite que d'aider ceux qui se battaient pour les libérer lors de notre tentative d'évasion. \nLeur envie d'évasion est moins grande que leur envie de survivre. Et si vous connaissez un peu l'extérieur vous serez d'accord qu'il est plus facile de survivre ici que dehors. </phrases9>
 		<phrases10 name="Emanuella">Bon, sur ce, je compte sur vous pour dire à Stan que tout est sous contrôle. </phrases10>
 		<reponse1>
 			<reaction>Partir</reaction>
@@ -118,7 +118,7 @@
 	</dialogue3.0>
 	<dialogue4.0>
 		<phrases1 name="Major">Dites m'en plus sur l'histoire de ce camp.</phrases1>
-		<phrases2 name="Adeline">*%Avancement/NomAdeline% pousse un profond soupire de désepoir*\n\n Bon, moi je m'ennuie, je vais faire un tour.</phrases2>
+		<phrases2 name="Adeline">*%Avancement/NomAdeline% pousse un profond soupir de désespoir*\n\n Bon, moi je m'ennuie, je vais faire un tour.</phrases2>
 		<phrases3 name="Emanuella">Nous avons été libérés par Stale il y a environ 8 mois, le temps est dur à compter sous terre. Nous étions alors une bonne trentaine et pensions avoir une chance de nous échapper. \nNous avons fabriqué des armes avec ce que nous pouvions et nous sommes partis en quête de liberté.\n Le combat contre les gardes mécaniques de l'extérieur fut long et nous avons cru à la victoire à plusieurs reprises. </phrases3>
 		<phrases4 name="Emanuella">Le combat dura jusqu'au lendemain et nous avons découvert que l'usine est capable de créer de nouveaux gardes mécaniques chaque jour. \nUne fois nos meilleurs combattants tombés, ils ne nous restaient plus qu'une solution~: la fuite... \nD'autres bons combattants se sont sacrifiés pour nous laisser fuir et Stale a fait croire à l'ennemi que tous ceux qu'il avait libérés ont été tués.</phrases4>
 		<phrases5 name="Emanuella">Une fois de retour dans nos prisons, nous nous sommes concertés et avons décidé de garder notre présence secrète en faisant tourner les roues comme si nous étions toujours enfermés. \n\nUne semaine plus tard, je fut élue maire et donna la permission exclusive à l'un de nos membres de faire des expéditions à l'extérieur afin de récupérer du matériel pour que notre forgeron puisse améliorer notre cadre de vie. </phrases5>

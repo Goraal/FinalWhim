@@ -1045,8 +1045,8 @@ ar\init=-3
 
 ar.armure=New armure ;armure du boss
 ar\num=111
-ar\name$="Armure de Protecteur à Bouclier"
-ar\description$="Une énorme armure très lourde, mais qui protège très bien (sauf évidemment aux points faibles mais que voulez vous...)"
+ar\name$[1]="Armure de Protecteur à Bouclier"
+ar\description$[1]="Une énorme armure très lourde, mais qui protège très bien (sauf évidemment aux points faibles mais que voulez vous...)"
 ar\val#[1]=5
 ar\val#[2]=9
 ar\val#[3]=10
@@ -1067,8 +1067,8 @@ ar\init=0
 
 ar.armure=New armure
 ar\num=112
-ar\name$="Armure de Stan"
-ar\description$="Une excellent armure offrant un maximum de protection sans trop gêner les mouvements."
+ar\name$[1]="Armure de Stan"
+ar\description$[1]="Une excellent armure offrant un maximum de protection sans trop gêner les mouvements."
 ar\val#[1]=3
 ar\val#[2]=6
 ar\val#[3]=9
@@ -1584,6 +1584,5 @@ For q.quest_item = Each quest_item
 		If q\name$[i]="" Then q\name$[i]="NTY: "+q\name$[1]
 	Next
 Next
-
 
 

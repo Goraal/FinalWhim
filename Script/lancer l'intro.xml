@@ -22,7 +22,7 @@
 	<phrases1 name="Adeline">Papa! Attends, j'ai un truc genre 'über important' à te dire!</phrases1>
 	<phrases2 name="Major">Pfff. \n\nBon ok, mais tu as cinq minutes.\n\n(Que je puisse aller chasser tranquillement.)</phrases2>
 	<phrases3 name="Adeline">Tu te souviens du gars qui me court après depuis mes 16 ans?</phrases3>
-	<phrases4 name="Major">\nOui, oui, viens-en au fait. \n\n(Ce type est un peu trop gentil, il est capable de demander pardon pour avoir oublié de s'excuser la semaine dernière!\nC'est dommage, il est costaux, on aurait pu en faire quelque chose.\n\n C'est quoi son nom déjà?) </phrases4>
+	<phrases4 name="Major">\nOui, oui, viens-en au fait. \n\n(Ce type est un peu trop gentil, il est capable de demander pardon pour avoir oublié de s'excuser la semaine dernière!\nC'est dommage, il est costaud, on aurait pu en faire quelque chose.\n\n C'est quoi son nom déjà?) </phrases4>
 		<reponse1>
 			<reaction>Suite</reaction>
 			<goto>803</goto><!-- Penser à faire Choix du Nom de Leopold puis event action = 4 -->
@@ -30,7 +30,7 @@
 	</dialogue3.0>
 	<dialogue4.0 image="sprites\Introduction\intro4.png">
 	<phrases1 name="Adeline">J'ai décidé de lui donner sa chance pour le féliciter de sa persévérance. Et j'aimerais bien avoir ton avis sur lui...\n\n On dit qu'on apprend beaucoup d'un homme sur sa façon de chasser, tu penses quoi de sa façon de chasser?</phrases1>
-	<phrases2 name="Major">(Soyons diplomate, qu'on en finisse)\n\nJ'aimerais bien te répondre, mais tu vois, je ne l'ai jamais vu chasser.\nBon, ce n’est pas tout, mais mes gibiers ne vont pas se chasser tout seul ... ...</phrases2>
+	<phrases2 name="Major">(Soyons diplomates, qu'on en finisse)\n\nJ'aimerais bien te répondre, mais tu vois, je ne l'ai jamais vu chasser.\nBon, ce n’est pas tout, mais mes gibiers ne vont pas se chasser tout seul ... ...</phrases2>
 	<phrases3 name="Adeline">Parfait! Profitez-en pour faire connaissance.\n*%Avancement/NomAdeline% se tourne et hurle*\n\nC'EST BON IL EST D'ACCORD POUR QUE TU CHASSES AVEC LUI.\n\n*Puis elle se retourne vers son père et lui fait un clin d'oeil*\nJe vous laisse entre hommes.</phrases3>
 		<reponse1>
 			<reaction>Suite</reaction>
@@ -93,8 +93,8 @@
 		</reponse1>
 	</dialogue9.0>
 	<dialogue10.0 image="sprites\Introduction\intro7.png">
-	<phrases1 name="Major">Qu'est-ce qui nous prouve que vous n’allez pas nous tuer.</phrases1>
-	<phrases2 name="Pillard">Si mon but avait été de vous tuer, vous seriez déjà mort!</phrases2>
+	<phrases1 name="Major">Qu'est-ce qui nous prouve que vous n'allez pas nous tuer.</phrases1>
+	<phrases2 name="Pillard">Si mon but avait été de vous tuer, vous seriez déjà morts!</phrases2>
 	<phrases3 name="Major">Laisser partir les deux autres et je me rends sans condition.</phrases3>
 	<phrases4 name="Pillard">On a besoin de trois personnes et on préfère éviter que les deux autres alertent tout le village.</phrases4>
 	<phrases5 name="Major">J'ai de l'argent planqué dans la forêt, vous les libérez et je vous montre la cachette.</phrases5>

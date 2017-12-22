@@ -48,6 +48,7 @@ Function new_avatar(num,cat,grp=0,set=11356,prop=0)
 		Select cat
 			Case 11 ; rat
 				a\name$[1]="Rat"
+				a\name$[2]="Rat"
 				a\cat=11 ; rat
 				a\att[1]=-1
 				a\att[2]=-2

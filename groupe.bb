@@ -97,7 +97,8 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\trigger[4]=1
 	g\range_trigger[1]=1
-	g\nom_action$[1]="coller son oreille contre le mur"			
+	g\nom_action$[1]="coller son oreille contre le mur"	
+	g\nom_action$[2]="stick your ear to the wall.txt"			
 	g\position#[1]=5
 	g\position#[2]=1
 	g\position#[3]=5

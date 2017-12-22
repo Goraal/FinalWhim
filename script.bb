@@ -1,4 +1,11 @@
 Function script(script_num)
+	
+	For gr.groupe=Each groupe
+		If gr\num=script_num
+			message_action$ = gr\nom_action$[Int(options#(7))]
+		EndIf
+	Next        
+						
 	Select script_num
 		Case -1
 			message_curseur$="Yaay ! I'm a butterfly !"
@@ -6,7 +13,7 @@ Function script(script_num)
 			message_curseur$="'' "+message_curseur$+" '', or so she said"
 			
 		
-		Case -665 ; victoire 1 dans Alpha
+		Case -665 ; victoire 1
 			FlushKeys
 			FlushMouse
 			StopChannel ch_bgm
@@ -21,7 +28,7 @@ Function script(script_num)
 				timer_animation#=timer_animation#+1
 				delta_frame=20
 				If sortie=0
-					sortie=fenetre_info("Félicitation, tu as fini la version Beta du jeu !#Nous attendons impatiemment ton retour sur ce projet pour savoir si nous continuons l'aventure.")
+					sortie=fenetre_info("Félicitation, tu as fini le jeu !#N'hesite pas à nous laisser un mot sous github : https://github.com/Goraal/FinalWhim.")
 				EndIf
 				Flip
 				If KeyHit(01) Then sortie=10
@@ -29,7 +36,7 @@ Function script(script_num)
 			Wend
 			quitter_jeu=1
 			
-		Case -666 ; Défaite 1 dans Alpha
+		Case -666 ; Défaite 1
 			FlushKeys
 			FlushMouse
 			StopChannel ch_bgm
@@ -303,7 +310,7 @@ Function script(script_num)
 		Case 99 ; lancer le combat de boss
 		
 .forgeron		
-		Case 100 ; Forgeron
+		Case 100 ; visiter la boutique du Forgeron
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If event_action>0 Then var_pl_grp(num_player,"animation",True,1):animation()
@@ -393,7 +400,7 @@ Function script(script_num)
 			EndIf
 
 			
-		Case 102 ; Rencontre avec Stale <Coller l'oreille contre le mur> (v Alpha)	
+		Case 102 ; message_action$="coller l'oreille contre le mur"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -408,7 +415,6 @@ Function script(script_num)
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
 				EndIf
-				message_action$="coller l'oreille contre le mur"
 				Select event_action
 				    Case 0
 				        If keys(12,2)=50 And player_in_control And chat_mode=0
@@ -854,7 +860,11 @@ Function script(script_num)
 				;new_log("test11")
 				start_loop("Head_Menu")
 				If event_action>0 Then var_pl_grp(num_player,"animation",True,1):animation()
-				message_action$="lancer l'intro"
+				If Int(options#(7))=1 
+					message_action$="lancer l'intro"
+				Else
+					message_action$="start the intro"
+				Endif
 				g_bHUDactif=0
 				Select event_action
 					Case 0  

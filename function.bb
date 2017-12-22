@@ -766,17 +766,40 @@ Function HUD(actif=1)
 	;	Rect (screenwidth-largeur)*0.5-2,100*screeny#-2,largeur+5,hauteur+5,0
 		Select Left(message_action$,1)
 			Case "^"
-				Text screenwidth*0.5,118*screeny#,"Cliquez sur ce personnage pour",1,1
-				Text screenwidth*0.5,149*screeny#,"le choisir comme Leader",1,1
+				If Int(options#(7)) = 1
+					Text screenwidth*0.5,118*screeny#,"Cliquez sur ce personnage pour",1,1
+					Text screenwidth*0.5,149*screeny#,"le choisir comme Leader",1,1
+				Else
+					Text screenwidth*0.5,118*screeny#,"NYT : Cliquez sur ce personnage pour",1,1
+					Text screenwidth*0.5,149*screeny#,"NYT : le choisir comme Leader",1,1
+				Endif
+				
 			Case "~"
-				Text screenwidth*0.5,118*screeny#,"Utilisez Z,Q,S,D",1,1
-				Text screenwidth*0.5,149*screeny#,"pour vous déplacer",1,1
+				If Int(options#(7)) = 1
+					Text screenwidth*0.5,118*screeny#,"Utilisez Z,Q,S,D",1,1
+					Text screenwidth*0.5,149*screeny#,"pour vous déplacer",1,1
+				Else
+					Text screenwidth*0.5,118*screeny#,"NYT : Utilisez Z,Q,S,D",1,1
+					Text screenwidth*0.5,149*screeny#,"NYT : pour vous déplacer",1,1
+				Endif
+
 			Case "}" ; roue
-				Text screenwidth*0.5,118*screeny#,"Nombre de tours : "+Right(Left(message_action$,5),4),1,1
-				Text screenwidth*0.5,149*screeny#,"Appuyez sur Espace pour quitter la roue",1,1
+				If Int(options#(7)) = 1
+					Text screenwidth*0.5,118*screeny#,"Nombre de tours : "+Right(Left(message_action$,5),4),1,1
+					Text screenwidth*0.5,149*screeny#,"Appuyez sur Espace pour quitter la roue",1,1
+				Else
+					Text screenwidth*0.5,118*screeny#,"NYT : Nombre de tours : "+Right(Left(message_action$,5),4),1,1
+					Text screenwidth*0.5,149*screeny#,"NYT : Appuyez sur Espace pour quitter la roue",1,1
+				Endif
+
 			Default 
-				Text screenwidth*0.5,118*screeny#,"Appuyez sur Espace pour",1,1
-				Text screenwidth*0.5,149*screeny#,message_action$,1,1
+				If Int(options#(7)) = 1
+					Text screenwidth*0.5,118*screeny#,"Appuyez sur Espace pour",1,1
+					Text screenwidth*0.5,149*screeny#,message_action$,1,1
+				Else
+					Text screenwidth*0.5,118*screeny#,"Hit space to",1,1
+					Text screenwidth*0.5,149*screeny#,message_action$,1,1
+				Endif
 		End Select
 	EndIf
 	
@@ -1869,7 +1892,12 @@ Function changer_leader(num_leader)
 				name$=av\name$[Int(options#(7))]
 			EndIf
 		Next	
-		new_log(name$+" est maintenant le leader du groupe.")
+		If Int(options#(7)) = 1
+				new_log(name$+" est maintenant le leader du groupe.")
+			Else
+				new_log(name$+" is  the new group' leader.")
+			Endif
+		
 		load_groupe(-1,1)
 	EndIf
 End Function
@@ -3135,19 +3163,19 @@ Function MiseEnFormeMessageDialogue(mess$,ajout_log=1,longueur=440)
 			If Variable$="NomMajor"
 				For av.avatar=Each avatar
 					If av\num = 1
-						VariableResultat$ =av\name$
+						VariableResultat$ =av\name$[1]
 					EndIf
 				Next	
 			ElseIf Variable$="NomLeopold"
 				For av.avatar=Each avatar
 					If av\num = 2
-						VariableResultat$ =av\name$
+						VariableResultat$ =av\name$[1]
 					EndIf 
 				Next
 			ElseIf Variable$="NomAdeline"
 				For av.avatar=Each avatar
 					If av\num = 3
-						VariableResultat$ =av\name$
+						VariableResultat$ =av\name$[1]
 					EndIf 
 				Next
 			Else
@@ -5946,7 +5974,6 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 																EndIf
 																dgts_temp#=max(0,dgts_temp#-armure_temp#(touche))*av_t\faiblesse#[touche]+max(0,min(sournoise,sournoise+dgts_temp#-armure_temp#(touche)))
 																dgts#=dgts#+dgts_temp#
-																mess$=mess$+", touche"
 																Select touche
 																	Case 2
 																		mess$=mess$+" (Crit)"
@@ -5954,6 +5981,8 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 																	Case 3
 																		mess$=mess$+" (Parfait)"
 																		crit_happened=max(crit_happened,1)
+																	Default
+																		mess$=mess$+", touche"
 																End Select
 															Else
 																mess$=mess$+", rate sa cible"

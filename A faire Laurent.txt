@@ -27,7 +27,7 @@ OK	Bug Major V esquive. + 2 image
 	Probleme camera lors combat boss (vision temporaire d'avant boss)
 	(Aide N°2 enigme)
 OK	Boss = Beau SS (function.bb + bestiaire.bb) 
-OK	FactoryTech VS FactoryTec
+0	FactoryTech VS FactoryTec
 OK       BUG dialog STAN .xml
 OK	Orthographe Teddy + monter étage + Ema + MJ
 

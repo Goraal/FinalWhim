@@ -19,7 +19,7 @@
 		</reponse4>
 	</dialogue1.0>
 	<dialogue1.1 condition="Stale/AOuvertascenseur:EnCours">
-		<phrases1 name="Stale">*Stale appuie sur l'énorme bouton au centre de la porte de l'ascenseur *\n...\n Je me permet également de vous donner deux conseils vitaux: \n*En premier lieu, une fois dehors éviter autant que faire ce peut les patrouilleurs méchaniques! Vous ne pourrez point les vaincre sans arme.\n *En second lieux, n'oubliez pas que le SS protége l'unique sortie de l'usine et il est bien plus puissant qu'un patrouilleur mechanique. </phrases1>
+		<phrases1 name="Stale">*Stale appuie sur l'énorme bouton au centre de la porte de l'ascenseur *\n...\n Je me permet également de vous donner deux conseils vitaux: \n*En premier lieu, une fois dehors éviter autant que faire ce peut les patrouilleurs mécaniques! Vous ne pourrez point les vaincre sans arme.\n *En second lieux, n'oubliez pas que le SS protège l'unique sortie de l'usine et il est bien plus puissant qu'un patrouilleur mécanique. </phrases1>
 		<reponse1>
 			<reaction>Partir</reaction>
 			<goto action="Avancement/Stale/AOuvertascenseur:OUI">100</goto>

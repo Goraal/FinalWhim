@@ -2862,7 +2862,7 @@ aff_load_menu(0)
 						SetFont big_font
 						mult_mess$(1)="Vitrine"
 						mult_mess$(2)="Shop"
-						Text 170,100,mult_mess$(Int(options#7))),0,1
+						Text 170,100,mult_mess$(Int(options#(7))),0,1
 						Rect 170,115,150,440,0 
 						For butin.butin=Each butin
 							If butin\num=-12
@@ -3058,7 +3058,7 @@ aff_load_menu(0)
 									good=1
 									mult_mess$(1)="Acheter"
 									mult_mess$(2)="Buy"
-									aff_info_equipement(butin\loot[Abs(inventaire_cible)],mult_mess$(Int(options#(7)))
+									aff_info_equipement(butin\loot[Abs(inventaire_cible)],mult_mess$(Int(options#(7))))
 								EndIf
 							Next
 						EndIf

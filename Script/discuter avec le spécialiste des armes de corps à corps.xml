@@ -1,6 +1,6 @@
 <PNJ>
     <dialogue1.0  condition="Stan/Postuler:NON">
-		<phrases1 name="Garde">Engagez vous qu'ils disaient! Vous pourrez tapper sur des gens qu'ils disaient!</phrases1>
+		<phrases1 name="Garde">Engagez vous qu'ils disaient! Vous pourrez taper sur des gens qu'ils disaient!</phrases1>
 		<reponse1>
 			<reaction>Partir</reaction>
 			<goto>0</goto>
@@ -63,7 +63,7 @@
 		</reponse2>
 	</dialogue1.4>
     <dialogue2.0>
-		<phrases1 name="Garde">Ah! Voici des personnes inteligentes! Je vous propose le meilleur équipement possible : une hache et je vous fait cadeau d'une armure de cuir légère!</phrases1>
+		<phrases1 name="Garde">Ah! Voici des personnes intelligentes! Je vous propose le meilleur équipement possible : une hache et je vous fait cadeau d'une armure de cuir légère!</phrases1>
 		<reponse1>
 			<reaction>Accepter</reaction>
 			<goto>100</goto>

@@ -177,7 +177,7 @@ Global old_message_curseur$=""
 Global message_action$=""
 Global ch_clic
 Global msg_radio$=""
-Global mode_debug=1
+Global mode_debug=0 ;LBA to reset mode_debug=0
 Global nb_tour
 Global nb_partie=1
 
@@ -308,6 +308,7 @@ Global g_bHUDactif=1 ;1 pour activer l'HUD, 0 pour la désactiver
 Global fond_Dialogue=LoadImage("sprites\menu\HUD_dialogue.png")
 Global fond_DialogueQCM=LoadImage("sprites\menu\HUD_dialogueQCM.png")
 Global fond_BoutonQCM=LoadImage("sprites\menu\HUD_dialogue_bouton.png")
+Global fond_Combat=LoadImage("sprites\menu\HUD_combat.png")
 Global fond_animation
 Global xml_ScriptPartiel=""
 Global phrasesIndex=0
@@ -566,7 +567,7 @@ Type avatar
 	Field steam ; la vapeur consommée
 	
 	Field cmpt[15] ; regroupe les règles spéciales
-	Field equi[8]
+	Field equi[8] ;4 = armure
 	Field charge[3] ; les charges de ses trois armes
 	Field caps
 	Field junk

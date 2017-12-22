@@ -42,6 +42,7 @@ Function fn_combat()
 			background=LoadImage("sprites\background\default.jpg")
 	End Select
 	
+	
 	If combat_roue=0 Then combat_roue=LoadImage("sprites\Menu\combat_roue.png"):MidHandle combat_roue
 	If combat_barre_pleine=0 Then combat_barre_pleine=LoadImage("sprites\Menu\combat_barre_pleine.png")
 	If combat_barre_vide=0 Then combat_barre_vide=LoadImage("sprites\Menu\combat_barre_vide.png")
@@ -126,9 +127,8 @@ Function fn_combat()
 		Cls							
 		DrawImage background,0,0
 		
-		;hud combat permanent (mettre des trucs plus beaux)
-		Color 0,0,0
-		Rect 0,450,screenwidth,500
+		
+
 		
 		;aff des combattants haut
 		For t=1 To 9
@@ -167,6 +167,123 @@ Function fn_combat()
 				
 				Color 255,255,255
 				Rect 400-Floor(actifs*0.5)*30-14,30-14,29,29,0
+				
+				;HUD combat.LBA : à faire aussi en EN !
+				;image de l'armure et arme sous hud fond...
+				If icone_armor<>0 then DrawImage icone_armor,691,526
+				If icone_arme<>0 then DrawImage icone_arme,67,527
+				;HUD fond
+				DrawImage fond_Combat,0,417
+				;PJ actif :
+				t=combat\qui
+				For av.avatar=Each avatar
+					If av\num=combat\ordre[t]
+						
+						If av\equi[1]=0
+								DebugLog("Main nue")
+								;LBA cheat arme 1
+								av\equi[1]=8
+						Endif
+						
+						For arme.arme=Each arme
+							If arme\num=av\equi[1]
+								;image de l'arme sous hud fond...
+								icone_arme=arme\icone[1]
+								
+								
+								Color 0,0,0
+								SetFont little_font
+								Text 95,444,av\name$[Int(options#(7))],true,true
+								
+								
+								;(1=mains nues, 2=légère, 3=lourde, 4=distance, 5=à feu)
+								;transformer {1,2,3,4,5} en {1,1,2,3,3}
+								style_att=min(3,max(1,arme\classe-1))
+								dgts_min=arme\degat_min+av\deg[style_att]+bonus_equi(6+style_att)
+								dgts_max=arme\degat_max+av\deg[style_att]+bonus_equi(6+style_att)
+								dgts_arme$ = Str$(dgts_min)+"-"+Str$(dgts_max)
+								Text 135,582,dgts_arme$,true,true
+																												
+								bonusAttaque = arme\att[style_att] + av\att[style_att]
+								Text 44,582,"1D20+"+Str$(bonusAttaque),true,true
+								;tête
+								If fighters_tete(av\cat,1)<>0 Then DrawBlock fighters_tete(av\cat,1),5,426
+								
+								
+								If Int(options#(7))=1 ;français
+									Text 38,513,"Attaque",true,true
+									Text 137,513,"Dégâts",true,true
+									;Type d'attaque
+									If style_att=1 Then nomAttaque$ = "Attaque arme legère"
+									If style_att=2 Then nomAttaque$ = "Attaque arme lourde"
+									If style_att=3 Then nomAttaque$ = "Attaque à distance"
+								Else ;anglais par défaut
+									Text 38,513,"Attack",true,true
+									Text 137,513,"Damage",true,true
+									;Type d'attaque
+									If style_att=1 Then nomAttaque$ = "Light weapon attack"
+									If style_att=2 Then nomAttaque$ = "Heavy weapon attack"
+									If style_att=3 Then nomAttaque$ = "Range attack"	
+								Endif
+								Text 88,480,nomAttaque$,true,true
+							EndIf
+						Next
+						
+					EndIf
+					
+				;Cible :
+					If combat_target=0 then icone_armor = 0
+					If av\num=combat_target
+						TargetHasArmor=0
+						For armure.armure=Each armure
+							If armure\num=av\equi[4]
+								
+								icone_armor = armure\icone[1]						
+								bonusResistance = armure\def[style_att] + av\def[style_att]
+								bonusArmure$ = Str$(Int(armure\val#[1]))+"/"+Str$(Int(armure\val#[2]))+"/"+Str$(Int(armure\val#[3]))
+								TargetHasArmor=1
+							EndIf
+						Next
+						
+						Color 0,0,0
+						SetFont little_font
+						Text 699,444,av\name$[Int(options#(7))],true,true
+						
+						
+										
+						;tête
+						If fighters_tete(av\cat,1)<>0 Then DrawBlock fighters_tete(av\cat,1),750,426
+						
+						;armor
+						if TargetHasArmor=0
+							bonusResistance=0
+							bonusArmure$="0/0/0"
+							;LBA cheat armure 1
+							av\equi[4]=102
+							
+						Endif
+						Text 666,582,Str$(bonusResistance),true,true
+						Text 762,582,Str$(bonusArmure$),true,true
+						
+						If Int(options#(7))=1 ;français
+							Text 664,513,"Défense",true,true
+							Text 760,513,"Armure",true,true
+							;Type de def
+							If style_att=1 Then nomDefense$ = "Défense legère"
+							If style_att=2 Then nomDefense$ = "Défense lourde"
+							If style_att=3 Then nomAttaque$ = "Défense à distance"
+						Else ;anglais par défaut
+							Text 664,513,"Defense",true,true
+							Text 760,513,"Armor",true,true
+							;Type de def
+							If style_att=1 Then nomAttaque$ = "Light defense"
+							If style_att=2 Then nomAttaque$ = "Heavy defense"
+							If style_att=3 Then nomAttaque$ = "Range defense"	
+						Endif
+						Text 710,480,nomDefense$,true,true
+					Endif
+				Next					
+				;fin HUD combat
 				
 				
 				If combat_temp_anim<0 ; agir
@@ -1181,6 +1298,7 @@ Function fn_combat()
 						EndIf
 					Next
 					
+					
 					;afficher tous les gars normalement, sauf pour l'acteur et la cible
 					For groupe.groupe=Each groupe
 						If groupe\num=combat\groupe[1] ; groupe de gauche (ennemis)
@@ -2141,13 +2259,12 @@ Function fn_combat()
 				
 				combat_temp_anim=combat_temp_anim-delta_frame
 										
+				;message de LOG LBA 
 				SetFont little_font
 				For t=1 To 9
-					Color log_color(t,1),log_color(t,2),log_color(t,3)
-					If log_mess$(t,2)<>""
-						If log_mess$(t,2)<>"#" Then Text 5,screenheight-(t-1)*18*screeny-28,"["+log_mess$(t,2)+"]"
-						Text 5+80*screeny,screenheight-(t-1)*18*screeny-28,log_mess$(t,1)
-					EndIf
+					Color 0,0,0
+					Text 160+80*screeny,screenheight-(t-1)*18*screeny-25,log_mess$(t,1)
+					;;EndIf
 				Next
 				
 				If chat_mode=1
