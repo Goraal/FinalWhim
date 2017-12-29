@@ -1,3 +1,41 @@
+Traduction :
+		rajout des \n et * dans les textes et relecture
+		changement des noms de perso dans les textes et images associés
+		talk to the ranged weapons specialst
+T		message de combat en anglais "choisissez votre action"
+T		""Partie sauvegardé""
+T		LOG : "VOUS : Surrender" => DONE
+SOALT	Faire le tour de tous les fichiers! OK pour combat + arme + main + function
+OK		Steamer dans ouvrir steamimpact
+SOALT	Pb en sortie de combat fillette
+T		Monter en ascenseur 
+T		"Once" avec Narrateur!
+		Nom narrateur et autre doivent montrer la bonne image lors des dialogues. Voici la liste :
+		1/Storyteller
+		2/Unknown
+		3/Info (en FR aussi)
+		4/Guard
+		5/Little girl
+		6/Nurse
+		7/Secretary
+		8/Mechanism
+		9/
+		10/
+		11/
+		12/
+
+		BON CA COMMENCE A BIEN FAIRE! 
+		
+Combat
+OK		remettre main nue
+OK		prévoir main nue + pas d'armure
+OK		Une image pour init type ennemis soit : guarde mech, protecteur, BB
+OK		Image visage + Nom pour carac ennemis à prévoir.
+SOALT	Affichage des PJ cibles lors des attaques PNJ
+SOALT	BB n'attaque plus ...
+
+
+
 
 OK	Teddy discution avant resolution enigme
 OK	Monter à l'étage = entity does not exist + crash (pb dist2d)

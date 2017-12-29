@@ -1,0 +1,11 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="affiche">*In case of an emergency, please use the following enigma as your password:*</phrases1>
+		<phrases2 name="affiche">\/\/|-|3|\| 1 \/\/45 80|2|\| 1 \/\/45 8|_4(|<, \n1 |_1\/3 8`/ 83(0|\/|1|\|6 |23|) \n4|\||) \/\/|-|3|\| 1 |)13 1 \/\/1|_|_ 83 6|23`/</phrases1>
+		<phrases3 name="affiche">signed 73|)||)'/ 8|3|23)</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+ </PNJ>

@@ -1,0 +1,63 @@
+<PNJ>
+    <dialogue1.0 condition="Manny/Fouillé:NON">
+		<phrases1 name="Adeline">*%Avancement/NomAdeline%'s eyes began to sparkle with the sight of the skeleton,* Daddy please... pretty please...\nCan I search the body?</phrases1>
+		<reponse1>
+			<reaction>Accept</reaction>
+			<goto action="Avancement/Manny/Fouillé:OUI">2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Refuse</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3 condition="Manny/Recherche:OUI">
+			<reaction>Look carefully</reaction>
+			<goto action="Avancement/Manny/Recherche:TROUVE">4</goto>
+		</reponse3>
+	</dialogue1.0>
+	<dialogue1.1 condition="Manny/Recherche:NON">
+		<phrases1 name="Leopold">There's nothing left to recover on this corpse...  \nExcept his clothes.</phrases1>
+		<phrases2 name="Major">*%Avancement/NomMajor% intervenes before %Avancement/NomAdeline% can say anything.* \n\nNo! We're not gonna steal this guy's clothes! \nHonestly, %Avancement/NomAdeline%, you need to stop trying to get every shred of garbage back.</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.1>
+	<dialogue1.2>
+		<phrases1 name="Leopold">Well, that's funny! He wouldn't be dead, he would look a lot like the Many we described Arsene.</phrases1>
+		<phrases2 name="Major">... It's true, I hadn't noticed...   \nHe looks so much like him that I think he is.</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Manny/Recherche:TROUVE">0</goto>
+		</reponse1>
+	</dialogue1.2>
+	<dialogue2.0>
+		<phrases1 name="Leopold">*%Avancement/NomLeopold% turns a blind eye and starts a conversation with %Avancement/NomMajor%.* \nYour daughter and I are really complementary! I'm having a hard time searching the bodies. </phrases1>
+		<phrases2 name="Adeline">Whoo-hoo!  \n\nIt's not a used corpse! I'm the first to search him.  </phrases2>
+		<phrases3 name="Leopold">It's cut, it looks like she's opening gifts.</phrases3>
+		<phrases4 name="Adeline">A spear!   \nAnd in good condition ! So cool! ...</phrases4>
+		<phrases5 name="Major">...   \nNext time I'd put his Porcher gifts under a dead body instead of a tree.</phrases5>
+		<phrases6 name="Adeline">All right, I'm done!   \n\And guess what! He had money on him! \n\nWell, there are only about 30 caps but it's always better than nothing.</phrases6>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>100</goto>
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Major">We don't know what this guy died of. \nIt's best not to touch it right now.</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Adeline">*%Avancement/NomAdeline% looks at the corpse pleating her eyes, then says with satisfaction.* \n\nBesides, I'm not doing this for me, this guy is the Many that Arsene told us about. \nSo we're forced to search him...... \nto find out what happened to him....</phrases1>
+		<reponse1>
+			<reaction>Search</reaction>
+			<goto action="Avancement/Manny/Fouillé:OUI">2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Do not search</reaction>
+			<goto>3</goto>
+		</reponse2>
+	</dialogue4.0>
+ </PNJ>

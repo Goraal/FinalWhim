@@ -7,7 +7,7 @@
 	<Enigme>     </Enigme>
 	<Inventaire>
 		 		 			 	 		 	
-		<Steamille>1</Steamille>
+		<Steamille> 1</Steamille>
 	</Inventaire>
 	<PJ>
 		 		 		 		 		 		 		 		 	 		 		 		 		 		 		 	
@@ -21,19 +21,19 @@
 	<Fillette>
 		 		 		 			 		 		 		 	 		 		 		 		 		 	
 		<Attaquee>  NON</Attaquee>
-		<jamais-vu>NON</jamais-vu>
-		<ApresCombat>OUI</ApresCombat>
+		<jamais-vu> NON</jamais-vu>
+		<ApresCombat> OUI</ApresCombat>
 		<Fouillee>  NON</Fouillee>
 		<morte>  NON</morte>
 	</Fillette>
 	<TOCTOC>
 		 		 		 		 	 		 		 	
-		<jamais-vu> NON</jamais-vu>
+		<jamais-vu>  OUI</jamais-vu>
 		<fin>  NON</fin>
 	</TOCTOC>
 	<MétaPortePrison>
 		 		 		 		 	 		 		 	
-		<steamille-inséré>OUI</steamille-inséré>
+		<steamille-inséré> OUI</steamille-inséré>
 		<ouverte>  NON</ouverte>
 	</MétaPortePrison>
 	<PorteAssenseur>
@@ -42,9 +42,9 @@
 	</PorteAssenseur>
 	<Stale>
 		 		 		 		 		 	 		 		 		 	
-		<jamais-vu>NON</jamais-vu>
+		<jamais-vu> NON</jamais-vu>
 		<Libre>  NON</Libre>
-		<AOuvertascenseur>OUI</AOuvertascenseur>
+		<AOuvertascenseur> OUI</AOuvertascenseur>
 	</Stale>
 	<SS>
 		 		 		 	 		 	

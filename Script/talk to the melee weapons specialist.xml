@@ -1,0 +1,138 @@
+<PNJ>
+    <dialogue1.0  condition="Stan/Postuler:NON">
+		<phrases1 name="Guard">Commit yourself to what they said! You can hit people they were saying!</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+    <dialogue1.1 condition="Stan/Postuler:CHOIX3">
+		<phrases1 name="Guard">My passion is the only weapon really effective: hand-to-hand weapons! \n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Ask for your first equipment.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.1>
+	<dialogue1.2 condition="Stan/Postuler:CHOIX2">
+		<phrases1 name="Guard">My passion is the only weapon really effective: hand-to-hand weapons! \n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Ask for your 2nd equipment.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.2>
+	<dialogue1.3 condition="Stan/Postuler:CHOIX1">
+		<phrases1 name="Guard">My passion is the only weapon really effective: hand-to-hand weapons! \n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Ask for your 3rd equipment.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.3>
+	<dialogue1.4>
+		<phrases1 name="Guard">My passion is the only weapon really effective: hand-to-hand weapons! \n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.4>
+    <dialogue2.0>
+		<phrases1 name="Guard">Ah! Here are smart people! I propose you the best equipment possible: an axe and I give you a gift of light leather armor!</phrases1>
+		<reponse1>
+			<reaction>Accept</reaction>
+			<goto>100</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Refuse and leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Ask for something else</reaction>
+			<goto>3</goto>
+		</reponse3>
+	</dialogue2.0>
+    <dialogue3.0>
+		<phrases1 name="Guard">Go see my colleagues, they will probably be able to find you a lower quality equipment!</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+    <dialogue4.0>
+		<phrases1 name="Guard">You can only attack hand-to-hand if there is no one between you and the target. Fighters already out of action don't count. \n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>5</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue4.0>
+    <dialogue5.0>
+		<phrases1 name="Guard">You can't attack in the first turn either because the enemy is not close enough to get an axe hit. Take advantage of this moment to position yourself in the right place or to put yourself on the defensive.\n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue5.0>
+    <dialogue6.0>
+		<phrases1 name="Guard">You can also make strategic attacks, it reduce your chances of touching, but assure you a critical hit (more dammage) and make possible a perfect shots (even more dammage). This is very useful against enemies with very good armor such as shields.\n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>7</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue6.0>
+    <dialogue7.0>
+		<phrases1 name="Guard">Once your enemies have landed, they won't be able to attack you any more, so hitting hard also protects themselves! Nothing but bonus!\n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue7.0>
+	<dialogue101.0>
+		<phrases1 name="Guard">Here you have your latest equipment, now go see Stan to pass the selection test.\n\nDon't forget to equip yourself!  (press E to equip yourself)</phrases1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue101.0>
+ </PNJ>

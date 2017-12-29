@@ -1,0 +1,138 @@
+<PNJ>
+    <dialogue1.0  condition="Stan/Postuler:NON">
+		<phrases1 name="Guard">Commit yourself to what they said! There will be action they were saying! </phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+    <dialogue1.1 condition="Stan/Postuler:CHOIX3">
+		<phrases1 name="Guard">Futur is with ranged weapon! And I'm a ranged weapon specialist.\n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Ask for your first equipment.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.1>
+	<dialogue1.2 condition="Stan/Postuler:CHOIX2">
+		<phrases1 name="Guard">Futur is with ranged weapon! And I'm a ranged weapon specialist.\n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Ask for your 2nd equipment.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.2>
+	<dialogue1.3 condition="Stan/Postuler:CHOIX1">
+		<phrases1 name="Guard">Futur is with ranged weapon! And I'm a ranged weapon specialist.\n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Ask for your 3rd equipment.</reaction>
+			<goto>2</goto>
+		</reponse3>
+	</dialogue1.3>
+	<dialogue1.4>
+		<phrases1 name="Guard">Futur is with ranged weapon! And I'm a ranged weapon specialist.\n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.4>
+    <dialogue2.0>
+		<phrases1 name="Guard">Ah! Here are smart people! I propose you the best equipment possible: The Dooble Berg AutoLoader</phrases1>
+		<reponse1>
+			<reaction>Accept</reaction>
+			<goto>100</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Refuse and leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Ask for something else</reaction>
+			<goto>3</goto>
+		</reponse3>
+	</dialogue2.0>
+    <dialogue3.0>
+		<phrases1 name="Guard">Go see my colleagues, they will probably be able to find you a lower quality equipment!</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+    <dialogue4.0>
+		<phrases1 name="Guard">When you attack with a ranged weapon, you can target who you want, whatever your position. \n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>5</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue4.0>
+    <dialogue5.0>
+		<phrases1 name="Guard">An ennemy hiding beyond an other ennemy is harder to hit, but if you miss, you have chance to hit the front ennemy.\n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue5.0>
+    <dialogue6.0>
+		<phrases1 name="Guard">Your friend doesn't affect your ranged attack so enjoy to hide behind them. Even if moving take a turn, I recommand to ALWAYS hide.\n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>7</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue6.0>
+    <dialogue7.0>
+		<phrases1 name="Guard">Even more, people attacking with ranged weapon are the only one that can attack on first round ! On other side, it's harder to hit with a ranged weapin on first line. \n\nWould you like to know more?</phrases1>
+		<reponse1>
+			<reaction>Yes, yes.</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue7.0>
+	<dialogue101.0>
+		<phrases1 name="Guard">Here you have your latest equipment, now go see Stan to pass the selection test.\n\nDon't forget to equip yourself!  (press E to equip yourself)</phrases1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Stan/Postuler:CHOISI">0</goto>
+		</reponse2>
+	</dialogue101.0>
+ </PNJ>

@@ -599,11 +599,19 @@ Function aff_load_combat(frame#=1,couleur#=1)
 	Color 255*couleur#,255*couleur#,255*couleur#
 	SetFont big_font
 	Text screenwidth*0.5,screenheight*0.5,"FIGHT !",1,1
-	If frame#<1
-		Text screenwidth*0.5,screenheight*0.5+30*screeny#,"Chargement ...",1,1
+	If Int(options#(7)) = 1
+		If frame#<1
+			Text screenwidth*0.5,screenheight*0.5+30*screeny#,"Chargement ...",1,1
+		Else
+			Text screenwidth*0.5,screenheight*0.5+30*screeny#,"--> Appuyez sur Espace pour indiquer que vous êtes prêt <--",1,1
+		EndIf
 	Else
-		Text screenwidth*0.5,screenheight*0.5+30*screeny#,"--> Appuyez sur Espace pour indiquer que vous êtes prêt <--",1,1
-	EndIf
+		If frame#<1
+			Text screenwidth*0.5,screenheight*0.5+30*screeny#,"Loading ...",1,1
+		Else
+			Text screenwidth*0.5,screenheight*0.5+30*screeny#,"--> Press Space when you're ready <--",1,1
+		EndIf
+	Endif
 	
 	DrawImageRect image_load_combat,0,screenheight*(-frame#)*0.5,0,0,screenwidth,screenheight*0.5	
 	DrawImageRect image_load_combat,0,screenheight*(frame#+1)*0.5,0,screenheight*0.5,screenwidth,screenheight*0.5	
@@ -614,8 +622,11 @@ Function aff_load_menu(frame#=1,couleur#=1)
 	Cls
 	Color 255*couleur#,255*couleur#,255*couleur#
 	SetFont big_font
-	Text screenwidth*0.5,screenheight*0.5,"Chargement du menu...",1,1
-	
+	If Int(options#(7)) = 1
+		Text screenwidth*0.5,screenheight*0.5,"Chargement du menu...",1,1
+	Else
+		Text screenwidth*0.5,screenheight*0.5,"Loading the menu...",1,1
+	Endif
 	Rect screenwidth*0.5-102,screenheight*0.5+20,205,20,0
 	Rect screenwidth*0.5-100,screenheight*0.5+22,200*frame#,16,1
 
@@ -647,7 +658,11 @@ Function HUD(actif=1)
 
 	DrawBlock PJ_small(pj1),635,550
 	If MouseX()<675 And MouseX()>635 And MouseY()>550 And MouseY()<590 And actif=1
-		message_action$="^Cliquez sur ce personnage pour"
+		If Int(options#(7)) = 1
+			message_action$="^Cliquez sur ce personnage pour"
+		Else
+			message_action$="^Click on this character to"
+		Endif
 		If keys(1,2)=50
 			keys(1,2)=49
 			changer_leader(pj1)
@@ -656,7 +671,11 @@ Function HUD(actif=1)
 
 	DrawBlock PJ_small(pj2),750,550
 	If MouseX()<790 And MouseX()>750 And MouseY()>550 And MouseY()<590 And actif=1
-		message_action$="^Cliquez sur ce personnage pour"
+		If Int(options#(7)) = 1
+			message_action$="^Cliquez sur ce personnage pour"
+		Else
+			message_action$="^Click on this character to"
+		Endif
 		If keys(1,2)=50
 			keys(1,2)=49
 			changer_leader(pj2)
@@ -770,8 +789,8 @@ Function HUD(actif=1)
 					Text screenwidth*0.5,118*screeny#,"Cliquez sur ce personnage pour",1,1
 					Text screenwidth*0.5,149*screeny#,"le choisir comme Leader",1,1
 				Else
-					Text screenwidth*0.5,118*screeny#,"NYT : Cliquez sur ce personnage pour",1,1
-					Text screenwidth*0.5,149*screeny#,"NYT : le choisir comme Leader",1,1
+					Text screenwidth*0.5,118*screeny#,"Click on this character to",1,1
+					Text screenwidth*0.5,149*screeny#,"choose him as Leader",1,1
 				Endif
 				
 			Case "~"
@@ -779,8 +798,8 @@ Function HUD(actif=1)
 					Text screenwidth*0.5,118*screeny#,"Utilisez Z,Q,S,D",1,1
 					Text screenwidth*0.5,149*screeny#,"pour vous déplacer",1,1
 				Else
-					Text screenwidth*0.5,118*screeny#,"NYT : Utilisez Z,Q,S,D",1,1
-					Text screenwidth*0.5,149*screeny#,"NYT : pour vous déplacer",1,1
+					Text screenwidth*0.5,118*screeny#,"Use Z,Q,S,D",1,1
+					Text screenwidth*0.5,149*screeny#,"to move yourself",1,1
 				Endif
 
 			Case "}" ; roue
@@ -788,8 +807,8 @@ Function HUD(actif=1)
 					Text screenwidth*0.5,118*screeny#,"Nombre de tours : "+Right(Left(message_action$,5),4),1,1
 					Text screenwidth*0.5,149*screeny#,"Appuyez sur Espace pour quitter la roue",1,1
 				Else
-					Text screenwidth*0.5,118*screeny#,"NYT : Nombre de tours : "+Right(Left(message_action$,5),4),1,1
-					Text screenwidth*0.5,149*screeny#,"NYT : Appuyez sur Espace pour quitter la roue",1,1
+					Text screenwidth*0.5,118*screeny#,"Number of wheel turn : "+Right(Left(message_action$,5),4),1,1
+					Text screenwidth*0.5,149*screeny#,"Hit space to leave the wheel",1,1
 				Endif
 
 			Default 
@@ -841,7 +860,11 @@ Function HUD(actif=1)
 			If msg_radio$=""
 				chat_mode=0
 			ElseIf Len(msg_radio$)<4
-				new_log("Vous : "+msg_radio$,50,50,255)
+				If Int(options#(7)) = 1
+					new_log("Vous : "+msg_radio$,50,50,255)
+				Else
+					new_log("You : "+msg_radio$,50,50,255)
+				Endif
 				msg_radio$=""
 				chat_mode=0
 			Else
@@ -850,7 +873,11 @@ Function HUD(actif=1)
 					msg_radio$=""
 					chat_mode=0
 				Else
-					new_log("Vous : "+msg_radio$,50,50,255)
+					If Int(options#(7)) = 1
+						new_log("Vous : "+msg_radio$,50,50,255)
+					Else
+						new_log("You : "+msg_radio$,50,50,255)
+					Endif
 					;SendNetMsg(99,msg_radio$,player_id)
 					msg_radio$=""
 					chat_mode=0
@@ -983,7 +1010,11 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						;afficher photo
 						DrawBlock photo_visage,45,15
 						SetFont middle_font
-						Text 180,20,"Nom : "+perso_name$
+						If Int(options#(7)) = 1
+							Text 180,20,"Nom : "+perso_name$
+						Else
+							Text 180,20,"Name : "+perso_name$
+						Endif
 						;description du perso
 						For t=1 To 7
 							disc_ligne(t)=""
@@ -1007,37 +1038,49 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						Next
 						
 						ai=70
-						Text ai,354,"PV",0,1
+						If Int(options#(7)) = 1
+							Text ai,354,"PV",0,1
+						Else
+							Text ai,354,"HP",0,1
+						EndIf
 						rText(ai+80,354,av\pv[2],1)
 						If MouseX()>50 And MouseX()<150 And MouseY()>(345) And MouseY()<(367)
 							aide_contextuelle$(1)="Points de Vie : Lorsque les points de vie arrivent à 0, le personnage est inconscient."
-							aide_contextuelle$(2)=""
+							aide_contextuelle$(2)="Hit Points: When hit points reach 0, the character is unconscious."
 						EndIf
 						Text ai,378,"Init",0,1
 						rText(ai+80,378,av\init,1)
 						If MouseX()>ai And MouseX()<ai+100 And MouseY()>(369) And MouseY()<(387)
 							aide_contextuelle$(1)="Initiative : La vitesse de réaction et de reflexion du personnage."
-							aide_contextuelle$(2)=""
+							aide_contextuelle$(2)="Initiative : The speed of reaction and reflection of the character."
 						EndIf
 						;carac (Att, Def, Dgts)
 						ai=250
-						Text ai,330,"Armes légères"
-						Text ai,348,"Att"
-						Text ai,366,"Def"
-						Text ai,384,"Dgts"
+						If Int(options#(7)) = 1
+							Text ai,330,"Armes légères"
+							Text ai,348,"Att"
+							Text ai,366,"Def"
+							Text ai,384,"Dgts"
+						Else
+							Text ai,330,"Light weapon"
+							Text ai,348,"Att"
+							Text ai,366,"Def"
+							Text ai,384,"Dmg"
+						EndIf
+						
 						If MouseX() > ai and MouseX() < ai+150
 							If MouseY() > 330 and MouseY() < 348
 								aide_contextuelle$(1)="Les armes de corps à corps légères (couteau, épée, lance, ...)"
-								aide_contextuelle$(2)=""
+								aide_contextuelle$(2)="Light weapons(knife, sword, spear, ...)"
 							ElseIf MouseY() > 348 and MouseY() < 366
 								aide_contextuelle$(1)="L'aptitude du personnage à attaquer avec les armes légères"
-								aide_contextuelle$(2)=""
+								aide_contextuelle$(2)="The character's ability to attack with light weapons"
 							ElseIf MouseY() > 366 and MouseY() < 384
 								aide_contextuelle$(1)="La défense du personnage contre les armes légères"
-								aide_contextuelle$(2)=""
+								aide_contextuelle$(2)="The character's defense against small arms and light weapons"
 							ElseIf MouseY() > 384 and MouseY() < 402
 								aide_contextuelle$(1)="Le bonus aux dégâts du personnage avec les armes légères"
-								aide_contextuelle$(2)=""
+								aide_contextuelle$(2)="The bonus to character damage with small arms"
 							EndIf									
 						EndIf
 						rText(ai+StringWidth("Armes légères"),348,Str(av\att[1]))
@@ -1045,23 +1088,30 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						rText(ai+StringWidth("Armes légères"),384,Str(av\deg[1]))
 						
 						ai=430
-						Text ai,330,"Armes lourdes"
-						Text ai,348,"Att"
-						Text ai,366,"Def"
-						Text ai,384,"Dgts"
+						If Int(options#(7)) = 1
+							Text ai,330,"Armes lourdes"
+							Text ai,348,"Att"
+							Text ai,366,"Def"
+							Text ai,384,"Dgts"
+						Else
+							Text ai,330,"Heavy weapon"
+							Text ai,348,"Att"
+							Text ai,366,"Def"
+							Text ai,384,"Dmg"
+						EndIf
 						If MouseX() > ai and MouseX() < ai+150
 							If MouseY() > 270 and MouseY() < 348
 								aide_contextuelle$(1)="Les armes de corps à corps lourdes (hache, marteau, tronçonneuse, ...)"
-								aide_contextuelle$(2)=""
+								aide_contextuelle$(2)="Heavy weapons (axes, hammers, chainsaws,...)"
 							ElseIf MouseY() > 348 and MouseY() < 366
 								aide_contextuelle$(1)="L'aptitude du personnage à attaquer avec les armes lourdes"
-								aide_contextuelle$(2)=""
+								aide_contextuelle$(2)="The character's ability to attack with heavy weapons"
 							ElseIf MouseY() > 366 and MouseY() < 384
 								aide_contextuelle$(1)="La défense du personnage contre les armes lourdes"
-								aide_contextuelle$(2)=""
+								aide_contextuelle$(2)="The character's defense against heavy weapons"
 							ElseIf MouseY() > 384 and MouseY() < 402
 								aide_contextuelle$(1)="Le bonus aux dégâts du personnage avec les armes lourdes"
-								aide_contextuelle$(2)=""
+								aide_contextuelle$(2)="The bonus to character damage with heavy weapons"
 							EndIf									
 						EndIf
 						rText(ai+StringWidth("Armes lourdes"),348,Str(av\att[2]))
@@ -1069,14 +1119,22 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						rText(ai+StringWidth("Armes lourdes"),384,Str(av\deg[2]))
 						
 						ai=610
-						Text ai,330,"Armes à distance"
-						Text ai,348,"Att"
-						Text ai,366,"Def"
-						Text ai,384,"Dgts"
+						If Int(options#(7)) = 1
+							Text ai,330,"Armes à distance"
+							Text ai,348,"Att"
+							Text ai,366,"Def"
+							Text ai,384,"Dgts"
+						Else
+							Text ai,330,"Ranged weapon"
+							Text ai,348,"Att"
+							Text ai,366,"Def"
+							Text ai,384,"Dmg"
+						EndIf
+						
 						If MouseX() > ai and MouseX() < ai+150
 							If MouseY() > 330 and MouseY() < 348
 								aide_contextuelle$(1)="Les armes à distance (pistolet, fusil, lance-piere, ...)"
-								aide_contextuelle$(2)=""
+								aide_contextuelle$(2)="Ranged weapons(gun, rifle, pistol, gun,...)"
 							ElseIf MouseY() > 348 and MouseY() < 366
 								aide_contextuelle$(1)="L'aptitude du personnage à attaquer avec les armes à distance"
 								aide_contextuelle$(2)=""
@@ -1097,7 +1155,11 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						ai=50;180
 						ci=180;400
 						bi=410;250
-						Text ai,bi,"Règles spéciales :"
+						If Int(options#(7)) = 1
+							Text ai,bi,"Règles spéciales :"
+						Else
+							Text ai,bi,"Special ability :"
+						EndIf
 						For t=1 To 8
 							If av\cmpt[t]<>0
 								For r.rules=Each rules
@@ -1116,7 +1178,7 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						ai=230
 						If MouseX()>ai And MouseX()<750 And MouseY()>410 And MouseY()<510
 							aide_contextuelle$(1)="Conseils pour utiliser ce personnage. Il s'agit bien entendu uniquement de conseils et ne sauraient engager la responsabilité des créateurs."
-							aide_contextuelle$(2)=""
+							aide_contextuelle$(2)="Tips for using this character. This is of course only advice and does not engage the responsibility of the creators."
 						EndIf
 						MiseEnFormeMessageDialogue(" "+av\tactique$[Int(options#(7))],0,750-ai)
 						
@@ -1129,7 +1191,7 @@ Function selection_avatar(perso,place=4,forcer=0,classe_depart$="")
 						Color 0,0,0
 						If MouseX()>250 And MouseX()<550 And MouseY()>520 And MouseY()<545
 							aide_contextuelle$(1)="Hmmm... Non, je n'aurais pas pris celle là. Mais bon, tout le monde ne peut pas être un génie."
-							aide_contextuelle$(2)=""
+							aide_contextuelle$(2)="Hmmm... No, I wouldn't have taken that one. But well, not everyone can be a genius."
 							Color 180,0,0
 							If keys(1,2)=50
 								keys(1,2)=49
@@ -1397,7 +1459,11 @@ Function rechoisir_avatar()
 		;afficher les instructions
 		Color 255,255,255
 		SetFont big_font
-		Text 400,70,"Voici votre équipe !",1,1
+		If Int(options#(7))=1
+			Text 400,70,"Voici votre équipe !",1,1
+		Else
+			Text 400,70,"This is your team !",1,1
+		Endif
 		SetFont middle_font
 		mult_mess$(1)="Cliquer sur le portrait d'un personnage pour changer sa classe"
 		mult_mess$(1)="Click on a character's portrait to change their class"
@@ -1409,7 +1475,9 @@ Function rechoisir_avatar()
 		;afficher confirmer
 		drawgrey2(300,465,200,50)
 		SetFont big_font
-		Text 400,490,"Confirmer",1,1
+		mult_mess$(1)="Confirmer"
+		mult_mess$(2)="Confirm"
+		Text 400,490,mult_mess$(Int(options#(7))),1,1
 		If MouseX()>300 And MouseX()<500 And MouseY()>465 And MouseY()<515
 			aide_contextuelle$(1)="Confirmer la composition de votre équipe et partir à l'aventure !"
 			aide_contextuelle$(2)="Confirm the composition of your team and start your adventure!"
@@ -2039,17 +2107,17 @@ Function load_combattant(num=1)
 			ElseIf a$="Protecteur"
 				fighters_gfx(num,1)=LoadAnimImage("sprites\combattants\"+a$+".png",80,80,0,MAX_FRAME_FIGHTER_GFX)
 				fighters_gfx(num,2)=LoadAnimImage("sprites\combattants\"+a$+".png",80,80,0,MAX_FRAME_FIGHTER_GFX)
-				fighters_tete(num,1)=LoadImage("sprites\combattants\default_guy_A_face1.png")
+				fighters_tete(num,1)=LoadImage("sprites\combattants\Protecteur_face1.png")
 				fighters_tete(num,2)=LoadImage("sprites\combattants\default_guy_A_face2.png")
 			ElseIf a$="Boss"
 				fighters_gfx(num,1)=LoadAnimImage("sprites\combattants\"+a$+".png",280,240,0,MAX_FRAME_FIGHTER_GFX)
 				fighters_gfx(num,2)=LoadAnimImage("sprites\combattants\"+a$+"_mirror.png",280,240,0,MAX_FRAME_FIGHTER_GFX)
-				fighters_tete(num,1)=LoadImage("sprites\combattants\default_guy_A_face1.png")
+				fighters_tete(num,1)=LoadImage("sprites\combattants\BB_face1.png")
 				fighters_tete(num,2)=LoadImage("sprites\combattants\default_guy_A_face2.png")
 			ElseIf a$="Patrouilleur"
 				fighters_gfx(num,1)=LoadAnimImage("sprites\combattants\"+a$+".png",140,120,0,MAX_FRAME_FIGHTER_GFX)
 				fighters_gfx(num,2)=LoadAnimImage("sprites\combattants\"+a$+"_mirror.png",140,120,0,MAX_FRAME_FIGHTER_GFX)
-				fighters_tete(num,1)=LoadImage("sprites\combattants\default_guy_A_face1.png")
+				fighters_tete(num,1)=LoadImage("sprites\combattants\patrouilleur_face1.png")
 				fighters_tete(num,2)=LoadImage("sprites\combattants\default_guy_A_face2.png")
 			Else
 				fighters_gfx(num,1)=LoadAnimImage("sprites\combattants\"+a$+".png",80,80,0,MAX_FRAME_FIGHTER_GFX)
@@ -2965,12 +3033,19 @@ Function fenetre_info(mess$,suite=1,defile=1,hors_jeu=0)
 	
 	MiseEnFormeMessageDialogue(" "+Replace(mess$,"#","\n"),0)
 	;couper_texte_defilant()
-	
-	If mode_debug=1
-		str_PJ$(0)="Fenêtre Info"
+	If Int(options#(7)) = 1
+		If mode_debug=1
+			str_PJ$(0)="Fenêtre Info"
+		Else
+			str_PJ$(0)="Narrateur"
+		EndIf
 	Else
-		str_PJ$(0)="Narrateur"
-	EndIf
+		If mode_debug=1
+			str_PJ$(0)="Info"
+		Else
+			str_PJ$(0)="Storyteller"
+		EndIf
+	Endif
 	AfficherDialogue(defile,hors_jeu)
 	
 	If disc_len#>amax
@@ -3805,8 +3880,14 @@ Function calcule_stat_cible(num_att,num_target,num_combat,dist=0,visee=0,rafale=
 								stat_cible$(2)=rafale+" x "+stat_cible$(2)
 							EndIf
 						Else
-							stat_cible$(1)="Non"
-							stat_cible$(2)="Attaquable"
+							If Int(options#(7)) = 1
+								stat_cible$(1)="Non"
+								stat_cible$(2)="Attaquable"
+							Else
+								stat_cible$(1)="Not"
+								stat_cible$(2)="Attackable"
+							Endif
+							
 						EndIf
 					EndIf
 				Next
@@ -5772,7 +5853,11 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 					SetFont big_font
 					Text screenwidth*0.5,screenheight*0.5,"PAUSE !",1,1
 					SetFont middle_font
-					Text screenwidth*0.5,screenheight*0.6,"Appuyez sur Espace ou sur Echap pour revenir au jeu",1,1
+					If Int(options#(7))=1 ;français
+						Text screenwidth*0.5,screenheight*0.6,"Appuyez sur Espace ou sur Echap pour revenir au jeu",1,1
+					Else
+						Text screenwidth*0.5,screenheight*0.6,"Press Space or Esc to return to the game",1,1
+					Endif
 					Flip
 					compensation_lag()
 				Wend
@@ -5829,7 +5914,11 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 										
 										Case 0 ; rien
 											av\animation=1
-											mess$=av\name$[1]+" est complètement perdu et passe son tour."
+											If Int(options#(7))=1 ;français 
+												mess$=av\name$[1]+" est complètement perdu et passe son tour."
+											Else
+												mess$=av\name$[1]+" skip his turn."
+											Endif
 											;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 											mess$="180#180#0#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -5949,13 +6038,17 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 														nb_attaque=1
 														dgts#=0
 														animation=0
-														mess$=av\name$[1]+" attaque "+av_t\name$[1]
+														If Int(options#(7))=1 ;français 
+															mess$=av\name$[1]+" attaque "+av_t\name$[1]
+														Else
+															mess$=av\name$[1]+" attacks "+av_t\name$[1]
+														Endif
 														If capac_att=1 Then nb_attaque=2
 														crit_happened=0
 														While nb_attaque>0
 															jet=Rand(1,20)
 															;;a enlever
-															new_log("("+Str(av\att[style_att])+signed_str$(bonus_att)+")+"+Str(jet)+" DD"+Str(av_t\def[style_att])+signed_str$(bonus_def))
+															;new_log("("+Str(av\att[style_att])+signed_str$(bonus_att)+")+"+Str(jet)+" DD"+Str(av_t\def[style_att])+signed_str$(bonus_def))
 															If jet+attaque+1>defense ; touche
 																touche=1
 															Else
@@ -5974,18 +6067,36 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 																EndIf
 																dgts_temp#=max(0,dgts_temp#-armure_temp#(touche))*av_t\faiblesse#[touche]+max(0,min(sournoise,sournoise+dgts_temp#-armure_temp#(touche)))
 																dgts#=dgts#+dgts_temp#
-																Select touche
-																	Case 2
-																		mess$=mess$+" (Crit)"
-																		crit_happened=max(crit_happened,1)
-																	Case 3
-																		mess$=mess$+" (Parfait)"
-																		crit_happened=max(crit_happened,1)
-																	Default
-																		mess$=mess$+", touche"
-																End Select
+																If Int(options#(7))=1 ;français 
+																	Select touche
+																		Case 2
+																			mess$=mess$+" (Crit)"
+																			crit_happened=max(crit_happened,1)
+																		Case 3
+																			mess$=mess$+" (Parfait)"
+																			crit_happened=max(crit_happened,1)
+																		Default
+																			mess$=mess$+", touche"
+																	End Select
+																Else
+																	Select touche
+																		Case 2
+																			mess$=mess$+" (Crit)"
+																			crit_happened=max(crit_happened,1)
+																		Case 3
+																			mess$=mess$+" (Perfect)"
+																			crit_happened=max(crit_happened,1)
+																		Default
+																			mess$=mess$+", hits"
+																	End Select
+
+																Endif
 															Else
-																mess$=mess$+", rate sa cible"
+																If Int(options#(7))=1 ;français 
+																	mess$=mess$+", rate sa cible"
+																Else
+																	mess$=mess$+", misses"
+																EndIf
 																animation=animation*10+1
 															EndIf
 															nb_attaque=nb_attaque-1
@@ -6005,7 +6116,11 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 													
 													;compte-rendu
 													If deja_mort=0
-														mess$=mess$+" et inflige "+Str(Int(dgts#))+" dégâts."
+														If Int(options#(7))=1 ;français 
+															mess$=mess$+" et inflige "+Str(Int(dgts#))+" dégâts."
+														Else
+															mess$=mess$+" and inflicts  "+Str(Int(dgts#))+" damages."
+														Endif
 														;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 														mess$="255#255#255#"+combat\num+"#"+mess$
 														analyse(96,mess$,master_id)
@@ -6015,7 +6130,11 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 														;maj_avatar(av\num,3)
 														;maj_avatar(av_t\num,3)
 														If Not(av_t\pv[1]>0)
-															mess$=av_t\name$[1]+" ("+av_t\num+") est battu."
+															If Int(options#(7))=1 ;français 
+																mess$=av_t\name$[1]+" est battu."
+															Else
+																mess$=av_t\name$[1]+" is defeated."
+															Endif
 															;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 															mess$="255#255#255#"+combat\num+"#"+mess$
 															analyse(96,mess$,master_id)
@@ -6128,7 +6247,11 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 														nb_attaque=1
 														dgts#=0
 														animation=0
-														mess$=av\name$[1]+" attaque "+av_t\name$[1]
+														If Int(options#(7))=1 ;français 
+															mess$=av\name$[1]+" attaque "+av_t\name$[1]
+														Else
+															mess$=av\name$[1]+" attacks "+av_t\name$[1]
+														Endif
 														If capac_att=1 Then nb_attaque=2
 														crit_happened=0
 														While nb_attaque>0
@@ -6154,17 +6277,36 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 																dgts_temp#=max(0,dgts_temp#-armure_temp#(touche))*av_t\faiblesse#[touche]+max(0,min(sournoise,sournoise+dgts_temp#-armure_temp#(touche)))
 																dgts#=dgts#+dgts_temp#
 																mess$=mess$+", touche"
-																Select touche
-																	Case 2
-																		mess$=mess$+" (Crit)"
-																		crit_happened=max(crit_happened,1)
-																	Case 3
-																		mess$=mess$+" (Parfait)"
-																		crit_happened=max(crit_happened,2)
-																End Select
+																If Int(options#(7))=1 ;français 
+																	Select touche
+																		Case 2
+																			mess$=mess$+" (Crit)"
+																			crit_happened=max(crit_happened,1)
+																		Case 3
+																			mess$=mess$+" (Parfait)"
+																			crit_happened=max(crit_happened,1)
+																		Default
+																			mess$=mess$+", touche"
+																	End Select
+																Else
+																	Select touche
+																		Case 2
+																			mess$=mess$+" (Crit)"
+																			crit_happened=max(crit_happened,1)
+																		Case 3
+																			mess$=mess$+" (Perfect)"
+																			crit_happened=max(crit_happened,1)
+																		Default
+																			mess$=mess$+", hits"
+																	End Select
+
+																EndIf
 															Else
-																mess$=mess$+", rate sa cible"
-																animation=animation*10+1
+																If Int(options#(7))=1 ;français 
+																	mess$=mess$+", rate sa cible"
+																Else
+																	mess$=mess$+", misses"
+																EndIf
 															EndIf
 															nb_attaque=nb_attaque-1
 														Wend
@@ -6183,7 +6325,11 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 													
 													;compte-rendu
 													if deja_mort=0
-														mess$=mess$+" et inflige "+Str(Int(dgts#))+" dégâts."
+														If Int(options#(7))=1 ;français 
+															mess$=mess$+" et inflige "+Str(Int(dgts#))+" dégâts."
+														Else
+															mess$=mess$+" and inflicts  "+Str(Int(dgts#))+" damages."
+														Endif
 														;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 														mess$="255#255#255#"+combat\num+"#"+mess$
 														analyse(96,mess$,master_id)
@@ -6193,7 +6339,11 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 														;maj_avatar(av\num,3)
 														;maj_avatar(av_t\num,3)
 														If Not(av_t\pv[1]>0)
-															mess$=av_t\name$[1]+" ("+av_t\num+") est battu."
+															If Int(options#(7))=1 ;français 
+																mess$=av_t\name$[1]+" ("+av_t\num+") est battu."
+															Else
+																mess$=av_t\name$[1]+" ("+av_t\num+") is defeated."
+															Endif
 															;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 															mess$="255#255#255#"+combat\num+"#"+mess$
 															analyse(96,mess$,master_id)
@@ -6316,8 +6466,12 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 
 										Case 21 ; défensive
 											av\defense=max(MIN_BONUS_DEFENSE,min(MAX_BONUS_DEF,av\defense+BONUS_DEFENDRE))
-											av\animation=3										
-											mess$=av\name$[1]+" se met sur la défensive."
+											av\animation=3				
+											If Int(options#(7))=1 ;français 
+												mess$=av\name$[1]+" se met en position défensive"
+											Else
+												mess$=av\name$[1]+" moves to defensive position "
+											Endif											
 											;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -6328,7 +6482,11 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 
 										Case 31 ; attendre
 											av\animation=1
-											mess$=av\name$[1]+" décide d'attendre le bon moment pour agir."
+											If Int(options#(7))=1 ;français 
+												mess$=av\name$[1]+" décide d'attendre le bon moment pour agir."
+											Else
+												mess$=av\name$[1]+" decides to wait for the right moment to act"
+											Endif
 											;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -6347,7 +6505,12 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 										
 										Case 311 ; revenir
 											av\animation=1
-											mess$=av\name$[1]+" se prépare à agir !"
+											If Int(options#(7))=1 ;français 
+												mess$=av\name$[1]+" se prépare à agir !"
+											Else
+												mess$=av\name$[1]+" is ready to act !"
+											Endif
+											
 											;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -6377,7 +6540,12 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 
 										Case 32 ; passer son tour
 											av\animation=1
-											mess$=av\name$[1]+" décide de passer son tour."
+											If Int(options#(7))=1 ;français 
+												mess$=av\name$[1]+" décide de passer son tour."
+											Else
+												mess$=av\name$[1]+" decide to skip turn."
+											Endif
+											
 											;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -6397,7 +6565,11 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 													action_target(1)=gr\formation[new_place] ; gars sur la nouvelle place
 													gr\formation[old_place]=gr\formation[new_place]
 													gr\formation[new_place]=av\num
-													mess$=av\name$[1]+" change de place !"
+													If Int(options#(7))=1 ;français 
+														mess$=av\name$[1]+" change de place !"
+													Else
+														mess$=av\name$[1]+" switches place !"
+													Endif
 													;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 													mess$="255#255#255#"+combat\num+"#"+mess$
 													analyse(96,mess$,master_id)
@@ -6460,7 +6632,11 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 											
 											new_chgt_equi(img_chgt,ai,bi,dir)
 											
-											mess$=av\name$[1]+" change d'arme !"
+											If Int(options#(7))=1 ;français 
+												mess$=av\name$[1]+" change d'arme !"
+											Else
+												mess$=av\name$[1]+" changes weapon !"
+											Endif
 											;new_log("(cmb "+combat\num+"p"+combat\phase+")"+mess$)
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -6507,7 +6683,13 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 												EndIf
 											Next
 											;retour
-											mess$=av\name$[1]+" déploie son gearbot "+name_bot$+" !"
+											av\animation=1
+											If Int(options#(7))=1 ;français 
+												mess$=av\name$[1]+" déploie son gearbot "+name_bot$+" !"
+											Else
+												mess$=av\name$[1]+" expands the "+name_bot$+" gearbot !"
+											Endif
+											
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
 											combat\anim_time=2000
@@ -6517,7 +6699,11 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 													
 										Case 52 ; ranger le GearBot
 											num_bot=(av\equi[6]-180)*-1
-											mess$=av\name$[1]+" range son gearbot "+name_bot$+" !"
+											If Int(options#(7))=1 ;français 
+												mess$=av\name$[1]+" range son gearbot "+name_bot$+" !"
+											Else
+												mess$=av\name$[1]+" stores the "+name_bot$+" gearbot !"
+											Endif
 											mess$="255#255#255#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
 											combat\anim_time=2000
@@ -6530,7 +6716,12 @@ Function analyse$(msg_type,msg_data$="",msg_from=0,msg_to=0)
 											
 										Default
 											av\animation=1
-											mess$=av\name$[1]+" tente de faire quelque chose mais on ne comprend pas quoi. ("+current_action+")" 
+											If Int(options#(7))=1 ;français 
+												mess$=av\name$[1]+" tente de faire quelque chose mais on ne comprend pas quoi. ("+current_action+")" 
+											Else
+												mess$=av\name$[1]+" X tries to do something but we don't know what.. ("+current_action+")" 
+											Endif
+											
 											;new_log("(cmb "+combat_num+")"+mess$,180,0,0)
 											mess$="180#0#0#"+combat\num+"#"+mess$
 											analyse(96,mess$,master_id)
@@ -7237,19 +7428,19 @@ Function update_boutons_menu()
 			Case 2
 				Select options_buffer#(1)
 					Case 1
-						bo\nom$[1] = " Difficulté : Facile "
+						bo\nom$[1] = " Difficulté : Normale "
 						bo\desc$[1]="Can I play, Daddy?"
-						bo\nom$[2] = " Easy Mode "
+						bo\nom$[2] = " Normal Mode "
 						bo\desc$[2]="For those who want the story first."
 					Case 2
-						bo\nom$[1] = " Difficulté : Normale "
+						bo\nom$[1] = " Difficulté : Hard "
 						bo\desc$[1]="Bring'em on!"
-						bo\nom$[2] = " Normal Mode "
+						bo\nom$[2] = " Hard Mode "
 						bo\desc$[2]="For those who want a reasonnable challenge."
 					Case 3
-						bo\nom$[1] = " Difficulté : Difficile "
+						bo\nom$[1] = " Difficulté : Infernal "
 						bo\desc$[1]="I am Death incarnate!"
-						bo\nom$[2] = " Hard Mode "
+						bo\nom$[2] = " Infernal Mode "
 						bo\desc$[2]="For those who want the opportunity to rage quit due to RNG shenanigans."
 				End Select
 			Case 3
@@ -7364,7 +7555,7 @@ Function menu_option()
 				
 				DIFFICULTY=options_buffer#(1)
 				Playsound2(sons_menu(1))
-				new_log("Options modifiées")
+				;new_log("Options modifiées")
 				action=0
 			Case 2 ; Fond (+)
 				options_buffer#(1)=options_buffer#(1)+1
@@ -7500,7 +7691,7 @@ Function cinematique_de_fin()
 		If sortie=0
 			sortie=fenetre_info("Félicitation, vous vous êtes échappé de FactoryTec !!")
 		Else
-			sortie=sortie+fenetre_info("Malheureusement, je n'ai pas le temps de faire une cinématique de fin, donc si vous en voulez une, dites nous que vous avez beaucoup aimé Final Whim et que vous aimeriez qu'on le finisse complètement au lieu de nous contenter d'une bêta.")
+			sortie=sortie+fenetre_info("Malheureusement, je n'ai pas le temps de faire une cinématique de fin, donc si vous en voulez une, dites nous que vous avez beaucoup aimé Final Whim et que vous aimeriez qu'on se botte les fesses.")
 		EndIf
 		Flip
 		If KeyHit(01) Then sortie=2

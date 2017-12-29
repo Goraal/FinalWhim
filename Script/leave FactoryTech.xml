@@ -1,0 +1,82 @@
+<PNJ>
+    <dialogue1.0 condition="SS/desactive:OUI">
+		<phrases1 name="Adeline">We'll finally be able to leave this place and go home!</phrases1>
+		<phrases2 name="Leopold">I don't know why, but I feel like we forgot something....</phrases2>
+		<reponse1>
+			<reaction>Stay in the factory</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave the factory</reaction>
+			<goto>7</goto>
+		</reponse2>
+	</dialogue1.0>
+	<dialogue1.1>
+	<phrases1 name="Adeline">Mhhhh! If I remember correctly, we were told there's something guarding the door.  \nThey also told us that he is super strong and that we have no chance against him!</phrases1>
+	<phrases2 name="Leopold">Pfff! They're all cowards! We are a strong team, united and fighting for a noble cause: freedom! We have to win. \n\nI bet you we'll wipe out what they calls "SS" in no time!</phrases2>
+		<reponse1 >
+			<reaction>Stay in the factory</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave the factory</reaction>
+			<goto>3</goto>
+		</reponse2>
+	</dialogue1.1>
+	<dialogue2.0>
+		<phrases1 name="Major">We'll leave this factory when we're ready. This is not the case at the moment. </phrases1>
+		<phrases2 name="Adeline">But....</phrases2>
+		<phrases3 name="Major">%Avancement/NomMajor% glare at %Avancement/NomAdeline%* \n\nNot Yet! \nKnow that it's better to take too many precautions than die foolishly.  \n\nWe only live once!</phrases3>
+		<reponse1>
+			<reaction>*Leave away*</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Major">Okay, we're leaving, but no noise!</phrases1>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>4</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0 image="sprites\Introduction\boss1.png">
+		<phrases1 name="Major">...</phrases1>
+		<phrases2 name="Adeline">...</phrases2>
+		<phrases3 name="Leopold">It's dark here and there are obstacles everywhere.  Be careful!  \n\n*%Avancement/NomLeopold% then strikes into an object and a metallic noise sounds throughout the building*\n\n...</phrases3>
+		<phrases4 name="Adeline">...\nNo reaction... \n\nMaybe the SS isn't here!  \n\nMoreover, the "SS" is surely only a legend that aims to dissuade prisoners from leaving.</phrases4>
+		<phrases5 name="Major">... \nOkay, you're probably right this time... \nso we don't need to whisper anymore.   \n\nI'm almost disappointed that we equipped ourselves for nothing!</phrases5>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>5</goto>
+		</reponse1>
+	</dialogue4.0>
+	<dialogue5.0 image="sprites\Introduction\boss2.png">
+		<phrases1 name="SS">INTRUDER DETECTION.  \n\n"KILL, BURN, MUTILATE" MODE ACTIVATED. </phrases1>
+		<phrases2 name="Major">Screw it ....</phrases2>
+		<reponse1>
+			<reaction>Fight</reaction>
+			<goto>100</goto>
+		</reponse1>
+	</dialogue5.0>
+	<dialogue6.0 image="sprites\Introduction\boss3.png">
+		<phrases1 name="Adeline">I think this time it's okay, we got him off the hook! \n\nI'm gonna go check it out and see what's recoverable.</phrases1>
+		<phrases2 name="Major">Start by piercing his boiler, it's safer.  \n\nWe're finally gonna be able to go home!</phrases2>
+		<phrases3 name="Leopold">I feel a little bad leaving the factory unprotected! \n\It could be attacked, the steammille seem to have some value...</phrases3>
+		<phrases4 name="Major">You feel bad leaving defenseless the guys who locked us up and enslaved us! \nYou really are a case!  \n\nRemember, if someone else gets locked up, they'll have less trouble getting out.  \nBut if you still feel bad, you can always stay and protect the factory. </phrases4>
+		<phrases5 name="Leopold">No, thank you, sir, I'd rather go home with you. \n\nI've had enough strong emotion for a long time.</phrases5>
+		<reponse1>
+			<reaction>Next</reaction>
+			<goto>7</goto>
+		</reponse1>
+	</dialogue6.0>
+	<dialogue7.0 image="sprites\Introduction\intro1.png">
+		<phrases1 name="Storyteller">It is on these words full of wisdom that our heroes returned to their homes.\n\nShortly after their departure, the factory was attacked by a group of looters and reduced to ashes.  \nThe inhabitants of the megalopolises, used to use steam to communicate, travel and even pay, had a very unpleasant surprise.</phrases1>
+		<phrases2 name="Storyteller">If history repeats itself unceasingly, it is not due to fate, but to humans who rarely learn from the mistakes of their ancestors. \n\nBut we're not going to complain, at least it's entertaining.</phrases2>
+		<phrases3 name="Storyteller">As for our three heroes, their small village was spared by this new crisis.  \n\n%Avancement/NomMajor% was reunited with his wife and his position as village chief.   While %Avancement/NomAdeline% and %Avancement/NomLeopold% separated and were much better so.</phrases3>
+		<phrases4 name="Storyteller">                                                          END </phrases4>
+		<reponse1>
+			<reaction>END</reaction>
+			<goto action="Script/-665:0">0</goto>
+		</reponse1>
+	</dialogue7.0>
+ </PNJ>

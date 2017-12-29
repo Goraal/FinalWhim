@@ -1,0 +1,214 @@
+<502>
+    <dialogue1.0 condition="SentinelleCamps/Jamais-vu:OUI">
+		<phrases1 name="Sentinel">*An armed man signals you to stop and calls you in a strict voice.* \n\nWho are you and what are you doing here?</phrases1>
+		<reponse1>
+			<reaction>Lie: Guards</reaction>
+			<goto action="Avancement/SentinelleCamps/Jamais-vu:NON">2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Truth: Prisoner</reaction>
+			<goto action="Avancement/SentinelleCamps/Jamais-vu:NON">5</goto>
+		</reponse2>
+	</dialogue1.0>
+	<dialogue1.1 condition="SentinelleCamps/laisse-passer:NON">
+		<phrases1 name="Sentinel">* The armed man signals you to stop* \nHere! Here you go! These are the so-called guards. \n\nI warn you, if you do not know the name of the person who sent you, you can leave immediately!</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Truth: Prisoner</reaction>
+			<goto>5</goto>
+		</reponse2>
+	</dialogue1.1>
+	<dialogue1.2>
+		<phrases1 name="Sentinel">Hey, new guys! Can I help you with something?</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Where to eat?</reaction>
+			<goto>6</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Where to sleep?</reaction>
+			<goto>7</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Where to buy equipment?</reaction>
+			<goto>8</goto>
+		</reponse4>
+		<reponse5>
+			<reaction>Where can I find out?</reaction>
+			<goto>9</goto>
+		</reponse5>
+		<reponse6>
+			<reaction>How to escape</reaction>
+			<goto>10</goto>
+		</reponse6>
+	</dialogue1.2>
+	<dialogue2.0>
+		<phrases1 name="Adeline">%Avancement/NomAdeline% responds with an equally strict voice* \n\nWe are new guards hired to keep an eye on the prisoners. And we were asked to come and inspect here.</phrases1>
+		<phrases2 name="Sentinel">The voice of your caller seems more hesitant.* \n\nYou don't look like guards at all. Where are your uniforms?</phrases2>
+		<phrases3 name="Adeline">There are supply problems...</phrases3>
+		<phrases4 name="Sentinel">Mhhh... Can you at least tell me who sent you?</phrases4>
+		<reponse1>
+			<reaction>Random name</reaction>
+			<goto>4</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Truth: Prisoner</reaction>
+			<goto>5</goto>
+		</reponse2>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Sentinel">*Push a long sigh of relief, then you smile* \n\nStale! So you're not really guards, you should have said it right away!  \nPlease excuse my mistrust, we are former slaves and our freedom depends on the secret of this place's existence.   \n\nWelcome to the refugee camps!</phrases1>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto action="Avancement/SentinelleCamps/laisse-passer:OUI">400</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Adeline">Boris sent us...</phrases1>
+		<phrases2 name="Major">Noticing the face of the caller, %Avancement/NomMajor% decides to intervene* \n\nBut no %Avancement/NomAdeline%! \nThat's the name of our old boss that... \nExcuse us, sir, but we're new and we don't know everyone's name yet.</phrases2>
+		<phrases3 name="Sentinel">Yeah, I'm willing to believe you got the wrong name!  \n\nCome back when you have the right name and use it to confirm that it is HERE that you should inspect!</phrases3>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrases1 name="Leopold">We were taken prisoner, but we managed to escape. \nStale told us there are other people like us here.</phrases1>
+		<phrases2 name="Sentinel">Please excuse my mistrust, our freedom depends on the secret of this place's existence.   \n\nWelcome to the refugee camps</phrases2>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto action="Avancement/SentinelleCamps/laisse-passer:OUI">400</goto>
+		</reponse1>
+	</dialogue5.0>
+	<dialogue6.0>
+		<phrases1 name="Adeline">I'm hungry! I'm hungry! I'm hungry! I'm hungry! I'm hungry!</phrases1>
+		<phrases2 name="Sentinel">We can keep silent, right? That would be nicer.</phrases2>
+		<phrases3 name="Adeline">Not even in dreams.</phrases3>
+		<phrases4 name="Sentinel">... You can find food at the tavern, in cells 9 and 10.</phrases4>
+				<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Where to sleep?</reaction>
+			<goto>7</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Where to buy equipment?</reaction>
+			<goto>8</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Where can I find out?</reaction>
+			<goto>9</goto>
+		</reponse4>
+		<reponse5>
+			<reaction>How to escape</reaction>
+			<goto>10</goto>
+		</reponse5>
+	</dialogue6.0>
+	<dialogue7.0>
+		<phrases1 name="Adeline">Can you tell us about a place to sleep, I think my boyfriend is starting to lost is mind...</phrases1>
+		<phrases2 name="Leopold">With insomnia, nothing is real anymore! Everything becomes distant. Everything is a copy, of a copy, of a copy...</phrases2>
+		<phrases3 name="Sentinel">...  I see... unfortunately the programmers haven't set up the dormitory yet...  \n\nI'm so sorry!</phrases3>
+				<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Where to eat?</reaction>
+			<goto>6</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Where to buy equipment?</reaction>
+			<goto>8</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Where can I find out?</reaction>
+			<goto>9</goto>
+		</reponse4>
+		<reponse5>
+			<reaction>How to escape</reaction>
+			<goto>10</goto>
+		</reponse5>
+	</dialogue7.0>
+	<dialogue8.0>
+		<phrases1 name="Major">The guards outside are tough as hell. Can you help us settle their scores?</phrases1>
+		<phrases2 name="Sentinel">What do you need... other than a miracle?</phrases2>
+		<phrases3 name="Major">Weapons, maximum weapons.</phrases3>
+		<phrases4 name="Sentinel">In cell 16 you will find our blacksmith. \nHe's not much of a talker, but he's got some good stuff!</phrase4>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Where to eat?</reaction>
+			<goto>6</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Where to sleep?</reaction>
+			<goto>7</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Where can I find out?</reaction>
+			<goto>9</goto>
+		</reponse4>
+		<reponse5>
+			<reaction>How to escape</reaction>
+			<goto>10</goto>
+		</reponse5>
+	</dialogue8.0>
+	<dialogue9.0>
+		<phrases1 name="Major">Knowledge is power! You know where we could get information about the factory.</phrases1>
+		<phrases2 name="Sentinel">Emanuella, our chief knows a lot of things. Go ask him your questions. She's in cell 8.</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Where to eat?</reaction>
+			<goto>6</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Where to sleep?</reaction>
+			<goto>7</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Where to buy equipment?</reaction>
+			<goto>8</goto>
+		</reponse4>
+		<reponse5>
+			<reaction>How to escape</reaction>
+			<goto>10</goto>
+		</reponse5>
+	</dialogue9.0>
+	<dialogue10.0>
+		<phrases1 name="Major">Well, it's fine here, but we're looking for people to help us escape.</phrases1>
+		<phrases2 name="Sentinel">Then this is not my thing at all! \nGo to Arsene, he keeps talking about escape and freedom.  He must be in the tavern, cell 9 and 10.</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Where to eat?</reaction>
+			<goto>6</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Where to sleep?</reaction>
+			<goto>7</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Where to buy equipment?</reaction>
+			<goto>8</goto>
+		</reponse4>
+		<reponse5>
+			<reaction>Where can I find out?</reaction>
+			<goto>9</goto>
+		</reponse5>
+	</dialogue10.0>
+ </502>

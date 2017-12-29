@@ -1,0 +1,170 @@
+<PNJ>
+    <dialogue1.0 condition="Arsène/Jamais-vu:OUI">
+		<phrases1 name="Arsène">Oh, newbies... \n\n*He spits on the floor and then quickly observes the three strangers.*\nAn ancestor, a little girl and... this one could be somehow useful. What's your name, kiddo?</phrases1>
+		<phrases2 name="Leopold">I forbid you to speak so of my beloved angel and future father-in-law!  \n\n*%Avancement/NomLeopold% then points to Arsene with his finger* Another word from you and you'll regret it !</phrases2>
+		<phrases3 name="Major">*%Avancement/NomMajor% put a cleat on %Avancement/NomLeopold%.* \n\nAnd just what will you do if he replies! You're going to attack him! Here! With all his friends around to break our faces?! Never make threats that you're not prepared to carry on\n... \nAnd, next time you call me 'father-in-law', I'll break both your legs. Understood?</phrases3>
+		<phrases4 name="Leopold">Y...yes, sir.  </phrases4>
+		<phrases5 name="Arsène">Puts his feet on the table and smile* \n\nI like you, ancestor!  \nI'll give you some good advice: don't trust the mayor!</phrases5>
+		<reponse1>
+			<reaction>Learn more about the mayor</reaction>
+			<goto action="Avancement/Arsène/Jamais-vu:NON">2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Talk about escape plans</reaction>
+			<goto action="Avancement/Arsène/Jamais-vu:NON">3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Why would you want to leave?</reaction>
+			<goto action="Avancement/Arsène/Jamais-vu:NON">4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Arsène/Jamais-vu:NON">0</goto>
+		</reponse4>
+	</dialogue1.0>
+	<dialogue1.1 condition="Manny/Recherche:OUI">
+		<phrases1 name="Arsène">So, rookies, still haven't found Manny?</phrases1>
+		<reponse1>
+			<reaction>Lie</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Continue to search</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Ask for his description</reaction>
+			<goto>5</goto>
+		</reponse3>
+	</dialogue1.1>
+	<dialogue1.2 condition="Manny/Recherche:TROUVE">
+		<phrases1 name="Arsène">So, rookies, still haven't found Manny?</phrases1>
+		<reponse1>
+			<reaction>Lie</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Talk about the dead body</reaction>
+			<goto>7</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse3>
+	</dialogue1.2>
+	<dialogue1.3 condition="Manny/Recherche:NON">
+		<phrases1 name="Arsène">Come back when you have more information on the owner. He calls himself Master J.</phrases1>
+		<reponse1>
+			<reaction>Learn more about the Mayor</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Talk about escape plans</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Why would you want to leave?</reaction>
+			<goto>4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse4>
+	</dialogue1.3>
+	<dialogue1.4>
+		<phrases1 name="Arsène">Come back when you have more information on the owner.  He calls himself Master J.</phrases1>
+		<reponse1>
+			<reaction>Learn more about the mayor</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Why would you want to leave?</reaction>
+			<goto>4</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse3>
+	</dialogue1.4>
+	<dialogue2.0>
+		<phrases1 name="Major">What's wrong with the mayor?</phrases1>
+		<phrases2 name="Arsène">According to her, as long as we make sure the wheels turn, the guards won't notice anything.  \nWe take turns for this chore. Those who are not on duty can continue to develop communal areas, such as this bar, relax, chat... \nBut soon you go around in circles... even when you're not in the wheels.</phrases2>
+		<phrases3 name="Arsène">I told her about my escape plans, but she always burries them under one pretext or another. I think she likes being mayor here and doesn't have any interest in leaving anymore. That's why I and my team decided to do it alone.</phrases3>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Why would you want to leave?</reaction>
+			<goto>4</goto>
+		</reponse2>
+		<reponse3 condition="Manny/Recherche:NON">
+			<reaction>Talk about escape plans</reaction>
+			<goto>3</goto>
+		</reponse3>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Major">We want to get out of here. Can you help us?</phrases1>
+		<phrases2 name="Arsène">Right now we're undercover. On top of mechanical guards, there are nobles in the factory. I sent my best man Manny undercover. He should be back soon.</phrases2>
+		<phrases3 name="Major">Can we help?</phrases3>
+		<phrases4 name="Arsène">I don't know if I can trust you...  If you're brave, you can pick up Manny and come back with the information from the undercover.</phrases4>
+		<reponse1>
+			<reaction>Accept</reaction>
+			<goto>5</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Why would you want to leave?</reaction>
+			<goto>4</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Learn more about the Mayor</reaction>
+			<goto>2</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse4>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Major">Why would you want to leave?</phrases1>
+		<phrases2 name="Arsène">Once you've spent a few months here, you'll understand that's not a life. \nSo try to always see the same faces and have the sole objective of turning those goddamn wheels so that no one can see anything up there.</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Learn more about the Mayor</reaction>
+			<goto>2</goto>
+		</reponse2>
+		<reponse3 condition="Manny/Recherche:NON">
+			<reaction>Talk about escape plans</reaction>
+			<goto>3</goto>
+		</reponse3>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrases1 name="Arsène"> *Describe Maany precisely*... and he always wears a dark blue suit, you can't miss him. Once you find him, come back and let me know what's going on.</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Manny/Recherche:OUI">0</goto>
+		</reponse1>
+	</dialogue5.0>
+	<dialogue6.0>
+		<phrases1 name="Major">We found Manny! He's undercover so he didn't have time to inform us of the situation.   \nWe, on the other hand, have plenty of time and are motivated to take part in the great escape.</phrases1>
+		<phrases2 name="Arsène">You should stop lying, it's bad for your reputation.  \nCome back with info next time.</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue6.0>
+	<dialogue7.0>
+		<phrases1 name="Major">Arsene... \nWe found Manny... \n\nhe's dead.</phrases1>
+		<phrases2 name="Arsène">*Without reaction* \nYup, I suspected as much!  \n\nThree months without a word from him, it was suspicious.</phrases2>
+		<phrases3 name="Adeline">Three months! And you didn't send anyone before! You stayed here idling!</phrases3>
+		<phrases4 name="Arsène">We rarely go out in the "courtyard" because of the mechanical guards, they killed quite a lot of people during the first escape attempt. We had the numbers, they had the weapons... \nSince then everyone here is afraid to go outside except Manny who volunteered to burry the bodies.  \nSo there was no one here ready to go out to confirm Manny's death.</phrases4>
+		<phrases5 name="Arsène">Well, you passed the preselection test. Welcome to the rebels.  \n\nI'll need you to replace Manny and get some information on the owner of the place. \nManny brought us an identification gear on his last mission. Take it, it will allow you to enter the factory.</phrases5>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>100</goto>
+		</reponse1>
+	</dialogue7.0>
+ </PNJ>

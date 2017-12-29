@@ -1,0 +1,24 @@
+<PNJ>
+    <dialogue1.0 condition="PJ/Embarquement:NON">
+		<phrases1 name="Teddy">... adding ten milligrams of silicon to my carbon titanium composition, I should be able to condensate 2.21 GigaWatt of steam... </phrases1>
+		<phrases2 name="Leopold">Stan sent us because there's an emergency in the factory. </phrases2>
+		<phrases3 name="Teddy">*Teddy continues to experiment without paying attention to his surroundings*\n... remains to create the appropriate joints not to blow up everything\n...  \nI could make an ARC joint with paladium but is that enough?!</phrases3>
+		<phrases4 name="Major">** \nHEY! WE DON' T HAVE THE WHOLE LIFE! STAN SEND US FOR AN EMERGENCY!</phrases4>
+		<phrases5 name="Teddy">*Teddy jumped up then answered without leaving his experience behind.* \n\nYes, yes, no need to shout, I know Stan's emergency room but I have something else to do than go see Mr. J.</phrases5>
+		<phrases6 name="Adeline">*Whisper to her father*\nCalm down, I think we can take advantage of the situation to meet Mr. J. \n*Then talk to Teddy out and loud.*\n\nYou look very busy indeed, maybe we can replace you.</phrases6>
+		<phrases7 name="Teddy">*Teddy jumps again then gently hits his forehead* \n\nBut yes, adamtium! How could I miss that?  \n*Teddy finally looks up to %Avancement/NomMajor%.* \nHere! You're not wearing a gas mask?! Are you sucidaire? </phrases7>
+		<phrases8 name="Major">WELL, YOU'RE GETTING IN MY NOSE! EITHER YOU DEAL WITH THE EMERGENCY OR YOU LET US HANDLE IT.</phrases8>
+		<phrases9 name="Teddy">If it'll amuse you! Here's something to "get aboard". \nOn the other hand, you better be well prepared because Mr. J is special and he does not accept mistakes.</phrases9>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/PJ/Embarquement:OUI">0</goto>
+		</reponse1>
+	</dialogue1.0>
+	<dialogue1.1 >
+		<phrases1 name="Teddy">*Teddy seems to be injecting a few drops into a melting tube. Then he turns to you with a happy face.*\nThere's progress, it hasn't exploded. \n\nBut I don't want anyone here without a gas mask!</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.1>
+ </PNJ>

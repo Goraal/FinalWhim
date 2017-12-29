@@ -170,64 +170,88 @@ Function fn_combat()
 				
 				;HUD combat.LBA : à faire aussi en EN !
 				;image de l'armure et arme sous hud fond...
-				If icone_armor<>0 then DrawImage icone_armor,691,526
+				If icone_armor<>0 then DrawImage icone_armor,687,524
 				If icone_arme<>0 then DrawImage icone_arme,67,527
 				;HUD fond
 				DrawImage fond_Combat,0,417
 				;PJ actif :
 				t=combat\qui
-				For av.avatar=Each avatar
+				For av.avatar=Each avatar		
 					If av\num=combat\ordre[t]
-						
-						If av\equi[1]=0
-								DebugLog("Main nue")
-								;LBA cheat arme 1
-								av\equi[1]=8
-						Endif
+						icone_arme=gfx_emptyHand;valeur par défaut = main nue	
+						style_att=1	
+						dgts_min = 1+av\deg[1]+bonus_equi(7)
+						dgts_max = 1+dgts_min
 						
 						For arme.arme=Each arme
 							If arme\num=av\equi[1]
 								;image de l'arme sous hud fond...
 								icone_arme=arme\icone[1]
-								
-								
-								Color 0,0,0
-								SetFont little_font
-								Text 95,444,av\name$[Int(options#(7))],true,true
-								
-								
 								;(1=mains nues, 2=légère, 3=lourde, 4=distance, 5=à feu)
 								;transformer {1,2,3,4,5} en {1,1,2,3,3}
 								style_att=min(3,max(1,arme\classe-1))
 								dgts_min=arme\degat_min+av\deg[style_att]+bonus_equi(6+style_att)
 								dgts_max=arme\degat_max+av\deg[style_att]+bonus_equi(6+style_att)
-								dgts_arme$ = Str$(dgts_min)+"-"+Str$(dgts_max)
-								Text 135,582,dgts_arme$,true,true
-																												
+								
 								bonusAttaque = arme\att[style_att] + av\att[style_att]
-								Text 44,582,"1D20+"+Str$(bonusAttaque),true,true
-								;tête
-								If fighters_tete(av\cat,1)<>0 Then DrawBlock fighters_tete(av\cat,1),5,426
 								
-								
-								If Int(options#(7))=1 ;français
-									Text 38,513,"Attaque",true,true
-									Text 137,513,"Dégâts",true,true
-									;Type d'attaque
-									If style_att=1 Then nomAttaque$ = "Attaque arme legère"
-									If style_att=2 Then nomAttaque$ = "Attaque arme lourde"
-									If style_att=3 Then nomAttaque$ = "Attaque à distance"
-								Else ;anglais par défaut
-									Text 38,513,"Attack",true,true
-									Text 137,513,"Damage",true,true
-									;Type d'attaque
-									If style_att=1 Then nomAttaque$ = "Light weapon attack"
-									If style_att=2 Then nomAttaque$ = "Heavy weapon attack"
-									If style_att=3 Then nomAttaque$ = "Range attack"	
-								Endif
-								Text 88,480,nomAttaque$,true,true
 							EndIf
 						Next
+																					
+						Color 0,0,0
+						SetFont little_font
+						Text 95,444,av\name$[Int(options#(7))],True,True
+						
+						
+						dgts_arme$ = Str$(dgts_min)+"-"+Str$(dgts_max)
+						Text 135,582,dgts_arme$,true,true
+																										
+						
+						Text 44,582,"1D20+"+Str$(bonusAttaque),true,true
+						;tête
+						If fighters_tete(av\cat,1)<>0 Then DrawBlock fighters_tete(av\cat,1),5,426
+						
+						
+						If Int(options#(7))=1 ;français
+							Text 38,513,"Attaque",true,true
+							Text 137,513,"Dégâts",true,true
+							Text 664,513,"Défense",true,true
+							Text 760,513,"Armure",true,true
+							;Type d'attaque
+							If style_att=1
+								nomAttaque$ = "Attaque arme legère"
+								nomDefense$ = "Défense arme legère"
+							Endif
+							If style_att=2 
+								nomAttaque$ = "Attaque arme lourde"
+								nomDefense$ = "Défense arme lourde"
+							Endif
+							If style_att=3 
+								nomAttaque$ = "Attaque à distance"
+								nomDefense$ = "Défense à distance"
+							Endif
+						Else ;anglais par défaut
+							Text 38,513,"Attack",true,true
+							Text 137,513,"Damage",true,true
+							Text 664,513,"Defense",true,true
+							Text 760,513,"Armor",true,true
+							;Type d'attaque
+							If style_att=1 
+								nomAttaque$ = "Light weapon attack"
+								nomDefense$ = "Light weapon defense"
+							Endif
+							If style_att=2 
+								nomAttaque$ = "Heavy weapon attack"
+								nomDefense$ = "Heavy weapon defense"
+							Endif
+							If style_att=3 
+								nomAttaque$ = "Ranged weapon attack"
+								nomDefense$ = "Ranged weapon defense"								
+							Endif
+						Endif
+						
+						Text 88,480,nomAttaque$,true,true
+						Text 710,480,nomDefense$,true,true
 						
 					EndIf
 					
@@ -256,31 +280,15 @@ Function fn_combat()
 						
 						;armor
 						if TargetHasArmor=0
+							icone_armor=gfx_emptyHand;valeur par défaut = main nue	
 							bonusResistance=0
-							bonusArmure$="0/0/0"
-							;LBA cheat armure 1
-							av\equi[4]=102
-							
+							bonusArmure$="0/0/0"						
 						Endif
 						Text 666,582,Str$(bonusResistance),true,true
 						Text 762,582,Str$(bonusArmure$),true,true
 						
-						If Int(options#(7))=1 ;français
-							Text 664,513,"Défense",true,true
-							Text 760,513,"Armure",true,true
-							;Type de def
-							If style_att=1 Then nomDefense$ = "Défense legère"
-							If style_att=2 Then nomDefense$ = "Défense lourde"
-							If style_att=3 Then nomAttaque$ = "Défense à distance"
-						Else ;anglais par défaut
-							Text 664,513,"Defense",true,true
-							Text 760,513,"Armor",true,true
-							;Type de def
-							If style_att=1 Then nomAttaque$ = "Light defense"
-							If style_att=2 Then nomAttaque$ = "Heavy defense"
-							If style_att=3 Then nomAttaque$ = "Range defense"	
-						Endif
-						Text 710,480,nomDefense$,true,true
+						
+						
 					Endif
 				Next					
 				;fin HUD combat
@@ -524,7 +532,11 @@ Function fn_combat()
 								
 								Select combat_menu_action
 									Case 0 ; premier menu
-										mess_action$="Choisissez votre action"
+										If Int(options#(7))=1; français
+											mess_action$="Choisissez votre action"
+										Else
+											mess_action$="Choose your action"
+										Endif
 
 										For k=0 To 3
 											a_int=400-Cos(90*k)*60
@@ -552,26 +564,50 @@ Function fn_combat()
 											EndIf
 											peut_agir=1
 											If MouseX()<a_int+25 And MouseX()>a_int-25 And MouseY()>b_int-25 And MouseY()<b_int+25
-												Select k
-													Case 0
-														mess_action="Attaquer"
-														If atd=0
-															If combat\phase<>2
-																If have_rule(av\num,12)=0 ; pas de swift
-																	peut_agir=0
-																	mess_action="Pas de corps à corps au premier tour"
-																Else
-																	mess_action="Attaquer (Swift)"
+												If Int(options#(7))=1; français
+													Select k
+														Case 0
+															mess_action$="Attaquer"
+															If atd=0
+																If combat\phase<>2
+																	If have_rule(av\num,12)=0 ; pas de swift
+																		peut_agir=0
+																		mess_action="Pas de corps à corps au premier tour"
+																	Else
+																		mess_action="Attaquer (Swift)"
+																	EndIf
 																EndIf
 															EndIf
-														EndIf
-													Case 1
-														mess_action="Défendre"
-													Case 2
-														mess_action="Ordre et Formation"
-													Case 3
-														mess_action="Inventaire"
-												End Select
+														Case 1
+															mess_action="Défendre"
+														Case 2
+															mess_action="Ordre et Formation"
+														Case 3
+															mess_action="Inventaire"
+													End Select
+												Else
+													Select k
+														Case 0
+															mess_action$="Attack"
+															If atd=0
+																If combat\phase<>2
+																	If have_rule(av\num,12)=0 ; pas de swift
+																		peut_agir=0
+																		mess_action="No melee attack in first round"
+																	Else
+																		mess_action="Attack (Swift)"
+																	EndIf
+																EndIf
+															EndIf
+														Case 1
+															mess_action="Defend"
+														Case 2
+															mess_action="Order and Formation"
+														Case 3
+															mess_action="Inventory"
+													End Select
+												EndIf
+													
 												If keys(1,2)=50 and peut_agir=1
 													combat_menu_action=k+1
 												EndIf
@@ -579,23 +615,41 @@ Function fn_combat()
 										Next
 										
 									Case 1 ; action d'attaque
-										mess_action$="Choisissez votre attaque"
+										If Int(options#(7))=1; français
+											mess_action$="Choisissez votre attaque"
+										Else
+											mess_action$="Choose your attack"
+										Endif
+										
 										For k=0 To 3
 											a_int=400-Cos(90*k)*60
 											b_int=(210-Sin(90*k)*60)
 											DrawBlock bouton_combat_sombre,a_int,b_int,k
 								
 											If MouseX()<a_int+25 And MouseX()>a_int-25 And MouseY()>b_int-25 And MouseY()<b_int+25
-												Select k
-													Case 0
-														mess_action="Attaquer"
-													Case 1
-														mess_action="Défendre"
-													Case 2
-														mess_action="Ordre et Formation"
-													Case 3
-														mess_action="Inventaire"
-												End Select
+												If Int(options#(7))=1; français
+													Select k
+														Case 0
+															mess_action="Attaquer"
+														Case 1
+															mess_action="Défendre"
+														Case 2
+															mess_action="Ordre et Formation"
+														Case 3
+															mess_action=""
+													End Select
+												Else
+													Select k
+														Case 0
+															mess_action="Attack"
+														Case 1
+															mess_action="Defend"
+														Case 2
+															mess_action="Order and Formation"
+														Case 3
+															mess_action="Inventory"
+													End Select
+												Endif
 												If keys(1,2)=50
 													combat_menu_action=k+1
 												EndIf
@@ -634,12 +688,21 @@ Function fn_combat()
 												DrawBlock bouton_combat,a_int,b_int,bouton_start+k
 												
 												If MouseX()<a_int+25 And MouseX()>a_int-25 And MouseY()>b_int-25 And MouseY()<b_int+25
-													Select k
-														Case 0
-															mess_action$="Attaque normale"
-														Case 1
-															mess_action$="Attaque Stratégique"
-													End Select
+													If Int(options#(7))=1; français
+														Select k
+															Case 0
+																mess_action$="Attaque normale"
+															Case 1
+																mess_action$="Attaque Stratégique"
+														End Select
+													Else
+														Select k
+															Case 0
+																mess_action$="Normal attack"
+															Case 1
+																mess_action$="Strategic attack"
+														End Select
+													EndIf
 													If keys(1,2)=50
 														combat_menu_action=11+k
 													EndIf
@@ -684,14 +747,25 @@ Function fn_combat()
 												
 												
 												If MouseX()<a_int+25 And MouseX()>a_int-25 And MouseY()>b_int-25 And MouseY()<b_int+25
-													Select k
-														Case 0
-															mess_action$="Attaque normale (1/"+av\charge[1]+")"
-														Case 1
-															mess_action$="Attaque Stratégique (1/"+av\charge[1]+")"
-														Case 2
-															mess_action$="Rafale ("+cadence+"/"+av\charge[1]+")"
-													End Select
+													If Int(options#(7))=1; français
+														Select k
+															Case 0
+																mess_action$="Attaque normale (1/"+av\charge[1]+")"
+															Case 1
+																mess_action$="Attaque Stratégique (1/"+av\charge[1]+")"
+															Case 2
+																mess_action$="Rafale ("+cadence+"/"+av\charge[1]+")"
+														End Select
+													Else
+														Select k
+															Case 0
+																mess_action$="Normale attack  (1/"+av\charge[1]+")"
+															Case 1
+																mess_action$="Strategic attack (1/"+av\charge[1]+")"
+															Case 2
+																mess_action$="Burst ("+cadence+"/"+av\charge[1]+")"
+														End Select
+													EndIf
 													If keys(1,2)=50
 														If k<2 
 															If av\charge[1]<>0
@@ -762,7 +836,12 @@ Function fn_combat()
 										combat_menu_action=0
 										
 									Case 4 ; action d'Inventaire
-										mess_action$="Choisissez votre action"
+										If Int(options#(7))=1; français
+											mess_action$="Choisissez votre action"
+										Else
+											mess_action$="Choose your action"
+										Endif
+										
 										For k=0 To 3
 											a_int=400-Cos(90*k)*60
 											b_int=(210-Sin(90*k)*60)
@@ -791,34 +870,65 @@ Function fn_combat()
 											peut_agir=1
 											
 											If MouseX()<a_int+25 And MouseX()>a_int-25 And MouseY()>b_int-25 And MouseY()<b_int+25
-												Select k
-													Case 0
-														mess_action="Attaquer"
-														If atd=0
-															If combat\phase<>2
-																If have_rule(av\num,12)=0 ; pas de swift
-																	peut_agir=0
-																	mess_action="Pas de corps à corps au premier tour"
+												If Int(options#(7))=1; français
+													Select k
+														Case 0
+															mess_action="Attaquer"
+															If atd=0
+																If combat\phase<>2
+																	If have_rule(av\num,12)=0 ; pas de swift
+																		peut_agir=0
+																		mess_action="Pas de corps à corps au premier tour"
+																	Else
+																		mess_action="Attaquer (Swift)"
+																		If keys(1,2)=50 Then combat_menu_action=1
+																	EndIf
 																Else
-																	mess_action="Attaquer (Swift)"
 																	If keys(1,2)=50 Then combat_menu_action=1
 																EndIf
 															Else
 																If keys(1,2)=50 Then combat_menu_action=1
 															EndIf
-														Else
-															If keys(1,2)=50 Then combat_menu_action=1
-														EndIf
-													Case 1
-														mess_action="Défendre"
-														If keys(1,2)=50 Then combat_menu_action=2
-													Case 2
-														mess_action="Ordre et Formation"
-														If keys(1,2)=50 Then combat_menu_action=3
-													Case 3
-														mess_action="Inventaire"
-														If keys(1,2)=50 Then combat_menu_action=4
-												End Select
+														Case 1
+															mess_action="Défendre"
+															If keys(1,2)=50 Then combat_menu_action=2
+														Case 2
+															mess_action="Ordre et Formation"
+															If keys(1,2)=50 Then combat_menu_action=3
+														Case 3
+															mess_action="Inventaire"
+															If keys(1,2)=50 Then combat_menu_action=4
+													End Select
+												Else
+													Select k
+														Case 0
+															mess_action="Attack"
+															If atd=0
+																If combat\phase<>2
+																	If have_rule(av\num,12)=0 ; pas de swift
+																		peut_agir=0
+																		mess_action="No melee attack in first round"
+																	Else
+																		mess_action="Attack (Swift)"
+																		If keys(1,2)=50 Then combat_menu_action=1
+																	EndIf
+																Else
+																	If keys(1,2)=50 Then combat_menu_action=1
+																EndIf
+															Else
+																If keys(1,2)=50 Then combat_menu_action=1
+															EndIf
+														Case 1
+															mess_action="Defend"
+															If keys(1,2)=50 Then combat_menu_action=2
+														Case 2
+															mess_action="Order and Formation"
+															If keys(1,2)=50 Then combat_menu_action=3
+														Case 3
+															mess_action="Inventory"
+															If keys(1,2)=50 Then combat_menu_action=4
+													End Select
+												Endif
 											EndIf
 										Next
 										
@@ -855,37 +965,70 @@ Function fn_combat()
 													DrawBlock bouton_combat,a_int,b_int,13
 											End Select
 											If MouseX()<a_int+25 And MouseX()>a_int-25 And MouseY()>b_int-25 And MouseY()<b_int+25
-												Select k
-													Case 0
-														Select test_gearbot
-															Case 0
-																mess_action$="Aucun Gearbot équipé"
-															Case 1
-																mess_action$="Déployer le Gearbot"
-															Case 2
-																mess_action$="Démonter le Gearbot"
-														End Select
-														If keys(1,2)=50
-															If test_gearbot=1
-																combat_menu_action=51
-															ElseIf test_gearbot=2
-																;envoyer l'ordre directement de ranger le bot (av\equi[6]-180)*-1
-																analyse(23,combat\num+"#"+av\num+"#52#s#s#s#s#s#s#s#s#s#",player_id,master_id)
-																av\last_action=52
-																combat_menu_action=0
-																;combat\qui=combat\qui+1
-																If combat\ordre[combat\qui]=0 Then combat\qui=1
-															EndIf
-														Endif
-													Case 1
-														mess_action$="Changer d'arme"
-														If keys(1,2)=50 Then combat_menu_action=42
-												End Select
+												If Int(options#(7))=1 ;français
+													Select k
+														Case 0
+															Select test_gearbot
+																Case 0
+																	mess_action$="Aucun Gearbot équipé"
+																Case 1
+																	mess_action$="Déployer le Gearbot"
+																Case 2
+																	mess_action$="Démonter le Gearbot"
+															End Select
+															If keys(1,2)=50
+																If test_gearbot=1
+																	combat_menu_action=51
+																ElseIf test_gearbot=2
+																	;envoyer l'ordre directement de ranger le bot (av\equi[6]-180)*-1
+																	analyse(23,combat\num+"#"+av\num+"#52#s#s#s#s#s#s#s#s#s#",player_id,master_id)
+																	av\last_action=52
+																	combat_menu_action=0
+																	;combat\qui=combat\qui+1
+																	If combat\ordre[combat\qui]=0 Then combat\qui=1
+																EndIf
+															Endif
+														Case 1
+															mess_action$="Changer d'arme"
+															If keys(1,2)=50 Then combat_menu_action=42
+													End Select
+												Else
+													Select k
+														Case 0
+															Select test_gearbot
+																Case 0
+																	mess_action$="No Gearbot equiped"
+																Case 1
+																	mess_action$="Deploy the Gearbot"
+																Case 2
+																	mess_action$="Get the Gearbot back"
+															End Select
+															If keys(1,2)=50
+																If test_gearbot=1
+																	combat_menu_action=51
+																ElseIf test_gearbot=2
+																	;envoyer l'ordre directement de ranger le bot (av\equi[6]-180)*-1
+																	analyse(23,combat\num+"#"+av\num+"#52#s#s#s#s#s#s#s#s#s#",player_id,master_id)
+																	av\last_action=52
+																	combat_menu_action=0
+																	;combat\qui=combat\qui+1
+																	If combat\ordre[combat\qui]=0 Then combat\qui=1
+																EndIf
+															Endif
+														Case 1
+															mess_action$="Change weapon"
+															If keys(1,2)=50 Then combat_menu_action=42
+													End Select
+												Endif
 											EndIf
 										Next
 									
 									Case 51 ;Déployer le GearBot
-										mess_action$="Choisissez une place libre pour le GearBot"
+										If Int(options#(7))=1 ;français
+											mess_action$="Choisissez une place libre pour le GearBot"
+										Else
+											mess_action$="Choisissez une place libre pour le GearBot"
+										Endif
 										target_actif=2
 										If keys(1,2)=50 And combat_place<>0
 											place_libre=0
@@ -907,7 +1050,11 @@ Function fn_combat()
 									
 	
 									Case 3 ; attendre
-										mess_action$="Choisissez votre action"
+										If Int(options#(7))=1 ;français
+											mess_action$="Choisissez votre action"
+										Else
+											mess_action$="Choose your action"
+										Endif
 										For k=0 To 3
 											a_int=400-Cos(90*k)*60
 											b_int=(210-Sin(90*k)*60)
@@ -936,34 +1083,65 @@ Function fn_combat()
 											peut_agir=1
 											
 											If MouseX()<a_int+25 And MouseX()>a_int-25 And MouseY()>b_int-25 And MouseY()<b_int+25
-												Select k
-													Case 0
-														mess_action="Attaquer"
-														If atd=0
-															If combat\phase<>2
-																If have_rule(av\num,12)=0 ; pas de swift
-																	peut_agir=0
-																	mess_action="Pas de corps à corps au premier tour"
+												If Int(options#(7))=1 ;français
+													Select k
+														Case 0
+															mess_action="Attaquer"
+															If atd=0
+																If combat\phase<>2
+																	If have_rule(av\num,12)=0 ; pas de swift
+																		peut_agir=0
+																		mess_action="Pas de corps à corps au premier tour"
+																	Else
+																		mess_action="Attaquer (Swift)"
+																		If keys(1,2)=50 Then combat_menu_action=1
+																	EndIf
 																Else
-																	mess_action="Attaquer (Swift)"
 																	If keys(1,2)=50 Then combat_menu_action=1
 																EndIf
 															Else
 																If keys(1,2)=50 Then combat_menu_action=1
 															EndIf
-														Else
-															If keys(1,2)=50 Then combat_menu_action=1
-														EndIf
-													Case 1
-														mess_action="Défendre"
-														If keys(1,2)=50 Then combat_menu_action=2
-													Case 2
-														mess_action="Ordre et Formation"
-														If keys(1,2)=50 Then combat_menu_action=3
-													Case 3
-														mess_action="Inventaire"
-														If keys(1,2)=50 Then combat_menu_action=4
-												End Select
+														Case 1
+															mess_action="Défendre"
+															If keys(1,2)=50 Then combat_menu_action=2
+														Case 2
+															mess_action="Ordre et Formation"
+															If keys(1,2)=50 Then combat_menu_action=3
+														Case 3
+															mess_action="Inventaire"
+															If keys(1,2)=50 Then combat_menu_action=4
+													End Select
+												Else
+													Select k
+														Case 0
+															mess_action="Attack"
+															If atd=0
+																If combat\phase<>2
+																	If have_rule(av\num,12)=0 ; pas de swift
+																		peut_agir=0
+																		mess_action="No melee attack in first round"
+																	Else
+																		mess_action="Attack (Swift)"
+																		If keys(1,2)=50 Then combat_menu_action=1
+																	EndIf
+																Else
+																	If keys(1,2)=50 Then combat_menu_action=1
+																EndIf
+															Else
+																If keys(1,2)=50 Then combat_menu_action=1
+															EndIf
+														Case 1
+															mess_action="Defend"
+															If keys(1,2)=50 Then combat_menu_action=2
+														Case 2
+															mess_action="Order and Formation"
+															If keys(1,2)=50 Then combat_menu_action=3
+														Case 3
+															mess_action="Inventory"
+															If keys(1,2)=50 Then combat_menu_action=4
+													End Select
+												Endif
 											EndIf
 										Next
 										DrawBlock bouton_combat,400+60,210,2
@@ -981,34 +1159,63 @@ Function fn_combat()
 											End Select
 											
 											If MouseX()<a_int+25 And MouseX()>a_int-25 And MouseY()>b_int-25 And MouseY()<b_int+25
-												Select k
-													Case 0
-														mess_action$="Attendre"
-														If keys(1,2)=50
-															;combat_menu_action=31
-															analyse(23,combat\num+"#"+av\num+"#31#s#s#s#s#s#s#",player_id)
-															av\last_action=31
-															;Playsound2(sons_menu(2))
-															combat_menu_action=0
-														EndIf
-													Case 1
-														mess_action$="Passer son tour"
-														If keys(1,2)=50
-															;combat_menu_action=32
-															analyse(23,combat\num+"#"+av\num+"#32#s#s#s#s#s#s#",player_id)
-															av\last_action=32
-															combat_menu_action=0
-														EndIf
-													Case 2
-														mess_action$="Changer de place"
-														If keys(1,2)=50 Then combat_menu_action=41
-												End Select
+												If Int(options#(7))=1 ;français
+													Select k
+														Case 0
+															mess_action$="Attendre"
+															If keys(1,2)=50
+																;combat_menu_action=31
+																analyse(23,combat\num+"#"+av\num+"#31#s#s#s#s#s#s#",player_id)
+																av\last_action=31
+																;Playsound2(sons_menu(2))
+																combat_menu_action=0
+															EndIf
+														Case 1
+															mess_action$="Passer son tour"
+															If keys(1,2)=50
+																;combat_menu_action=32
+																analyse(23,combat\num+"#"+av\num+"#32#s#s#s#s#s#s#",player_id)
+																av\last_action=32
+																combat_menu_action=0
+															EndIf
+														Case 2
+															mess_action$="Changer de place"
+															If keys(1,2)=50 Then combat_menu_action=41
+													End Select
+												Else
+													Select k
+														Case 0
+															mess_action$="Wait"
+															If keys(1,2)=50
+																;combat_menu_action=31
+																analyse(23,combat\num+"#"+av\num+"#31#s#s#s#s#s#s#",player_id)
+																av\last_action=31
+																;Playsound2(sons_menu(2))
+																combat_menu_action=0
+															EndIf
+														Case 1
+															mess_action$="give up your turn"
+															If keys(1,2)=50
+																;combat_menu_action=32
+																analyse(23,combat\num+"#"+av\num+"#32#s#s#s#s#s#s#",player_id)
+																av\last_action=32
+																combat_menu_action=0
+															EndIf
+														Case 2
+															mess_action$="Switch place"
+															If keys(1,2)=50 Then combat_menu_action=41
+													End Select
+												Endif
 											EndIf
 										Next
 										
 									Case 11 ; attaque de base
 										target_actif=1
-										mess_action$="Choisissez votre cible"
+										If Int(options#(7))=1 ;français
+											mess_action$="Choisissez votre cible"
+										Else
+											mess_action$="Choose your target"
+										Endif
 										If combat_target<>0
 											;voir les stats à l'avance
 											calcule_stat_cible(av\num,combat_target,combat\num,0,0,0)
@@ -1029,7 +1236,11 @@ Function fn_combat()
 										
 									Case 12 ; Attaque Stratégique
 										target_actif=1
-										mess_action$="Choisissez votre cible"
+										If Int(options#(7))=1 ;français
+											mess_action$="Choisissez votre cible"
+										Else
+											mess_action$="Choose your target"
+										Endif
 										If combat_target<>0
 											;voir les stats à l'avance
 											calcule_stat_cible(av\num,combat_target,combat\num,0,1,0)
@@ -1050,7 +1261,11 @@ Function fn_combat()
 
 									Case 13 ; attaque dist
 										target_actif=1
-										mess_action$="Choisissez votre cible"
+										If Int(options#(7))=1 ;français
+											mess_action$="Choisissez votre cible"
+										Else
+											mess_action$="Choose your target"
+										Endif
 										If combat_target<>0
 											;voir les stats à l'avance
 											calcule_stat_cible(av\num,combat_target,combat\num,1,0,0)
@@ -1083,7 +1298,11 @@ Function fn_combat()
 										
 									Case 14 ; attaque dist visée
 										target_actif=1
-										mess_action$="Choisissez votre cible"
+										If Int(options#(7))=1 ;français
+											mess_action$="Choisissez votre cible"
+										Else
+											mess_action$="Choose your target"
+										Endif
 										If combat_target<>0
 											;voir les stats à l'avance
 											calcule_stat_cible(av\num,combat_target,combat\num,1,1,0)
@@ -1116,7 +1335,11 @@ Function fn_combat()
 
 									Case 15 ; rafale
 										target_actif=1
-										mess_action$="Choisissez votre cible"
+										If Int(options#(7))=1 ;français
+											mess_action$="Choisissez votre cible"
+										Else
+											mess_action$="Choose your target"
+										Endif
 										If combat_target<>0
 											;voir les stats à l'avance
 											For arme.arme=Each arme
@@ -1165,7 +1388,11 @@ Function fn_combat()
 								;		combat_menu_action=0
 									
 									Case 41 ; changer de position
-										mess_action$="Choisissez votre nouvelle place"
+										If Int(options#(7))=1 ;français
+											mess_action$="Choisissez votre nouvelle place"
+										Else
+											mess_action$="Choose your new place"
+										Endif
 										target_actif=2
 										If keys(1,2)=50 And combat_place<>0
 											analyse(23,combat\num+"#"+av\num+"#41#"+combat_place+"#s#s#s#s#s#s#",player_id,master_id)
@@ -1177,7 +1404,12 @@ Function fn_combat()
 									
 									Case 42 ; changer d'arme
 										;Playsound2(sons_menu(02))
-										mess_action$="Choisissez votre nouvelle arme"
+										If Int(options#(7))=1 ;français
+											mess_action$="Choisissez votre nouvelle arme"
+										Else
+											mess_action$="Choose your new weapon"
+										Endif
+										
 										For t=1 To 3
 											atd_cible(t)=0
 											If av\equi[t]<>0
@@ -2286,7 +2518,11 @@ Function fn_combat()
 						If msg_radio$=""
 							chat_mode=0
 						ElseIf Len(msg_radio$)<4
-							new_log("Vous : "+msg_radio$,50,50,255)
+							If Int(options#(7))=1 ;français
+								new_log("Vous : "+msg_radio$,50,50,255)
+							Else
+								new_log("You : "+msg_radio$,50,50,255)
+							Endif
 							analyse(99,msg_radio$,player_id)
 							msg_radio$=""
 							chat_mode=0
@@ -2297,7 +2533,11 @@ Function fn_combat()
 								msg_radio$=Left(msg_radio,3)
 								chat_mode=0
 							Else
-								new_log("Vous : "+msg_radio$,50,50,255)
+								If Int(options#(7))=1 ;français
+									new_log("Vous : "+msg_radio$,50,50,255)
+								Else
+									new_log("You : "+msg_radio$,50,50,255)
+								Endif
 								analyse(99,msg_radio$,player_id)
 								msg_radio$=""
 								chat_mode=0
@@ -2308,7 +2548,11 @@ Function fn_combat()
 					If keys(14,2)=50 Or keys(82,2)=50 Then chat_mode=1					
 					If inactif_controled>0
 						If react_mode=0
-							mess$="Appuyez sur Espace pour faire agir les personnages en attente"
+							If Int(options#(7))=1 ;français
+								mess$="Appuyez sur Espace pour faire agir les personnages en attente"
+							Else
+								mess$="Press space to play with syand-by character "
+							EndIf
 							ai=max(Len(mess$)*8,200)
 						;	Color 0,0,0
 						;	Rect (screenwidth-ai)*0.5-4,(450-10)-4,ai+8,20+8,1
@@ -2333,7 +2577,12 @@ Function fn_combat()
 				
 				If react_mode=1
 					If keys(12,2)=50 Or keys(2,2)=50 Then react_mode=0
-					mess_action$="Cliquez sur le personnage à faire agir"
+					If Int(options#(7))=1 ;français
+						mess_action$="Cliquez sur le personnage à faire agir"
+					Else
+						mess_action$="Clic on the character you want to play"
+					EndIf
+					
 					target_actif=3
 					a_int=400
 					b_int=210
@@ -2428,7 +2677,11 @@ Function fn_combat()
 	;phase 3 profit !
 	If combat_vainqueur=-1
 		;victoire
-		new_log("Vous êtes sortis victorieux de ce combat !",200,100,0)
+		If Int(options#(7))=1 ;français
+			new_log("Vous êtes sortis victorieux de ce combat !",200,100,0)
+		Else
+			new_log("Vous won this fight !",200,100,0)
+		EndIf
 		StopChannel ch_fight
 		FreeSound mus_fight
 		mus_fight=LoadSound("musiques\victoire.wav")
@@ -2455,7 +2708,12 @@ Function fn_combat()
 		Next
 		player_caps=player_caps+butin_caps
 		player_junk=player_junk+butin_junk
-		new_log("Vous obtenez "+butin_caps+" caps et "+butin_junk+" junk.",200,100,0)
+		If Int(options#(7))=1 ;français
+			new_log("Vous obtenez "+butin_caps+" caps et "+butin_junk+" junk.",200,100,0)
+		Else
+			new_log("You get "+butin_caps+" caps and "+butin_junk+" junk.",200,100,0)
+		EndIf
+		
 				
 		time_dep=MilliSecs()
 		sortie=0
@@ -2485,9 +2743,16 @@ Function fn_combat()
 				af#=(Cos(timer_animation#*10)+2)*0.33
 				Color 220*af#,180*af#,80*af#
 				SetFont middle_font
-				Text 400,screenheight*0.5+68,"Appuyez sur Espace pour continuer",1,1
-				Color 220,180,80
-				Text 400,screenheight*0.5+50,"Vous gagnez "+butin_caps+" caps et "+butin_junk+" junk",1,1
+				If Int(options#(7))=1 ;français
+					Text 400,screenheight*0.5+68,"Appuyez sur Espace pour continuer",1,1
+					Color 220,180,80
+					Text 400,screenheight*0.5+50,"Vous gagnez "+butin_caps+" caps et "+butin_junk+" junk.",1,1
+				Else
+					Text 400,screenheight*0.5+68,"Press space to continue",1,1
+					Color 220,180,80
+					Text 400,screenheight*0.5+50,"You get "+butin_caps+" caps and "+butin_junk+" junk.",1,1
+				EndIf
+				
 				If keys(12,2)=50 Then sortie=1
 			EndIf
 			If KeyHit(01) Then sortie=1
@@ -2496,7 +2761,11 @@ Function fn_combat()
 			compensation_lag()
 		Wend
 	Else
-		new_log("Vous avez été vaincu !",200,0,0)
+		If Int(options#(7))=1 ;français
+			new_log("Vous avez été vaincu !",200,0,0)
+		Else
+			new_log("Vous avez été vaincu !",200,0,0)
+		EndIf
 		StopChannel ch_fight
 		FreeSound mus_fight
 		mus_fight=0

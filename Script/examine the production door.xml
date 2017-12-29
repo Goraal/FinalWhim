@@ -1,0 +1,20 @@
+<PNJ>
+    <dialogue1.0 condition="Stan/Mission1:Teddy">
+		<phrases1 name="Porte">The door is locked.</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Using the production key</reaction>
+			<goto>100</goto>
+		</reponse2>
+	</dialogue1.0>
+	<dialogue1.1>
+		<phrases1 name="Porte">The door is locked.</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.1>
+ </PNJ>

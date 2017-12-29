@@ -1,0 +1,88 @@
+<PNJ>
+    <dialogue1.0 condition="Fillette/Fouillee:OUI">
+		<phrases1 name="Leopold">Every time I see the body, I feel bad.  We could at least bury him.</phrases1>
+		<phrases2 name="Adeline">I don't really see any place to bury her, but we could hide her under the rubble!</phrases2>
+		<reponse1>
+			<reaction>Hide the body</reaction>
+			<goto>120</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.0>
+	<dialogue1.1 condition="Fillette/Attaquee:OUI">
+	<phrases1 name="Leopold">She's dead! What did we do? What did we do? I just wanted to scare him off me!</phrases1>
+	<phrases2 name="Adeline">That filthy plague got what it deserves. She was a psychopath, we could see him.</phrases2>
+	<phrases3 name="Leopold">But she was just a child!  What if her parents find us?</phrases3>
+	<phrases4 name="Adeline">We'll take them apart too. We're in enemy territory, honey.  We can only trust ourselves! Some children in our village are more dangerous than adults.</phrases4>
+	<phrases5 name="Major">What's done is done.  Now shut up, so I can think about what to do.</phrases5>
+		<reponse1 >
+			<reaction>Leaving discreetly</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Search respectfully</reaction>
+			<goto action="Avancement/Fillette/Fouillee:OUI">2</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Methodically search</reaction>
+			<goto action="Avancement/Fillette/Fouillee:OUI">3</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Digging hard</reaction>
+			<goto action="Avancement/Fillette/Fouillee:OUI">4</goto>
+		</reponse4>
+	</dialogue1.1>
+	<dialogue1.2>
+	<phrases1 name="Leopold">Pfft, I didn't think we were gonna make it this time! </phrases1>
+	<phrases2 name="Adeline">%Avancement/NomAdeline% shows the dead body of the little girl.One of us didn't do very well.  Not very resistant, kid! Too bad she could have been useful.</phrases2>
+	<phrases3 name="Leopold">It's sad, she was so young. I'm sure you'd end up becoming good friends. </phrases3>
+	<phrases5 name="Major">What's done is done.  Now shut up, so I can think about what we're gonna do.</phrases5>
+		<reponse1 >
+			<reaction>Leaving discreetly</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Search respectfully</reaction>
+			<goto action="Avancement/Fillette/Fouillee:OUI">2</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Methodically search</reaction>
+			<goto action="Avancement/Fillette/Fouillee:OUI">3</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Searching hard</reaction>
+			<goto action="Avancement/Fillette/Fouillee:OUI">4</goto>
+		</reponse4>
+	</dialogue1.2>
+	<dialogue2.0>
+		<phrases1 name="Major">Well, %Avancement/NomLeopold% searches the body and recovers what's useful in the meantime, we stand guard.</phrases1>
+		<phrases2 name="Leopold">No offense, sir, but why me?</phrases2>
+		<phrases3 name="Major">*%Avancement/NomMajor% glare at %Avancement/NomLeopold% *...</phrases3>
+		<phrases4 name="Leopold">... Okay, I'll put it on right away, sir.%Avancement/NomLeopold% finds 3 steamilles in the girl's pockets and picks up his gun.</phrases4>
+		<reponse1>
+			<reaction>*Leave away*</reaction>
+			<goto>400</goto>
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Major">Okay, I'll search the body while you two are on guard duty.  To be sure not to forget anything, %Avancement/NomMajor% searches all the clothes, including boots. The clothes are too small but he finds three steamers and picks up the girl's gun.Then he hides the body in a pile of garbage.</phrases1>
+		<reponse1>
+			<reaction>*Leave away*</reaction>
+			<goto>401</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Major">Well, %Avancement/NomAdeline%'s search deep into the body, while I and' sensitive soul' stand guard.</phrases1>
+		<phrases2 name="Adeline">%Avancement/NomAdeline% smiles with great pleasure.  Recovering the little girl's knife, %Avancement/NomAdeline% begins to cut the corpse.</phrases2>
+		<phrases3 name="Leopold">What are you doing?! It's not going well in your head!!</phrases3>
+		<phrases4 name="Adeline">At the end of the fight, I saw her swallow something.  I'm sure it was something useful!   It also makes it possible to make the evidence disappear!</phrases4>
+		<phrases5 name="Major">%Avancement/NomLeopold%!   You come and stand guard with me. That way you won't be looking.</phrases5>
+		<phrases6 name="Adeline">*We can't see anything with all this blood!*\n\n*But after a bit of hard work, %Avancement/NomAdeline% finally found a steam room that really had to be well hidden.** She uses the clothes to clean the blood and hides the body parts in a rat hole.*</phrases6>
+		<reponse1>
+			<reaction>*Leave away*</reaction>
+			<goto>402</goto>
+		</reponse1>
+	</dialogue4.0>
+ </PNJ>

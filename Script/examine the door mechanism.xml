@@ -1,0 +1,27 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="Mechanism">There is a series of keys in front of you to enter a password*.</phrases1>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>2</goto>
+		</reponse1>
+	</dialogue1.0>
+	<dialogue2.0>
+		<phrases1 name="Mechanism">*Use your keyboard to write the password: *</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Confirm</reaction>
+			<goto>100</goto>
+		</reponse2>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Mechanism">*This doesn't seem to work*</phrases1>
+		<reponse1>
+			<reaction>Suite</reaction>
+			<goto>2</goto>
+		</reponse1>
+	</dialogue3.0>
+ </PNJ>

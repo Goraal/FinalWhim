@@ -2,7 +2,7 @@
     <dialogue1.0 condition="Arsène/Jamais-vu:OUI">
 		<phrases1 name="Arsène">Hey, des petits nouveaux... \n\n*Il crache par terre puis observe rapidement les trois étrangers.*\nUn ancêtre, une pisseuse et ... tiens y en a un qui pourrait servir à quelque chose. \n\nTu t'appelles comment petit~?</phrases1>
 		<phrases2 name="Leopold">Je vous interdis de parler ainsi de mon ange adoré et futur beau papa~!\n\n*%Avancement/NomLeopold% pointe ensuite Arsène du doigt*\n\n Encore un mot de votre part et vous le regretterez amèrement~!</phrases2>
-		<phrases3 name="Major">*Met un taquet à %Avancement/NomLeopold% *\n\nEt tu vas faire quoi s'il répond~! Tu vas l'attaquer~! Ici~! Avec tous ses amis autour pour nous casser la figure~?! Ne fais jamais de menace que tu n'es pas prêt à tenir.\n...\nEt, la prochaine fois que tu m'appelles 'beau papa', je te brise les deux jambes. Compris~?</phrases3>
+		<phrases3 name="Major">*%Avancement/NomMajor% met un taquet à %Avancement/NomLeopold% *\n\nEt tu vas faire quoi s'il répond~! Tu vas l'attaquer~! Ici~! Avec tous ses amis autour pour nous casser la figure~?! Ne fais jamais de menace que tu n'es pas prêt à tenir.\n...\nEt, la prochaine fois que tu m'appelles 'beau papa', je te brise les deux jambes. Compris~?</phrases3>
 		<phrases4 name="Leopold">Ou ..oui, Monsieur.\n\n</phrases4>
 		<phrases5 name="Arsène">*Met les pieds sur la table et sourit* \n\nJe t'aime bien l'ancêtre~! \nJe vais te donner un bon conseil~: ne fais pas confiance à la maire~!</phrases5>
 		<reponse1>
@@ -149,7 +149,7 @@
 		</reponse1>
 	</dialogue5.0>
 	<dialogue6.0>
-		<phrases1 name="Major">On a retrouvé Manny! Il est en pleine infiltration donc il n'a pas eut le temps de nous informer de la situation. \n Nous en revanche on a plein de temps et on est motivé pour prendre part à la grande évasion.</phrases1>
+		<phrases1 name="Major">On a retrouvé Manny! Il est en pleine infiltration donc il n'a pas eu le temps de nous informer de la situation. \n Nous en revanche on a plein de temps et on est motivé pour prendre part à la grande évasion.</phrases1>
 		<phrases2 name="Arsène">Vous devriez arrêter de mentir, c'est mauvais pour votre réputation. \nRevenez avec de faire info la prochaine fois.</phrases2>
 		<reponse1>
 			<reaction>Partir</reaction>

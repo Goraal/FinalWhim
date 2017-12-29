@@ -169,6 +169,7 @@ Global gfx_alerte=LoadImage("sprites\gfx\alerte.bmp")
 MidHandle gfx_alerte
 Global gfx_bouclier=LoadAnimImage("sprites\gfx\defense.bmp",16,16,0,2)
 Global gfx_chiffre=LoadAnimImage("sprites\gfx\chiffres.bmp",16,20,0,12)
+Global gfx_emptyHand=LoadImage("sprites\objets\main_nue.png");
 Global timer_animation# ; roule en continu (pour les animations de fond)
 Global timer_animation2# ; est remis à zéro à chaque nouvel action à animer
 Global drawmouse

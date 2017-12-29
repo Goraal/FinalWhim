@@ -96,7 +96,7 @@
 		</reponse2>
 	</dialogue4.0>
     <dialogue5.0>
-		<phrases1 name="Garde">Lorsqu'un combattant se défend, il gagne deux marqueurs ''protection'' (symbolisé par un bouclier bleu entier) et devient plus dur à toucher. Les marqueurs ''protection'' et ''acharnement'' s'annulent. En plus, les marqueurs ''protection'' reste d'un tour sur l'autre.\n\nVoulez-vous en savoir plus?</phrases1>
+		<phrases1 name="Garde">Lorsqu'un combattant se défend, il gagne deux marqueurs ''protection'' (symbolisé par un bouclier bleu entier) et devient plus dur à toucher. Les marqueurs ''protection'' et ''acharnement'' s'annulent. En plus, les marqueurs restent d'un tour sur l'autre.\n\nVoulez-vous en savoir plus?</phrases1>
 		<reponse1>
 			<reaction>Oui</reaction>
 			<goto>6</goto>

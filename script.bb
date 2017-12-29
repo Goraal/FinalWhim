@@ -1,10 +1,14 @@
 Function script(script_num)
-	
-	For gr.groupe=Each groupe
-		If gr\num=script_num
-			message_action$ = gr\nom_action$[Int(options#(7))]
-		EndIf
-	Next        
+	If lock_action=0
+		message_action$ =""
+		For gr.groupe=Each groupe
+			;If gr\script[1]=script_num
+			If gr\num=var_script_int(1)
+				temp$ = gr\nom_action$[Int(options#(7))]
+				If temp$<>"" And temp$<>message_action$ Then message_action$ = temp$
+			EndIf
+		Next   
+	Endif	
 						
 	Select script_num
 		Case -1
@@ -28,7 +32,11 @@ Function script(script_num)
 				timer_animation#=timer_animation#+1
 				delta_frame=20
 				If sortie=0
-					sortie=fenetre_info("Félicitation, tu as fini le jeu !#N'hesite pas à nous laisser un mot sous github : https://github.com/Goraal/FinalWhim.")
+					If Int(options#(7))=1 ;français
+						sortie=fenetre_info("Félicitation, tu as fini le jeu !#N'hesite pas à nous laisser un mot sous github : https://github.com/Goraal/FinalWhim.")
+					Else ;english
+						sortie=fenetre_info("Congratulations, you finished the game! #Don't hesitate to leave us a note under github: https://github.com/Goraal/FinalWhim.")
+					EndIf
 				EndIf
 				Flip
 				If KeyHit(01) Then sortie=10
@@ -51,7 +59,13 @@ Function script(script_num)
 				timer_animation#=timer_animation#+1
 				delta_frame=20
 				If sortie=0
-					sortie=fenetre_info("Stale essaye de se débrouiller sans vous et finit par se faire tuer.#Vous restez enfermés jusqu'à la fin de vos vies avec pour seule occupation de tourner dans la roue.")
+				EndIf
+				If sortie=0
+					If Int(options#(7))=1 ;français
+						sortie=fenetre_info("Stale essaye de se débrouiller sans vous et finit par se faire tuer.#Vous restez enfermés jusqu'à la fin de vos vies avec pour seule occupation de tourner dans la roue.")
+					Else ;english
+						sortie=fenetre_info("Stale tries to manage without you and ends up getting killed #You stay locked up for the rest of your lives with only one thing to do: turn around in the wheel.")
+					EndIf
 				EndIf
 				Flip
 				If KeyHit(01) Then sortie=10
@@ -74,12 +88,22 @@ Function script(script_num)
 				timer_animation#=timer_animation#+1
 				delta_frame=20
 				;bmg=LoadSound("sons\Environnement\")
-				Select sortie
-					Case 0
-						sortie=fenetre_info("Vous avez été tué en combat.")
-					Case 1
-						sortie=sortie+fenetre_info("Ne désepérez pas, retentez votre chance. La plupart des combats sont faisable mais vous n'êtes pas à l'abri d'un coup de malchance. Vous pouvez aussi diminuer la difficulté dans le menu.")
+				If Int(options#(7))=1 ;français
+					Select sortie
+						Case 0
+							sortie=fenetre_info("Vous avez été tué en combat.")
+						Case 1
+							sortie=sortie+fenetre_info("Ne désepérez pas, retentez votre chance. La plupart des combats sont faisable mais vous n'êtes pas à l'abri d'un coup de malchance. Vous pouvez aussi diminuer la difficulté dans le menu.")
 					End Select
+				Else ; english
+					Select sortie
+						Case 0
+							sortie=fenetre_info("You were killed in fight.")
+						Case 1
+							sortie=sortie+fenetre_info("Don't despise, take your chance. Most fights are doable but you're not immune to a stroke of bad luck. You can also reduce the difficulty in the menu.")
+					End Select
+				Endif
+				
 				Flip
 				If KeyHit(01) Then sortie=10
 			Wend
@@ -99,7 +123,11 @@ Function script(script_num)
 				lire_clavier()
 				timer_animation#=timer_animation#+1
 				delta_frame=20
-				sortie=fenetre_info("Vous avez fait 5000 tours de roue. Vous n'aviez rien de mieux à faire~?##Et vous croyez vraiment que les programmer n'ont rien de mieux à faire que de cacher des easter egg!...")
+				If Int(options#(7))=1 ;français
+					sortie=fenetre_info("Vous avez fait 5000 tours de roue. Vous n'aviez rien de mieux à faire~?##Et vous croyez vraiment que les programmer n'ont rien de mieux à faire que de cacher des easter egg!...")
+				Else
+					sortie=fenetre_info("You made 5,000 turns. You didn't have anything better to do~? ## And you really believe that programming them has nothing better to do than to hide easter egg!...")
+				Endif
 				Flip
 				If KeyHit(01) Then sortie=10
 			Wend
@@ -119,7 +147,11 @@ Function script(script_num)
 				lire_clavier()
 				timer_animation#=timer_animation#+1
 				delta_frame=20
-				sortie=fenetre_info("Votre mort fut rapide et sans surprise~! Mais vus qu'on est pas méchant, on vous laisse retentez votre chance. ;)")
+				If Int(options#(7))=1 ;français
+					sortie=fenetre_info("Votre mort fut rapide et sans surprise~! Mais vus qu'on est pas méchant, on vous laisse retentez votre chance. ;)")
+				Else
+					sortie=fenetre_info("Your death was quick and unsurprising~! But considering we're not bad guys, we'll let you take your chances. ;)")
+				Endif
 				Flip
 				If KeyHit(01) Then sortie=10
 			Wend
@@ -127,7 +159,7 @@ Function script(script_num)
 		
 		Case 1 ; Afficher "Appuyez sur Espace pour"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
-				message_action$=var_script_str$(1)				
+				;message_action$=var_script_str$(Int(options#(7)))				
 				lock_action=1
 			EndIf
 					
@@ -136,7 +168,7 @@ Function script(script_num)
 				If gr\num=var_script_int(1)
 					If lock_action=0
 						lock_action=1
-						message_action$=var_script_str$(1)				
+						;message_action$=var_script_str$(Int(options#(7)))				
 				
 						If keys(12,2)=50 And event_action=0 And player_in_control And chat_mode=0; Return hit
 							keys(12,2)=49
@@ -159,7 +191,7 @@ Function script(script_num)
 				If gr\num=var_script_int(1)
 					If lock_action=0
 						lock_action=1
-						message_action$=var_script_str$(1)				
+						;message_action$=var_script_str$(Int(options#(7)))				
 				
 						If keys(12,2)=50 And event_action=0 And player_in_control And chat_mode=0; Return hit
 							keys(12,2)=49
@@ -183,7 +215,7 @@ Function script(script_num)
 				If gr\num=var_script_int(1)
 					If lock_action=0
 						lock_action=1
-						message_action$=var_script_str$(1)				
+						;message_action$=var_script_str$(Int(options#(7)))				
 				
 						If keys(12,2)=50 And event_action=0 And player_in_control And chat_mode=0; Return hit
 							keys(12,2)=49
@@ -214,12 +246,16 @@ Function script(script_num)
 							leader_choix_qcm=choix_qcm
 						EndIf
 						
-						message_action$=var_script_str$(1)				
+						;message_action$=var_script_str$(Int(options#(7)))				
 						
 						If event_action=1
 							For gro.groupe=Each groupe
 								If gro\num=-1
-									new_log("Vous changez de map")
+									If Int(options#(7))=1 ;français
+										new_log("Vous changez de map")
+									Else
+										new_log("You change map")
+									Endif
 									;changer la map
 									gro\map=gr\range_trigger[2]
 									player_map=gro\map
@@ -290,14 +326,25 @@ Function script(script_num)
 				lire_clavier()
 				timer_animation#=timer_animation#+1
 				delta_frame=20
-				Select sortie
-					Case 0
-						sortie=fenetre_info("Vous avez été tué en combat.#Vos cadavres seront sûrement fouillés puis probablement jetés dans les égouts pour être mangés par les rats.")
-					Case 1
-						sortie=1+fenetre_info("Vous allez à présent être renvoyé vers le menu principal où vous pourrez charger votre dernière sauvegarde, si vous avez pensé à sauvegarder ... #Et si le programmeur n'a pas décidé de la supprimer ! MOUAHAHAHAHA !")
-					Case 2
-						sortie=3
-				End Select
+				If Int(options#(7))=1 ;français
+					Select sortie
+						Case 0
+							sortie=fenetre_info("Vous avez été tué en combat.#Vos cadavres seront sûrement fouillés puis probablement jetés dans les égouts pour être mangés par les rats.")
+						Case 1
+							sortie=1+fenetre_info("Vous allez à présent être renvoyé vers le menu principal où vous pourrez charger votre dernière sauvegarde, si vous avez pensé à sauvegarder ... #Et si le programmeur n'a pas décidé de la supprimer ! MOUAHAHAHAHA !")
+						Case 2
+							sortie=3
+					End Select
+				Else
+					Select sortie
+						Case 0
+							sortie=fenetre_info("You were killed in action. #Your corpses will surely be searched and probably thrown into the sewers to be eaten by rats.")
+						Case 1
+							sortie=1+fenetre_info("You will now be taken back to the main menu where you will be able to load your last backup, if you thought about saving... #And if the programmer didn't decide to delete it! MOUAHAHAHAHA!")
+						Case 2
+							sortie=3
+					End Select
+				EndIf
 				Flip
 				If KeyHit(01) Then sortie=10
 			Wend
@@ -310,14 +357,13 @@ Function script(script_num)
 		Case 99 ; lancer le combat de boss
 		
 .forgeron		
-		Case 100 ; visiter la boutique du Forgeron
+		Case 100 ; message_action$="visiter la boutique du Forgeron"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If event_action>0 Then var_pl_grp(num_player,"animation",True,1):animation()
 						
 				Select event_action
 					Case 0
-						message_action$="visiter la boutique du Forgeron"
 						call_activator(901);version test
 						call_activator(505);forgeron du garage
 						If keys(12,2)=50
@@ -337,13 +383,11 @@ Function script(script_num)
 			EndIf
 
 
-		Case 101 ; Stale 2ème partie <Devant l'ascenseur> (v Bêta)
+		Case 101 ; Stale 2ème partie <Devant l'ascenseur> message_action$="parler avec Stale"
 			If lock_action=0
 				lock_action=1
 				call_activator(101)
-				
-				message_action$="parler avec Stale"
-								
+	
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
@@ -391,10 +435,19 @@ Function script(script_num)
 				;Else
 				If temp_int>10
 					If event_action
-						mess$="Qu'est-ce que tu attends~? Vas-y~! Il n'y a plus rien à faire ici et la liberté t'attend dehors~!"
+						If Int(options#(7))=1 ;français
+							mess$="Qu'est-ce que tu attends~? Vas-y~! Il n'y a plus rien à faire ici et la liberté t'attend dehors~!"
+						Else
+							mess$="What are you waiting for? Go ~! There's nothing left to do here and freedom awaits you outside!"
+						EndIf
 						If discussion(1,1,"Stale",mess$) And player_in_control Then event_action=0
 					Else
-						message_action$="parler avec Stale"
+						For gr.groupe=Each groupe
+							If gr\num=script_num
+								temp$ = gr\nom_action$[Int(options#(7))]
+								If temp$<>"" And temp$<>message_action$ Then message_action$ = temp$
+							EndIf
+						Next 
 					EndIf
 				EndIf
 			EndIf
@@ -465,12 +518,15 @@ Function script(script_num)
 					EndIf
 				Next
 			EndIf
-		Case 104 ; fillette
+		Case 104 ; message_action$="discuter avec la fillette"
 			If lock_action=0
 				lock_action=1
-				message_action$="discuter avec la fillette"
+				
 
-		        If map_stat(1,1)=2 Then message_action$="fouiller la fillette"
+		        If map_stat(1,1)=2 
+					If Int(options#(7))=1 Then message_action$="fouiller la fillette"
+					If Int(options#(7))=2 Then message_action$="search the little girl"
+				EndIf
 				
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
@@ -537,10 +593,14 @@ Function script(script_num)
 				    Case 118
 				        PauseChannel ch_bgm1
 				        PlaySound sons_menu(10)
-				        new_log("Vous obtenez une poignée de steamilles",20,200,20)
+						If Int(options#(7))=1 
+							mess$="Vous avez obtenu une poignée de steamilles !"
+						Else
+							mess$="You got yourself some steamilles!"
+						Endif
+				        new_log(mess$,20,200,20)
 				        event_action=119
 				    Case 119
-				        mess$="Vous avez obtenu une poignée de steamilles !"
 				        If fenetre_info(mess$)
 				            event_action=0
 				            maj_map(1,1,3)
@@ -558,7 +618,11 @@ Function script(script_num)
 						event_action=0
 				    Case 165
 						g_bHUDactif=1
-				        reponse=fenetreqcm(2,"Il s'agit de votre premier combat. Voir le tutoriel ?","Oui","Non")
+				        If Int(options#(7))=1 ;français
+							reponse=fenetreqcm(2,"Il s'agit de votre premier combat. Voir le tutoriel ?","Oui","Non")
+						Else
+							reponse=fenetreqcm(2,"This is your first fight. See the tutorial?","Yes","No")
+						Endif
 				        If reponse=1 Then tutoriel(1):event_action=166
 				        If reponse=2 Then event_action=166
 				    Case 166 ; duel
@@ -591,7 +655,11 @@ Function script(script_num)
 				            EndIf
 				        Next
 					Case 400
-						mess$="Vous avez obtenu une poignée de steamilles et une arme!"
+						If Int(options#(7))=1 ;français
+							mess$="Vous avez obtenu une poignée de steamilles et une arme!"
+						Else
+							mess$="You got yourself some steamilles and a weapon!"
+						Endif
 				        If fenetre_info(mess$)
 							item_give(1,1);glaive de chasseur
 							item_quest(Abs(var_pl_grp(num_player,"num")),1,1)
@@ -600,7 +668,11 @@ Function script(script_num)
 						EndIf
 					Case 401
 					
-						mess$="Vous avez obtenu une poignée de steamilles et une arme !"
+						If Int(options#(7))=1 ;français
+							mess$="Vous avez obtenu une poignée de steamilles et une arme!"
+						Else
+							mess$="You got yourself some steamilles and a weapon!"
+						Endif
 				        If fenetre_info(mess$)
 							item_give(1,1);glaive de chasseur
 							item_quest(Abs(var_pl_grp(num_player,"num")),1,1)
@@ -608,7 +680,11 @@ Function script(script_num)
 							event_action=403
 						EndIf
 					Case 402
-						mess$="Vous avez obtenu une poignée de steamilles, une arme et une armure !"
+						If Int(options#(7))=1 ;français
+							mess$="Vous avez obtenu une poignée de steamilles et une arme!"
+						Else
+							mess$="You got yourself some steamilles, an armor and a weapon!"
+						Endif
 				        If fenetre_info(mess$)
 							item_give(1,1);glaive de chasseur
 							item_give(1,100);armure fillette
@@ -630,7 +706,7 @@ Function script(script_num)
 				End Select
 			EndIf
 			
-		Case 105 ; Truc à steamille
+		Case 105 ; message_action$="tripoter la serrure SteamImpact(tm)"
 			
 			If lock_action=0
 				lock_action=1
@@ -638,7 +714,7 @@ Function script(script_num)
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
 				EndIf
-				message_action$="tripoter la serrure SteamImpact(tm)"
+				
                 
 				Select event_action
 					Case 0                       
@@ -693,7 +769,7 @@ Function script(script_num)
 
 		Case 106 ; Stale se déplace vers la bonne porte (serveur)
 			
-		Case 107 ; panneau d'information	
+		Case 107 ; panneau d'information	message_action$="lire l'affiche"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -705,37 +781,70 @@ Function script(script_num)
 					leader_choix_qcm=choix_qcm
 				EndIf
 				If event_action>0 Then var_pl_grp(num_player,"animation",True,1):animation()
-				Select event_action
-					Case 0
-						message_action$="lire l'affiche"
-						
-						If keys(12,2)=50 And player_in_control And chat_mode=0
-							keys(12,2)=min(49,keys(12,2))
-							interaction_avec=var_script_int(1)
-							interaction_script=var_script_int(2)
-							event_action=1
-							disc_len#=0		
-						EndIf
-					Case 1
-						g_bHUDactif=0
-						mess$="C'est une affiche qui est là depuis que vous êtes~là, et date même certainement d'avant. Elle donne diverses informations pour aider les nouveaux à s'adapter à leur nouvel environnement."
-						If fenetre_info(mess$) And player_in_control Then event_action=2
-					Case 2
-						g_bHUDactif=0
-						mess$="Bienvenue,##Vous êtes nouveau, perdu~? Voici quelques informations utiles pour que votre séjour se passe pour le mieux~:"
-						If discussion(2,1,"Affiche",mess$) And player_in_control Then event_action=3
-					Case 3
-						g_bHUDactif=0
-						mess$=" — Votre statut : Esclave# — Votre travail : Faire tourner la grande roue blanche# — Votre rémunération :#     - Un repas (breuvage compris) tous les 5 000 tours#     - La Liberté* pour 10 000 000 tours# — En cas de problème : Autonomie !"
-						If discussion(2,1,"Affiche",mess$) And player_in_control Then event_action=4
-					Case 4
-						g_bHUDactif=0
-						mess$="La société FactoryTec vous souhaite un agréable séjour et vous rappelle que vous n'êtes pas irremplaçable.##                                 FactoryTec##(*Offre soumise à conditions)"
-						If discussion(2,1,"Affiche",mess$) And player_in_control Then event_action=0					
+				
+				If Int(options#(7))=1 ;français
+					Select event_action
+						Case 0
+							
+							
+							If keys(12,2)=50 And player_in_control And chat_mode=0
+								keys(12,2)=min(49,keys(12,2))
+								interaction_avec=var_script_int(1)
+								interaction_script=var_script_int(2)
+								event_action=1
+								disc_len#=0		
+							EndIf
+						Case 1
+							g_bHUDactif=0
+							mess$="C'est une affiche qui est là depuis que vous êtes~là, et date même certainement d'avant. Elle donne diverses informations pour aider les nouveaux à s'adapter à leur nouvel environnement."
+							If fenetre_info(mess$) And player_in_control Then event_action=2
+						Case 2
+							g_bHUDactif=0
+							mess$="Bienvenue,##Vous êtes nouveau, perdu~? Voici quelques informations utiles pour que votre séjour se passe pour le mieux~:"
+							If discussion(2,1,"Message",mess$) And player_in_control Then event_action=3
+						Case 3
+							g_bHUDactif=0
+							mess$=" — Votre statut : Esclave# — Votre travail : Faire tourner la grande roue blanche# — Votre rémunération :#     - Un repas (breuvage compris) tous les 5 000 tours#     - La Liberté* pour 10 000 000 tours# — En cas de problème : Autonomie !"
+							If discussion(2,1,"Message",mess$) And player_in_control Then event_action=4
+						Case 4
+							g_bHUDactif=0
+							mess$="La société FactoryTech vous souhaite un agréable séjour et vous rappelle que vous n'êtes pas irremplaçable.##                                 FactoryTech##(*Offre soumise à conditions)"
+							If discussion(2,1,"Message",mess$) And player_in_control Then event_action=0					
 					End Select
+				EndIf
+				If Int(options#(7))=2 ;english
+					Select event_action
+						Case 0
+							message_action$="read the message"
+							
+							If keys(12,2)=50 And player_in_control And chat_mode=0
+								keys(12,2)=min(49,keys(12,2))
+								interaction_avec=var_script_int(1)
+								interaction_script=var_script_int(2)
+								event_action=1
+								disc_len#=0		
+							EndIf
+						Case 1
+							g_bHUDactif=0
+							mess$="It's a message that's been there since you were there, and it's probably even dated before. It provides a variety of information to help newcomers adapt to their environment."
+							If fenetre_info(mess$) And player_in_control Then event_action=2
+						Case 2
+							g_bHUDactif=0
+							mess$="Welcome, ##You're new, lost~? Here are some useful information to help you make your stay a success:"
+							If discussion(2,1,"Message",mess$) And player_in_control Then event_action=3
+						Case 3
+							g_bHUDactif=0
+							mess$=" — Your status: Slave# - Your work: Rotate the big white wheel# - Your remuneration: # - One meal (brewery included) every 5,000 laps# - Freedom* for 10,000,000 laps# - In case of problems: Autonomy!"
+							If discussion(2,1,"Message",mess$) And player_in_control Then event_action=4
+						Case 4
+							g_bHUDactif=0
+							mess$="The FactoryTech company wishes you a pleasant stay and reminds you that you are not irreplaceable ## FactoryTech## (*Offer subject to conditions)"
+							If discussion(2,1,"Message",mess$) And player_in_control Then event_action=0					
+					End Select
+				EndIf
 			EndIf
 		
-		Case 108 ; roue dans la prison
+		Case 108 ; roue dans la prison message_action$="monter dans la roue"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -749,7 +858,7 @@ Function script(script_num)
 				If event_action>0 Then var_pl_grp(num_player,"animation",True,1):animation()
 				Select event_action
 					Case 0
-						message_action$="monter dans la roue"
+						
 						
 						If keys(12,2)=50 And player_in_control And chat_mode=0
 							keys(12,2)=min(49,keys(12,2))
@@ -792,7 +901,12 @@ Function script(script_num)
 									UpdateWorld
 									RenderWorld
 									
-									message_action$="}"+min_str(Str(gr\range_trigger[2]),4," ",1)+"ez sur Espace pour quitter la roue"
+									
+									If Int(options#(7))=1 
+										message_action$="}"+min_str(Str(gr\range_trigger[2]),4," ",1)+"Appuyez sur Espace pour quitter la roue"
+									Else
+										message_action$="}"+min_str(Str(gr\range_trigger[2]),4," ",1)+"Press Space to exit the wheel"
+									Endif
 									g_bHUDactif=1
 									
 									If gr\range_trigger[2]>5000 Then script(-668)
@@ -832,14 +946,13 @@ Function script(script_num)
 			EndIf
 
 			
-		Case 110 ; test script		
+		Case 110 ; test script		 message_action$="test script"
 			If lock_action=0
 				lock_action=1
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
 				EndIf
-				message_action$="test script"
                 
 				Select event_action
 					Case 0                       
@@ -895,7 +1008,7 @@ Function script(script_num)
                         event_action=Main_ScriptXml(message_action$,event_action)
 				End Select
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAP02			
-		Case 202 ; discussion avec les gardes
+		Case 202 ; discussion avec les gardes message_action$="discuter avec les gardes"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -906,7 +1019,6 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="discuter avec les gardes"
 					If event_action>0 
 						var_pl_grp(num_player,"animation",True,1):animation()
 						g_bHUDactif=0
@@ -926,7 +1038,7 @@ Function script(script_num)
 					End Select
 				EndIf
 
-		Case 203 ; secrétaire
+		Case 203 ; 				message_action$="discuter avec la secrétaire"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -937,7 +1049,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="discuter avec la secrétaire"
+
 
 
 				If event_action>0 
@@ -959,7 +1071,7 @@ Function script(script_num)
 				End Select
 			EndIf
 
-		Case 205 ; Stan (amical)
+		Case 205 ; 				message_action$="discuter avec Stan"
 .Stan			
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
@@ -971,8 +1083,6 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="discuter avec Stan"
-
 
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
@@ -1030,7 +1140,7 @@ Function script(script_num)
 
 		Case 206 ; Stan (ennemi)
 		
-		Case 207 ; Armurier 1 (couteau)
+		Case 207 ; Armurier 1 (couteau) 				message_action$="discuter avec le spécialiste des armes de corps à corps"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1041,7 +1151,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="discuter avec le spécialiste des armes de corps à corps"
+
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
@@ -1074,7 +1184,7 @@ Function script(script_num)
 						event_action=Main_ScriptXml(message_action$,event_action)
 				End Select
 			EndIf
-		Case 208 ; Armurier 2 (Cobalt SAA)
+		Case 208 ; Armurier 2 (Cobalt SAA) 				message_action$="discuter avec le spécialiste des armes de tir"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1085,7 +1195,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="discuter avec le spécialiste des armes de tir"
+
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
@@ -1117,7 +1227,7 @@ Function script(script_num)
 						event_action=Main_ScriptXml(message_action$,event_action)
 				End Select
 			EndIf
-		Case 209 ; Armurier 3 (Armure)
+		Case 209 ; Armurier 3 (Armure) 				message_action$="discuter avec le spécialiste des armures"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1128,7 +1238,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="discuter avec le spécialiste des armures"
+
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
@@ -1162,7 +1272,7 @@ Function script(script_num)
 				End Select
 			EndIf
 .porte			
-		Case 210 ; porte principale engrenage
+		Case 210 ; porte principale engrenage 				message_action$="examiner la porte de la production"
 
 			
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
@@ -1175,9 +1285,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				
-				message_action$="examiner la porte de la production"
-				
+		
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
@@ -1215,7 +1323,7 @@ Function script(script_num)
 				End Select
 			EndIf
 		
-		Case 211 ; porte principale engrenage (coté usine)
+		Case 211 ; porte principale engrenage (coté usine) 				message_action$="examiner la porte de la production"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1226,7 +1334,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="examiner la porte de la production"
+
 				
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
@@ -1263,7 +1371,7 @@ Function script(script_num)
 				End Select
 			EndIf
 		
-		Case 212 ; enigme engrenage
+		Case 212 ; enigme engrenage				message_action$="examiner l'énigme"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1274,7 +1382,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="examiner l'énigme"
+
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
@@ -1297,7 +1405,7 @@ Function script(script_num)
 				End Select
 			EndIf
 			
-		Case 213 ; porte enigme
+		Case 213 ; porte enigme 				message_action$="examiner le mechanisme de la porte"
 			; solution : CHARBON = (|-|4|280|\|
 			; Car C=( A=4 R=|2 O=0 N=|\| (cf enigme)  ainsi que   H=|-| B=8 (cf aide => TO DO) 
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
@@ -1310,7 +1418,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="examiner le mechanisme de la porte"
+
 				
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
@@ -1340,7 +1448,7 @@ Function script(script_num)
 						
 					Case 100
 						mess_enigme$=xmlNodeDataGet$(xmlNodeFind("Enigme",xml_Avancement))
-						If Trim$(mess_enigme$)="(|-|4|280|\|"
+						If Trim$(mess_enigme$)="(|-|4|280|\|" or Trim$(mess_enigme$)="(04|_"
 							event_action=102
 						Else
 							; DebugLog "2/"+mess_enigme$+"/"
@@ -1379,7 +1487,7 @@ Function script(script_num)
 			EndIf
 
 			
-		Case 214 ; porte secondaire de l'engrenage
+		Case 214 ; porte secondaire de l'engrenage message_action$="examiner la porte"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1390,7 +1498,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="examiner la porte"
+
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
@@ -1431,7 +1539,7 @@ Function script(script_num)
 				End Select
 			EndIf
 			
-		Case 215 ; Poste
+		Case 215 ; Poste message_action$="examiner la porte"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1442,7 +1550,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="examiner la porte"
+				
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
@@ -1482,7 +1590,7 @@ Function script(script_num)
 				End Select
 			EndIf
 
-		Case 216
+		Case 216 ;message_action$="examiner la Trieuse"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1493,7 +1601,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="examiner la Trieuse"
+				
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
@@ -1516,7 +1624,7 @@ Function script(script_num)
 				End Select		
 			EndIf
 
-		Case 217 ; Infirmière
+		Case 217 ; 				message_action$="discuter avec l'Infirmière"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1527,7 +1635,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="discuter avec l'Infirmière"
+
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
@@ -1563,10 +1671,10 @@ Function script(script_num)
 				End Select
 			EndIf	
 					
-		Case 218
+		Case 218 ;				message_action$="discuter avec Teddy"
 			If lock_action=0
 				lock_action=1
-				message_action$="discuter avec Teddy"
+
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
@@ -1602,7 +1710,7 @@ Function script(script_num)
 				End Select
 			EndIf
 		
-		Case 219 ; entrée bateau
+		Case 219 ; entrée bateau 				message_action$="monter à l'étage supérieur"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1613,7 +1721,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="monter à l'étage supérieur"
+
 					If event_action>0 
 						var_pl_grp(num_player,"animation",True,1):animation()
 						g_bHUDactif=0
@@ -1644,7 +1752,7 @@ Function script(script_num)
 				EndIf
 		
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EXTERIEUR;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-		Case 402 ; entrée usine
+		Case 402 ; entrée usine				message_action$="rentrer dans l'usine"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1655,7 +1763,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="rentrer dans l'usine"
+
 					If event_action>0 
 						var_pl_grp(num_player,"animation",True,1):animation()
 						g_bHUDactif=0
@@ -1675,7 +1783,7 @@ Function script(script_num)
 					End Select
 				EndIf
 		
-		Case 403 ; sortie du jeu
+		Case 403 ; sortie du jeu				message_action$="sortir de FactoryTech"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1686,7 +1794,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="sortir de FactoryTech"
+
 					If event_action>0 
 						var_pl_grp(num_player,"animation",True,1):animation()
 						g_bHUDactif=0
@@ -1733,7 +1841,7 @@ Function script(script_num)
 					End Select
 				EndIf
 				
-	Case 405 ; cadavre
+	Case 405 ; cadavre				message_action$="examiner le cadavre"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1744,7 +1852,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="examiner le cadavre"
+
 					If event_action>0 
 						var_pl_grp(num_player,"animation",True,1):animation()
 						g_bHUDactif=0
@@ -1768,7 +1876,7 @@ Function script(script_num)
 					End Select
 				EndIf
 				
-		Case 406 ; MJ Monsieur J Mister J
+		Case 406 ; MJ Monsieur J Mister J				message_action$="regarder la machine humanoïde"
 			If lock_action=0 Or (leader_script=script_num And player_in_control=0)
 				lock_action=1
 				If player_in_control=0 
@@ -1779,7 +1887,7 @@ Function script(script_num)
 					leader_script=script_num
 					leader_choix_qcm=choix_qcm
 				EndIf
-				message_action$="regarder la machine humanoïde"
+
 					If event_action>0 
 						var_pl_grp(num_player,"animation",True,1):animation()
 						g_bHUDactif=0
@@ -1847,43 +1955,73 @@ Function script(script_num)
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
 				EndIf
-				Select event_action
-					Case 0
-						If mode_debug=1
-							event_action=4
-						Else
-							event_action=1
-						EndIf
-					Case 1
-						mess$="Vous arrivez dans une zone particulièrement dangereuse !#Nous vous conseillons vivement de sauvegarder."
-						If fenetre_info(mess$) then event_action=2
-					Case 2
-						mess$="Pour cela, ouvrez le menu joueur en appuyant sur F1, ou en appuyant sur le bouton ''Menu (F1)'' en bas de l'écran (appuyez sur Alt pour faire apparaitre la souris)."
-						If fenetre_info(mess$) then event_action=3
-					Case 3
-						mess$="Une fois dans le menu, cliquez sur l'onglet ''Système'' puis sur le bouton Sauvegarder.#Attention, vous n'avez qu'un seul fichier de sauvegarde et toute nouvelle sauvegarde effacera les données précédentes."
-						If fenetre_info(mess$) then event_action=4
-					Case 4
-						For gr.groupe=Each groupe
-							If gr\num=499
-								gr\trigger[1]=0
+				If Int(options#(7))=1 ;français
+					Select event_action
+						Case 0
+							If mode_debug=1
+								event_action=4
+							Else
+								event_action=1
 							EndIf
-						Next
-						event_action=0
-					Default
-						event_action=Main_ScriptXml(message_action$,event_action)
-				End Select
+						Case 1
+							mess$="Vous arrivez dans une zone particulièrement dangereuse !#Nous vous conseillons vivement de sauvegarder."
+							If fenetre_info(mess$) then event_action=2
+						Case 2
+							mess$="Pour cela, ouvrez le menu joueur en appuyant sur F1, ou en appuyant sur le bouton ''Menu (F1)'' en bas de l'écran (appuyez sur Alt pour faire apparaitre la souris)."
+							If fenetre_info(mess$) then event_action=3
+						Case 3
+							mess$="Une fois dans le menu, cliquez sur l'onglet ''Système'' puis sur le bouton Sauvegarder.#Attention, vous n'avez qu'un seul fichier de sauvegarde et toute nouvelle sauvegarde effacera les données précédentes."
+							If fenetre_info(mess$) then event_action=4
+						Case 4
+							For gr.groupe=Each groupe
+								If gr\num=499
+									gr\trigger[1]=0
+								EndIf
+							Next
+							event_action=0
+						Default
+							event_action=Main_ScriptXml(message_action$,event_action)
+					End Select
+				EndIf
+				If Int(options#(7))=2 ;english				
+					Select event_action
+						Case 0
+							If mode_debug=1
+								event_action=4
+							Else
+								event_action=1
+							EndIf
+						Case 1
+							mess$="You have just arrived in a particularly dangerous area! #We strongly advise you to save."
+							If fenetre_info(mess$) then event_action=2
+						Case 2
+							mess$="To do this, open the player menu by pressing F1, or by pressing the'' Menu (F1)'' button at the bottom of the screen (press Alt to show the mouse)."
+							If fenetre_info(mess$) then event_action=3
+						Case 3
+							mess$="Once in the menu, click on the'' System'' tab and then click on the Save button. #Beware, you only have one backup file and any new backups will erase the previous data."
+							If fenetre_info(mess$) then event_action=4
+						Case 4
+							For gr.groupe=Each groupe
+								If gr\num=499
+									gr\trigger[1]=0
+								EndIf
+							Next
+							event_action=0
+						Default
+							event_action=Main_ScriptXml(message_action$,event_action)
+					End Select
+				Endif
 			EndIf
 		
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;CAMPS;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-		Case 502 ; sentinelle		
+		Case 502 ; sentinelle					message_action$="discuter avec la sentinelle"; 	
 		If lock_action=0
 				lock_action=1
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
 				EndIf
-				message_action$="discuter avec la sentinelle";fillette"; 
+
                 
 				Select event_action
 					Case 0
@@ -1913,14 +2051,15 @@ Function script(script_num)
                         event_action=Main_ScriptXml(message_action$,event_action)
 					End Select
 				EndIf
-		Case 503 ; Arsène		
+				
+		Case 503 ; Arsène						message_action$="discuter avec Arsène"
 		If lock_action=0
 				lock_action=1
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
 				EndIf
-				message_action$="discuter avec Arsène"
+
                 
 				Select event_action
 					Case 0
@@ -1949,14 +2088,15 @@ Function script(script_num)
                         event_action=Main_ScriptXml(message_action$,event_action)
 					End Select
 				EndIf
-		Case 504 ; Emanuella		
+				
+				
+		Case 504 ; Emanuella						message_action$="discuter avec Emanuella"
 		If lock_action=0
 				lock_action=1
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
 				EndIf
-				message_action$="discuter avec Emanuella"
                 
 				Select event_action
 					Case 0
@@ -1974,15 +2114,14 @@ Function script(script_num)
                         event_action=Main_ScriptXml(message_action$,event_action)
 					End Select
 				EndIf
-		Case 506 ; Tavernier		
+		Case 506 ; Tavernier		message_action$="discuter avec le tavernier"
 		If lock_action=0
 				lock_action=1
 				If event_action>0 
 					var_pl_grp(num_player,"animation",True,1):animation()
 					g_bHUDactif=0
 				EndIf
-				message_action$="discuter avec le tavernier"
-                
+		                
 				Select event_action
 					Case 0
 						call_activator(script_num)                     

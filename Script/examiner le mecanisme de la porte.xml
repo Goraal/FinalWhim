@@ -1,13 +1,13 @@
 <PNJ>
     <dialogue1.0>
-		<phrases1 name="Mechanisme">*Il y a en face de vous une serie de touche permettant de rentrer un mot de pass*</phrases1>
+		<phrases1 name="Mecanisme">*Il y a en face de vous une serie de touche permettant de rentrer un mot de pass*</phrases1>
 		<reponse1>
 			<reaction>Suite</reaction>
 			<goto>2</goto>
 		</reponse1>
 	</dialogue1.0>
 	<dialogue2.0>
-		<phrases1 name="Mechanisme">*Utiliser votre clavier pour écrire le mot de pass:*\n\n %Avancement/Enigme%</phrases1>
+		<phrases1 name="Mecanisme">*Utiliser votre clavier pour écrire le mot de pass:*\n\n %Avancement/Enigme%</phrases1>
 		<reponse1>
 			<reaction>Partir</reaction>
 			<goto>0</goto>
@@ -18,7 +18,7 @@
 		</reponse2>
 	</dialogue2.0>
 	<dialogue3.0>
-		<phrases1 name="Mechanisme">*Cela ne semble pas fonctionner*</phrases1>
+		<phrases1 name="Mecanisme">*Cela ne semble pas fonctionner*</phrases1>
 		<reponse1>
 			<reaction>Suite</reaction>
 			<goto>2</goto>

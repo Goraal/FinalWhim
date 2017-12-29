@@ -1,0 +1,61 @@
+<PNJ>
+    <dialogue1.0 condition="Infirmiere/Jamais-vu:OUI">
+		<phrases1 name="Nurse">Welcome to the infirmary, handsome. I can take care of you if you want.</phrases1>
+		<phrases2 name="Leopold">I strongly thank your proposal but I am already taken and fidelity is for me a rule of life of the most important ones.</phrases2>
+		<phrases3 name="Nurse">*Blast eyes several times and then smile.* \n\nExcept I wasn't talking to you, kid.  \nIt is also a way of speaking to attract customers. If you're injured, I can treat you for 30 capsules.</phrases3>
+		<phrases4 name="Adeline">You didn't swear an oath to treat the poor for free?</phrases4>
+		<phrases5 name="Nurse">Pfff, I must have been drinking when I swore an oath of hypocrates!   Well, I can resuscitate you for free, but the rest of the treatment is still paid for. If I want to make a living, I have to make you pay for yours.</phrases5>
+		<reponse1>
+			<reaction>Care: 30 capsules</reaction>
+			<goto action="Avancement/Infirmiere/Jamais-vu:NON">100</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Resuscitation</reaction>
+			<goto action="Avancement/Infirmiere/Jamais-vu:NON">101</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Infirmiere/Jamais-vu:NON">0</goto>
+		</reponse3>
+	</dialogue1.0>
+	<dialogue1.1>
+		<phrases1 name="Nurse">How I can help my clients... uh, favorite patients.</phrases1>
+		<reponse1>
+			<reaction>Care: 30 capsules</reaction>
+			<goto>100</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Resuscitation</reaction>
+			<goto>101</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse3>
+	</dialogue1.1>
+	<dialogue2.0>
+		<phrases1 name="Nurse">As they say at home, money is health. \n\nCome back anytime you want!</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Nurse">You look really bad. Unfortunately, so is my wallet. \n\nCome back when we can help each other.</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Nurse">There you go, you're all up.  On the other hand, I advise against any physical activity in your condition... unless you accept a treatment at very affordable rates.  Remember that life is priceless and that your money won't help you if you die.</phrases1>
+		<reponse1>
+			<reaction>Care: 30 capsules</reaction>
+			<goto>100</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue4.0>
+ </PNJ>

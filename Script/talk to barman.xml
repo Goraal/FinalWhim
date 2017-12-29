@@ -1,0 +1,53 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="Lou">What can I get you?</phrases1>
+		<reponse1>
+			<reaction>Drinks (3 caps)</reaction>
+			<goto>102</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Surprises of the chef (9 caps)</reaction>
+			<goto>103</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Pork gums (21 capsules)</reaction>
+			<goto>104</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse4>
+	</dialogue1.0>
+	<dialogue2.0>
+		<phrases1 name="Lou">Here are the three fresh drink of the gentlemen, ladies.</phrases1>
+		<phrases2 name="Info">*You've recovered some hit points.*</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Lou">I'd like to introduce you to my specialty: organic ratatouille!  Meat 100% of animal origin cooked in the embers by our artisan blacksmith.   \n\n\n... May contain traces of wood and metals...</phrases1>
+		<phrases2 name="Info">*You've recovered some hit points.*</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Lou">Unfortunately we are short of pork.   But I made you an equivalent with local products!</phrases1>
+		<phrases2 name="Info">You recovered a lot of hit points.*</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrases1 name="Lou">The house doesn't make credit. When you are officially part of our group, you will be able to pay in wheels' turn but it can take several weeks.</phrases1>
+		<phrases2 name="Leopold">Pfff, refuse to feed hungry people, this tavernier is really selfish.</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue5.0>
+ </PNJ>

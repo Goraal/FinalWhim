@@ -1,0 +1,20 @@
+<PNJ>
+    <dialogue1.0 condition="PJ/Embarquement:NON">
+		<phrases1 name="Secretary">STOP!  It is forbidden to climb to the upper floor without permission!  \n\n*The tone of the secretary's voice imposed respect on %Avancement/NomLeopold% and %Avancement/NomMajor% who stopped halfway.*</phrases1>
+		<phrases2 name="Adeline">*However, %Avancement/NomAdeline% continued to climb the stairs even more decisively than before, whispering to herself* \n\nMommy also tries to stop me by talking to me in an authoritarian way... but it never worked.  \n\n*%Avancement/NomAdeline% reached the hatch at the top of the staircase and began to open it.*</phrases2>
+		<phrases3 name="Secretary">The hatch seems to be securely closed. Mr. J does not wish to be disturbed. Come back when you get a boarding pass.</phrases3>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+    <dialogue1.1>
+		<phrases1 name="Secretary">STOP!  \nIt is forbidden to climb to the upper floor without permission!...</phrases1>
+		<phrases2 name="Major">*%Avancement/NomMajor% shows boarding pass.* \n\nWe've been ordered to go see Mr. J.</phrases2>
+		<phrases3 name="Secretary">*The secretary seems both surprised and worried* \n\nOk, go ahead but be careful, Mr. J is very suspicious and he is not used to seeing new faces.</phrases3>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>100</goto>
+		</reponse1>
+	</dialogue1.1>
+</PNJ>

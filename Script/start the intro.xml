@@ -1,0 +1,111 @@
+<PNJ>
+    <dialogue1.0 image="sprites\Introduction\intro1.png">
+		<phrases1 name="Storyteller">According to legend, our ancestors were all-mighty and lived in a perfect world. \n\nTheir powers dwelled in a magical energy, allowing them to communicate with each other, no matter how far apart they were, or move faster than sound.</phrases1>
+		<phrases2 name="Storyteller">They had learned to harvest this energy from water, wind and even daylight.  \n\nThey also gave it a name: \n\n\n                                                                                                Electricity.</phrases2>
+		<phrases3 name="Storyteller">But one day, electricity disappeared!  \n\nThe reason for this disappearance varies according to the legends, ranging from the conspiracy of several governments to the classic divine punishment.  \nBut whatever the cause, legends agree that chaos fell all over the planet.</phrases3>
+		<phrases4 name="Storyteller">\nOur ancestors were so dependent on this energy that they needed it to work, but also to pay or even simply to feed themselves!   \n\nIn just a few months, the planet's population was divided by ten.</phrases4>
+		<phrases5 name="Storyteller">The survivors of this chaos gathered in small communities to form villages or become looters. \nMost of the villages were destroyed and completely plundered, leaving only the two types of villages that we know today:  \nthe megalopolises, which are home to many villagers and have formidable defences, and the hidden villages living in self-sufficiency.</phrases5>
+		<phrases6 name="Storyteller">Of course, it's just a legend.  Probably invented by a person who wants to know why the world is world.  \n\nBut, we must never forget that in every legend there is a part of truth.</phrases6>
+		<reponse1>
+			<reaction>Next</reaction>
+			<goto>801</goto><!-- Penser à faire Choix du Nom de Major puis event action = 2 -->
+		</reponse1>
+	</dialogue1.0>
+	<dialogue2.0 image="sprites\Introduction\intro2.png">
+	<phrases1 name="Major">Despite the comfort of the village, %Avancement/NomMajor% likes to go hunting outside the palisades. Actually this is the only time he's got a little time to himself. \n\nToday, it's his daughter who got on his nerves.   \nAt the aged of 19, she is selfish, manipulative and spends her time arguing with her mother.*</phrases1>
+		<reponse1>
+			<reaction>Next</reaction>
+			<goto>802</goto><!-- Penser à faire Choix du Nom d'Adeline puis event action = 3 -->
+		</reponse1>
+	</dialogue2.0>
+	<dialogue3.0 image="sprites\Introduction\intro3.png">
+	<phrases1 name="Adeline">Daddy! \nWait, I got something like "über important" to tell you!</phrases1>
+	<phrases2 name="Major">Pffff. Okay, but you got five minutes.  \n\n(So I may go hunting peacefully.)</phrases2>
+	<phrases3 name="Adeline">Remember the guy who's been chasing me since I was 16?</phrases3>
+	<phrases4 name="Major"> Yeah, yeah, yeah, come to the point.   \n\n(This guy is a little too nice, he can ask forgiveness for forgetting to apologize last week! \nIt's a shame, he's strong, we could have get something out of him. \nWhat's his name again?) </phrases4>
+		<reponse1>
+			<reaction>Next</reaction>
+			<goto>803</goto><!-- Penser à faire Choix du Nom de Leopold puis event action = 4 -->
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0 image="sprites\Introduction\intro4.png">
+	<phrases1 name="Adeline">I decided to give him a chance to reward him for his perseverance. \nAnd I'd like to know what you think of him...   \n\nThey say that you learn a lot from a man about how he hunts, what do you think of the way he hunts?</phrases1>
+	<phrases2 name="Major"> (Let's be diplomatic and end this.)  \n\nI'd like to answer you, but you see, I've never seen him hunt. \nWell, that's not all, but my games won't hunt themselves....</phrases2>
+	<phrases3 name="Adeline">Perfect! \nTake the opportunity to get to know each other. \n\n*%Avancement/NomAdeline% turns and screams* IT'S ALL RIGHT HE AGREED TO HUNT WITH HIM.  \n\n* Then she turns to her father and winks at him* I leave you among men.</phrases3>
+		<reponse1>
+			<reaction>Next</reaction>
+			<goto>5</goto>
+		</reponse1>
+	</dialogue4.0>
+	<dialogue5.0 image="sprites\Introduction\intro5.png">
+	<phrases1 name="Leopold">So cool, thanks, sweetie.  \nThat's so awesome, sir. I never dared ask you to come hunting with you.</phrases1>
+	<phrases2 name="Major">(I don't remember agreeing.... Pffffffffff) \n\nOkay, you come but you just look, I'm the one hunting.</phrases2>
+	<phrases3 name="Leopold">(Sigh, I was a little scared to have him see me fight)  \n \nNo worries, sir.</phrases3>
+		<reponse1>
+			<reaction>Next</reaction>
+			<goto>6</goto>
+		</reponse1>
+	</dialogue5.0>
+	<dialogue6.0 image="sprites\Introduction\intro6.png">
+	<phrases1 name="Leopold">  ...</phrases1>
+	<phrases2 name="Major">  ...</phrases2>
+	<phrases3 name="Leopold">It's a beautiful day for hunting.</phrases3>
+	<phrases4 name="Major">I really can't understand what you find in my daughter!</phrases4>
+	<phrases5 name="Leopold">Love can't be explained, sir. \nOne day, BAM, it's coming at you. \n\n My grandmother always said...</phrases5>
+	<phrases6 name="Adeline">* %Avancement/NomAdeline%'s familiar voice comes out of the bushes*.   \n\nDon't touch me, you sons of bitches, or I'll make you eat your testicles.</phrases6>
+	<phrases7 name="Major">When we talk about the wolf... \n\nWell, we'd better go check it out before she gets herself in more trouble.</phrases7>
+		<reponse1>
+			<reaction>Next</reaction>
+			<goto>7</goto>
+		</reponse1>
+	</dialogue6.0>
+	<dialogue7.0 image="sprites\Introduction\intro7.png">
+	<phrases1 name="Pillard">Drop your weapons and no harm will be done to you!</phrases1>
+	<phrases2 name="Major">Two to three, even if our odds are slim, I'm willing to bet on it.</phrases2>
+	<phrases3 name="Pillard">*The looter made a gesture with his hand and three arrows were planted in the trees next to %Avancement/NomMajor%.* \n\nWho said there are only three of us?</phrases3>
+		<reponse1>
+			<reaction>Attack</reaction>
+			<goto>8</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Surrender</reaction>
+			<goto>9</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Negotiate</reaction>
+			<goto>10</goto>
+		</reponse3>
+	</dialogue7.0>
+	<dialogue8.0 image="sprites\Introduction\intro7.png">
+	<phrases1 name="Leopold">You dared to touch %Avancement/NomAdeline%. My weapons will do justice!</phrases1>
+	<phrases2 name="Storyteller">Was the last words spoken and heard by our three buddies.  THE END</phrases2>
+		<reponse1>
+			<reaction>THE END</reaction>
+			<goto action="Script/-669:0">6</goto>
+		</reponse1>
+	</dialogue8.0>
+	<dialogue9.0 image="sprites\Introduction\intro7.png">
+	<phrases1 name="Major">*%Avancement/NomMajor% dropped his weapons on the ground. *\nOkay, you won... this time.</phrases1>
+	<phrases2 name="Storyteller">Our three companions were then tied up and stunned. \nThen they woke up in a strange cell.</phrases2>
+		<reponse1>
+			<reaction>THE END</reaction>
+			<goto>804</goto><!-- Penser à faire Supprimer le groupe "introduction" -->
+		</reponse1>
+	</dialogue9.0>
+	<dialogue10.0 image="sprites\Introduction\intro7.png">
+	<phrases1 name="Major">What proves that you're not going to kill us.</phrases1>
+	<phrases2 name="Pillard">If my goal had been to kill you, you'd already be dead!</phrases2>
+	<phrases3 name="Major">Let the other two go and I surrender unconditionally.</phrases3>
+	<phrases4 name="Pillard">We need three people and we prefer to avoid the other two alerting the whole village.</phrases4>
+	<phrases5 name="Major">I've got money stashed in the forest, you release them and I'll show you the hiding place.</phrases5>
+	<phrases6 name="Pillard">Okay, we'll make it simple: either you surrender now or we kill the three of you and look for other volunteers.</phrases6>
+		<reponse1>
+			<reaction>Attack</reaction>
+			<goto>8</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Surrender</reaction>
+			<goto>9</goto>
+		</reponse2>
+	</dialogue10.0>
+ </PNJ>

@@ -1,0 +1,135 @@
+<PNJ name="Stale">
+    <dialogue1.0 condition="Stale/Jamais-vu:OUI">
+		<phrases1 name="Stale">Thank you for freeing me.  I couldn't have done it without you.  I am at your service to answer your questions.</phrases1>
+		<reponse1>
+			<reaction>Find out more about him</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Find out more about the site</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Find out more about the exit</reaction>
+			<goto>4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Asking to open the door</reaction>
+			<goto action="Avancement/Stale/Jamais-vu:NON">7</goto>
+		</reponse4>
+	</dialogue1.0>
+	<dialogue1.1 condition="Stale/AOuvertascenseur:EnCours">
+		<phrases1 name="Stale">*Stale pushes the huge button in the center of the elevator door *\n....  \nI would also like to give you two vital advice: *First of all, once outdoors, avoid as much as possible mechanical patrollers! You cannot defeat them without a weapon.  Second, remember that the SS protects the only factory exit and is much more powerful than a mechanical patrollers. </phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Stale/AOuvertascenseur:OUI">100</goto>
+		</reponse1>
+	</dialogue1.1>
+	<dialogue1.2>
+		<phrases1 name="Stale">What's the pleasure of seeing you again?</phrases1>
+		<reponse1>
+			<reaction>Find out more about him</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Find out more about the site</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Find out more about the exit</reaction>
+			<goto>4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Asking to open the door</reaction>
+			<goto action="Avancement/Stale/Jamais-vu:NON">7</goto>
+		</reponse4>
+	</dialogue1.2>
+	<dialogue2.0>
+		<phrases1 name="Stale">Coming from a noble family in the upper town of SteamLock, a merchant father and a diplomatic mother, I like to think that I lived my first happy and cherished years...</phrases1>
+		<phrases2 name="Adeline">Can we have the short version?  The one where we know how you ended up here.</phrases2>
+		<phrases3 name="Stale">Ah, the impatience of youth...  \nEngaged at FactoryTech an annual cycle earlier, my mission was to improve and repair the machines.  But, not supporting the use of slaves, I rebelled by liberating some poor souls. \n\nMy gesture put me in an unfortunate position and I was locked up here waiting for my resignation.</phrases3>
+		<phrases4 name="Major">Why didn't they put you in a classic cell with a wheel?</phrases4>
+		<phrases5 name="Stale">Officially, for reasons of privilege, I am above all nobility! \n\nUnofficially, it's to keep me from escaping.  I'm the one who designed what you call "classic cell."</phrases5>
+		<reponse1>
+			<reaction>Learn about slaves</reaction>
+			<goto>5</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Find out more about the site</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Find out more about the exit</reaction>
+			<goto>4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Stale/Jamais-vu:NON">0</goto>
+		</reponse4>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Stale">I thought I told you about it... You're at FactoryTech, the steamille factory.  You must have been bought as a slave before you were sent here.</phrases1>
+		<reponse1>
+			<reaction>Find out more about him</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Find out more about the exit</reaction>
+			<goto>4</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Stale/Jamais-vu:NON">0</goto>
+		</reponse3>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Major">Well, it's been a pleasure, Stale.   \n\nWe have a lot of things to do if you can tell us the exit...</phrases1>
+		<phrases2 name="Stale">Of course, of course. \n\nTo get out, you just have to take the elevator and then, from the outside, reach the building at the back. \n\nThat being said, I strongly advise against it, without a weapon you will not be able to fight the guards, let alone the SS.</phrase2>
+		<phrases3 name="Major">It is not two or three guards serving meals and bringing unconscious prisoners into their cells that will frighten us!</phrases3>
+		<phrases4 name="Stale">In addition to the guards, who are armed and trained, FactoryTech is equipped with a Security System (or SS) to prevent looters from taking control of the factory. I would not advise you too much to equip yourself heavily before any attempt to escape.</phrase4>
+		<phrases5 name="Major">Yes, but this system keeps people from getting in and out!</phrases5>
+		<phrases6 name="Stale">The SS protects against unauthorized entry and exit.  Even the guards can't get out without permission.  \nI think it's just in case a looter managed to infiltrate the guards. \n\nYou should go see the prisoners I released, I'm sure they'll be happy to help you.</phrases6>
+		<reponse1>
+			<reaction>Find out more about him</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Learn about slaves</reaction>
+			<goto>5</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Find out more about the site</reaction>
+			<goto>3</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Asking to open the door</reaction>
+			<goto action="Avancement/Stale/Jamais-vu:NON">7</goto>
+		</reponse4>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrases1 name="Stale">There are two underground prisons. In the other prison, I freed the prisoners and taught them to open their cells from the inside. \n\nAs long as they keep the wheels spinning, the guards won't come to see what's going on.</phrases1>
+		<phrases2 name="Major">You think they can help us get out of here? </phrases2>
+		<phrases3 name="Stale">It seems to me that some of them also want to escape. Maybe they have a plan?</phrases3>
+		<phrases4 name="Major">And how do we get to the other prison?</phrases4>
+		<phrases5 name="Stale">Nothing could be easier.   For the other prison, all you have to do is take the elevator and then, from the outside, reach the second elevator and get off.</phrases5>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Stale/Jamais-vu:NON">0</goto>
+		</reponse1>
+	</dialogue5.0>
+	<dialogue7.0 condition="Stale/AOuvertascenseur:NON">
+		<phrases1 name="Adeline">%Avancement/NomAdeline% turned to Stale and smiled at him.\nSir, could you help us with the elevator door, it won't open. </phrases1>
+		<phrases2 name="Stale">But with pleasure, lady.  \nPlease follow me</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Stale/AOuvertascenseur:EnCours">106</goto>
+		</reponse1>
+	</dialogue7.0>
+	<dialogue7.1>
+		<phrases1 name="Stale">I'm sure you know how to do it now.</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue7.1>
+</PNJ>

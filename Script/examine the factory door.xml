@@ -1,0 +1,9 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="Porte">﻿*The door seems to have been sealed with a soldering iron... strange *</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+ </PNJ>

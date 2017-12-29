@@ -80,6 +80,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=2
 	g\nom_action$[1]="discuter avec Stale"
+	g\nom_action$[2]="talk to Stale"
 	g\script[2]=106
 	g\trigger[2]=0	
 	g\position#[1]=9.8
@@ -98,7 +99,7 @@ Function reinit_groupe()
 	g\trigger[4]=1
 	g\range_trigger[1]=1
 	g\nom_action$[1]="coller son oreille contre le mur"	
-	g\nom_action$[2]="stick your ear to the wall.txt"			
+	g\nom_action$[2]="stick your ear to the wall"			
 	g\position#[1]=5
 	g\position#[2]=1
 	g\position#[3]=5
@@ -115,6 +116,7 @@ Function reinit_groupe()
 	g\range_trigger[2]=0
 	g\script[2]=0
 	g\nom_action$[1]="discuter avec la fillette"
+	g\nom_action$[2]="talk to the little girl"
 	g\position#[1]=28
 	g\position#[2]=0.45
 	g\position#[3]=34.5
@@ -131,6 +133,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1
 	g\nom_action$[1]="tripoter la serrure SteamImpact(tm)"
+	g\nom_action$[2]="examine the SteamImpact(tm) lock"
 	g\position#[1]=9.5
 	g\position#[2]=1
 	g\position#[3]=9
@@ -143,6 +146,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1
 	g\nom_action$[1]="lire l'affiche"
+	g\nom_action$[2]="read the message"
 	g\position#[1]=0.75
 	g\position#[2]=0
 	g\position#[3]=5
@@ -155,6 +159,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]="monter avec l'ascenseur"
+	g\nom_action$[2]="get up with the elevator"
 	g\range_trigger[2]=4
 	g\range_trigger[3]=1
 	g\position#[1]=54
@@ -170,6 +175,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1
 	g\nom_action$[1]="courir dans la roue"
+	g\nom_action$[2]="run in the wheel"
 	g\script[2]=0
 	g\range_trigger[2]=3642
 	g\position#[1]=3
@@ -234,6 +240,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]= "descendre avec l'ascenseur"
+	g\nom_action$[2]= "get down with the elevator"
 	g\range_trigger[2]=1 ;N° map
 	g\range_trigger[3]=2 ;N° entrance
 	g\position#[1]=93
@@ -248,6 +255,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]= "rentrer dans l'usine"
+	g\nom_action$[2]= "enter the factory"
 	g\range_trigger[2]=2 ;N° map
 	g\range_trigger[3]=1 ;N° entrance
 	g\position#[1]=72
@@ -263,6 +271,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]= "sortir de FactoryTech"
+	g\nom_action$[2]= "leave FactoryTech"
 	g\script[2]=4030
 	g\trigger[2]=0	
 	g\position#[1]=95
@@ -285,6 +294,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]= "descendre avec l'ascenseur"
+	g\nom_action$[2]= "get down with the elevator"
 	g\range_trigger[2]=5 ;N° map
 	g\range_trigger[3]=1 ;N° entrance
 	g\position#[1]=18
@@ -300,6 +310,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]="examiner le cadavre"
+	g\nom_action$[2]="examine the skeleton"
 	g\position#[1]=44.87
 	g\position#[2]=0.1
 	g\position#[3]=0
@@ -317,6 +328,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]= "regarder la machine humanoïde"
+	g\nom_action$[2]= "examine the humanoid machine"
 	g\script[2]=4060
 	g\trigger[2]=0		
 	g\range_trigger[2]=2 
@@ -342,6 +354,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]= "retourner dans l'usine"
+	g\nom_action$[2]= "return to the factory"
 	g\range_trigger[2]=2 ;N° map
 	g\range_trigger[3]=2 ;N° entrance
 	g\position#[1]=63.73 
@@ -440,6 +453,7 @@ Function reinit_groupe()
 	g\trigger[1]=1
 	g\range_trigger[1]=10
 	g\nom_action$[1]="Lire le conseil"
+	g\nom_action$[2]="Read the advise"
 	g\position#[1]=90
 	g\position#[2]=-2.5
 	g\position#[3]=43
@@ -453,6 +467,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]="retourner dans la cour"
+	g\nom_action$[2]="go back to the yard"
 	g\range_trigger[2]=4
 	g\range_trigger[3]=2
 	g\position#[1]=7.5
@@ -469,6 +484,7 @@ Function reinit_groupe()
 	g\script[4]=2020
 	g\range_trigger[1]=2
 	g\nom_action$[1]="discuter avec les gardes"
+	g\nom_action$[2]="talk to guards"
 	g\position#[1]=5
 	g\position#[2]=1
 	g\position#[3]=2
@@ -483,6 +499,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=0.75
 	g\nom_action$[1]="discuter avec la secrétaire"
+	g\nom_action$[2]="talk to the secretary"
 	g\position#[1]=9
 	g\position#[2]=1
 	g\position#[3]=26
@@ -495,6 +512,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]="discuter avec la secrétaire"
+	g\nom_action$[2]="talk to the secretary"
 	g\position#[1]=10
 	g\position#[2]=1
 	g\position#[3]=29
@@ -512,6 +530,7 @@ Function reinit_groupe()
 	g\range_trigger[2]=0
 	g\script[2]=0
 	g\nom_action$[1]="discuter avec Stan"
+	g\nom_action$[2]="talk to Stan"
 	g\position#[1]=31
 	g\position#[2]=1.7
 	g\position#[3]=31
@@ -559,28 +578,12 @@ Function reinit_groupe()
 	g\script[1]=207
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
-	g\nom_action$[1]="discuter avec le Garde"
+	g\nom_action$[1]="discuter avec le spécialiste des armes de corps à corps"
+	g\nom_action$[2]="talk to the melee weapons specialist"
 	g\position#[1]=31
 	g\position#[2]=1.7
 	g\position#[3]=38
 	g\position#[4]=180
-	g\animation=1
-	g\trigger[3]=0 
-	g\act_scale#=1
-	g\act_type=2
-
-	g.groupe=New groupe
-	g\num=209
-	g\name$="Garde 3"
-	g\map=2
-	g\script[1]=209
-	g\trigger[1]=4
-	g\range_trigger[1]=1.5
-	g\nom_action$[1]="discuter avec le Garde"
-	g\position#[1]=34.5
-	g\position#[2]=1.7
-	g\position#[3]=35
-	g\position#[4]=90
 	g\animation=1
 	g\trigger[3]=0 
 	g\act_scale#=1
@@ -593,7 +596,8 @@ Function reinit_groupe()
 	g\script[1]=208
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
-	g\nom_action$[1]="discuter avec le Garde"
+	g\nom_action$[1]="discuter avec le spécialiste des armes de tir"
+	g\nom_action$[2]="talk to the ranged weapons specialst"
 	g\position#[1]=34.5
 	g\position#[2]=1.7
 	g\position#[3]=38.5
@@ -604,13 +608,32 @@ Function reinit_groupe()
 	g\act_type=2
 
 	g.groupe=New groupe
+	g\num=209
+	g\name$="Garde 3"
+	g\map=2
+	g\script[1]=209
+	g\trigger[1]=4
+	g\range_trigger[1]=1.5
+	g\nom_action$[1]="discuter avec le spécialiste des armures"
+	g\nom_action$[2]="talk to the armor specialist"
+	g\position#[1]=34.5
+	g\position#[2]=1.7
+	g\position#[3]=35
+	g\position#[4]=90
+	g\animation=1
+	g\trigger[3]=0 
+	g\act_scale#=1
+	g\act_type=2
+	
+	g.groupe=New groupe
 	g\num=210
 	g\name$="Porte principale Engrenage - côté couloir"
 	g\map=2
 	g\script[1]=210
 	g\trigger[1]=4
 	g\range_trigger[1]=1
-	g\nom_action$[1]="examiner la porte"
+	g\nom_action$[1]="examiner la porte de la production"
+	g\nom_action$[2]="examine the production door"
 	g\position#[1]=40
 	g\position#[2]=2
 	g\position#[3]=16.5
@@ -625,7 +648,8 @@ Function reinit_groupe()
 	g\script[1]=211
 	g\trigger[1]=4
 	g\range_trigger[1]=1
-	g\nom_action$[1]="examiner la porte"
+	g\nom_action$[1]="examiner la porte de la production"
+	g\nom_action$[2]="examine the production door"
 	g\position#[1]=42
 	g\position#[2]=2
 	g\position#[3]=16.5
@@ -638,7 +662,8 @@ Function reinit_groupe()
 	g\script[1]=212
 	g\trigger[1]=4
 	g\range_trigger[1]=1
-	g\nom_action$[1]="examiner la porte"
+	g\nom_action$[1]="examiner l'énigme"
+	g\nom_action$[2]="examine the enigma"
 	g\position#[1]=28.5
 	g\position#[2]=1
 	g\position#[3]=1.5
@@ -652,7 +677,8 @@ Function reinit_groupe()
 	g\script[1]=213
 	g\trigger[1]=4
 	g\range_trigger[1]=1
-	g\nom_action$[1]="examiner la porte"
+	g\nom_action$[1]="examiner le mecanisme de la porte"
+	g\nom_action$[2]="examine the door mechanism"
 	g\position#[1]=29
 	g\position#[2]=1
 	g\position#[3]=4.5
@@ -666,7 +692,8 @@ Function reinit_groupe()
 	g\script[1]=214
 	g\trigger[1]=4
 	g\range_trigger[1]=1
-	g\nom_action$[1]="ouvrir/fermer la porte"
+	g\nom_action$[1]="examiner la porte"
+	g\nom_action$[2]="examine the door"
 	g\position#[1]=21
 	g\position#[2]=2
 	g\position#[3]=6
@@ -681,7 +708,8 @@ Function reinit_groupe()
 	g\script[1]=215
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
-	g\nom_action$[1]="ouvrir/fermer la porte"
+	g\nom_action$[1]="examiner la porte"
+	g\nom_action$[2]="examine the door"
 	g\position#[1]=12
 	g\position#[2]=1
 	g\position#[3]=11
@@ -698,6 +726,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]="examiner la trieuse"
+	g\nom_action$[2]="examiner la trieuse"
 	g\position#[1]=13.5
 	g\position#[2]=1
 	g\position#[3]=6.5
@@ -711,6 +740,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]="parler à l'Infirmière"
+	g\nom_action$[2]="talk to the nurse"
 	g\position#[1]=21.2
 	g\position#[2]=0.5
 	g\position#[3]=36
@@ -726,6 +756,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]="parler à Teddy"
+	g\nom_action$[2]="talk to Teddy"
 	g\position#[1]=26.7
 	g\position#[2]=0.5
 	g\position#[3]=2.6
@@ -741,6 +772,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]="monter à l'étage supérieur"
+	g\nom_action$[2]="go up to top floor"
 	g\range_trigger[2]=2
 	g\range_trigger[3]=4
 	g\position#[1]=14
@@ -756,6 +788,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]="monter avec l'ascenseur"
+	g\nom_action$[2]="get up with the elevator"
 	g\range_trigger[2]=4 ;N° map
 	g\range_trigger[3]=3 ;N° entrance
 	g\position#[1]=51
@@ -770,6 +803,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]="discuter avec la sentinelle"
+	g\nom_action$[2]="talk to the sentinel"
 	g\position#[1]=38.5
 	g\position#[2]=0.48
 	g\position#[3]=9
@@ -785,6 +819,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
 	g\nom_action$[1]="discuter avec Arsene";"discuter avec Arsène"
+	g\nom_action$[2]="talk to Arsene" 
 	g\position#[1]=6.2
 	g\position#[2]=0.48
 	g\position#[3]=39.5
@@ -800,6 +835,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=3
 	g\nom_action$[1]="discuter avec Emanuella"
+	g\nom_action$[2]="talk to Emanuella" 
 	g\position#[1]=1
 	g\position#[2]=0.38
 	g\position#[3]=5
@@ -814,7 +850,8 @@ Function reinit_groupe()
 	g\script[1]=100
 	g\trigger[1]=4
 	g\range_trigger[1]=1.5
-	g\nom_action$[1]="parler avec le forgeron"
+	g\nom_action$[1]="visiter la boutique du Forgero"
+	g\nom_action$[2]="visit the blacksmith's shop"
 	g\position#[1]=48
 	g\position#[2]=0.48
 	g\position#[3]=37.5
@@ -830,6 +867,7 @@ Function reinit_groupe()
 	g\trigger[1]=4
 	g\range_trigger[1]=3
 	g\nom_action$[1]="discuter avec le tavernier"
+	g\nom_action$[2]="talk to barman"
 	g\position#[1]=4.5
 	g\position#[2]=0.48
 	g\position#[3]=32.9
@@ -882,7 +920,7 @@ Function reinit_groupe()
 	a\name$[2]="Major"
 	a\groupe=-1
 	a\description$[1]="Chef par droit de sang d'un petit village caché. Il aime la chasse, prendre des décisions et l'odeur du café au petit matin. Il n'aime pas les protecteurs des animaux, les gens qui n'obéissent pas et les matins sans café."
-	a\description$[2]=""
+	a\description$[2]="Chief by blood of a small hidden village. He enjoys hunting, making decisions and the smell of coffee in the early morning. He doesn't like animal protectors, people who don't obey and mornings without coffee."
 	
 	a.avatar=New avatar
 	a\num=2
@@ -893,7 +931,7 @@ Function reinit_groupe()
 	a\name$[2]="Léopold"
 	a\groupe=-1
 	a\description$[1]="Fils d'un marchand itinérant, il s'est installé dans ce village après avoir eu un coup de foudre pour la fille du Chef. Sa bonne volonté est appréciée des villageois mais sa trop grande gentillesse en fait la cible rêvée de tous les profiteurs."
-	a\description$[2]=""
+	a\description$[2]="Son of a travelling merchant, he settled in this village after falling in love with the Chef's daughter. His good will is appreciated by the villagers, but his kindness makes him the dream target of all the profiteers."
 
 	a.avatar=New avatar
 	a\num=3
@@ -904,7 +942,7 @@ Function reinit_groupe()
 	a\name$[2]="Adeline"
 	a\groupe=-1
 	a\description$[1]="Fille du Chef du village. Son égoïsme et sa passion pour la manipulation énervent au plus haut point ses parents qui désespèrent de la voir mûrir un peu."
-	a\description$[2]=""
+	a\description$[2]="Daughter of the village chief. Her selfishness and her passion for manipulation pissed off her parents who despair that she would grow up a little."
 	
 	;classes possibles pour les PJ
 	a.avatar=New avatar
@@ -912,14 +950,16 @@ Function reinit_groupe()
 	a\prop=0
 	a\set=1
 	a\cat=1
+	;français
 	a\name$[1]="Classe 1"
 	a\classe$[1]="Aspirant"
 	a\description$[1]="L'aspirant est un apprenti-garde. Il s'est durement entrainé au combat et a juré de protéger les habitants de son village."
-	a\tactique$[1]="Conseils : L'Aspirant est équilibré et s'en sort plutôt bien au corps à corps. Il devrait donc convenir dans la plupart des situations mais son absence de spécialisation peut rendre un peu dure la fin du jeu."
+	a\tactique$[1]="Conseils : L'aspirant est équilibré et s'en sort plutôt bien au corps à corps. Il devrait donc convenir dans la plupart des situations mais son absence de spécialisation peut rendre un peu dure la fin du jeu."
+	;anglais
 	a\name$[2]="Class 1"
-	a\classe$[2]=""
-	a\description$[2]=""
-	a\tactique$[2]=""
+	a\classe$[2]="Aspirant"
+	a\description$[2]="The aspirant is an apprentice guard. He trained hard in combat and swore to protect the people of his village."
+	a\tactique$[2]="Advice: The aspirant is well-balanced and does rather well in close combat. It should therefore be appropriate in most situations but its lack of specialization can make the end of the game a bit hard."
 	a\att[1]=4
 	a\att[2]=4
 	a\att[3]=4
@@ -952,8 +992,8 @@ Function reinit_groupe()
 	a\tactique$[1]="Conseils : L'Acrobate est difficile à toucher grâce à sa haute dextérité mais reste très fragile. Profitez de sa rapidité pour frapper dès le premier tour même avec des armes de corps à corps."
 	a\name$[2]="Class 2"
 	a\classe$[2]="Acrobat"
-	a\description$[2]=""
-	a\tactique$[2]=""
+	a\description$[2]="After many years in a circus, the Acrobat can follow a series of tricks and jumps that can captivate an audience and save their lives on the battlefield."
+	a\tactique$[2]="Advice: The Acrobat is difficult to touch thanks to its high dexterity but remains very fragile. Take advantage of its speed to hit from the first round even with hand-to-hand weapons."
 	a\att[1]=6
 	a\att[2]=3
 	a\att[3]=4
@@ -984,11 +1024,11 @@ Function reinit_groupe()
 	a\name$[1]="Classe 3"
 	a\classe$[1]="Médecin"
 	a\description$[1]="Ancien médecin militaire, c'est un spécialiste de la suture et rebouture avec trois bouts de ficelle. Certes il ne peut pas rivaliser avec un hôpital bien équipé mais bien des gens doivent la vie à ses mains habiles et son professionnalisme."
-	a\tactique$[1]="Conseils : Le Médecin est fragile et n'est pas très bon au combat, que ce soit au contact ou à distance. Il faudra donc le protéger et cela vous empêchera aussi de prendre un autre combattant mais sa compétence [Médecin] (qui ne fonctionne que s'il n'est pas inconscient) peut valoir le coup."
+	a\tactique$[1]="Conseils : Le Médecin est fragile et n'est pas très bon au combat, que ce soit au contact ou à distance. Il faudra donc le protéger et cela vous empêchera aussi de prendre un autre combattant mais sa compétence [Médecin] (qui ne fonctionne que s'il est conscient) peut valoir le coup."
 	a\name$[2]="Class 3"
-	a\classe$[2]=""
-	a\description$[2]=""
-	a\tactique$[2]=""
+	a\classe$[2]="Doctor"
+	a\description$[2]="A former military doctor, he is a specialist in suture and stitching with three ends of string. Of course he can't compete with a well-equipped hospital, but many people owe life to his skillful hands and professionalism."
+	a\tactique$[2]="Advice: The Doctor is fragile and not very good in combat, whether it is in contact or remote. So you'll have to protect him and this will also prevent you from taking on another fighter but his skill[Physician] (which only works if he's conscious) can be worth it."
 	a\att[1]=3
 	a\att[2]=1
 	a\att[3]=3
@@ -1021,9 +1061,9 @@ Function reinit_groupe()
 	a\description$[1]="Encore jeune et plein de bonne volonté, l'Infirmier accompagne souvent un Médecin afin d'apprendre son art (même si il sert le plus souvent de garde du corps et d'aide de camp)."
 	a\tactique$[1]="Conseils : L'infirmier est plus utile en combat que le Médecin mais son bonus de soin est moins élevé et il n'a pas d'arme de prédilection."
 	a\name$[2]="Class 4"
-	a\classe$[2]=""
-	a\description$[2]=""
-	a\tactique$[2]=""
+	a\classe$[2]="Nurse"
+	a\description$[2]="Still young and full of good will, the nurse often accompanies a doctor in order to learn his art (even if he serves most often as a bodyguard and aide-de-camp)."
+	a\tactique$[2]="Advice: The nurse is more useful in combat than the Doctor but his bonus of care is lower and he has no weapon of predilection."
 	a\att[1]=4
 	a\att[2]=3
 	a\att[3]=5
@@ -1055,9 +1095,9 @@ Function reinit_groupe()
 	a\description$[1]="Contrairement à ce que pourrait faire penser son physique impressionnant, la Brute n'est pas idiote et profite même souvent de ce stéréotype pour bluffer les ennemis qui la sous-estiment."
 	a\tactique$[1]="Conseils : Pas besoin de beaucoup réfléchir avec la Brute. Profitez de sa grande force et de sa résistance pour l'envoyer en première ligne."
 	a\name$[2]="Class 5"
-	a\classe$[2]=""
-	a\description$[2]=""
-	a\tactique$[2]=""
+	a\classe$[2]="Brute"
+	a\description$[2]="Contrairement à ce que pourrait faire penser son physique impressionnant, la Brute n'est pas idiote et profite même souvent de ce stéréotype pour bluffer les ennemis qui la sous-estiment."
+	a\tactique$[2]="Advice: No need to think a lot with the Brute. Take advantage of its great strength and resistance to send it to the front line."
 	a\att[1]=1
 	a\att[2]=5
 	a\att[3]=0
@@ -1092,8 +1132,8 @@ Function reinit_groupe()
 	a\tactique$[1]="Conseils : Essayez de frapper les cible ayant le moins de défense. Plus la cible a de malus de defense (bouclier rouge), plus vous ferez de dégâts. Attention cependant à ne pas mourir avant de pouvoir frapper."
 	a\name$[2]="Class 6"
 	a\classe$[2]="Assassin"
-	a\description$[2]=""
-	a\tactique$[2]=""
+	a\description$[2]="For this low-blow specialist, it's all about timing. A small stocade can do as much damage as a large axe if the victim cannot defend himself. And imagine what a big, well-placed ax could do!"
+	a\tactique$[2]="Advice: Try to hit the least defensive targets. The more defensive malus the target has (red shield), the more damage you will do. But be careful not to die before you can strike."
 	a\att[1]=7
 	a\att[2]=2
 	a\att[3]=5
@@ -1123,11 +1163,11 @@ Function reinit_groupe()
 	a\name$[1]="Classe 7"
 	a\classe$[1]="Flingeur"
 	a\description$[1]="Les flingues, c'est sa passion depuis son enfance. Pourquoi jouer dehors quand on peut démonter un pistolet~? Pourquoi avoir des amis quand on peut écouter le doux murmure de la mécanique, suivi du rugissement de la poudre~? Pourquoi rester enfermé alors qu'on pourrait flinguer tout le monde~?"
-	a\tactique$[1]="Conseils : Faites irradier la passion du Flingeur sur vos ennemis et n'hésitez pas à tirer en rafale. Cependant n'oubliez pas que son bonus d'attaque avec les armes de poings n'est pas appliqué sur les autres armes."
+	a\tactique$[1]="Conseils : Faites irradier la passion du Flingeur sur vos ennemis et n'hésitez pas à tirer en rafale. Pensez à vous équipez d'armes secondaires car vous pourriez vous retrouver à court de munition rapidement."
 	a\name$[2]="Class 7"
-	a\classe$[2]=""
-	a\description$[2]=""
-	a\tactique$[2]=""
+	a\classe$[2]="Shooter"
+	a\description$[2]="Guns have been his passion since he was a kid. Why play outside when you can disassemble a pistol? Why have friends when you can listen to the soft murmur of mechanics, followed by the roar of powder? Why stay locked up when we could shoot everybody?"
+	a\tactique$[2]="Tips: Let the passion of the Lingeur radiate on your enemies and don't hesitate to shoot in a burst of fire. Think about equipping yourself with secondary weapons because you could run out of ammunition quickly."
 	a\att[1]=3
 	a\att[2]=2
 	a\att[3]=6
@@ -1162,9 +1202,9 @@ Function reinit_groupe()
 	a\description$[1]="Le Franc-Tireur fait généralement parti d'un petit groupe de mercenaire, engagé pour protéger un village. Il est spécialement entrainé aux armes à feu, en particulier les fusils semi-automatiques, ce qui en fait un allié précieux mais couteux."
 	a\tactique$[1]="Conseils : Le Franc-Tireur fera des ravages avec une arme pouvant tirer plusieurs fois par tour, comme un fusil semi-automatique ou un pistolet mitrailleur. Mais n'oubliez pas qu'il s'agit d'armes de haut niveau, chères et rares."
 	a\name$[2]="Class 8"
-	a\classe$[2]=""
-	a\description$[2]=""
-	a\tactique$[2]=""
+	a\classe$[2]="Maverick"
+	a\description$[2]="The Maverick is usually part of a small group of mercenaries hired to protect a village. He is specially trained in firearms, especially semi-automatic rifles, making him a valuable but expensive ally."
+	a\tactique$[2]="Advice : The Franc-Tireur will wreak havoc with a weapon that can fire several times per turn, such as a semi-automatic rifle or machine gun. But don't forget that these are expensive and rare high level weapons."
 	a\att[1]=2
 	a\att[2]=4
 	a\att[3]=7

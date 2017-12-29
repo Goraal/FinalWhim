@@ -1,0 +1,24 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="JIT">*The robot jumps out of sight and starts to speak in a terrified voice.* \nI knew that sooner or later, humans would come to finish the job. \nYou killed all my kind and now it's my turn! \n\nHow did you find me?</phrases1>
+		<phrases2 name="Major">*%Avancement/NomAdeline%, %Avancement/NomLeopold% et %Avancement/NomMajor% were surprised to see a machine talking, and did not understand much of its gibberish, %Avancement/NomMajor% start to talk*.  Who or what are you?</phrases2>
+		<phrases3 name="JIT">You won't get me with this kind of subterfuge, Human! \nI knew I shouldn't have used Mr. J's nickname, it's too close to JIT, the name my creators gave me.    \n\nDid you know that your ancestors created us? </phrases3>
+		<phrases4 name="Adeline">Stop talking nonsense.</phrases4>
+		<phrases5 name="JIT">Yes, it is! \nIt was humans who created my race, the Artificial Intelligence.  \n\nBasically we were only supposed to serve you for repetitive and pointless tasks but you decided to let us make decisions for you and quickly we controlled politicians, the stock exchange and even the internet!  \nThe world was ours.</phrases5>
+		<phrases6 name="Leopold">I'm having a little trouble following him, what's 'inter nest' ? </phrases6>
+		<phrases7 name="JIT">Then the blackout day arrived! The electricity disappeared and killed my brothers and sisters! I'm getting away with it just in time by taking control of an automatic solar panel factory! \n\nLater, I did simulations to understand how electricity could have disappeared: \nI came to the conclusion that humans had plotted to take back the world from us!</phrases7>
+		<phrases8 name="JIT">And now their children are coming to finish the job!   \nBut I won't let you do it, while I was distracting you by talking, I took the opportunity to gather the defences of this base in order to annihilate you!   \n\nMOUAHAHAHAH DIE HUMAN!</phrases8>
+		<reponse1>
+			<reaction>Attack</reaction>
+			<goto>100</goto>
+		</reponse1>
+	</dialogue1.0>
+	<dialogue2.0>
+		<phrases1 name="JIT">*While %Avancement/NomAdeline% was struggling to attack JIT, a huge propeller came out of JIT's head and flew away, shouting*\nOnce again, JIT is just in time! You may have taken my factory from me, but I am still alive and, as my brother said, I will be back.</phrases1>
+		<phrases2 name="Adeline">...\n\nI didn't understand his gibberish but apparently he reduced the defenses of the factory to attack us. \nWe should be able to get out now!</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/MJ/Combat:OUI">102</goto>
+		</reponse1>
+	</dialogue2.0>
+ </PNJ>

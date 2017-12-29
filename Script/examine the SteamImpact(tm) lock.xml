@@ -1,0 +1,42 @@
+<PNJ name="Serrure">
+    <dialogue1.0 condition="MétaPortePrison/steamille-inséré:OUI">
+		<phrases1 name="Marjor">Looks like the lock is working now.*</phrases1>
+		<reponse1>
+			<reaction>Open the door</reaction>
+			<goto>100</goto><!-- Penser à faire Avancement/Stale/Libre=OUI -->
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.0>
+	<dialogue1.1 condition="Inventaire/Steamille:NON">
+	<phrases1 name="Marjor">Nothing to do, the door won't open. We have to find a way to feed it... *</phrases1>
+		<reponse1>
+			<reaction>Force like an ox</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.1>
+	<dialogue1.2>
+	<phrases1 name="Marjor">Steams seem to fit perfectly.  It almost looks like it was conceived from that perspective.*</phrases1>
+		<reponse1>
+			<reaction>Insert steamille</reaction>
+			<goto action="Avancement/MétaPortePrison/steamille-inséré:OUI">1</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue1.2>
+	<dialogue2.0>
+		<phrases1 name="Marjor">Perseverance is a strategy that always pays off! This time, your arms paid for it... The door, however, is still intact *</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto><!--SOALT : Pvs:-1 (min 0)-->
+		</reponse1>
+	</dialogue2.0>
+ </PNJ>

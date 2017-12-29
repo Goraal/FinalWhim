@@ -1,0 +1,165 @@
+<PNJ>
+    <dialogue1.0 condition="Stan/Mission1:ToDo">
+		<phrases1 name="Adeline">We got a message from Stan. He wants to know if everything's going well. \n\nCan you explain the trouble?</phrases1>
+		<phrases2 name="Emanuella">I figured you were going to mess my business.   \n\nWell... well, now that you're involved, I might as well tell you everything.</phrases2>
+		<phrases3 name="Emanuella">When we failed to escape, I was captured by Stan who offered me a deal: \n\nif I convince the survivors to keep the wheels running without trying to escape, he leaves us alone. </phrases3>
+		<phrases4 name="Adeline">What about Manny in this story?</phrases4>
+		<phrases5 name="Emanuella">Manny let the cat out of the bag, just like you, and he came to talk to me about it.  \nI shared my secret, we became lovers and then he shared my point of view. His mission was to calm Arsene down amd watch him, but also to serve as an intermediary with Stan. </phrases5>
+		<phrases6 name="Adeline">So you basically betrayed everyone in this camp?   \n\nNot bad! I'm starting to like you!</phrases6>
+		<phrases7 name="Emanuella">Betrayed!  \nNot at all!  \nI brought them a better life. You really think our blacksmith could have made a piano! It is my negotiations with Stan that have given us the comfort that we now have. Most people here didn't have the same comfort outside!</phrases7>
+		<phrases8 name="Leopold">Comfort is good, but every living being wants to have freedom above all! \n\nYou can't prevent them from wanting to escape!</phrases8>
+		<phrases9 name="Emanuella">Let us not forget that we are talking about the cowards who preferred to retreat rather than helping those who were fighting to free them when we tried to escape the first time.  \nTheir willingness to escape is less than their desire to survive. And if you know a little about the outdoors, you'll agree that it's easier to survive here than outdoors. </phrases9>
+		<phrases10 name="Emanuella">Well, on that, I'm counting on you to tell Stan that everything is under control. </phrases10>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Stan/Mission1:Done">0</goto>
+		</reponse1>
+	</dialogue1.0>
+	<dialogue1.1 condition="Stan/Mission1:Done">
+		<phrases1 name="Emanuella">I'm pretty busy right now! Give my regards to Stan.</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.1>
+	<dialogue1.1 condition="Emanuella/Jamais-vu:OUI">
+		<phrases1 name="Emanuella">Hi, I assume you're the new ones released by Stale. </phrases1>
+		<phrases2 name="Major">Indeed, the news travel fast.</phrases2>
+		<phrases3 name="Emanuella">It's not too hard, I know everyone here and the only newcomers are sent to us by Stale.  \n\nI'm Mayor Emanuella. Welcome to the camp! How can I help you?</phrases3>
+		<reponse1>
+			<reaction>Presentation: refugee camp</reaction>
+			<goto action="Avancement/Emanuella/Jamais-vu:NON">2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Presentation: factory</reaction>
+			<goto action="Avancement/Emanuella/Jamais-vu:NON">3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>History: refugee camp</reaction>
+			<goto action="Avancement/Emanuella/Jamais-vu:NON">4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>How to escape?</reaction>
+			<goto action="Avancement/Emanuella/Jamais-vu:NON">5</goto>
+		</reponse4>
+		<reponse5>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Emanuella/Jamais-vu:NON">0</goto>
+		</reponse5>
+	</dialogue1.1>
+	<dialogue1.2>
+		<phrases1 name="Emanuella">Yes, what can I do for you?</phrases1>
+		<reponse1>
+			<reaction>Presentation: refugee camp</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Presentation: factory</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>History: refugee camp</reaction>
+			<goto>4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>How to escape?</reaction>
+			<goto>5</goto>
+		</reponse4>
+		<reponse5>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse5>
+	</dialogue1.2>
+	<dialogue2.0>
+		<phrases1 name="Major">A refugee camp? What's this all about?</phrases1>
+		<phrases2 name="Emanuella">Like you, we were captured and imprisoned to keep the wheels of the factory running.  \n\nStale freed us all one by one and we formed a community.  \n\nLittle by little, the camp was able to add a bar, a blacksmith's shop and even a few beds.</phrases2>
+		<phrases3 name="Major">I also noticed your wallpaper! How did you get all this when you were cut off from the world? </phrases3>
+		<phrases4 name="Emanuella">Our blacksmith is a true artist, he is able to create sumptuous things from the waste he calls' Junk'.  \nDon't hesitate to go see him, he's in cell 16.</phrases4>
+		<reponse1>
+			<reaction>Presentation: factory</reaction>
+			<goto>3</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>History: refugee camp</reaction>
+			<goto>4</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>How to escape?</reaction>
+			<goto>5</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse4>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Leopold">Say, ma'am, I don't get it, \nwe're in a factory here?</phrases1>
+		<phrases2 name="Emanuella">Yeah, more or less. We are in the dependence of the factory that generates energy with the help of people who are spinning in wheels. \n\nThe exterior, which we call "the courtyard", is protected by mechanical guards and separates us from the main building.</phrases2>
+		<phrases3 name="Adeline">But if you stop supplying power to the factory, the mechanical guards should stop working, right? </phrases3>
+		<phrases4 name="Emanuella">In the main building, there are humans on top of them, much better armed than us. If we stop producing just one day, they're going to barge in here and exterminate us.   \n\nAlso, I'm willing to bet they have power reserves to get the guards running again. </phrases4>
+		<phrases5 name="Major">What's in the main building? Where's the exit? </phrases5>
+		<phrases6 name="Emanuella">Unfortunately, that's the only information I have.</phrases6>
+		<reponse1>
+			<reaction>Presentation: refugee camp</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>History: refugee camp</reaction>
+			<goto>4</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>How to escape?</reaction>
+			<goto>5</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse4>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Major">Tell me more about the history of this camp.</phrases1>
+		<phrases2 name="Adeline">All right, I'm bored, I'm going for a walk.</phrases2>
+		<phrases3 name="Emanuella">We were freed by Stale about 8 months ago, time is hard to count underground. At the time, there were about 30 of us and we thought we had a chance to escape.  \nWe made weapons with what we could find and we went, searching of freedom.  \nThe fight against the mechanical guards outside was long and we believed in victory several times. </phrases3>
+		<phrases4 name="Emanuella">The fight lasted until the next day and we discovered that the factory is capable of creating new mechanical guards every day.  \nOnce our best fighters fell down, they left us with only one solution: flight... Other good fighters sacrificed themselves to let us flee and Stale made the enemy believe that all those he had liberated were killed.</phrases4>
+		<phrases5 name="Emanuella">When we returned to our prisons, we consulted with each other and decided to keep our presence secret by running the wheels and pretend we were still emprisonned. \n\nA week after that, I was elected as mayor and I gave the exclusive permission to one of us to raid outside in order to gather materiel for our blacksmith to improve our living style.</phrases5>
+		<reponse1>
+			<reaction>Presentation: refugee camp</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Presentation: factory</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>How to escape?</reaction>
+			<goto>5</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse4>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrases1 name="Major">Thanks for the welcome and the intel, but you know, we only want to escape from here.</phrases1>
+		<phrases2 name="Emanuella">*In an annoyed tone* \nEscape plans are still being studied and for now, none of them is worth anything. We can't allow another failure like last time. \n\nBy the way, I forbid you to go out again.</phrases2>
+		<phrases3 name="Adeline">You really think you have the right to forbid us stuff? \n\nWe are not even part of your cowards group.</phrases3>
+		<phrases4 name="Emanuella">*Emanuella inhales slowly and continues calmer* \n\nVery well, you can go out and risk your lives but don't go near the central building. If a human sees you, they might come here and destroy all our work. \nIf anything happens, come to see me first. I don't want a panic spreading.</phrases4>
+		<phrases5 name="Major">Don't worry, we'll keep this camp secret and be as discreet as possible.</phrases5>
+		<reponse1>
+			<reaction>Presentation: refugee camp</reaction>
+			<goto>2</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Presentation: factory</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>History: refugee camp</reaction>
+			<goto>4</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse4>
+	</dialogue5.0>
+ </PNJ>

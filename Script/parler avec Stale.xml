@@ -119,7 +119,7 @@
 	</dialogue5.0>
 	<dialogue7.0 condition="Stale/AOuvertascenseur:NON">
 		<phrases1 name="Adeline">*%Avancement/NomAdeline% se tourna vers Stale et lui fit son plus beau sourire.* \nMonsieur, pourriez-vous nous aider avec la porte de l'ascenseur, elle refuse de s'ouvrir. </phrases1>
-		<phrases2 name="Stale">Mais avec plaisir, gente dame. \n*Veuillez me suivre*</phrases2>
+		<phrases2 name="Stale">Mais avec plaisir, gente dame. \nVeuillez me suivre</phrases2>
 		<reponse1>
 			<reaction>Partir</reaction>
 			<goto action="Avancement/Stale/AOuvertascenseur:EnCours">106</goto>

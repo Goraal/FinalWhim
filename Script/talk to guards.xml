@@ -1,0 +1,9 @@
+<PNJ>
+    <dialogue1.0>
+		<phrases1 name="Guard">*The guard take a serious face*   YOU SHALL NOT PASS ...   ...without Stan agreement</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+ </PNJ>

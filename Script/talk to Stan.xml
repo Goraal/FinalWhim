@@ -1,0 +1,87 @@
+<PNJ>
+    <dialogue1.0 condition="Stan/Postuler:NON">
+		<phrases1 name="Stan">You have nothing to do here. Get out of here or I'll kick your ass!</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+	<dialogue1.1 condition="Stan/Postuler:OUI">
+		<phrases1 name="Stan">You have nothing to do here. Get out of here or I'll kick your ass!</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Talk about the job</reaction>
+			<goto action="Avancement/Stan/Postuler:CHOIX3">2</goto>
+		</reponse2>
+	</dialogue1.1>
+	<dialogue1.2 condition="Stan/Postuler:COMBAT">
+		<phrases1 name="Stan">So, are you ready?</phrases1>
+		<reponse1>
+			<reaction>Not yet not yet</reaction>
+			<goto action="Avancement/Stan/Postuler:DONE">3</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>About</reaction>
+			<goto action="Avancement/Stan/Postuler:DONE">3</goto>
+		</reponse2>
+	</dialogue1.2>
+	<dialogue1.3 condition="Stan/Mission1:Done">
+		<phrases1 name="Major">We went to see Emanuella and everything's fine. </phrases1>
+		<phrases2 name="Stan">Well, her name is Emanuella, like my mother! Well, I have a second assignment for you. Contact our head Gear, Teddy. This nerd locked himself in his office and left a riddle to contact him in case of an emergency.  \n\nReally pathetic, especially since we have an emergency and nobody can solve the riddle. </phrases2>
+		<phrases3 name="Stan">Here is a key that will allow you to enter the production area. \n\nFind Teddy and tell him to take care of the emergency.</phrases3>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Stan/Mission1:Teddy">110</goto>
+		</reponse1>
+	</dialogue1.3>
+	<dialogue1.4 condition="Stan/Mission1:Teddy">
+		<phrases1 name="Stan">Hurry up and get Teddy!</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.4>
+	<dialogue1.5>
+		<phrases1 name="Stan">I don't have time to take care of you!</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.5>
+	<dialogue2.0>
+		<phrases1 name="Stan">So you want to be a protector! \nWe can't accept weak guy here! \nGo to the other Protecteurs, they will give you what to equip each of you. Choose your equipment carefully and then come back to see me so that we can test your combat skills in 3 to 3.   \n\nDon't disappoint me!</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+		<reponse2  condition="Stan/Postuler:OUI">
+			<reaction>Talk about the job</reaction>
+			<goto>0</goto>
+		</reponse2>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Stan">Too bad for you, because the fight starts now! \n\nDazzle me! </phrases1>
+		<reponse1>
+			<reaction>Fight</reaction>
+			<goto>100</goto>
+		</reponse1>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Stan">Congratulations, rookies! You're doing pretty well. \n\nNow we'll see what you give on the field.   Your first mission is an undercover mission, so at least your outfits won't stain too much...</phrases1>
+		<phrases2 name="Stan">There is a refugee camp on the outside, its wipes think we don't know their presence, but in reality we have an agreement with their leader, a female whose name I forgot.  \nGo check to see if everything's going well there. \nI'm not gonna lie to you,"Manny,"the last guy I sent there is never back, so show me you're better than him.</phrases2>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Stan/Mission1:ToDo">0</goto>
+		</reponse1>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrases1 name="Stan">Looks like fighting is not for you. Come back to see me and try your luck again!</phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Stan/Postuler:COMBAT">0</goto>
+		</reponse1>
+	</dialogue5.0>
+ </PNJ>

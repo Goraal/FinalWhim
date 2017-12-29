@@ -1,0 +1,123 @@
+<PNJ>
+    <dialogue1.0 condition="Fillette/ApresCombat:OUI">
+		<phrases1 name="Little girl">Mouhaha! You're less clever now that you're dead, you rat!  \n* stabbed a rat corpse with a knife *</phrases1>
+		<phrases2 name="Major">Tell me, little girl, I have a quick question...</phrases2>
+		<phrases3 name="Little girl">Hey! Can't you see I'm busy! Get out of here!</phrases3>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue1.0>
+	<dialogue1.1 condition="Fillette/Jamais-vu:OUI">
+		<phrases1 name="Little girl">A young girl seems to be hitting hard on the floor with her knife under the incredulous gaze of a few rats. She turns to you with a confusing smile* \n\nSay! Say, say, say!  Will you help me eradicate some rats? I won't tell anyone...</phrases1>
+		<reponse1>
+			<reaction>Accept</reaction>
+			<goto action="Avancement/Fillette/Jamais-vu:NON">6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Request a fee</reaction>
+			<goto action="Avancement/Fillette/Jamais-vu:NON">3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Moralizing</reaction>
+			<goto action="Avancement/Fillette/Jamais-vu:NON">2</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Refuse</reaction>
+			<goto action="Avancement/Fillette/Jamais-vu:NON">5</goto>
+		</reponse4>
+		<reponse5>
+			<reaction>Leave</reaction>
+			<goto action="Avancement/Fillette/Jamais-vu:NON">0</goto>
+		</reponse5>
+	</dialogue1.1>
+	<dialogue1.2>
+		<phrases1 name="Little girl">*When you approach the girl, her pout turns into a smile* Yeah! You came back to help me!</phrases1>
+		<reponse1 >
+			<reaction>Refuse</reaction>
+			<goto>5</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Request a fee</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Accept</reaction>
+			<goto>6</goto>
+		</reponse3>
+	</dialogue1.2>
+	<dialogue2.0>
+		<phrases1 name="Leopold">You shouldn't be playing with the life of being alive.  Killing is wrong.  Didn't your mom teach you that? </phrases1>
+		<phrases2 name="Little girl">I have the right, I'm a hunter! So, are you helping me or are you just a bunch of fat, stinking losers?</phrases2>
+		<phrases3 name="Adeline">Oh! Watch your language! If not, I'll make you understand the importance of life with big kicks in the face.</phrases3>
+		<phrases4 name="Little girl">I bet you're all red and wrinkled when you're angry.</phrases4>
+		<reponse1>
+			<reaction>Agree to help her</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Request a fee</reaction>
+			<goto>3</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Leaving indignant</reaction>
+			<goto>0</goto>
+		</reponse3>
+		<reponse4>
+			<reaction>Make her regret her words.</reaction>
+			<goto>165</goto>
+		</reponse4>
+	</dialogue2.0>
+	<dialogue3.0>
+		<phrases1 name="Major">We'd like to give you a little help, but you see, on principle, none of us work for nothing!</phrases1>
+		<phrases2 name="Leopold">Well, I work for free a lot.  I think that if everyone helped each other, the world would be a better place.</phrases2>
+		<phrases3 name="Major">Pfff. \n\nI didn't ask you to interfere, dummy. \nLet's be clear right now: I'm giving the orders here!   \n\nAny objections?</phrases3>
+		<phrases4 name="Leopold">No objections, sir, I was just being proactive, sir. \n\nOtherwise my name's not Dummy, but %Avancement/NomLeopold%.</phrases4>
+		<phrases5 name="Adeline">*Leaving the men to their discussions, %Avancement/NomAdeline% turns to the girl.* \n\nTell me, you don't have steamille on you?</phrases5>
+		<phrases6 name="Little girl">Yes, I picked up 2-3 this morning.  Why? Why?</phrases6>
+		<reponse1>
+			<reaction>Helping to get steamille</reaction>
+			<goto>6</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Threaten</reaction>
+			<goto>4</goto>
+		</reponse3>
+	</dialogue3.0>
+	<dialogue4.0>
+		<phrases1 name="Adeline">*%Avancement/NomAdeline% winks at %Avancement/NomLeopold% * \n*She then gives the girl a piercing look * \n\nYou're going to give me your steamille and don't stumble.</phrases1>
+		<phrases2 name="Little girl"> WHAT?!   But... uh-uh!  It's mine. It's mine.</phrases2>
+		<phrases3 name="Adeline">In that case, I think we're gonna have to kill you and plunder your corpse. Nothing personal, we just need your steamille.</phrases3>
+		<phrases4 name="Little girl">The girl jumps up and back slightly* Y-you'll never find the steamille!  I hid them too well! \n\nIf you help me, I will give them to you as a reward.</phrases4>
+		<reponse1>
+			<reaction>Attack the girl</reaction>
+			<goto>165</goto>
+		</reponse1>
+		<reponse2>
+			<reaction>Accept</reaction>
+			<goto>6</goto>
+		</reponse2>
+		<reponse3>
+			<reaction>Refuse</reaction>
+			<goto>5</goto>
+		</reponse3>
+	</dialogue4.0>
+	<dialogue5.0>
+		<phrase1 name="Major">I'm sorry, girl, you're not worth the risk of me getting tired. </phrases1>
+		<reponse1>
+			<reaction>Leave</reaction>
+			<goto>0</goto>
+		</reponse1>
+	</dialogue5.0>
+	<dialogue6.0>
+		<phrases1 name="Little girl">Cool! We're gonna make cat food!</phrases1>
+		<reponse1>
+			<reaction>Fight</reaction>
+			<goto action="Avancement/Fillette/ApresCombat:OUI">115</goto>
+		</reponse1>
+	</dialogue6.0>
+ </PNJ>
