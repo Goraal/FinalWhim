@@ -1920,7 +1920,7 @@ Function script(script_num)
 					            If gr\num=406
 									If MilliSecs()-gr\script[2]>3000
 				                    	If sortie_combat=1
-				              				event_action=102
+				              				event_action=2
 				                    	Else ; défaite définitive
 				                    	    script(12)
 				                    	EndIf                                   
@@ -1941,7 +1941,7 @@ Function script(script_num)
 									gr\manikin[3]=0
 								EndIf
 							Next
-							event_action=2
+							event_action=0
 							
 						Default
 							event_action=Main_ScriptXml(message_action$,event_action)

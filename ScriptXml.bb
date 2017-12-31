@@ -122,7 +122,12 @@ Function Main_ScriptXml(nomDuScript$, int_i)
 				str_actionToDo$=xmlNodeAttributeValueGet$(xml_gotoNode, "action")
 				If str_actionToDo$<>"" Then actionScript(str_actionToDo$)
 				;Afficher le dialogue dans le journal
-				new_log("Vous:"+str_PJ$(choix_qcm+1),0,38,255)
+				If Int(options#(7))=1
+					new_log("Vous:"+str_PJ$(choix_qcm+1),0,38,255)
+				Else
+					new_log("You:"+str_PJ$(choix_qcm+1),0,38,255)
+				Endif
+				
 				;nico : Remettre à zéro la longueur du texte défilant
 				disc_len#=0 									; nico
 			EndIf

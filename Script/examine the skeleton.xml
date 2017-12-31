@@ -36,7 +36,7 @@
 		<phrases3 name="Leopold">It's cut, it looks like she's opening gifts.</phrases3>
 		<phrases4 name="Adeline">A spear!   \nAnd in good condition ! So cool! ...</phrases4>
 		<phrases5 name="Major">...   \nNext time I'd put his Porcher gifts under a dead body instead of a tree.</phrases5>
-		<phrases6 name="Adeline">All right, I'm done!   \n\And guess what! He had money on him! \n\nWell, there are only about 30 caps but it's always better than nothing.</phrases6>
+		<phrases6 name="Adeline">All right, I'm done!   \nAnd guess what! He had money on him! \n\nWell, there are only about 30 caps but it's always better than nothing.</phrases6>
 		<reponse1>
 			<reaction>Leave</reaction>
 			<goto>100</goto>
@@ -50,7 +50,7 @@
 		</reponse1>
 	</dialogue3.0>
 	<dialogue4.0>
-		<phrases1 name="Adeline">*%Avancement/NomAdeline% looks at the corpse pleating her eyes, then says with satisfaction.* \n\nBesides, I'm not doing this for me, this guy is the Many that Arsene told us about. \nSo we're forced to search him...... \nto find out what happened to him....</phrases1>
+		<phrases1 name="Adeline">*%Avancement/NomAdeline% looks at the corpse pleating her eyes, then says with satisfaction.* \n\nBesides, I'm not doing this for me, this guy is the Many that Arsene told us about. \nSo we're forced to search him...... to find out what happened to him....</phrases1>
 		<reponse1>
 			<reaction>Search</reaction>
 			<goto action="Avancement/Manny/Fouillé:OUI">2</goto>

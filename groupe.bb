@@ -993,7 +993,7 @@ Function reinit_groupe()
 	a\name$[2]="Class 2"
 	a\classe$[2]="Acrobat"
 	a\description$[2]="After many years in a circus, the Acrobat can follow a series of tricks and jumps that can captivate an audience and save their lives on the battlefield."
-	a\tactique$[2]="Advice: The Acrobat is difficult to touch thanks to its high dexterity but remains very fragile. Take advantage of its speed to hit from the first round even with hand-to-hand weapons."
+	a\tactique$[2]="Advice: The Acrobat is difficult to touch thanks to its high dexterity but remains very fragile. Take advantage of its speed to hit from the first round even with melee weapons."
 	a\att[1]=6
 	a\att[2]=3
 	a\att[3]=4

@@ -7,7 +7,7 @@
 		</reponse1>
 	</dialogue1.0>
 	<dialogue2.0>
-		<phrases1 name="Mechanism">*Use your keyboard to write the password: *</phrases1>
+		<phrases1 name="Mechanism">*Use your keyboard to write the password: *\n\n %Avancement/Enigme%</phrases1>
 		<reponse1>
 			<reaction>Leave</reaction>
 			<goto>0</goto>

@@ -1014,7 +1014,7 @@ LightRange lumiere,20
 
 
 entiteTest=mur_ouest2_infirmerie
-mode_debug=True
+;mode_debug=True
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Rajout Nico;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

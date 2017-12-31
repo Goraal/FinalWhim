@@ -1,5 +1,5 @@
-Global num_version$="0.43"
-date_version$="2017-10-06" 
+Global num_version$="1.00"
+date_version$="2017-12-31" 
 
 AppTitle Str("Final Whim "+num_version$)
 

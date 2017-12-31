@@ -9179,75 +9179,143 @@ Function tutoriel(num)
 				lire_clavier()
 				
 				If action>1 Then DrawBlock fond,screenwidth*0.5,screenheight*0.5
-				
-				Select action
-					Case 1
-						mess$="Bonjour et bienvenu dans ce tutoriel !#Dans cette séquence, nous verrons les bases du combat dans Final Whim (tm)."
-						If discussion(2,1,"Narrateur",mess$,1,1,1) Then action=2
-					Case 2
-						mess$="Premièrement, voici à quoi ressemble un champ de bataille classique."
-						If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=3
-					Case 3
-						Color 255,255,255
-						af#=0.75+0.25*Cos(timer_animation#*4)
-						rayon=150*af#
-						For t=1 To 5
-							Oval (550-rayon*0.5)*screenyf#-t,(275-rayon*0.5)*screenyf#-t,rayon+2*t,rayon+2*t,0
-						Next
-						mess$="Voici votre personnage.#La roue dentée jaune en dessous de lui indique que c'est son tour d'agir.#La barre verte représente ses points de vie. Quand elle est entièrement rouge, le personnage meurt."
-						If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=4
-					Case 4
-						Color 255,255,255
-						af#=0.75+0.25*Cos(timer_animation#*4)
-						rayon=200*af#
-						For t=1 To 5
-							Oval (200-rayon*0.5)*screenyf#-t,(175-rayon*0.5)*screenyf#-t,rayon+2*t,rayon+2*t,0
-						Next
-						mess$="Les personnages en face sont les ennemis.#Le but du combat est de les tuer ou de les faire fuir."
-						If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=5
-					Case 5
-						Color 255,255,255
-						af#=0.75+0.25*Cos(timer_animation#*4)
-						rayon=15*af#
-						For t=1 To 4
-							Rect (screenwidth*0.5-100*screenyf#-4-t-rayon*0.5),(370*screenyf#-4-t-rayon*0.5),(200*screenyf#+8+2*t+rayon),(10*screenyf#+8+2*t+rayon),0
-						Next
-						mess$="Ceci est votre barre de temps.#Elle représente combien de temps il vous reste pour agir. Si elle est complètement vide avant que vous ayez agit, vous passez automatiquement votre tour.#Rassurez vous, vous avez quand même "+Str(Int(Float(TEMPS_ROUND)*0.001))+" secondes pour faire toutes vos actions."
-						If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=6
-					Case 6
-						Color 255,255,255
-						af#=0.75+0.25*Cos(timer_animation#*4)
-						rayon=75*af#*screenyf#
-						For t=1 To 5
-							Oval screenwidth*0.5-60*screenyf#-rayon*0.5-t,210*screenyf#-rayon*0.5-t,rayon+2*t,rayon+2*t,0
-						Next
-						mess$="Pour faire une attaque basique, cliquez sur l'icône en forme d'épée, puis sur un des deux type d'attaque (normale ou visée)."
-						If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=7
-					Case 7
-						mess$="Les attaques normales sont, comme leur nom l'indique, des attaques basiques.#Les attaques stratégiques sont des attaques plus difficiles (et donc qui échouent plus facilement) mais qui font plus de dégâts lorsque vous touchez."
-						If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=8
-					Case 8
-						mess$="Cliquez enfin sur la cible que vous souhaitez attaquer.#Si pour x raisons, vous ne pouvez pas l'attaquer, vous entendrez le son ''erreur''."
-						If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=9
-					Case 9
-						mess$="Pour pouvoir attaquer une cible au corps à corps, il faut que votre cible et vous soyez les premiers de vos colonnes respectives. Vous ne pourrez pas l'attaquer au corps à corps si vous ou votre cible êtes caché derrière quelqu'un~!"
-						If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=10
-					Case 10
-						mess$="D'autre part, au premier tour d'un combat, votre groupe et celui de vos ennemis sont trop éloignés pour attaquer au corps à corps. Seuls les personnages possédant la règle spéciale Célérité (comme les Acrobates) peuvent attaquer au corps à corps au premier tour."
-						If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=11
-					Case 11
-						mess$="Les armes à distance peuvent attaquer dès le premier tour, et peuvent aussi attaquer n'importe quelle cible, même si cette cible ou si le tireur est caché derrière quelqu'un.#Nous verrons les armes à distance plus en détail dans un autre tutoriel."
-						If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=12						
-					Case 12
-						mess$="Ça sera tout pour le moment.# #Bonne chance~!"
-						If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=13
-					Case 13
-						reponse=fenetreqcm(2,"Revoir le tutoriel ?","Oui","Non")
-						If reponse=1 Then action=2
-						If reponse=2 Then action=0	
-						DrawImage curseur,MouseX(),MouseY()	
-				End Select
-
+				If Int(options#(7))=1
+					Select action
+						Case 1
+							mess$="Bonjour et bienvenu dans ce tutoriel !#Dans cette séquence, nous verrons les bases du combat dans Final Whim (tm)."
+							If discussion(2,1,"Narrateur",mess$,1,1,1) Then action=2
+						Case 2
+							mess$="Premièrement, voici à quoi ressemble un champ de bataille classique."
+							If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=3
+						Case 3
+							Color 255,255,255
+							af#=0.75+0.25*Cos(timer_animation#*4)
+							rayon=150*af#
+							For t=1 To 5
+								Oval (550-rayon*0.5)*screenyf#-t,(275-rayon*0.5)*screenyf#-t,rayon+2*t,rayon+2*t,0
+							Next
+							mess$="Voici votre personnage.#La roue dentée jaune en dessous de lui indique que c'est son tour d'agir.#La barre verte représente ses points de vie. Quand elle est entièrement rouge, le personnage meurt."
+							If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=4
+						Case 4
+							Color 255,255,255
+							af#=0.75+0.25*Cos(timer_animation#*4)
+							rayon=200*af#
+							For t=1 To 5
+								Oval (200-rayon*0.5)*screenyf#-t,(175-rayon*0.5)*screenyf#-t,rayon+2*t,rayon+2*t,0
+							Next
+							mess$="Les personnages en face sont les ennemis.#Le but du combat est de les tuer ou de les faire fuir."
+							If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=5
+						Case 5
+							Color 255,255,255
+							af#=0.75+0.25*Cos(timer_animation#*4)
+							rayon=15*af#
+							For t=1 To 4
+								Rect (screenwidth*0.5-100*screenyf#-4-t-rayon*0.5),(370*screenyf#-4-t-rayon*0.5),(200*screenyf#+8+2*t+rayon),(10*screenyf#+8+2*t+rayon),0
+							Next
+							mess$="Ceci est votre barre de temps.#Elle représente combien de temps il vous reste pour agir. Si elle est complètement vide avant que vous ayez agit, vous passez automatiquement votre tour.#Rassurez vous, vous avez quand même "+Str(Int(Float(TEMPS_ROUND)*0.001))+" secondes pour faire toutes vos actions."
+							If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=6
+						Case 6
+							Color 255,255,255
+							af#=0.75+0.25*Cos(timer_animation#*4)
+							rayon=75*af#*screenyf#
+							For t=1 To 5
+								Oval screenwidth*0.5-60*screenyf#-rayon*0.5-t,210*screenyf#-rayon*0.5-t,rayon+2*t,rayon+2*t,0
+							Next
+							mess$="Pour faire une attaque basique, cliquez sur l'icône en forme d'épée, puis sur un des deux type d'attaque (normale ou visée)."
+							If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=7
+						Case 7
+							mess$="Les attaques normales sont, comme leur nom l'indique, des attaques basiques.#Les attaques stratégiques sont des attaques plus difficiles (et donc qui échouent plus facilement) mais qui font plus de dégâts lorsque vous touchez."
+							If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=8
+						Case 8
+							mess$="Cliquez enfin sur la cible que vous souhaitez attaquer.#Si pour x raisons, vous ne pouvez pas l'attaquer, vous entendrez le son ''erreur''."
+							If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=9
+						Case 9
+							mess$="Pour pouvoir attaquer une cible au corps à corps, il faut que votre cible et vous soyez les premiers de vos colonnes respectives. Vous ne pourrez pas l'attaquer au corps à corps si vous ou votre cible êtes caché derrière quelqu'un~!"
+							If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=10
+						Case 10
+							mess$="D'autre part, au premier tour d'un combat, votre groupe et celui de vos ennemis sont trop éloignés pour attaquer au corps à corps. Seuls les personnages possédant la règle spéciale Célérité (comme les Acrobates) peuvent attaquer au corps à corps au premier tour."
+							If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=11
+						Case 11
+							mess$="Les armes à distance peuvent attaquer dès le premier tour, et peuvent aussi attaquer n'importe quelle cible, même si cette cible ou si le tireur est caché derrière quelqu'un.#Nous verrons les armes à distance plus en détail dans un autre tutoriel."
+							If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=12						
+						Case 12
+							mess$="Ça sera tout pour le moment.# #Bonne chance~!"
+							If discussion(0,0,"Narrateur",mess$,1,1,1) Then action=13
+						Case 13
+							reponse=fenetreqcm(2,"Revoir le tutoriel ?","Oui","Non")
+							If reponse=1 Then action=2
+							If reponse=2 Then action=0	
+							DrawImage curseur,MouseX(),MouseY()	
+					End Select
+				Else
+					Select action
+						Case 1
+							mess$="Hello, welcom to this tutorial !#In this sequence, we will see the basic of FinalWhim fight phase."
+							If discussion(2,1,"StoryTeller",mess$,1,1,1) Then action=2
+						Case 2
+							mess$="First, this is what the battle field look like."
+							If discussion(0,0,"StoryTeller",mess$,1,1,1) Then action=3
+						Case 3
+							Color 255,255,255
+							af#=0.75+0.25*Cos(timer_animation#*4)
+							rayon=150*af#
+							For t=1 To 5
+								Oval (550-rayon*0.5)*screenyf#-t,(275-rayon*0.5)*screenyf#-t,rayon+2*t,rayon+2*t,0
+							Next
+							mess$="This is your character.#The yellow wheel behind him indicates that it's his turn to act.# The green bar represent his health points. When it's completely red, the character is KO."
+							If discussion(0,0,"StoryTeller",mess$,1,1,1) Then action=4
+						Case 4
+							Color 255,255,255
+							af#=0.75+0.25*Cos(timer_animation#*4)
+							rayon=200*af#
+							For t=1 To 5
+								Oval (200-rayon*0.5)*screenyf#-t,(175-rayon*0.5)*screenyf#-t,rayon+2*t,rayon+2*t,0
+							Next
+							mess$="On the other side of the battle field are ennemy.#Defeat them all to win the fight."
+							If discussion(0,0,"StoryTeller",mess$,1,1,1) Then action=5
+						Case 5
+							Color 255,255,255
+							af#=0.75+0.25*Cos(timer_animation#*4)
+							rayon=15*af#
+							For t=1 To 4
+								Rect (screenwidth*0.5-100*screenyf#-4-t-rayon*0.5),(370*screenyf#-4-t-rayon*0.5),(200*screenyf#+8+2*t+rayon),(10*screenyf#+8+2*t+rayon),0
+							Next
+							mess$="This is the time bar.#It reprenste the remaining time to act. If it's completly empty before you act, you skip your turn.#In the current mode, you have "+Str(Int(Float(TEMPS_ROUND)*0.001))+" seconds to act."
+							If discussion(0,0,"StoryTeller",mess$,1,1,1) Then action=6
+						Case 6
+							Color 255,255,255
+							af#=0.75+0.25*Cos(timer_animation#*4)
+							rayon=75*af#*screenyf#
+							For t=1 To 5
+								Oval screenwidth*0.5-60*screenyf#-rayon*0.5-t,210*screenyf#-rayon*0.5-t,rayon+2*t,rayon+2*t,0
+							Next
+							mess$="To do an attack, you need to clic on the sword icone, then choose between normal attack or strategical attack."
+							If discussion(0,0,"StoryTeller",mess$,1,1,1) Then action=7
+						Case 7
+							mess$="(Normal attack has no particularity.#Strategical attack are harder to do (less chance to hit) but do more damage.)"
+							If discussion(0,0,"StoryTeller",mess$,1,1,1) Then action=8
+						Case 8
+							mess$="Then clic on your target.#If, for some reason, you can't attack, you will list to an ''error'' sound."
+							If discussion(0,0,"StoryTeller",mess$,1,1,1) Then action=9
+						Case 9
+							mess$="To attack with melee weapon, you need to be the first on your line. You cannot attack with a melee weapon if your hide beyind anyone~!"
+							If discussion(0,0,"StoryTeller",mess$,1,1,1) Then action=10
+						Case 10
+							mess$="The first turn, your groupe and ennemi group are to far from each other to use melee weapon (except people with the rules Swift)."
+							If discussion(0,0,"StoryTeller",mess$,1,1,1) Then action=11
+						Case 11
+							mess$="The ranged weapon can attack the first round and attack anyone form evrywhere."
+							If discussion(0,0,"StoryTeller",mess$,1,1,1) Then action=12						
+						Case 12
+							mess$="That's all.# #Good luck~!"
+							If discussion(0,0,"StoryTeller",mess$,1,1,1) Then action=13
+						Case 13
+							reponse=fenetreqcm(2,"Review this tutorial ?","Yes","No")
+							If reponse=1 Then action=2
+							If reponse=2 Then action=0	
+							DrawImage curseur,MouseX(),MouseY()	
+					End Select
+				EndIf
 				Flip
 				compensation_lag()
 			Wend
